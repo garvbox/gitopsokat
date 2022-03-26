@@ -17,7 +17,12 @@ spec:
   values:
     configInline:
       address-pools:
+      - name: reserved  # Reserved single IP for DNS
+        protocol: layer2
+        auto-assign: false
+        addresses:
+        - 10.0.40.1
       - name: default
         protocol: layer2
         addresses:
-        - 10.0.40.1-10.0.40.255
+        - 10.0.40.2-10.0.40.50
