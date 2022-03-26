@@ -1,0 +1,45 @@
+---
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: issuer-letsencrypt-staging
+  namespace: cert-manager
+spec:
+  acme:
+    email: gonarvib@protonmail.com
+    server: https://acme-staging-v02.api.letsencrypt.org/directory  # LE Staging
+    # server: https://acme-v02.api.letsencrypt.org/directory        # LE Prod
+    privateKeySecretRef:
+      name: issuer-letsencrypt-staging-key
+    solvers:
+    - dns01:
+        cloudflare:
+          apiTokenSecretRef:
+            key: api-token
+            name: cloudflare-api-token-secret
+          email: gonarvib@protonmail.com
+
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: testsite-lestage
+  namespace: kube-system
+spec:
+  secretName: testsite-lestage-secret
+  dnsNames:
+  - "*.testsite.garvbox.net"
+  - testsite.garvbox.net
+  issuerRef:
+    kind: ClusterIssuer
+    name: issuer-letsencrypt-staging
+
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: TLSStore
+metadata:
+  name: default
+  namespace: kube-system
+spec:
+  defaultCertificate:
+    secretName: testsite-lestage-secret
