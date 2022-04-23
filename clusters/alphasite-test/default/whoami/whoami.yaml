@@ -27,7 +27,6 @@ metadata:
   labels:
     app: whoami
 spec:
-  type: LoadBalancer
   ports:
     - port: 80
   selector:
@@ -44,7 +43,7 @@ metadata:
     traefik.ingress.kubernetes.io/router.tls: "true"
 spec:
   rules:
-    - host: whoami.alphasite-test.garvbox.net
+    - host: whoami.alphasite-test.glenside.lan
       http:
         paths:
           - path: /whoami
