@@ -21,7 +21,7 @@ spec:
         protocol: layer2
         auto-assign: false
         addresses:
-        - 10.0.40.1
+        - 10.0.40.1/32
       - name: default
         protocol: layer2
         addresses:
