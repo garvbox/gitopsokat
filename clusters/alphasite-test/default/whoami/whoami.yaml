@@ -27,6 +27,7 @@ metadata:
   labels:
     app: whoami
 spec:
+  type: LoadBalancer
   ports:
     - port: 80
   selector:
