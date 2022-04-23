@@ -46,7 +46,7 @@ spec:
     - host: whoami.alphasite-test.glenside.lan
       http:
         paths:
-          - path: /whoami
+          - path: "/"
             pathType: Prefix
             backend:
               service:
