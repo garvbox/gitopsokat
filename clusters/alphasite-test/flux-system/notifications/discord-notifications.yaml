@@ -6,7 +6,8 @@ metadata:
   namespace: flux-system
 spec:
   type: discord
-  address: ${discord_url}
+  secretRef:
+    name: discord-url
 
 ---
 apiVersion: notification.toolkit.fluxcd.io/v1beta1
