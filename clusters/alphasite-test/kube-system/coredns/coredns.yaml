@@ -7,7 +7,7 @@ metadata:
   namespace: kube-system
 data:
   external.server: |
-    alphasite-test.garvbox.net:53 {
+    alphasite-test.glenside.lan:53 {
       kubernetes
-      k8s_external alphasite-test.garvbox.net
+      k8s_external alphasite-test.glenside.lan
     }
