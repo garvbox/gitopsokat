@@ -1,0 +1,13 @@
+# Apply DNS config for external queries
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: coredns-custom
+  namespace: kube-system
+data:
+  external.server: |
+    alphasite-test.garvbox.net:53 {
+      kubernetes
+      k8s_external alphasite-test.garvbox.net
+    }
