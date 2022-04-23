@@ -22,4 +22,16 @@ spec:
     ingress:
       main:
         enabled: true
-    hostNetwork: false
+        annotations:
+          traefik.ingress.kubernetes.io/router.entrypoints: web
+        hosts: 
+          host: home-assistant.alphasite-test.glenside.lan
+          paths:
+            - path: "/"
+              pathType: Prefix
+              backend:
+                service:
+                  name: home-assistant
+                  port:
+                    number: 8123
+        tls: []
