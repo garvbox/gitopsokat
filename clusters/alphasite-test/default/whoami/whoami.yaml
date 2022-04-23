@@ -43,7 +43,7 @@ metadata:
     traefik.ingress.kubernetes.io/router.tls: "true"
 spec:
   rules:
-    - host: whoami.k3s-lxc-test.glenside.lan
+    - host: whoami.alphasite-test.garvbox.net
       http:
         paths:
           - path: /whoami
