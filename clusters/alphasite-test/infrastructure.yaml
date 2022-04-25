@@ -1,0 +1,25 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: infrastructure
+  namespace: flux-system
+spec:
+  interval: 10m0s
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  path: ./infrastructure/alphasite-test
+  prune: true
+  # Enable Encryption using sops-gpg secret pre-loaded with ansible
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-gpg
+  # Site-specific variables
+  postBuild:
+    substitute:
+      metallb_ip_dns: 10.0.40.1
+      metallb_ip_range: 10.0.40.2-10.0.40.50
+      # Note Traefik IP should be inside the metallb dynamic ip range
+      metallb_ip_traefik: 10.0.40.10
+      cluster_ext_domain: alphasite-test.glenside.lan
