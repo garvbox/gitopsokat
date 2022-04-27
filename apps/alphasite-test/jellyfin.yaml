@@ -33,6 +33,7 @@ spec:
       videos:
         enabled: true
         type: custom
+        readOnly: true
         volumeSpec:
           nfs:
             server: kraken.glenside.lan
