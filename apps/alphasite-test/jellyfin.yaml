@@ -31,6 +31,11 @@ spec:
                 pathType: Prefix
         tls: []
     persistence:
+      config:
+        enabled: true
+        type: pvc
+        accessMode: ReadWriteOnce
+        size: 2Gi
       videos:
         enabled: true
         type: custom
