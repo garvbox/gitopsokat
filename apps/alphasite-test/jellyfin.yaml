@@ -1,0 +1,39 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: jellyfin
+  namespace: default
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: jellyfin
+      version: 9.3.0
+      sourceRef:
+        kind: HelmRepository
+        name: k8s-at-home-charts
+        namespace: flux-system
+      interval: 5m
+  values:
+    env:
+      TZ: "Europe/Dublin"
+    ingress:
+      main:
+        enabled: true
+        annotations:
+          traefik.ingress.kubernetes.io/router.entrypoints: web
+        hosts: 
+          - host: jellyfin.${cluster_ext_domain}
+            paths:
+              - path: "/"
+                pathType: Prefix
+        tls: []
+    persistence:
+      videos:
+        enabled: true
+        type: custom
+        volumeSpec:
+          nfs:
+            server: kraken.glenside.lan
+            path: /datapool/videos
