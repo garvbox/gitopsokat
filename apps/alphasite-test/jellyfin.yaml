@@ -34,8 +34,9 @@ spec:
       config:
         enabled: true
         type: pvc
+        storageClass: 
         accessMode: ReadWriteOnce
-        size: 2Gi
+        size: 6Gi
       videos:
         enabled: true
         type: custom
