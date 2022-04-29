@@ -4,7 +4,7 @@ resources:
 - coredns-configmap.yaml
 - ext-dns.yaml
 - metallb.yaml
-- cert-manager.yaml
 - traefik.yaml
 - discord-notifications.yaml
 - nfs-provisioner.yaml
+- cert-manager
