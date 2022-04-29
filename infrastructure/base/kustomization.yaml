@@ -6,3 +6,4 @@ resources:
 - metallb.yaml
 - traefik.yaml
 - discord-notifications.yaml
+- nfs-provisioner.yaml

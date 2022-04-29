@@ -5,3 +5,4 @@ resources:
 - metallb-charts.yaml
 - traefik-charts.yaml
 - k8s-at-home-charts.yaml
+- nfs-provisioner-charts.yaml
