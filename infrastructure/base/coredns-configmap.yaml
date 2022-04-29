@@ -7,7 +7,7 @@ metadata:
   namespace: kube-system
 data:
   external.server: |
-    ${cluster_ext_domain}:53 {
+    ${cluster_int_domain}:53 {
       kubernetes
-      k8s_external ${cluster_ext_domain}
+      k8s_external ${cluster_int_domain}
     }

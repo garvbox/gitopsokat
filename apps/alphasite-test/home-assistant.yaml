@@ -26,7 +26,7 @@ spec:
           traefik.ingress.kubernetes.io/router.entrypoints: websecure
           traefik.ingress.kubernetes.io/router.tls: "true"
         hosts: 
-          - host: home-assistant.${cluster_ext_domain}
+          - host: home-assistant.${cluster_int_domain}
             paths:
               - path: "/"
                 pathType: Prefix

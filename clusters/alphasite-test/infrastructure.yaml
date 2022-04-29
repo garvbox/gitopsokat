@@ -22,6 +22,9 @@ spec:
       metallb_ip_range: 10.0.40.2-10.0.40.50
       # Note Traefik IP should be inside the metallb dynamic ip range
       metallb_ip_traefik: 10.0.40.10
-      cluster_ext_domain: alphasite-test.glenside.lan
+      cluster_ext_domain: testsite.garvbox.net
+      cluster_int_domain: alphasite-test.glenside.lan
       nfs_provisioner_server: kraken.glenside.lan
       nfs_provisioner_path: /export/alphasite-test
+      le_issuer: letsencrypt-test
+      admin_email: gonarvib@protonmail.com
