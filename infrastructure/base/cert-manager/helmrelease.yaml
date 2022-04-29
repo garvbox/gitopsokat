@@ -14,9 +14,3 @@ spec:
         kind: HelmRepository
         name: jetstack-charts
         namespace: flux-system
-  install:
-    crds: Create
-  upgrade:
-    crds: CreateReplace
-  values:
-    installCRDs: true

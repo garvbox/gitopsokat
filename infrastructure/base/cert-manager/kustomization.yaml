@@ -3,7 +3,10 @@ kind: Kustomization
 # Any site-specific configs/patches should be loaded here before loading the base config
 resources:
   - namespace.yaml
+  # NOTE: The CRDs are manually added because flux cannot wait for the helm install
+  # to finish before using the resources in issuers + certs files
+  - https://github.com/jetstack/cert-manager/releases/download/v1.8.0/cert-manager.crds.yaml
   - helmrelease.yaml
-  # - issuers.yaml
-  # - certs.yaml
+  - issuers.yaml
+  - certs.yaml
   
