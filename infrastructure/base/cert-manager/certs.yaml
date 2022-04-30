@@ -5,9 +5,9 @@ metadata:
   name: acme-crt
   namespace: cert-manager
 spec:
-  secretName: acme-crt-secret
+  secretName: ${le_issuer:=letsencrypt-test}
   issuerRef:
-    name: ${le_issuer:=letsencrypt-test}
+    name: ${le_issuer:=letsencrypt-test}-secret
     kind: ClusterIssuer
   dnsNames:
   - ${cluster_ext_domain}

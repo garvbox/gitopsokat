@@ -9,7 +9,7 @@ spec:
     email: ${admin_email}
     server: https://acme-staging-v02.api.letsencrypt.org/directory
     privateKeySecretRef:
-      name: letsencrypt-test
+      name: letsencrypt-test-secret
     solvers:
     # An empty 'selector' means that this solver matches all domains
     - selector: {}
@@ -30,7 +30,7 @@ spec:
     email: ${admin_email}
     server: https://acme-v02.api.letsencrypt.org/directory
     privateKeySecretRef:
-      name: letsencrypt-prod
+      name: letsencrypt-prod-secret
     solvers:
     # An empty 'selector' means that this solver matches all domains
     - selector: {}
