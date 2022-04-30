@@ -43,7 +43,7 @@ metadata:
     traefik.ingress.kubernetes.io/router.tls: "true"
 spec:
   rules:
-    - host: whoami.${cluster_int_domain}
+    - host: whoami.${cluster_ext_domain}
       http:
         paths:
           - path: "/"

@@ -21,5 +21,4 @@ spec:
   # Site-specific variables
   postBuild:
     substitute:
-      cluster_ext_domain: testsite.garvbox.net
-      cluster_int_domain: alphasite-test.glenside.lan
+      cluster_ext_domain: alphasite-test.garvbox.net

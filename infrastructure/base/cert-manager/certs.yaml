@@ -12,4 +12,3 @@ spec:
   dnsNames:
   - ${cluster_ext_domain}
   - '*.${cluster_ext_domain}'
-  - '*.${cluster_int_domain}'
