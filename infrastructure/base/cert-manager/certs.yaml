@@ -5,7 +5,7 @@ metadata:
   name: letsencrypt-cert
   namespace: cert-manager
 spec:
-  secretName: ${le_issuer:=letsencrypt-test}-secret
+  secretName: letsencrypt-secret
   issuerRef:
     name: ${le_issuer:=letsencrypt-test}
     kind: ClusterIssuer

@@ -26,5 +26,6 @@ spec:
       cluster_int_domain: alphasite-test.glenside.lan
       nfs_provisioner_server: kraken.glenside.lan
       nfs_provisioner_path: /export/alphasite-test
-      le_issuer: letsencrypt-test
       admin_email: gonarvib@protonmail.com
+      # Uncomment to switch to PROD LetsEncrypt URL
+      # le_url: https://acme-v02.api.letsencrypt.org/directory
