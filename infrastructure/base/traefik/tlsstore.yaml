@@ -8,4 +8,4 @@ metadata:
 
 spec:
   defaultCertificate:
-    secretName: letsencrypt-cert
+    secretName: letsencrypt-secret
