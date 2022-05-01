@@ -19,10 +19,10 @@ spec:
     #   https://github.com/traefik/traefik-helm-chart/blob/master/traefik/values.yaml
     # Removed some unused values
 
-    # Create an IngressRoute for the dashboard
+    # Disable silly traefik ingressroute
     ingressRoute:
       dashboard:
-        enabled: true
+        enabled: false
     # Configure Traefik static configuration
     # Additional arguments to be passed at Traefik's binary
     # All available options available on https://docs.traefik.io/reference/static-configuration/cli/
