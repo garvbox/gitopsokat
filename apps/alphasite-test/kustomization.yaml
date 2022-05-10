@@ -1,5 +1,10 @@
+# Test apps
+# Note ../base directory is used for common apps with prod and test
+# Useful tokeep some here just in test for rollout
+---
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - ../base
   - whoami.yaml
+  - gitea.yaml
