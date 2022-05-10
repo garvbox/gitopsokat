@@ -35,11 +35,11 @@ spec:
         - ReadWriteOnce
       labels: {}
       annotations: {}
-      storageClass: "nfs-kraken"
+      storageClass: "${nfs_provisioner_scname}"
     postgresql:
       persistence:
         size: 500Mi
-        storageClass: "nfs-kraken"
+        storageClass: "${nfs_provisioner_scname}"
     podSecurityContext: {}  # Disabled security context for NFS data access
       # fsGroup: 1000
     config: {}  #  Gitea Config settings

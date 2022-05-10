@@ -34,7 +34,7 @@ spec:
       config:
         enabled: true
         type: pvc
-        storageClass: nfs-kraken
+        storageClass: "${nfs_provisioner_scname}"
         accessMode: ReadWriteOnce
         size: 6Gi
       videos:

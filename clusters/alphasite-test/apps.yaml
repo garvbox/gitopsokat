@@ -22,3 +22,4 @@ spec:
   postBuild:
     substitute:
       cluster_ext_domain: alphasite-test.garvbox.net
+      nfs_provisioner_scname: nfs-kraken

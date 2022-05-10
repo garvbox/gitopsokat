@@ -24,6 +24,7 @@ spec:
       metallb_ip_traefik: 10.0.40.10
       cluster_ext_domain: alphasite-test.garvbox.net
       cluster_int_domain: alphasite-test.glenside.lan
+      nfs_provisioner_scname: nfs-kraken
       nfs_provisioner_server: kraken.glenside.lan
       nfs_provisioner_path: /export/alphasite-test
       admin_email: gonarvib@protonmail.com
