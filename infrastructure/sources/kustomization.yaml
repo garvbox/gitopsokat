@@ -7,3 +7,4 @@ resources:
 - k8s-at-home-charts.yaml
 - nfs-provisioner-charts.yaml
 - jetstack-charts.yaml
+- gitea-charts.yaml
