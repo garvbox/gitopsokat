@@ -30,12 +30,18 @@ spec:
       tls: []
     persistence:
       enabled: true
-      size: 2Gi
+      size: 4Gi
       accessModes:
         - ReadWriteOnce
       labels: {}
       annotations: {}
       storageClass: "nfs-kraken"
+    postgresql:
+      persistence:
+        size: 500Mi
+        storageClass: "nfs-kraken"
+    podSecurityContext: {}  # Disabled security context for NFS data access
+      # fsGroup: 1000
     config: {}  #  Gitea Config settings
     service:
       ssh:
