@@ -7,4 +7,4 @@ kind: Kustomization
 resources:
   - ../base
   - whoami.yaml
-  - gitea.yaml
+  # - gitea.yaml
