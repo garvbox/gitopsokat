@@ -8,3 +8,4 @@ resources:
 - nfs-provisioner-charts.yaml
 - jetstack-charts.yaml
 - gitea-charts.yaml
+- kubernetes-dashboard-charts.yaml

@@ -8,3 +8,4 @@ resources:
 - nfs-provisioner.yaml
 - cert-manager
 - traefik
+- kubernetes-dashboard.yaml
