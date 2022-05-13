@@ -15,6 +15,7 @@ spec:
         name: kubernetes-dashboard-charts
         namespace: flux-system
   values:
+    protocolHttp: true  # serve over http as traefik is doing https for us
     ingress:
       enabled: true
       annotations:
@@ -22,3 +23,6 @@ spec:
         traefik.ingress.kubernetes.io/router.tls: "true"
       hosts: 
         - kube-dashboard.${cluster_ext_domain}
+    serviceAccount:
+      create: true
+      name: admin-user
