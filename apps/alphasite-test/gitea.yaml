@@ -37,16 +37,20 @@ spec:
       annotations: {}
       storageClass: "${nfs_provisioner_scname}"
     postgresql:
-      persistence:
-        size: 500Mi
-        storageClass: "${nfs_provisioner_scname}"
+      enabled: false    # Disabled External postgres - test setup
+      # persistence:
+      #   size: 500Mi
+      #   storageClass: "${nfs_provisioner_scname}"
+    memcached:
+      enabled: false  # disabled external memcached - test setup
     podSecurityContext: {}  # Disabled security context for NFS data access
       # fsGroup: 1000
     config: {}  #  Gitea Config settings
     service:
       ssh:
         type: LoadBalancer
-        port: 22
+        # Allow SSH to automatically pull an IP from MetalLB LoadBalancer
+        # port: 22
         # clusterIP: None
-        loadBalancerIP:
-        annotations:
+        # loadBalancerIP:
+        # annotations:
