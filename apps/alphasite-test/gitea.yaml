@@ -37,14 +37,9 @@ spec:
       annotations: {}
       storageClass: "${nfs_provisioner_scname}"
     postgresql:
-      enabled: false    # Disabled External postgres - test setup
-      # persistence:
-      #   size: 500Mi
-      #   storageClass: "${nfs_provisioner_scname}"
-    memcached:
-      enabled: false  # disabled external memcached - test setup
-    podSecurityContext: {}  # Disabled security context for NFS data access
-      # fsGroup: 1000
+      persistence:
+        size: 500Mi
+        storageClass: "${nfs_provisioner_scname}"
     config: {}  #  Gitea Config settings
     service:
       ssh:
