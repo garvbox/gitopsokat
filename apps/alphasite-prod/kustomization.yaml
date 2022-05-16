@@ -1,0 +1,8 @@
+# Test apps
+# Note ../base directory is used for all apps - most should be run in both
+# We can explicitly callout any required helm patches here
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../base
