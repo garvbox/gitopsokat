@@ -1,0 +1,32 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: infrastructure
+  namespace: flux-system
+spec:
+  interval: 10m0s
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  path: ./infrastructure/alphasite-prod
+  prune: true
+  # Enable Encryption using sops-gpg secret pre-loaded with ansible
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-gpg
+  # Site-specific variables
+  postBuild:
+    substitute:
+      metallb_ip_dns: 10.0.50.1
+      metallb_ip_range: 10.0.50.2-10.0.50.50
+      # Note Traefik IP should be inside the metallb dynamic ip range
+      metallb_ip_traefik: 10.0.50.10
+      cluster_ext_domain: alphasite.garvbox.net
+      cluster_int_domain: alphasite.glenside.lan
+      nfs_provisioner_scname: nfs-kraken
+      nfs_provisioner_server: kraken.glenside.lan
+      nfs_provisioner_path: /export/alphasite-prod
+      admin_email: gonarvib@protonmail.com
+      # Uncomment to switch to PROD LetsEncrypt URL
+      # le_url: https://acme-v02.api.letsencrypt.org/directory
