@@ -7,5 +7,5 @@ resources:
 - discord-notifications.yaml
 - nfs-provisioner.yaml
 - cert-manager
-- traefik
+- traefik.yaml
 - kubernetes-dashboard.yaml
