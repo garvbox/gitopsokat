@@ -1,7 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - namespace.yaml
+  # - namespace.yaml
   # NOTE: The CRDs are manually added because flux cannot wait for the helm install
   # to finish before using the resources in issuers + certs files
   - https://github.com/jetstack/cert-manager/releases/download/v1.8.0/cert-manager.crds.yaml
