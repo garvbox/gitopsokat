@@ -29,4 +29,4 @@ spec:
       nfs_provisioner_path: /export/alphasite-prod
       admin_email: gonarvib@protonmail.com
       # Uncomment to switch to PROD LetsEncrypt URL
-      # le_url: https://acme-v02.api.letsencrypt.org/directory
+      le_url: https://acme-v02.api.letsencrypt.org/directory
