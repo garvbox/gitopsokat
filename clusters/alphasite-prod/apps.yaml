@@ -1,0 +1,26 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: apps
+  namespace: flux-system
+spec:
+  interval: 10m0s
+  dependsOn:
+    - name: infrastructure
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  path: ./apps/alphasite-prod
+  prune: true
+  wait: true
+  timeout: 5m0s
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-gpg
+  # Site-specific variables
+  postBuild:
+    substitute:
+      cluster_int_domain: alphasite.glenside.lan
+      cluster_ext_domain: alphasite.garvbox.net
+      nfs_provisioner_scname: nfs-kraken
