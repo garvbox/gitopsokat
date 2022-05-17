@@ -9,7 +9,7 @@ spec:
     email: ${admin_email}
     server: ${le_url:=https://acme-staging-v02.api.letsencrypt.org/directory}
     privateKeySecretRef:
-      name: letsencrypt-secret
+      name: letsencrypt-issuer-secret
     solvers:
     # An empty 'selector' means that this solver matches all domains
     - selector: {}

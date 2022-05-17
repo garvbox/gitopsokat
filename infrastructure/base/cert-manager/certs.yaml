@@ -5,7 +5,7 @@ metadata:
   name: letsencrypt-cert
   namespace: kube-system
 spec:
-  secretName: letsencrypt-secret
+  secretName: letsencrypt-cert-secret
   issuerRef:
     name: letsencrypt-issuer
     kind: ClusterIssuer
