@@ -40,9 +40,13 @@ spec:
       persistence:
         size: 500Mi
         storageClass: "${nfs_provisioner_scname}"
-    config:
-      server:
-        SSH_DOMAIN: gitea-ssh.default.${cluster_int_domain}
+    gitea:
+      config:
+        server:
+          SSH_DOMAIN: gitea-ssh.default.${cluster_int_domain}
+        repository:
+          ENABLE_PUSH_CREATE_USER: "true"
+          ENABLE_PUSH_CREATE_ORG: "true"
     service:
       ssh:
         type: LoadBalancer
