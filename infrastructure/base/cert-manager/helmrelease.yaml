@@ -14,3 +14,7 @@ spec:
         kind: HelmRepository
         name: jetstack-charts
         namespace: flux-system
+  values:
+    extraArgs:
+      - --dns01-recursive-nameservers-only
+      - --dns01-recursive-nameservers=dimitris.ns.cloudflare.com:53,kallie.ns.cloudflare.com:53
