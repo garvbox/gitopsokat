@@ -16,6 +16,9 @@ spec:
         namespace: flux-system
       interval: 5m
   values:
+    probes:
+      liveness:
+        enabled: false
     env:
       TZ: "Europe/Dublin"
     ingress:

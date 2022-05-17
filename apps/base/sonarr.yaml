@@ -18,6 +18,9 @@ spec:
   values:
     env:
       TZ: "Europe/Dublin"
+    probes:
+      liveness:
+        enabled: false
     ingress:
       main:
         enabled: true
