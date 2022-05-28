@@ -41,6 +41,7 @@ spec:
         accessMode: ReadWriteOnce
         size: 5Gi
     mariadb:
+      enabled: true
       primary:
         persistence:
           storageClass: "${nfs_provisioner_scname}"
