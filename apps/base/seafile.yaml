@@ -35,17 +35,11 @@ spec:
       data:
         enabled: true
         mountPath: /shared
-        size: 4Gi
-        accessModes:
-          - ReadWriteOnce
-        labels: {}
-        annotations: {}
+        type: pvc
         storageClass: "${nfs_provisioner_scname}"
+        accessMode: ReadWriteOnce
+        size: 5Gi
     mariadb:
       primary:
         persistence:
-          enabled: true
           storageClass: "${nfs_provisioner_scname}"
-          size: 4Gi
-          accessModes:
-            - ReadWriteOnce
