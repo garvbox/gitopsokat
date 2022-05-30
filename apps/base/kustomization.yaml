@@ -3,11 +3,8 @@ kind: Kustomization
 resources:
   # - home-assistant.yaml
   - jellyfin.yaml
-  - whoami.yaml
   - gitea.yaml
   - jackett.yaml
   - radarr.yaml
   - sonarr.yaml
-  - seafile.yaml
   - tautulli.yaml
-  
