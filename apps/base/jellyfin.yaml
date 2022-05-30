@@ -45,3 +45,11 @@ spec:
           nfs:
             server: kraken.glenside.lan
             path: /datapool/videos
+      videos_archive:
+        enabled: true
+        type: custom
+        readOnly: true
+        volumeSpec:
+          nfs:
+            server: kraken.glenside.lan
+            path: /datapool/videos_archive
