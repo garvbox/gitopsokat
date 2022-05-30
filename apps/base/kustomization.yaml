@@ -8,3 +8,6 @@ resources:
   - jackett.yaml
   - radarr.yaml
   - sonarr.yaml
+  - seafile.yaml
+  - tautulli.yaml
+  
