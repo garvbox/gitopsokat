@@ -9,4 +9,5 @@ resources:
   - radarr.yaml
   - sonarr.yaml
   - seafile.yaml
+  - tautulli.yaml
   
