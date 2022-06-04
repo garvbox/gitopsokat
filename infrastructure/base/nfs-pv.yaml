@@ -30,3 +30,33 @@ spec:
   resources:
     requests:
       storage: 1Mi
+---
+# Datapool Videos Archive
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-videos-archive-pv
+  namespace: default
+spec:
+  storageClassName: videos-archive
+  capacity:
+    storage: 1Mi
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    server: ${nfs_provisioner_server}
+    path: "/datapool/videos_archive"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: nfs-videos-archive-pvc
+  namespace: default
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: videos-archive
+  resources:
+    requests:
+      storage: 1Mi
