@@ -18,6 +18,9 @@ spec:
   values:
     env:
       TZ: "Europe/Dublin"
+    podSecurityContext:
+      runAsUser: 6666
+      runAsGroup: 6666
     probes:
       liveness:
         enabled: false
