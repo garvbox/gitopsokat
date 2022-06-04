@@ -44,8 +44,8 @@ spec:
       videos:
         enabled: true
         readOnly: true
-        existingClaim: nfs-videos-pv
+        existingClaim: nfs-videos-pvc
       videos-archive:
         enabled: true
         readOnly: true
-        existingClaim: nfs-videos-archive-pv
+        existingClaim: nfs-videos-archive-pvc
