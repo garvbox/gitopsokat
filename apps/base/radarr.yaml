@@ -51,4 +51,4 @@ spec:
       downloads:
         enabled: true
         readOnly: false
-        existingClaim: nfs-downloads
+        existingClaim: nfs-downloads-pvc
