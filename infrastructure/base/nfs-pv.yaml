@@ -60,3 +60,34 @@ spec:
   resources:
     requests:
       storage: 1Mi
+
+---
+# Datapool Downloads
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-downloads-pv
+  namespace: default
+spec:
+  storageClassName: nfs-downloads
+  capacity:
+    storage: 1Mi
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    server: ${nfs_provisioner_server}
+    path: "/datapool/downloads"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: nfs-downloads-pvc
+  namespace: default
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: nfs-downloads
+  resources:
+    requests:
+      storage: 1Mi
