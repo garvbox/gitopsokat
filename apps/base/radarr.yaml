@@ -21,6 +21,9 @@ spec:
         enabled: false
     env:
       TZ: "Europe/Dublin"
+    podSecurityContext:
+      runAsUser: 6666
+      runAsGroup: 6666
     ingress:
       main:
         enabled: true
