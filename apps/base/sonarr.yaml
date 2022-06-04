@@ -40,4 +40,15 @@ spec:
         storageClass: "${nfs_provisioner_scname}"
         accessMode: ReadWriteOnce
         size: 5Gi
-
+      videos:
+        enabled: true
+        readOnly: false
+        existingClaim: nfs-videos-pvc
+      videos-archive:
+        enabled: true
+        readOnly: false
+        existingClaim: nfs-videos-archive-pvc
+      downloads:
+        enabled: true
+        readOnly: false
+        existingClaim: nfs-downloads
