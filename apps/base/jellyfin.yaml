@@ -37,19 +37,15 @@ spec:
         storageClass: "${nfs_provisioner_scname}"
         accessMode: ReadWriteOnce
         size: 6Gi
+      transcodes:
+        enabled: true
+        mountPath: /config/transcodes
+        type: emptyDir
       videos:
         enabled: true
-        type: custom
         readOnly: true
-        volumeSpec:
-          nfs:
-            server: kraken.glenside.lan
-            path: /datapool/videos
+        existingClaim: nfs-videos-pvc
       videos-archive:
         enabled: true
-        type: custom
         readOnly: true
-        volumeSpec:
-          nfs:
-            server: kraken.glenside.lan
-            path: /datapool/videos_archive
+        existingClaim: nfs-videos-archive-pvc
