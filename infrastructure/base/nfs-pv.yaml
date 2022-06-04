@@ -8,7 +8,7 @@ metadata:
   name: nfs-videos-pv
   namespace: default
 spec:
-  storageClassName: videos
+  storageClassName: nfs-videos
   capacity:
     storage: 1Mi
   accessModes:
@@ -26,7 +26,7 @@ metadata:
 spec:
   accessModes:
     - ReadWriteMany
-  storageClassName: videos
+  storageClassName: nfs-videos
   resources:
     requests:
       storage: 1Mi
@@ -38,7 +38,7 @@ metadata:
   name: nfs-videos-archive-pv
   namespace: default
 spec:
-  storageClassName: videos-archive
+  storageClassName: nfs-videos-archive
   capacity:
     storage: 1Mi
   accessModes:
@@ -56,7 +56,7 @@ metadata:
 spec:
   accessModes:
     - ReadWriteMany
-  storageClassName: videos-archive
+  storageClassName: nfs-videos-archive
   resources:
     requests:
       storage: 1Mi
