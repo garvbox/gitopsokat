@@ -18,6 +18,9 @@ spec:
   values:
     env:
       TZ: "Europe/Dublin"
+    podSecurityContext:
+      runAsUser: 6666
+      runAsGroup: 6666
     probes:
       liveness:
         enabled: false
@@ -40,4 +43,15 @@ spec:
         storageClass: "${nfs_provisioner_scname}"
         accessMode: ReadWriteOnce
         size: 5Gi
-
+      videos:
+        enabled: true
+        readOnly: false
+        existingClaim: nfs-videos-pvc
+      videos-archive:
+        enabled: true
+        readOnly: false
+        existingClaim: nfs-videos-archive-pvc
+      downloads:
+        enabled: true
+        readOnly: false
+        existingClaim: nfs-downloads-pvc
