@@ -1,0 +1,17 @@
+# Custom seafile values to be merged in by kustomize
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: seafile
+  namespace: default
+spec:
+  values:
+    persistence:
+      data:
+        enabled: true
+        mountPath: /shared
+        type: pvc
+        storageClass: "${nfs_provisioner_scname}"
+        accessMode: ReadWriteOnce
+        size: 5Gi
