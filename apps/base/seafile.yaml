@@ -1,4 +1,5 @@
-
+# NOTE: Default config here has no DB, Strategic merge used to switch between test and prod
+# As the prod setup uses external DB
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
@@ -15,7 +16,6 @@ spec:
         kind: HelmRepository
         name: k8s-at-home-charts
         namespace: flux-system
-      interval: 5m
   values:
     env:
       TZ: "Europe/Dublin"
@@ -32,16 +32,3 @@ spec:
               - path: "/"
                 pathType: Prefix
         tls: []
-    persistence:
-      data:
-        enabled: true
-        mountPath: /shared
-        type: pvc
-        storageClass: "${nfs_provisioner_scname}"
-        accessMode: ReadWriteOnce
-        size: 5Gi
-    mariadb:
-      enabled: true
-      primary:
-        persistence:
-          storageClass: "${nfs_provisioner_scname}"

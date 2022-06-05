@@ -15,3 +15,6 @@ spec:
         storageClass: "${nfs_provisioner_scname}"
         accessMode: ReadWriteOnce
         size: 5Gi
+    mariadb:
+      # Basic non-persistent mariaDB database for testing
+      enabled: true
