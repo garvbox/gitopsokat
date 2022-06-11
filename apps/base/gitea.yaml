@@ -15,6 +15,10 @@ spec:
         kind: HelmRepository
         name: gitea-charts
         namespace: flux-system
+  valuesFrom:
+  - kind: Secret
+    name: gitea-db-pass
+    targetPath: gitea.config.database
   values:
     ingress:
       enabled: true
@@ -36,13 +40,14 @@ spec:
       annotations: {}
       storageClass: "${nfs_provisioner_scname}"
     postgresql:
-      persistence:
-        size: 500Mi
-        storageClass: "${nfs_provisioner_scname}"
+      enabled: false
     gitea:
       config:
         server:
           SSH_DOMAIN: gitea-ssh.default.${cluster_int_domain}
+        database:
+          DB_TYPE: postgres
+          # NOTE: PASSWD, NAME, USER, HOST are all merged from secret gitea-db-pass
         repository:
           ENABLE_PUSH_CREATE_USER: "true"
           ENABLE_PUSH_CREATE_ORG: "true"

@@ -1,0 +1,42 @@
+# Gitea PostGres Secret
+apiVersion: v1
+kind: Secret
+metadata:
+    name: gitea-db-pass
+    namespace: default
+data:
+    USER: ENC[AES256_GCM,data:di1G0Ds=,iv:8V5bIdcpVL20jFevPJRLeyMSsjbVKp38KcNyX3IG1EE=,tag:Iq4Ka/IMG2Etq/rq0ftyNg==,type:str]
+    PASSWD: ENC[AES256_GCM,data:WfdrP50UjtPvBE9W,iv:8khJkGXsQkLK3acPEHZT5hknHL5MWC3AVQyJPdQ6KZQ=,tag:Er+6GvzqBP6PYyPnDYlEAw==,type:str]
+    NAME: ENC[AES256_GCM,data:LPLw7TxgqFNGtZc=,iv:Iih0cNsrGUrhwpJKVcc9+3UD56VU1XfLcXT/2ifdE5o=,tag:JN/mZx+08v29xzJt7Of3fw==,type:str]
+    HOST: ENC[AES256_GCM,data:R6X32uQfNNUst123gMtNWLnsvG6Lr5ImZzAN7w==,iv:8sO0huKxxG0619TNeWnEc0YQAFiCqygLXBJ59Fehyj0=,tag:20oqmq2U/5dgRRiJDA8vAA==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2022-06-11T15:59:06Z"
+    mac: ENC[AES256_GCM,data:lY9PsOGriCjDjEiapURenjrX76S60yR57a91V44Q74Oi5LmmXxC4F+q1JdcCiwu6CUTnuXqDiRlAZF6PEuoR5i7L65JpzxtIs2Tju7HUT3oxgcYW6OYuKsJzKDhz+nfg4DhhWWPM2mIfA9W4xrz4IjPTUis5+G9QUne32jkjUWo=,iv:8TyCjohl8PNn4l84oeiQfFKUSSeXDtfGBHqrDerDWm4=,tag:7AmyJpPifhGQyEkaOTVI3w==,type:str]
+    pgp:
+        - created_at: "2022-06-11T15:59:05Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hQIMA7A1ru9tuH/BARAAwziJngL6JMH9W6guL8JgL7cIMIOGZCpLMgbICEGg+p+I
+            QCcK3/Rw+9juDeSHSDmyWR/286LallXsv2edck7ynRFnY5cAm7BNUT/PJ+VVMhbl
+            6e5JNuRk85ibD1BCUd3or/6QN55QLoivv6K53gK9+lD7l8/ZuoqguR9fVh0NcOyw
+            SsQGmq02KXF/kdjaHlnY60/qSL8eRkkEpe06R63nOuSBGliAgpqHfus2tuKtdzKe
+            aQDd3GE3mazfwVizUCpTBZ2PsBieCGEhXJdkayxzL6/4is3+maEXF3p/SvvfMnri
+            rvQqkpy+VDrHtUlsOWJWWzMAZ0yM7DLCwolrFAbRtn8/0oOFDpfzinFR8WxxqyDj
+            RETlijmZ5Qin/o4FTj+tVsG/DnKOr2if7BuS1LqS3ZiJUcL245dxCOhFK8JQgkUl
+            xxynsbMVl9BS4BbPHE45TDPTTvKXXHGGtXrCs0/1EVyiOlzfcWrDeghMSvNOdCPR
+            qdeY+oV2rSK3+jwu4kkbHOi13jEFunrM/bfbN/0om2PLp0s6096kBzmm6P7QK0C2
+            fcHXfmGzbwTdI6d6L81Tj6Z3Sbho8eZme1kNL2roUsM7p01JMXFwRss2VLSdHdWM
+            OXwaJc0vpyvKPvszIOmJFoWgkVnp/fcoJDAPUiW4J+qKpK//mMdJBEP4Ojf6NdnS
+            XgFVdglI5gVHIJlBSRSCanRaWwyNXzBGVy/O0cXyGJkTo2SgwbPqRnVompip264J
+            2ViFDmhNgJlmv+GeRT2BMoaYuCxrK/Z2areXxYwQiNI5+1iA1xEd5jxS16V9gAk=
+            =gyy8
+            -----END PGP MESSAGE-----
+          fp: BCFD0656354D49F51B8C16148A18DAD76BC16DB2
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.2
