@@ -48,9 +48,6 @@ spec:
           SSH_DOMAIN: gitea-ssh.default.${cluster_int_domain}
         database:
           DB_TYPE: sqlite3
-        repository:
-          ENABLE_PUSH_CREATE_USER: "true"
-          ENABLE_PUSH_CREATE_ORG: "true"
     service:
       ssh:
         type: LoadBalancer
