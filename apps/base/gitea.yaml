@@ -36,16 +36,13 @@ spec:
       annotations: {}
       storageClass: "${nfs_provisioner_scname}"
     postgresql:
-      persistence:
-        size: 500Mi
-        storageClass: "${nfs_provisioner_scname}"
+      enabled: false
     gitea:
       config:
         server:
           SSH_DOMAIN: gitea-ssh.default.${cluster_int_domain}
-        repository:
-          ENABLE_PUSH_CREATE_USER: "true"
-          ENABLE_PUSH_CREATE_ORG: "true"
+        database:
+          DB_TYPE: sqlite3
     service:
       ssh:
         type: LoadBalancer
