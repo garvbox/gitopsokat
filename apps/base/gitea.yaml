@@ -47,11 +47,7 @@ spec:
         server:
           SSH_DOMAIN: gitea-ssh.default.${cluster_int_domain}
         database:
-          DB_TYPE: postgres
-          USER: gitea
-          HOST: ${gitea_db_host}
-          NAME: ${gitea_db_name}
-          # Note: PASSWD value is merged in from a secret
+          DB_TYPE: sqlite3
         repository:
           ENABLE_PUSH_CREATE_USER: "true"
           ENABLE_PUSH_CREATE_ORG: "true"
