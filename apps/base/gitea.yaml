@@ -15,11 +15,6 @@ spec:
         kind: HelmRepository
         name: gitea-charts
         namespace: flux-system
-  valuesFrom:
-  - kind: Secret
-    name: gitea-db-pass
-    targetPath: gitea.config.database.PASSWD
-    valuesKey: PASSWD
   values:
     ingress:
       enabled: true
