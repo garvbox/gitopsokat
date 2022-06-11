@@ -24,3 +24,5 @@ spec:
       cluster_int_domain: alphasite-test.glenside.lan
       cluster_ext_domain: alphasite-test.garvbox.net
       nfs_provisioner_scname: nfs-kraken
+      gitea_db_name: gitea_stage
+      gitea_db_host: 10.0.20.16:5432

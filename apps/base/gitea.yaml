@@ -18,7 +18,8 @@ spec:
   valuesFrom:
   - kind: Secret
     name: gitea-db-pass
-    targetPath: gitea.config.database
+    targetPath: gitea.config.database.PASSWD
+    valuesKey: PASSWD
   values:
     ingress:
       enabled: true
@@ -47,7 +48,10 @@ spec:
           SSH_DOMAIN: gitea-ssh.default.${cluster_int_domain}
         database:
           DB_TYPE: postgres
-          # NOTE: PASSWD, NAME, USER, HOST are all merged from secret gitea-db-pass
+          USER: gitea
+          HOST: ${gitea_db_host}
+          NAME: ${gitea_db_name}
+          # Note: PASSWD value is merged in from a secret
         repository:
           ENABLE_PUSH_CREATE_USER: "true"
           ENABLE_PUSH_CREATE_ORG: "true"
