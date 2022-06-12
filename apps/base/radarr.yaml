@@ -24,6 +24,7 @@ spec:
     podSecurityContext:
       runAsUser: 6666
       runAsGroup: 6666
+      fsGroup: 6666
     ingress:
       main:
         enabled: true
@@ -48,14 +49,14 @@ spec:
             iqn: iqn.2022-06.kraken:alphasite-stage-sonarr-data
             lun: 1
             fsType: ext4
-      videos:
-        enabled: true
-        readOnly: false
-        existingClaim: nfs-videos-pvc
-      videos-archive:
-        enabled: true
-        readOnly: false
-        existingClaim: nfs-videos-archive-pvc
+      # videos:
+      #   enabled: true
+      #   readOnly: false
+      #   existingClaim: nfs-videos-pvc
+      # videos-archive:
+      #   enabled: true
+      #   readOnly: false
+      #   existingClaim: nfs-videos-archive-pvc
       downloads:
         enabled: true
         readOnly: false
