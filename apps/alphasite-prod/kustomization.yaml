@@ -10,3 +10,4 @@ resources:
 patchesStrategicMerge:
   - gitea-patch-values.yaml
   - radarr-patch-values.yaml
+  - sonarr-patch-values.yaml
