@@ -24,6 +24,8 @@ spec:
     podSecurityContext:
       runAsUser: 6666
       runAsGroup: 6666
+      fsGroup: 6666
+      fsGroupChangePolicy: "OnRootMismatch"
     ingress:
       main:
         enabled: true
@@ -39,19 +41,4 @@ spec:
     persistence:
       config:
         enabled: true
-        type: pvc
-        storageClass: "${nfs_provisioner_scname}"
-        accessMode: ReadWriteOnce
-        size: 5Gi
-      videos:
-        enabled: true
-        readOnly: false
-        existingClaim: nfs-videos-pvc
-      videos-archive:
-        enabled: true
-        readOnly: false
-        existingClaim: nfs-videos-archive-pvc
-      downloads:
-        enabled: true
-        readOnly: false
-        existingClaim: nfs-downloads-pvc
+        type: emptyDir

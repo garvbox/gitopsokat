@@ -9,3 +9,4 @@ resources:
   - secrets/gitea-pg.yaml
 patchesStrategicMerge:
   - gitea-patch-values.yaml
+  - radarr-patch-values.yaml
