@@ -41,6 +41,10 @@ spec:
         enabled: true
         type: custom
         volumeSpec:
+          capacity:
+            storage: 10Gi
+          accessModes:
+            - ReadWriteOnce
           iscsi:
             targetPortal: kraken.glenside.lan:3260
             iqn: iqn.2022-06.kraken:alphasite-stage-sonarr-data
