@@ -1,12 +1,12 @@
 ---
-# Sonarr Production iSCSI Patch
+# Jellyfin Production iSCSI Patch
 # NOTE: This is using manually created iSCSI LUNs/Targets
 # The setup is opting for performance over flexibility due to
-# the SQLite Database in the 'arr apps
+# the SQLite Database
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: sonarr
+  name: jelyfin
   namespace: default
 spec:
   values:
@@ -14,23 +14,23 @@ spec:
       config:
         enabled: true
         accessMode: ReadWriteOnce
-        size: 10G
+        size: 25G
         type: custom
         volumeSpec:
           iscsi:
             targetPortal: 10.0.20.5:3260
             iqn: iqn.2022-06.lan.glenside.kraken:alphasite-prod
-            lun: 2
+            lun: 3
             fsType: ext4
       videos:
         enabled: true
-        readOnly: false
+        readOnly: true
         existingClaim: nfs-videos-pvc
       videos-archive:
         enabled: true
-        readOnly: false
+        readOnly: true
         existingClaim: nfs-videos-archive-pvc
-      downloads:
+      transcodes:
         enabled: true
-        readOnly: false
-        existingClaim: nfs-downloads-pvc
+        mountPath: /config/transcodes
+        type: emptyDir

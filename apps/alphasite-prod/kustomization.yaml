@@ -11,3 +11,4 @@ patchesStrategicMerge:
   - gitea-patch-values.yaml
   - radarr-patch-values.yaml
   - sonarr-patch-values.yaml
+  - jellyfin-patch-values.yaml

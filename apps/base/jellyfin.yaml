@@ -32,19 +32,4 @@ spec:
     persistence:
       config:
         enabled: true
-        type: pvc
-        storageClass: "${nfs_provisioner_scname}"
-        accessMode: ReadWriteOnce
-        size: 6Gi
-      transcodes:
-        enabled: true
-        mountPath: /config/transcodes
         type: emptyDir
-      videos:
-        enabled: true
-        readOnly: true
-        existingClaim: nfs-videos-pvc
-      videos-archive:
-        enabled: true
-        readOnly: true
-        existingClaim: nfs-videos-archive-pvc
