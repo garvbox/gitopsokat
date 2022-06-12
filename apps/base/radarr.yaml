@@ -44,7 +44,7 @@ spec:
         type: custom
         volumeSpec:
           iscsi:
-            targetPortal: kraken.glenside.lan:3260
+            targetPortal: 10.0.20.5:3260
             iqn: iqn.2022-06.kraken:alphasite-stage-sonarr-data
             lun: 1
             fsType: ext4
