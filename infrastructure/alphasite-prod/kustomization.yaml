@@ -4,5 +4,6 @@ kind: Kustomization
 resources:
   - ./discord-secrets.yaml
   - ./cf-secret.yaml
+  - nfs-videos-pvs.yaml     # NFS Videos PVs only used in Production for safety
   - ../sources
   - ../base

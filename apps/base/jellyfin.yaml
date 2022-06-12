@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: jellyfin
-      version: 9.3.0
+      version: ">=9.0.0"
       sourceRef:
         kind: HelmRepository
         name: k8s-at-home-charts
@@ -32,19 +32,4 @@ spec:
     persistence:
       config:
         enabled: true
-        type: pvc
-        storageClass: "${nfs_provisioner_scname}"
-        accessMode: ReadWriteOnce
-        size: 6Gi
-      transcodes:
-        enabled: true
-        mountPath: /config/transcodes
         type: emptyDir
-      videos:
-        enabled: true
-        readOnly: true
-        existingClaim: nfs-videos-pvc
-      videos-archive:
-        enabled: true
-        readOnly: true
-        existingClaim: nfs-videos-archive-pvc
