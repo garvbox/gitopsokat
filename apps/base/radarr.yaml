@@ -39,10 +39,13 @@ spec:
     persistence:
       config:
         enabled: true
-        type: pvc
-        storageClass: "${nfs_provisioner_scname}"
-        accessMode: ReadWriteOnce
-        size: 5Gi
+        type: custom
+        volumeSpec:
+          iscsi:
+            targetPortal: kraken.glenside.lan
+            iqn: iqn.2022-06.kraken:alphasite-stage-sonarr-data
+            lun: 1
+            fsType: ext4
       videos:
         enabled: true
         readOnly: false
