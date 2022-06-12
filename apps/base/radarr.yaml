@@ -39,12 +39,10 @@ spec:
     persistence:
       config:
         enabled: true
+        accessMode: ReadWriteOnce
+        size: 10G
         type: custom
         volumeSpec:
-          capacity:
-            storage: 10Gi
-          accessModes:
-            - ReadWriteOnce
           iscsi:
             targetPortal: kraken.glenside.lan:3260
             iqn: iqn.2022-06.kraken:alphasite-stage-sonarr-data
