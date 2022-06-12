@@ -9,4 +9,3 @@ resources:
 - cert-manager
 - traefik
 - kubernetes-dashboard.yaml
-- nfs-pv.yaml
