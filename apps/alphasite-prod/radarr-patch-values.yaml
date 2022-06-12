@@ -1,5 +1,8 @@
 ---
 # Radarr Production iSCSI Patch
+# NOTE: This is using manually created iSCSI LUNs/Targets
+# The setup is opting for performance over flexibility due to
+# the SQLite Database in the 'arr apps
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
@@ -16,7 +19,7 @@ spec:
         volumeSpec:
           iscsi:
             targetPortal: 10.0.20.5:3260
-            iqn: iqn.2022-06.kraken:alphasite-stage-sonarr-data
+            iqn: iqn.2022-06.lan.glenside.kraken:alphasite-prod
             lun: 1
             fsType: ext4
       videos:
