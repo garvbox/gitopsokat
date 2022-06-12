@@ -25,6 +25,7 @@ spec:
       runAsUser: 6666
       runAsGroup: 6666
       fsGroup: 6666
+      fsGroupChangePolicy: "OnRootMismatch"
     ingress:
       main:
         enabled: true
@@ -40,24 +41,4 @@ spec:
     persistence:
       config:
         enabled: true
-        accessMode: ReadWriteOnce
-        size: 10G
-        type: custom
-        volumeSpec:
-          iscsi:
-            targetPortal: 10.0.20.5:3260
-            iqn: iqn.2022-06.kraken:alphasite-stage-sonarr-data
-            lun: 1
-            fsType: ext4
-      # videos:
-      #   enabled: true
-      #   readOnly: false
-      #   existingClaim: nfs-videos-pvc
-      # videos-archive:
-      #   enabled: true
-      #   readOnly: false
-      #   existingClaim: nfs-videos-archive-pvc
-      downloads:
-        enabled: true
-        readOnly: false
-        existingClaim: nfs-downloads-pvc
+        type: emptyDir

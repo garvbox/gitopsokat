@@ -1,0 +1,33 @@
+---
+# Radarr Production iSCSI Patch
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: radarr
+  namespace: default
+spec:
+  values:
+    persistence:
+      config:
+        enabled: true
+        accessMode: ReadWriteOnce
+        size: 10G
+        type: custom
+        volumeSpec:
+          iscsi:
+            targetPortal: 10.0.20.5:3260
+            iqn: iqn.2022-06.kraken:alphasite-stage-sonarr-data
+            lun: 1
+            fsType: ext4
+      videos:
+        enabled: true
+        readOnly: false
+        existingClaim: nfs-videos-pvc
+      videos-archive:
+        enabled: true
+        readOnly: false
+        existingClaim: nfs-videos-archive-pvc
+      downloads:
+        enabled: true
+        readOnly: false
+        existingClaim: nfs-downloads-pvc
