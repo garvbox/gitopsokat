@@ -19,8 +19,8 @@ spec:
         volumeSpec:
           iscsi:
             targetPortal: 10.0.20.5:3260
-            iqn: iqn.2022-06.lan.glenside.kraken:alphasite-prod
-            lun: 3
+            iqn: iqn.2022-06.lan.glenside.kraken:alphasite-prod-jellyfin
+            lun: 1
             fsType: ext4
       videos:
         enabled: true
