@@ -30,7 +30,6 @@ spec:
         enabled: true
         readOnly: true
         existingClaim: nfs-videos-archive-pvc
-      transcodes:
+      transcode:
         enabled: true
-        mountPath: /config/transcodes
         type: emptyDir
