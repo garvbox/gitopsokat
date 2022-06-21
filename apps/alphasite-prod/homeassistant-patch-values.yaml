@@ -1,0 +1,15 @@
+---
+# HomeAssistant Prod NFS Patch for editable config
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: home-assistant
+  namespace: default
+spec:
+  values:
+    persistence:
+      config:
+        enabled: true
+        type: nfs
+        server: ${}
+        path: /export/homeassistant

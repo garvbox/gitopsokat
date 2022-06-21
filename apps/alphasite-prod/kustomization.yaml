@@ -13,3 +13,4 @@ patchesStrategicMerge:
   - sonarr-patch-values.yaml
   - jellyfin-patch-values.yaml
   - tautulli-patch-values.yaml
+  - homeassistant-patch-values.yaml
