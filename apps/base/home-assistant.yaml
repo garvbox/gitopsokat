@@ -34,4 +34,7 @@ spec:
     persistence:
       config:
         enabled: true
-        type: emptyDir
+        type: pvc
+        storageClass: "${nfs_provisioner_scname}"
+        accessMode: ReadWriteOnce
+        size: 5Gi
