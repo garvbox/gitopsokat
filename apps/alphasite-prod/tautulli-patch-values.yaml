@@ -22,3 +22,6 @@ spec:
             iqn: iqn.2022-06.lan.glenside.kraken:alphasite-prod-tautulli
             lun: 1
             fsType: ext4
+    podSecurityContext:
+      fsGroup: 568
+      fsGroupChangePolicy: "OnRootMismatch"
