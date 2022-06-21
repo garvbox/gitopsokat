@@ -1,4 +1,5 @@
-# HomeAssistant TEST setup - storage and ingress config to be fixed
+# HomeAssistant Server
+# NOTE: Test setup uses emptydir - prod version patches in iSCSI persistent storage
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
@@ -10,7 +11,7 @@ spec:
   chart:
     spec:
       chart: home-assistant
-      version: 13.0.0
+      version: ">=13.2.0"
       sourceRef:
         kind: HelmRepository
         name: k8s-at-home-charts
@@ -25,7 +26,7 @@ spec:
           traefik.ingress.kubernetes.io/router.entrypoints: websecure
           traefik.ingress.kubernetes.io/router.tls: "true"
         hosts: 
-          - host: home-assistant.${cluster_ext_domain}
+          - host: homeassistant.${cluster_ext_domain}
             paths:
               - path: "/"
                 pathType: Prefix
@@ -34,5 +35,6 @@ spec:
       config:
         enabled: true
         type: pvc
+        storageClass: "${nfs_provisioner_scname}"
         accessMode: ReadWriteOnce
-        size: 100Mi
+        size: 5Gi
