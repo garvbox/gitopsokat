@@ -11,5 +11,5 @@ spec:
       config:
         enabled: true
         type: nfs
-        server: ${}
+        server: kraken.glenside.lan
         path: /export/homeassistant
