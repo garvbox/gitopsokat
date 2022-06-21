@@ -1,4 +1,5 @@
-# HomeAssistant TEST setup - storage and ingress config to be fixed
+# HomeAssistant Server
+# NOTE: Test setup uses emptydir - prod version patches in iSCSI persistent storage
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
