@@ -1,0 +1,24 @@
+---
+# Home-Assistant Production iSCSI Patch
+# NOTE: This is using manually created iSCSI LUNs/Targets
+# The setup is opting for performance over flexibility due to 
+# the SQLite Database
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: home-assistant
+  namespace: default
+spec:
+  values:
+    persistence:
+      config:
+        enabled: true
+        accessMode: ReadWriteOnce
+        size: 10G
+        type: custom
+        volumeSpec:
+          iscsi:
+            targetPortal: 10.0.20.5:3260
+            iqn: iqn.2022-06.lan.glenside.kraken:alphasite-prod-homeassistant
+            lun: 1
+            fsType: ext4

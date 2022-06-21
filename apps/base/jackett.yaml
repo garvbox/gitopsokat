@@ -24,4 +24,3 @@ spec:
         storageClass: "${nfs_provisioner_scname}"
         accessMode: ReadWriteOnce
         size: 1Gi
-
