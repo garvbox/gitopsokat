@@ -17,12 +17,24 @@ spec:
   values:
     env:
       TZ: "Europe/Dublin"
-configmap:
-  config:
-    # -- Store homer configuration as a ConfigMap
-    enabled: false
-    # -- Homer configuration. See [image documentation](https://github.com/bastienwirtz/homer/blob/main/docs/configuration.md) for more information.
-    # @default -- See values.yaml
-    data:
-      config.yml: |
-        externalConfig: https://raw.githubusercontent.com/bastienwirtz/homer/main/public/assets/config.yml.dist
+    ingress:
+      main:
+        enabled: true
+        annotations:
+          traefik.ingress.kubernetes.io/router.entrypoints: websecure
+          traefik.ingress.kubernetes.io/router.tls: "true"
+        hosts: 
+          - host: homer.${cluster_ext_domain}
+            paths:
+              - path: "/"
+                pathType: Prefix
+        tls: []
+    configmap:
+      config:
+        # -- Store homer configuration as a ConfigMap
+        enabled: false
+        # -- Homer configuration. See [image documentation](https://github.com/bastienwirtz/homer/blob/main/docs/configuration.md) for more information.
+        # @default -- See values.yaml
+        data:
+          config.yml: |
+            externalConfig: https://raw.githubusercontent.com/bastienwirtz/homer/main/public/assets/config.yml.dist
