@@ -8,3 +8,4 @@ resources:
   - radarr.yaml
   - sonarr.yaml
   - tautulli.yaml
+  - heimdall.yaml
