@@ -19,7 +19,7 @@ spec:
   values:
     image:
       repository: ghcr.io/home-assistant/home-assistant
-      tag: 2022.6.6
+      tag: 2022.6.7
     env:
       TZ: "Europe/Dublin"
     ingress:
@@ -28,7 +28,7 @@ spec:
         annotations:
           traefik.ingress.kubernetes.io/router.entrypoints: websecure
           traefik.ingress.kubernetes.io/router.tls: "true"
-        hosts: 
+        hosts:
           - host: homeassistant.${cluster_ext_domain}
             paths:
               - path: "/"
