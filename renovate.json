@@ -16,9 +16,16 @@
       "\\.yaml$"
     ]
   },
-  "helm-values": {
-    "fileMatch": [
-      "\\.yaml$"
-    ]
-  }
+  "packageRules": [
+    {
+      "datasources": [
+        "docker"
+      ],
+      "versioning": "docker",
+      "packageNames": [
+        "linuxserver/heimdall",
+        "ghcr.io/home-assistant/home-assistant"
+      ]
+    }
+  ]
 }
