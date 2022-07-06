@@ -9,13 +9,13 @@ spec:
   chart:
     spec:
       chart: traefik
-      version: ">=10.0.0"
+      version: 10.24.0
       sourceRef:
         kind: HelmRepository
         name: traefik-charts
         namespace: flux-system
   values:
-    # Values taken from example: 
+    # Values taken from example:
     #   https://github.com/traefik/traefik-helm-chart/blob/master/traefik/values.yaml
     # Removed some unused values
 
@@ -45,7 +45,6 @@ spec:
     #     secretKeyRef:
     #       name: secret-name
     #       key: secret-key
-
 
     # Configure ports
     ports:
@@ -149,10 +148,12 @@ spec:
         loadBalancerIP: "${metallb_ip_traefik}"
         # externalTrafficPolicy: Cluster
         # clusterIP: "2.3.4.5"
-      loadBalancerSourceRanges: []
+      loadBalancerSourceRanges:
+        []
         # - 192.168.0.1/32
         # - 172.16.0.0/16
-      externalIPs: []
+      externalIPs:
+        []
         # - 1.2.3.4
       # One of SingleStack, PreferDualStack, or RequireDualStack.
       # ipFamilyPolicy: SingleStack

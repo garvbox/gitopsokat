@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: kubernetes-dashboard
-      version: ">=5.4.0"
+      version: 5.7.0
       sourceRef:
         kind: HelmRepository
         name: kubernetes-dashboard-charts
@@ -17,13 +17,13 @@ spec:
   values:
     service:
       externalPort: 80
-    protocolHttp: true  # serve over http as traefik is doing https for us
+    protocolHttp: true # serve over http as traefik is doing https for us
     ingress:
       enabled: true
       annotations:
         traefik.ingress.kubernetes.io/router.entrypoints: websecure
         traefik.ingress.kubernetes.io/router.tls: "true"
-      hosts: 
+      hosts:
         - kube-dashboard.${cluster_ext_domain}
     serviceAccount:
       create: true
@@ -39,6 +39,6 @@ roleRef:
   kind: ClusterRole
   name: cluster-admin
 subjects:
-- kind: ServiceAccount
-  name: admin-user
-  namespace: kube-system
+  - kind: ServiceAccount
+    name: admin-user
+    namespace: kube-system
