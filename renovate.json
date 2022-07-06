@@ -23,13 +23,9 @@
   },
   "packageRules": [
     {
-      "datasources": [
-        "docker"
-      ],
       "versioning": "semver",
       "packageNames": [
-        "linuxserver/heimdall",
-        "ghcr.io/home-assistant/home-assistant"
+        "linuxserver/heimdall"
       ]
     }
   ]
