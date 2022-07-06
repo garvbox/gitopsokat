@@ -25,7 +25,7 @@
     {
       "versioning": "semver",
       "matchPackageNames": [
-        "linuxserver/heimdall"
+        "heimdall"
       ]
     }
   ]
