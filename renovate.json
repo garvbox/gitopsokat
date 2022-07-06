@@ -5,12 +5,17 @@
       "\\.yaml$"
     ],
     "ignorePaths": [
-      "clusters/*/flux-system/"
+      "clusters/"
+    ]
+  },
+  "flux": {
+    "fileMatch": [
+      "\\.yaml$"
     ]
   },
   "helm-values": {
     "fileMatch": [
-      "./.+\\.yaml$"
+      "\\.yaml$"
     ]
   }
 }
