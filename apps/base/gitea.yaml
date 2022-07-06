@@ -1,4 +1,3 @@
-
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
@@ -10,18 +9,21 @@ spec:
   chart:
     spec:
       chart: gitea
-      version: ">5.0.0"
+      version: 5.0.9
       sourceRef:
         kind: HelmRepository
         name: gitea-charts
         namespace: flux-system
   values:
+    image:
+      repository: gitea/gitea
+      tag: 1.16.8
     ingress:
       enabled: true
       annotations:
         traefik.ingress.kubernetes.io/router.entrypoints: websecure
         traefik.ingress.kubernetes.io/router.tls: "true"
-      hosts: 
+      hosts:
         - host: gitea.${cluster_ext_domain}
           paths:
             - path: "/"

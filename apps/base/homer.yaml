@@ -23,7 +23,7 @@ spec:
         annotations:
           traefik.ingress.kubernetes.io/router.entrypoints: websecure
           traefik.ingress.kubernetes.io/router.tls: "true"
-        hosts: 
+        hosts:
           - host: homer.${cluster_ext_domain}
             paths:
               - path: "/"
