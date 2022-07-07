@@ -17,6 +17,7 @@ spec:
       interval: 5m
   values:
     image:
+      # renovate: registryUrl=https://k8s-at-home.com/charts/
       repository: gchr.io/k8s-at-home/radarr
       tag: v4.1.0.6175
     probes:
