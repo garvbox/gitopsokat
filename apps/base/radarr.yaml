@@ -16,6 +16,9 @@ spec:
         namespace: flux-system
       interval: 5m
   values:
+    image:
+      repository: gchr.io/k8s-at-home/radarr
+      tag: v4.1.0.6175
     probes:
       liveness:
         enabled: false

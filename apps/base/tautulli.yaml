@@ -15,6 +15,9 @@ spec:
         name: k8s-at-home-charts
         namespace: flux-system
   values:
+    image:
+      repository: gchr.io/k8s-at-home/tautulli
+      tag: v2.7.7
     env:
       TZ: "Europe/Dublin"
     probes:
