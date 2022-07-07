@@ -20,13 +20,5 @@
     "fileMatch": [
       "\\.yaml$"
     ]
-  },
-  "packageRules": [
-    {
-      "versioning": "semver",
-      "matchPackageNames": [
-        "heimdall"
-      ]
-    }
-  ]
+  }
 }
