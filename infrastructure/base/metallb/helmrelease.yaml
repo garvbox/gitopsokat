@@ -14,3 +14,7 @@ spec:
         kind: HelmRepository
         name: metallb-charts
         namespace: flux-system
+  values:
+    crds:
+      # Disable CRD Retreival as it is included in Kustomization
+      enabled: false
