@@ -14,7 +14,7 @@ metadata:
   name: reserved
   namespace: metallb-system
 spec:
-  auto-assign: false
+  autoAssign: false
   addresses:
     - ${metallb_ip_dns}/32
 ---
