@@ -3,3 +3,4 @@ kind: Kustomization
 # Any site-specific configs/patches should be loaded here before loading the base config
 resources:
   - tlsstore.yaml
+  - lb-service.yaml

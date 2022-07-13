@@ -1,0 +1,25 @@
+---
+# Main Traefik Frontend Loadbalancer SErvice
+apiVersion: v1
+kind: Service
+metadata:
+  name: traefik
+  namespace: kube-system
+spec:
+  type: LoadBalancer
+  loadBalancerIP: ${metallb_ip_traefik}
+  ports:
+    - name: web
+      nodePort: 31264
+      port: 80
+      protocol: TCP
+      targetPort: web
+    - name: websecure
+      nodePort: 31714
+      port: 443
+      protocol: TCP
+      targetPort: websecure
+  selector:
+    app.kubernetes.io/instance: traefik
+    app.kubernetes.io/name: traefik
+  sessionAffinity: None
