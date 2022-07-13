@@ -19,10 +19,20 @@ spec:
     #   https://github.com/traefik/traefik-helm-chart/blob/master/traefik/values.yaml
     # Removed some unused values
 
+    image:
+      name: traefik
+      tag: 2.8.0
+
     # Disable silly traefik ingressroute
     ingressRoute:
       dashboard:
         enabled: false
+
+    providers:
+      # Disable CRD Loading as its being done in Kustomization
+      kubernetesCRD:
+        enabled: false
+
     # Configure Traefik static configuration
     # Additional arguments to be passed at Traefik's binary
     # All available options available on https://docs.traefik.io/reference/static-configuration/cli/

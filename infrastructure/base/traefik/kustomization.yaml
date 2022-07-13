@@ -2,5 +2,6 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 # Any site-specific configs/patches should be loaded here before loading the base config
 resources:
+  - https://raw.githubusercontent.com/traefik/traefik/v2.8/docs/content/reference/dynamic-configuration/kubernetes-crd-definition-v1.yml
   - helmrelease.yaml
   - tlsstore.yaml
