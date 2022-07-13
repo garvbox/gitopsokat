@@ -10,12 +10,10 @@ spec:
   loadBalancerIP: ${metallb_ip_traefik}
   ports:
     - name: web
-      nodePort: 31264
       port: 80
       protocol: TCP
       targetPort: web
     - name: websecure
-      nodePort: 31714
       port: 443
       protocol: TCP
       targetPort: websecure
