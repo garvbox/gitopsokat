@@ -13,6 +13,7 @@ spec:
   wait: true
   dependsOn:
     - name: metallb-install
+    - name: traefik-install
   # Enable Encryption using sops-gpg secret pre-loaded with ansible
   decryption:
     provider: sops
@@ -43,6 +44,21 @@ spec:
   interval: 10m
   retryInterval: 1m
   path: ./infrastructure/base/metallb-install
+  prune: true
+  wait: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: traefik-install
+  namespace: flux-system
+spec:
+  interval: 10m
+  retryInterval: 1m
+  path: ./infrastructure/base/traefik-install
   prune: true
   wait: true
   sourceRef:
