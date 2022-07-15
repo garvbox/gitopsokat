@@ -1,11 +1,11 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - metallb-resources
+  - metallb
   - coredns-configmap.yaml
   - ext-dns.yaml
   - discord-notifications.yaml
   - nfs-provisioner.yaml
   - cert-manager
-  - traefik-resources
+  - traefik
   - kubernetes-dashboard.yaml
