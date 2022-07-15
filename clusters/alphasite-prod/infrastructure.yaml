@@ -9,7 +9,7 @@ spec:
     kind: GitRepository
     name: flux-system
   path: ./infrastructure/alphasite-prod
-  prune: true
+  prune: false
   # Enable Encryption using sops-gpg secret pre-loaded with ansible
   decryption:
     provider: sops
