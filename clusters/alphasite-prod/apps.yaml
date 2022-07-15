@@ -11,7 +11,7 @@ spec:
     kind: GitRepository
     name: flux-system
   path: ./apps/alphasite-prod
-  prune: true
+  prune: false
   wait: true
   timeout: 5m0s
   decryption:
