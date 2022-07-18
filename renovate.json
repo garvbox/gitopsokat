@@ -25,7 +25,7 @@
         "docker"
       ],
       "automerge": true,
-      "automergeType": "branch",
+      "automergeType": "pr",
       "ignoreTests": true,
       "matchUpdateTypes": [
         "minor",
@@ -36,6 +36,15 @@
       "matchPackagePatterns": [
         "ghcr.io/k8s-at-home",
         "ghcr.io/home-assistant"
+      ]
+    },
+    {
+      "description": "Limit Jackett updates to once a Week",
+      "matchPackageNames": [
+        "ghcr.io/k8s-at-home/jackett"
+      ],
+      "schedule": [
+        "after 6pm on Monday"
       ]
     }
   ]
