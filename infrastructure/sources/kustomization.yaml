@@ -9,3 +9,4 @@ resources:
 - jetstack-charts.yaml
 - gitea-charts.yaml
 - kubernetes-dashboard-charts.yaml
+- grafana-charts.yaml
