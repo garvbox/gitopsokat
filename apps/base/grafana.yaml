@@ -28,6 +28,7 @@ spec:
       annotations:
         traefik.ingress.kubernetes.io/router.entrypoints: websecure
         traefik.ingress.kubernetes.io/router.tls: "true"
-      host: grafana.${cluster_ext_domain}
+      hosts:
+        - grafana.${cluster_ext_domain}
       path: "/"
       pathType: Prefix
