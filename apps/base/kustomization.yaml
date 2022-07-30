@@ -9,3 +9,4 @@ resources:
   - sonarr.yaml
   - tautulli.yaml
   - heimdall.yaml
+  - grafana.yaml
