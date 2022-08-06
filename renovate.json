@@ -48,8 +48,14 @@
         "minor",
         "patch"
       ],
-      "matchSourceUrls": [
-        "https://github.com/k8s-at-home/charts"
+      "packageNames": [
+        "tautulli",
+        "sonarr",
+        "radarr",
+        "jackett",
+        "heimdall",
+        "jellyfin",
+        "home-assistant"
       ]
     },
     {
