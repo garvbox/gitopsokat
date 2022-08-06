@@ -48,7 +48,7 @@
         "minor",
         "patch"
       ],
-      "packageNames": [
+      "matchPackageNames": [
         "tautulli",
         "sonarr",
         "radarr",
