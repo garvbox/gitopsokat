@@ -85,7 +85,7 @@
       ]
     },
     {
-      "updateTypes": [
+      "matchUpdateTypes": [
         "major"
       ],
       "addLabels": [
@@ -94,7 +94,7 @@
     },
     {
 
-      "updateTypes": [
+      "matchUpdateTypes": [
         "minor"
       ],
       "addLabels": [
@@ -102,7 +102,7 @@
       ]
     },
     {
-      "updateTypes": [
+      "matchUpdateTypes": [
         "patch"
       ],
       "addLabels": [
