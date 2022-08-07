@@ -36,6 +36,13 @@ spec:
               - path: "/"
                 pathType: Prefix
         tls: []
+    service:
+      deluge:
+        type: LoadBalancer
+        loadBalancerIP: ${metallb_ip_deluge}
+        ports:
+          torrent:
+            port: 55066
     persistence:
       # Note Staging setup only has config vol - this is overridden
       # for production with real volumes and share mounts
