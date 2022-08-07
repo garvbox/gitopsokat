@@ -37,7 +37,8 @@ spec:
                 pathType: Prefix
         tls: []
     service:
-      torrents:
+      deluge-torrent:
+        enabled: true
         type: LoadBalancer
         loadBalancerIP: ${metallb_ip_deluge}
         ports:
