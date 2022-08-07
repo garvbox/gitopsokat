@@ -37,14 +37,16 @@ spec:
                 pathType: Prefix
         tls: []
     service:
-      deluge-torrent:
+      torrents:
         enabled: true
         type: LoadBalancer
-        loadBalancerIP: ${metallb_ip_deluge}
+        annotations:
+          metallb.universe.tf/loadBalancerIPs: ${metallb_ip_deluge}
         ports:
           torrent:
             enabled: true
             port: 55066
+            targetPort: 55066
             protocol: TCP
     persistence:
       # Note Staging setup only has config vol - this is overridden
