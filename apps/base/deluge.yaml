@@ -19,19 +19,11 @@ spec:
     image:
       repository: linuxserver/deluge
       tag: 2.0.5
-    probes:
-      liveness:
-        enabled: false
     env:
       TZ: "Europe/Dublin"
       PUID: "6666"
       PGID: "6666"
       DELUGE_LOGLEVEL: "info"
-    # podSecurityContext:
-    #   runAsUser: 6666
-    #   runAsGroup: 6666
-    #   fsGroup: 6666
-    #   fsGroupChangePolicy: "OnRootMismatch"
     ingress:
       main:
         enabled: true
