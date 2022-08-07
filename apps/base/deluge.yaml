@@ -27,11 +27,11 @@ spec:
       PUID: "6666"
       PGID: "6666"
       DELUGE_LOGLEVEL: "info"
-    podSecurityContext:
-      runAsUser: 6666
-      runAsGroup: 6666
-      fsGroup: 6666
-      fsGroupChangePolicy: "OnRootMismatch"
+    # podSecurityContext:
+    #   runAsUser: 6666
+    #   runAsGroup: 6666
+    #   fsGroup: 6666
+    #   fsGroupChangePolicy: "OnRootMismatch"
     ingress:
       main:
         enabled: true
