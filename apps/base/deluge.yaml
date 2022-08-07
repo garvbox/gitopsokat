@@ -1,0 +1,59 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: deluge
+  namespace: default
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: deluge
+      version: 5.4.2
+      sourceRef:
+        kind: HelmRepository
+        name: k8s-at-home-charts
+        namespace: flux-system
+      interval: 5m
+  values:
+    image:
+      repository: linuxserver/deluge
+      tag: 2.0.5
+    env:
+      TZ: "Europe/Dublin"
+      PUID: "6666"
+      PGID: "6666"
+      DELUGE_LOGLEVEL: "info"
+    ingress:
+      main:
+        enabled: true
+        annotations:
+          traefik.ingress.kubernetes.io/router.entrypoints: websecure
+          traefik.ingress.kubernetes.io/router.tls: "true"
+        hosts:
+          - host: deluge.${cluster_ext_domain}
+            paths:
+              - path: "/"
+                pathType: Prefix
+        tls: []
+    service:
+      torrents:
+        enabled: true
+        type: LoadBalancer
+        annotations:
+          metallb.universe.tf/loadBalancerIPs: ${metallb_ip_deluge}
+        ports:
+          torrent:
+            enabled: true
+            port: 55066
+            targetPort: 55066
+            protocol: TCP
+    persistence:
+      # Note Staging setup only has config vol - this is overridden
+      # for production with real volumes and share mounts
+      config:
+        enabled: true
+        type: pvc
+        storageClass: "${nfs_provisioner_scname}"
+        accessMode: ReadWriteOnce
+        size: 1Gi

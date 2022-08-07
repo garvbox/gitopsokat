@@ -27,3 +27,5 @@ spec:
       cluster_int_domain: alphasite.glenside.lan
       cluster_ext_domain: alphasite.garvbox.net
       nfs_provisioner_scname: nfs-kraken
+      # Deluge Static IP for firewall
+      metallb_ip_deluge: 10.0.50.11

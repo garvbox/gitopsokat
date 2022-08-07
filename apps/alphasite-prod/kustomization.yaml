@@ -14,3 +14,4 @@ patchesStrategicMerge:
   - jellyfin-patch-values.yaml
   - tautulli-patch-values.yaml
   - homeassistant-patch-values.yaml
+  - deluge-patch-values.yaml
