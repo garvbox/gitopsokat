@@ -29,6 +29,7 @@ spec:
       metallb_ip_range: 10.0.50.2-10.0.50.50
       # Note Traefik IP should be inside the metallb dynamic ip range
       metallb_ip_traefik: 10.0.50.10
+      metallb_ip_deluge: 10.0.50.11
       cluster_ext_domain: alphasite.garvbox.net
       cluster_int_domain: alphasite.glenside.lan
       nfs_provisioner_scname: nfs-kraken
