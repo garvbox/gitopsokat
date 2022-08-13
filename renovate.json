@@ -18,7 +18,9 @@
       "\\.yaml$"
     ]
   },
-  "labels": ["renovate"],
+  "labels": [
+    "renovate"
+  ],
   "packageRules": [
     {
       "description": "Auto merge Container Minor Updates",
@@ -35,6 +37,16 @@
       "matchPackagePatterns": [
         "ghcr.io/k8s-at-home",
         "ghcr.io/home-assistant"
+      ]
+    },
+    {
+      "description": "Restrict Docker Packages with known odd naming",
+      "matchDatasources": [
+        "docker"
+      ],
+      "allowedVersions": "/^[0-9]+\\.[0-9]+\\.[0-9]$/",
+      "matchPackageNames": [
+        "linuxserver/.*"
       ]
     },
     {
@@ -93,7 +105,6 @@
       ]
     },
     {
-
       "matchUpdateTypes": [
         "minor"
       ],
