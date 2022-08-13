@@ -40,9 +40,10 @@
       ]
     },
     {
-      "description": "Restrict Docker Packages with known odd naming",
+      "description": "Restrict Linuxserver Packages with known odd naming",
       "matchDatasources": [
-        "docker"
+        "docker",
+        "helm"
       ],
       "allowedVersions": "/^[0-9]+\\.[0-9]+\\.[0-9]$/",
       "matchPackageNames": [
