@@ -41,13 +41,10 @@
     },
     {
       "description": "Restrict Linuxserver Packages with known odd naming",
-      "matchDatasources": [
-        "docker",
-        "helm"
-      ],
-      "allowedVersions": "/^[0-9]+\\.[0-9]+\\.[0-9]$/",
+      "allowedVersions": "<=2",
       "matchPackageNames": [
-        "linuxserver/.*"
+        "linuxserver/heimdall",
+        "linuxserver/deluge"
       ]
     },
     {
