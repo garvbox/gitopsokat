@@ -1,0 +1,31 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: apps
+  namespace: flux-system
+spec:
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  path: ./apps/gammasite-prod
+  dependsOn:
+    - name: infrastructure
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-gpg
+  # Flux Sync Settings
+  interval: 60m0s
+  timeout: 3m0s
+  retryInterval: 2m0s
+  wait: true
+  prune: true
+  force: true
+  # Site-specific variables
+  postBuild:
+    substitute:
+      cluster_int_domain: kube.gammasite.lan
+      cluster_ext_domain: gammasite.garvbox.net
+      nfs_provisioner_scname: nfs-kraken
+      # Deluge Static IP for firewall
+      metallb_ip_deluge: 192.168.0.61

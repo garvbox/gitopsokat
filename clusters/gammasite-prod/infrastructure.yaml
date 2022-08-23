@@ -1,0 +1,57 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: infrastructure
+  namespace: flux-system
+spec:
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  path: ./infrastructure/gammasite-prod
+  dependsOn:
+    - name: infra-core-install
+  # Enable Encryption using sops-gpg secret pre-loaded with ansible
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-gpg
+  # Flux Sync Settings
+  interval: 60m0s
+  timeout: 3m0s
+  retryInterval: 2m0s
+  wait: true
+  prune: true
+  force: true
+  # Site-specific variables
+  postBuild:
+    substitute:
+      metallb_ip_dns: 192.168.0.45
+      metallb_ip_range: 192.168.0.51-192.168.0.69
+      # Note Traefik IP should be inside the metallb dynamic ip range
+      metallb_ip_traefik: 192.168.0.60
+      metallb_ip_deluge: 192.168.0.61
+      cluster_ext_domain: gammasite.garvbox.net
+      cluster_int_domain: kube.gammasite.lan
+      nfs_provisioner_scname: nfs-kraken
+      nfs_provisioner_server: kraken.glenside.lan
+      nfs_provisioner_path: /export/gammasite-prod
+      admin_email: gonarvib@protonmail.com
+      le_url: https://acme-v02.api.letsencrypt.org/directory
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: infra-core-install
+  namespace: flux-system
+spec:
+  path: ./infrastructure/core-install
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  # Flux Sync Settings
+  interval: 60m0s
+  timeout: 3m0s
+  retryInterval: 2m0s
+  wait: true
+  prune: true
+  force: true
