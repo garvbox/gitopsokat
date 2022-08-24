@@ -4,5 +4,4 @@ kind: Kustomization
 resources:
   - ./discord-secrets.yaml
   - ./cf-secret.yaml
-  - ../sources
   - ../base
