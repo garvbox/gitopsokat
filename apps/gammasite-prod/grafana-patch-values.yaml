@@ -9,11 +9,6 @@ metadata:
 spec:
   values:
     persistence:
-      config:
-        enabled: true
-        existingClaim: homeassistant-config-pvc
-
-    persistence:
       enabled: true
       type: pvc
       existingClaim: grafana-config-pvc

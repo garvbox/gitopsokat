@@ -6,10 +6,9 @@ metadata:
   name: homeassistant-config-pvc
   namespace: default
 spec:
-  storageClassName: local-storage
+  storageClassName: local-path
   accessModes:
     - ReadWriteOnce
-  persistentVolumeReclaimPolicy: Retain
   resources:
     requests:
       storage: 2Gi
@@ -20,10 +19,9 @@ metadata:
   name: grafana-config-pvc
   namespace: default
 spec:
-  storageClassName: local-storage
+  storageClassName: local-path
   accessModes:
     - ReadWriteOnce
-  persistentVolumeReclaimPolicy: Retain
   resources:
     requests:
       storage: 5Gi
