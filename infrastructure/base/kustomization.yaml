@@ -5,7 +5,7 @@ resources:
   - coredns-configmap.yaml
   - ext-dns.yaml
   - discord-notifications.yaml
-  - nfs-provisioner.yaml
+  - nfs-provisioner
   - cert-manager
   - traefik
-  - kubernetes-dashboard.yaml
+  - kubernetes-dashboard

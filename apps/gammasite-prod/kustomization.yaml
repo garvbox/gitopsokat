@@ -1,20 +1,13 @@
-# Gammasite Production Apps
-# Note ../base directory is used for all apps manifests/charts
-# We can explicitly callout any required helm patches here
 ---
+# Gammasite Production Apps
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - ./pvc.yaml
+  - ../base/sources
   - ../base/grafana.yaml
   - ../base/home-assistant.yaml
   - ../base/whoami.yaml
 patchesStrategicMerge:
   - homeassistant-patch-values.yaml
   - grafana-patch-values.yaml
-#   - radarr-patch-values.yaml
-#   - sonarr-patch-values.yaml
-#   - jellyfin-patch-values.yaml
-#   - tautulli-patch-values.yaml
-#   - homeassistant-patch-values.yaml
-#   - deluge-patch-values.yaml
