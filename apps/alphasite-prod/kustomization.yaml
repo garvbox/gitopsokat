@@ -13,7 +13,7 @@ resources:
   - ../base/deluge.yaml
   - ../base/tautulli.yaml
   - ../base/heimdall.yaml
-  - ../base/grafana.yaml
+  # - ../base/grafana.yaml
   - ../base/whoami.yaml
   - secrets/gitea-pg.yaml
 patchesStrategicMerge:
