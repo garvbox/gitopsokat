@@ -5,9 +5,9 @@ kind: Kustomization
 resources:
   - ./pvc.yaml
   - ../base/sources
-  - ../base/grafana.yaml
-  - ../base/home-assistant.yaml
   - ../base/whoami.yaml
+  - ../base/home-assistant.yaml
+  - ../base/grafana.yaml
 patchesStrategicMerge:
   - homeassistant-patch-values.yaml
   - grafana-patch-values.yaml

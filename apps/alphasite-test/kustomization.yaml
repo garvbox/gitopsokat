@@ -1,9 +1,17 @@
-# Test apps
-# Note ../base directory is used for all apps - most should be run in both
-# We can explicitly callout any required helm patches here
 ---
+# Test apps
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - ../base
+  - ../base/sources
+  - ../base/home-assistant.yaml
+  - ../base/jellyfin.yaml
+  - ../base/gitea.yaml
+  - ../base/jackett.yaml
+  - ../base/radarr.yaml
+  - ../base/sonarr.yaml
+  - ../base/deluge.yaml
+  - ../base/tautulli.yaml
+  - ../base/heimdall.yaml
+  - ../base/grafana.yaml
   - ../base/whoami.yaml
