@@ -6,7 +6,7 @@ resources:
   - ../base/sources
   # - ../base/home-assistant.yaml
   # - ../base/jellyfin.yaml
-  - ../base/gitea.yaml
+  # - ../base/gitea.yaml
   - ../base/jackett.yaml
   - ../base/radarr.yaml
   - ../base/sonarr.yaml
@@ -17,7 +17,7 @@ resources:
   - ../base/whoami.yaml
   - secrets/gitea-pg.yaml
 patchesStrategicMerge:
-  - gitea-patch-values.yaml
+  # - gitea-patch-values.yaml
   - radarr-patch-values.yaml
   - sonarr-patch-values.yaml
   # - jellyfin-patch-values.yaml
