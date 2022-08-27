@@ -5,3 +5,4 @@ resources:
   - ./discord-secrets.yaml
   - ./cf-secret.yaml
   - ../base
+  - ../base/nfs-provisioner
