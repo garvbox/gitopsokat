@@ -6,7 +6,7 @@ resources:
   - ../base/sources
   # - ../base/home-assistant.yaml
   # - ../base/jellyfin.yaml
-  # - ../base/gitea.yaml
+  - ../base/gitea.yaml
   - ../base/jackett.yaml
   - ../base/radarr.yaml
   - ../base/sonarr.yaml
