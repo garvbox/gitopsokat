@@ -8,12 +8,12 @@ resources:
   - ../base/radarr.yaml
   - ../base/sonarr.yaml
   - ../base/deluge.yaml
-  - ../base/tautulli.yaml
+  # - ../base/tautulli.yaml
   - ../base/heimdall.yaml
   - ../base/whoami.yaml
   - secrets/gitea-pg.yaml
 patchesStrategicMerge:
   - radarr-patch-values.yaml
   - sonarr-patch-values.yaml
-  - tautulli-patch-values.yaml
+  # - tautulli-patch-values.yaml
   - deluge-patch-values.yaml

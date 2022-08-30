@@ -8,6 +8,8 @@ resources:
   - ../base/whoami.yaml
   - ../base/home-assistant.yaml
   - ../base/grafana.yaml
+  - ../base/tautulli.yaml
 patchesStrategicMerge:
   - homeassistant-patch-values.yaml
   - grafana-patch-values.yaml
+  - tautulli-patch-values.yaml
