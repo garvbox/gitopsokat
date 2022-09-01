@@ -18,7 +18,7 @@ spec:
   values:
     image:
       repository: linuxserver/deluge
-      tag: 2.0.5
+      tag: 2.1.1
     env:
       TZ: "Europe/Dublin"
       PUID: "6666"
