@@ -9,6 +9,10 @@ resources:
   - ../base/home-assistant.yaml
   - ../base/grafana.yaml
   - ../base/tautulli.yaml
+  - ../base/jackett.yaml
+  - ../base/radarr.yaml
+  - ../base/sonarr.yaml
+  - ../base/deluge.yaml
 patchesStrategicMerge:
   - homeassistant-patch-values.yaml
   - grafana-patch-values.yaml

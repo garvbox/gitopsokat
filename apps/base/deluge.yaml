@@ -49,11 +49,9 @@ spec:
             targetPort: 55066
             protocol: TCP
     persistence:
-      # Note Staging setup only has config vol - this is overridden
-      # for production with real volumes and share mounts
       config:
         enabled: true
         type: pvc
         storageClass: "${default_provisioner_scname}"
         accessMode: ReadWriteOnce
-        size: 1Gi
+        size: 10Gi

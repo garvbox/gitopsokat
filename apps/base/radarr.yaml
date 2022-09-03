@@ -44,4 +44,7 @@ spec:
     persistence:
       config:
         enabled: true
-        type: emptyDir
+        type: pvc
+        storageClass: "${default_provisioner_scname}"
+        accessMode: ReadWriteOnce
+        size: 10Gi
