@@ -26,7 +26,7 @@ spec:
         annotations:
           traefik.ingress.kubernetes.io/router.entrypoints: websecure
           traefik.ingress.kubernetes.io/router.tls: "true"
-        hosts: 
+        hosts:
           - host: heimdall.${cluster_ext_domain}
             paths:
               - path: "/"
@@ -36,6 +36,6 @@ spec:
       config:
         enabled: true
         type: pvc
-        storageClass: "${nfs_provisioner_scname}"
+        storageClass: "${default_provisioner_scname}"
         accessMode: ReadWriteOnce
         size: 1Gi

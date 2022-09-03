@@ -21,7 +21,7 @@ spec:
     persistence:
       enabled: true
       type: pvc
-      storageClass: "${nfs_provisioner_scname}"
+      storageClass: "${default_provisioner_scname}"
       size: 5Gi
     ingress:
       enabled: true

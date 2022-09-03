@@ -36,7 +36,7 @@ spec:
         - ReadWriteOnce
       labels: {}
       annotations: {}
-      storageClass: "${nfs_provisioner_scname}"
+      storageClass: "${default_provisioner_scname}"
     postgresql:
       enabled: false
     gitea:

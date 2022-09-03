@@ -32,7 +32,7 @@ spec:
       metallb_ip_deluge: 10.0.50.11
       cluster_ext_domain: alphasite.garvbox.net
       cluster_int_domain: alphasite.glenside.lan
-      nfs_provisioner_scname: nfs-kraken
+      default_provisioner_scname: nfs-kraken
       nfs_provisioner_server: kraken.glenside.lan
       nfs_provisioner_path: /export/alphasite-prod
       admin_email: gonarvib@protonmail.com

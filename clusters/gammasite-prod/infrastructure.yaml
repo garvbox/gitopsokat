@@ -32,9 +32,7 @@ spec:
       metallb_ip_deluge: 192.168.0.61
       cluster_ext_domain: gammasite.garvbox.net
       cluster_int_domain: kube.gammasite.lan
-      nfs_provisioner_scname: nfs-kraken
-      nfs_provisioner_server: kraken.glenside.lan
-      nfs_provisioner_path: /export/gammasite-prod
+      default_provisioner_scname: local-path
       admin_email: gonarvib@protonmail.com
       le_url: https://acme-v02.api.letsencrypt.org/directory
 ---

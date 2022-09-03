@@ -16,7 +16,7 @@ spec:
         namespace: flux-system
   values:
     storageClass:
-      name: ${nfs_provisioner_scname}
+      name: ${default_provisioner_scname}
     nfs:
       server: ${nfs_provisioner_server}
       path: ${nfs_provisioner_path}
