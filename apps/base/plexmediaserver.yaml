@@ -55,4 +55,4 @@ spec:
         size: 10Gi
       transcode:
         enabled: true
-        type: emptydir
+        type: emptyDir
