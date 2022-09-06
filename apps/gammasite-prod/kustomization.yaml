@@ -20,4 +20,5 @@ patchesStrategicMerge:
   - tautulli-patch-values.yaml
   - radarr-patch-values.yaml
   - sonarr-patch-values.yaml
+  - deluge-patch-values.yaml
   - plexmediaserver-patch-values.yaml

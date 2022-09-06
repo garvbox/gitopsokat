@@ -17,14 +17,14 @@ spec:
         readOnly: true
         existingClaim: videos-archive-pvc
     service:
-      main:
+      torrents:
         enabled: true
         type: LoadBalancer
         annotations:
-          metallb.universe.tf/loadBalancerIPs: ${metallb_ip_plex}
+          metallb.universe.tf/loadBalancerIPs: ${metallb_ip_deluge}
         ports:
           torrent:
             enabled: true
-            port: 32400
-            targetPort: 32400
+            port: 55066
+            targetPort: 55066
             protocol: TCP

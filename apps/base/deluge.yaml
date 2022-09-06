@@ -39,9 +39,6 @@ spec:
     service:
       torrents:
         enabled: true
-        type: LoadBalancer
-        annotations:
-          metallb.universe.tf/loadBalancerIPs: ${metallb_ip_deluge}
         ports:
           torrent:
             enabled: true
