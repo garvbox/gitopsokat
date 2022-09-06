@@ -1,0 +1,29 @@
+---
+# Sonarr Production iSCSI Patch
+# NOTE: This is using manually created iSCSI LUNs/Targets
+# The setup is opting for performance over flexibility due to
+# the SQLite Database in the 'arr apps
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: sonarr
+  namespace: default
+spec:
+  values:
+    persistence:
+      videos:
+        enabled: true
+        readOnly: false
+        type: nfs
+        server: ${nfs_provisioner_server}
+        path: /datapool/videos
+      videos-archive:
+        enabled: true
+        readOnly: false
+        server: ${nfs_provisioner_server}
+        path: /datapool/videos_archive
+      downloads:
+        enabled: true
+        readOnly: false
+        server: ${nfs_provisioner_server}
+        path: /datapool/downloads
