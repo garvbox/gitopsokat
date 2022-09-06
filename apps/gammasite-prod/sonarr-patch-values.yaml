@@ -14,18 +14,12 @@ spec:
       videos:
         enabled: true
         readOnly: false
-        type: nfs
-        server: ${nfs_provisioner_server}
-        path: /datapool/videos
+        existingClaim: videos-pvc
       videos-archive:
         enabled: true
         readOnly: false
-        type: nfs
-        server: ${nfs_provisioner_server}
-        path: /datapool/videos_archive
+        existingClaim: videos-archive-pvc
       downloads:
         enabled: true
         readOnly: false
-        type: nfs
-        server: ${nfs_provisioner_server}
-        path: /datapool/downloads
+        existingClaim: downloads-pvc

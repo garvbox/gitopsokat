@@ -1,0 +1,93 @@
+# Static NFS Mounts to be used by multiple Apps
+# Outside of the standard NFS directory Provisioner
+---
+# Datapool Videos
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-videos-pv
+  namespace: default
+spec:
+  storageClassName: nfs-videos
+  capacity:
+    storage: 1Mi
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    server: ${nfs_provisioner_server}
+    path: "/datapool/videos"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: videos-pvc
+  namespace: default
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: nfs-videos
+  resources:
+    requests:
+      storage: 1Mi
+---
+# Datapool Videos Archive
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-videos-archive-pv
+  namespace: default
+spec:
+  storageClassName: nfs-videos-archive
+  capacity:
+    storage: 1Mi
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    server: ${nfs_provisioner_server}
+    path: "/datapool/videos_archive"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: videos-archive-pvc
+  namespace: default
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: nfs-videos-archive
+  resources:
+    requests:
+      storage: 1Mi
+
+---
+# Datapool Downloads
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-downloads-pv
+  namespace: default
+spec:
+  storageClassName: nfs-downloads
+  capacity:
+    storage: 1Mi
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    server: ${nfs_provisioner_server}
+    path: "/datapool/downloads"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: downloads-pvc
+  namespace: default
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: nfs-downloads
+  resources:
+    requests:
+      storage: 1Mi
