@@ -23,7 +23,7 @@ spec:
         annotations:
           metallb.universe.tf/loadBalancerIPs: ${metallb_ip_plex}
         ports:
-          torrent:
+          http:
             enabled: true
             port: 32400
             targetPort: 32400
