@@ -13,9 +13,11 @@ resources:
   - ../base/radarr.yaml
   - ../base/sonarr.yaml
   - ../base/deluge.yaml
+  - ../base/plexmediaserver.yaml
 patchesStrategicMerge:
   - homeassistant-patch-values.yaml
   - grafana-patch-values.yaml
   - tautulli-patch-values.yaml
   - radarr-patch-values.yaml
   - sonarr-patch-values.yaml
+  - plexmediaserver-patch-values.yaml

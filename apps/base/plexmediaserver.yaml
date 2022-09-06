@@ -1,0 +1,58 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: plexmediaserver
+  namespace: default
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: plex
+      version: 6.4.3
+      sourceRef:
+        kind: HelmRepository
+        name: k8s-at-home-charts
+        namespace: flux-system
+      interval: 5m
+  values:
+    image:
+      repository: ghcr.io/k8s-at-home/plex
+      tag: v1.28.0
+    probes:
+      liveness:
+        enabled: false
+    env:
+      TZ: "Europe/Dublin"
+      ALLOWED_NETWORKS: "192.168.0.0/255.0.0.0"
+      # ADVERTISE_IP:
+      # PLEX_CLAIM:
+      # PLEX_PREFERENCE_1: "FriendlyName=plex-kubernetes"
+      # PLEX_PREFERENCE_2: "EnableIPv6=0"
+      # PLEX_PREFERENCE_3: "logDebug=0"
+      # PLEX_PREFERENCE_4: "DisableTLSv1_0=1"
+      # PLEX_PREFERENCE_5: "LanNetworksBandwidth=xxx.xxx.xxx.0/18\,xxx.xxx.xxx.0/24\,xxx.xxx.xxx.0/24"
+      # PLEX_PREFERENCE_6: "TranscoderQuality=2"
+      # PLEX_PREFERENCE_7: "TreatWanIpAsLocal=0"
+      # PLEX_PREFERENCE_8: "TranscoderH264BackgroundPreset=fast"
+    podSecurityContext:
+      runAsUser: 6666
+      runAsGroup: 6666
+      fsGroup: 6666
+      fsGroupChangePolicy: "OnRootMismatch"
+    service:
+      main:
+        primary: true
+        ports:
+          http:
+            port: 32400
+    persistence:
+      config:
+        enabled: true
+        type: pvc
+        storageClass: "${default_provisioner_scname}"
+        accessMode: ReadWriteOnce
+        size: 10Gi
+      transcode:
+        enabled: true
+        type: emptydir
