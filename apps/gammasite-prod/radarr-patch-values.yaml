@@ -17,10 +17,12 @@ spec:
       videos-archive:
         enabled: true
         readOnly: false
+        type: nfs
         server: ${nfs_provisioner_server}
         path: /datapool/videos_archive
       downloads:
         enabled: true
         readOnly: false
+        type: nfs
         server: ${nfs_provisioner_server}
         path: /datapool/downloads
