@@ -4,4 +4,5 @@ kind: Kustomization
 resources:
   - ./discord-secrets.yaml
   - ./cf-secret.yaml
+  - ./nfs-videos-pvs.yaml
   - ../base
