@@ -10,12 +10,14 @@ spec:
     persistence:
       videos:
         enabled: true
-        readOnly: true
-        existingClaim: videos-pvc
-      videos-archive:
+        readOnly: false
+        existingClaim: nfs-videos-pvc
+        mountPath: /datapool/videos
+      downloads:
         enabled: true
-        readOnly: true
-        existingClaim: videos-archive-pvc
+        readOnly: false
+        existingClaim: nfs-downloads-pvc
+        mountPath: /datapool/downloads
     service:
       torrents:
         enabled: true
