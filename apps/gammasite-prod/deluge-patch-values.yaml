@@ -11,12 +11,12 @@ spec:
       videos:
         enabled: true
         readOnly: false
-        existingClaim: nfs-videos-pvc
+        existingClaim: videos-pvc
         mountPath: /datapool/videos
       downloads:
         enabled: true
         readOnly: false
-        existingClaim: nfs-downloads-pvc
+        existingClaim: downloads-pvc
         mountPath: /datapool/downloads
     service:
       torrents:
