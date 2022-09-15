@@ -5,6 +5,7 @@ resources:
   - coredns-configmap.yaml
   - ext-dns.yaml
   - discord-notifications.yaml
+  - renovate-cronjob.yaml
   # - nfs-provisioner # Disabled - must be included explicitly
   - cert-manager
   - traefik
