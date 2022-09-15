@@ -23,20 +23,16 @@
   ],
   "packageRules": [
     {
-      "description": "Auto merge Container Minor Updates",
+      "description": "Auto merge All Minor Patches",
       "matchDatasources": [
-        "docker"
+        "docker",
+        "helm"
       ],
       "automerge": true,
-      "automergeType": "pr",
+      "automergeType": "branch",
       "ignoreTests": true,
       "matchUpdateTypes": [
-        "minor",
         "patch"
-      ],
-      "matchPackagePatterns": [
-        "ghcr.io/k8s-at-home",
-        "ghcr.io/home-assistant"
       ]
     },
     {
@@ -45,29 +41,6 @@
       "matchPackageNames": [
         "linuxserver/heimdall",
         "linuxserver/deluge"
-      ]
-    },
-    {
-      "description": "Auto merge Helm Minor Updates",
-      "matchDatasources": [
-        "helm"
-      ],
-      "automerge": true,
-      "automergeType": "pr",
-      "ignoreTests": true,
-      "matchUpdateTypes": [
-        "minor",
-        "patch"
-      ],
-      "matchPackageNames": [
-        "tautulli",
-        "sonarr",
-        "radarr",
-        "jackett",
-        "heimdall",
-        "jellyfin",
-        "home-assistant",
-        "grafana"
       ]
     },
     {

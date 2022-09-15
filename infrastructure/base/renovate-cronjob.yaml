@@ -4,7 +4,8 @@ metadata:
   name: renovate
   namespace: kube-system
 spec:
-  schedule: '@hourly'
+  # Runs every 15 minutes in the evening to allow auto-merging to work
+  schedule: '*/15 7-9 * * *'
   concurrencyPolicy: Forbid
   jobTemplate:
     spec:
@@ -17,7 +18,13 @@ spec:
                 - garvbox-iac/gitopsokat
               env:
                 - name: LOG_LEVEL
-                  value: debug
+                  value: info
+                - name: RENOVATE_BASE_BRANCHES
+                  value: main
+                - name: RENOVATE_AUTODISCOVER
+                  value: false
+                - name: RENOVATE_PLATFORM
+                  value: gitlab
               envFrom:
                 - secretRef:
                     name: renovate-env
