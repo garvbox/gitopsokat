@@ -22,7 +22,7 @@ spec:
                 - name: RENOVATE_BASE_BRANCHES
                   value: main
                 - name: RENOVATE_AUTODISCOVER
-                  value: false
+                  value: 'false'
                 - name: RENOVATE_PLATFORM
                   value: gitlab
               envFrom:
