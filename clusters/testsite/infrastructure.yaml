@@ -7,7 +7,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./infrastructure/alphasite-prod
+  path: ./infrastructure/testsite
   dependsOn:
     - name: infra-core-install
   # Enable Encryption using sops-gpg secret pre-loaded with ansible
@@ -25,19 +25,21 @@ spec:
   # Site-specific variables
   postBuild:
     substitute:
-      metallb_ip_dns: 10.0.50.1
-      metallb_ip_range: 10.0.50.2-10.0.50.50
+      metallb_ip_dns: 10.0.40.1
+      metallb_ip_range: 10.0.40.2-10.0.40.50
       # Note Traefik IP should be inside the metallb dynamic ip range
-      metallb_ip_traefik: 10.0.50.10
-      metallb_ip_deluge: 10.0.50.11
-      cluster_ext_domain: alphasite.garvbox.net
-      cluster_int_domain: alphasite.glenside.lan
+      metallb_ip_traefik: 10.0.40.10
+      # Deluge Static IP for firewall
+      # (NOTE: Actually used in apps.yaml as deluge is under apps)
+      metallb_ip_deluge: 10.0.40.11
+      cluster_ext_domain: testsite.garvbox.net
+      cluster_int_domain: testsite.glenside.lan
       default_provisioner_scname: nfs-kraken
       nfs_provisioner_server: kraken.glenside.lan
-      nfs_provisioner_path: /export/alphasite-prod
+      nfs_provisioner_path: /export/testsite
       admin_email: gonarvib@protonmail.com
       # Uncomment to switch to PROD LetsEncrypt URL
-      le_url: https://acme-v02.api.letsencrypt.org/directory
+      # le_url: https://acme-v02.api.letsencrypt.org/directory
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization

@@ -1,9 +1,0 @@
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-# Any site-specific configs/patches should be loaded here before loading the base config
-resources:
-  - ./discord-secrets.yaml
-  - ./cf-secret.yaml
-  - ../base
-  - ../base/nfs-provisioner
-  - nfs-videos-pvs.yaml # NFS Videos PVs only used in Production for safety
