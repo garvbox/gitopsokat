@@ -16,6 +16,9 @@ spec:
         enabled: true
         readOnly: true
         existingClaim: videos-archive-pvc
+      config:
+        enabled: true
+        existingClaim: plex-config-pvc
     service:
       main:
         enabled: true

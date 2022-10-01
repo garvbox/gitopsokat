@@ -25,3 +25,42 @@ spec:
   resources:
     requests:
       storage: 5Gi
+---
+# Plex Static Path on dedicated ZFS dataset due to size
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: local-plex=config-pv
+  namespace: default
+spec:
+  storageClassName: local-datapool
+  capacity:
+    storage: 50Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  local:
+    path: "/datapool/kube/plexmediaserver"
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - gammatron
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: plex-config-pvc
+  namespace: default
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: local-datapool
+  volumeName: local-plex-config-pv
+  resources:
+    requests:
+      storage: 50Gi
