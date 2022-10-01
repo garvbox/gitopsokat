@@ -4,8 +4,8 @@ metadata:
   name: renovate
   namespace: kube-system
 spec:
-  # Runs every 15 minutes in the evening to allow auto-merging to work
-  schedule: '*/15 7-9 * * *'
+  # Runs every 30 minutes in the evening to allow auto-merging to work
+  schedule: "*/30 19-21 * * *"
   concurrencyPolicy: Forbid
   jobTemplate:
     spec:
@@ -22,7 +22,7 @@ spec:
                 - name: RENOVATE_BASE_BRANCHES
                   value: main
                 - name: RENOVATE_AUTODISCOVER
-                  value: 'false'
+                  value: "false"
                 - name: RENOVATE_PLATFORM
                   value: gitlab
               envFrom:
