@@ -24,7 +24,7 @@ spec:
         enabled: false
     env:
       TZ: "Europe/Dublin"
-      ALLOWED_NETWORKS: "192.168.0.0/255.0.0.0"
+      # ALLOWED_NETWORKS:
       # ADVERTISE_IP:
       # PLEX_CLAIM:
       # PLEX_PREFERENCE_1: "FriendlyName=plex-kubernetes"
