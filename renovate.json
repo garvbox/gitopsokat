@@ -26,6 +26,7 @@
       "description": "Auto merge All Patches",
       "matchDatasources": [
         "docker",
+        "github-releases",
         "helm"
       ],
       "automerge": true,
