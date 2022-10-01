@@ -23,7 +23,7 @@
   ],
   "packageRules": [
     {
-      "description": "Auto merge All Minor Patches",
+      "description": "Auto merge All Patches",
       "matchDatasources": [
         "docker",
         "helm"
@@ -36,20 +36,26 @@
       ]
     },
     {
-      "description": "Restrict Linuxserver Packages with known odd naming",
-      "allowedVersions": "<=2",
+      "description": "Auto merge All Minor Releases for Renovate",
+      "matchDatasources": [
+        "docker"
+      ],
+      "automerge": true,
+      "automergeType": "branch",
+      "ignoreTests": true,
+      "matchUpdateTypes": [
+        "patch",
+        "minor"
+      ],
       "matchPackageNames": [
-        "linuxserver/heimdall",
-        "linuxserver/deluge"
+        "renovate/renovate"
       ]
     },
     {
-      "description": "Limit Jackett updates to once a Week",
+      "description": "Restrict Linuxserver Packages with known odd naming",
+      "allowedVersions": "<=2",
       "matchPackageNames": [
-        "ghcr.io/k8s-at-home/jackett"
-      ],
-      "schedule": [
-        "after 6pm on Monday"
+        "linuxserver/deluge"
       ]
     },
     {
@@ -59,7 +65,7 @@
       "versioning": "loose",
       "matchPackageNames": [
         "plexinc/pms-docker",
-        "ghcr.io/k8s-at-home/plex"
+        "plex"
       ]
     },
     {
