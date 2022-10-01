@@ -21,13 +21,6 @@ spec:
         existingClaim: plex-config-pvc
     service:
       main:
-        enabled: true
         type: LoadBalancer
         annotations:
           metallb.universe.tf/loadBalancerIPs: ${metallb_ip_plex}
-        ports:
-          http:
-            enabled: true
-            port: 32400
-            targetPort: 32400
-            protocol: TCP
