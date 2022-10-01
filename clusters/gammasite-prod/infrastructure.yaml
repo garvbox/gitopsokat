@@ -27,12 +27,9 @@ spec:
     substitute:
       metallb_ip_dns: 192.168.0.45
       metallb_ip_range: 192.168.0.51-192.168.0.69
-      # Note Traefik IP should be inside the metallb dynamic ip range
       metallb_ip_traefik: 192.168.0.60
-      metallb_ip_deluge: 192.168.0.61
       cluster_ext_domain: gammasite.garvbox.net
       cluster_int_domain: kube.gammasite.lan
-      nfs_provisioner_server: kraken.glenside.lan
       default_provisioner_scname: local-path
       admin_email: gonarvib@protonmail.com
       le_url: https://acme-v02.api.letsencrypt.org/directory
