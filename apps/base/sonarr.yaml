@@ -5,29 +5,35 @@ metadata:
   name: sonarr
   namespace: default
 spec:
-  interval: 5m
+  interval: 15m
   chart:
     spec:
-      chart: sonarr
-      version: 16.3.2
+      chart: app-template
+      version: 0.2.1
+      interval: 15m
       sourceRef:
         kind: HelmRepository
-        name: k8s-at-home-charts
+        name: bjw-s
         namespace: flux-system
   values:
     image:
-      repository: ghcr.io/k8s-at-home/sonarr
-      tag: v3.0.9.1549
+      repository: ghcr.io/onedr0p/radarr
+      tag: 3.0.9.1549
     env:
       TZ: "Europe/Dublin"
+    probes:
+      liveness:
+        enabled: false
     podSecurityContext:
       runAsUser: 6666
       runAsGroup: 6666
       fsGroup: 6666
       fsGroupChangePolicy: "OnRootMismatch"
-    probes:
-      liveness:
-        enabled: false
+    service:
+      main:
+        ports:
+          http:
+            port: 8989
     ingress:
       main:
         enabled: true
