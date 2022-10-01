@@ -65,7 +65,7 @@
       "versioning": "loose",
       "matchPackageNames": [
         "plexinc/pms-docker",
-        "plex"
+        "ghcr.io/onedr0p/plex"
       ]
     },
     {
