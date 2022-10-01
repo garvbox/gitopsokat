@@ -8,18 +8,24 @@ spec:
   interval: 5m
   chart:
     spec:
-      chart: jackett
-      version: 11.7.2
+      chart: app-template
+      version: 0.2.1
+      interval: 15m
       sourceRef:
         kind: HelmRepository
-        name: k8s-at-home-charts
+        name: bjw-s
         namespace: flux-system
   values:
     image:
-      repository: ghcr.io/k8s-at-home/jackett
-      tag: v0.20.1887
+      repository: ghcr.io/onedr0p/jackett
+      tag: 0.20.1887
     env:
       TZ: "Europe/Dublin"
+    service:
+      main:
+        ports:
+          http:
+            port: 9117
     persistence:
       config:
         enabled: true
