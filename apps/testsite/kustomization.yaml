@@ -11,6 +11,5 @@ resources:
   - ../base/sonarr.yaml
   - ../base/deluge.yaml
   - ../base/tautulli.yaml
-  - ../base/heimdall.yaml
   - ../base/grafana.yaml
   - ../base/whoami.yaml
