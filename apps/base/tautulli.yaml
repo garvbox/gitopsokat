@@ -5,14 +5,15 @@ metadata:
   name: tautulli
   namespace: default
 spec:
-  interval: 5m
+  interval: 15m
   chart:
     spec:
-      chart: tautulli
-      version: 11.4.2
+      chart: app-template
+      version: 0.2.1
+      interval: 15m
       sourceRef:
         kind: HelmRepository
-        name: k8s-at-home-charts
+        name: bjw-s
         namespace: flux-system
   values:
     image:
@@ -23,6 +24,11 @@ spec:
     probes:
       liveness:
         enabled: false
+    service:
+      main:
+        ports:
+          http:
+            port: 8181
     ingress:
       main:
         enabled: true
@@ -38,4 +44,7 @@ spec:
     persistence:
       config:
         enabled: true
-        type: emptyDir
+        type: pvc
+        storageClass: "${default_provisioner_scname}"
+        accessMode: ReadWriteOnce
+        size: 10Gi
