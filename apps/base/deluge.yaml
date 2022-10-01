@@ -5,16 +5,16 @@ metadata:
   name: deluge
   namespace: default
 spec:
-  interval: 5m
+  interval: 15m
   chart:
     spec:
-      chart: deluge
-      version: 5.4.2
+      chart: app-template
+      version: 0.2.1
+      interval: 15m
       sourceRef:
         kind: HelmRepository
-        name: k8s-at-home-charts
+        name: bjw-s
         namespace: flux-system
-      interval: 5m
   values:
     image:
       repository: linuxserver/deluge
@@ -24,6 +24,19 @@ spec:
       PUID: "6666"
       PGID: "6666"
       DELUGE_LOGLEVEL: "info"
+    service:
+      main:
+        ports:
+          http:
+            port: 8112
+      torrents:
+        enabled: true
+        ports:
+          torrent:
+            enabled: true
+            port: 55066
+            targetPort: 55066
+            protocol: TCP
     ingress:
       main:
         enabled: true
@@ -36,15 +49,6 @@ spec:
               - path: "/"
                 pathType: Prefix
         tls: []
-    service:
-      torrents:
-        enabled: true
-        ports:
-          torrent:
-            enabled: true
-            port: 55066
-            targetPort: 55066
-            protocol: TCP
     persistence:
       config:
         enabled: true
