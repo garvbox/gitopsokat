@@ -60,11 +60,11 @@
     },
     {
       "datasources": [
-        "docker"
+        "docker",
+        "github-releases"
       ],
       "versioning": "loose",
       "matchPackageNames": [
-        "plexinc/pms-docker",
         "ghcr.io/onedr0p/plex"
       ]
     },
