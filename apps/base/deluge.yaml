@@ -42,7 +42,7 @@ spec:
         annotations:
           traefik.ingress.kubernetes.io/router.entrypoints: websecure
           traefik.ingress.kubernetes.io/router.tls: "true"
-          traefik.ingress.kubernetes.io/router.middlewares: mw-local-only@kubernetes
+          traefik.ingress.kubernetes.io/router.middlewares: kube-system-localonly
         hosts:
           - host: deluge.${cluster_ext_domain}
             paths:
