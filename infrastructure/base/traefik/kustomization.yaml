@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - tlsstore.yaml
   - lb-service.yaml
+  - mw-local-only.yaml
