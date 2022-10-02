@@ -5,5 +5,5 @@ metadata:
   name: traefik-charts
   namespace: flux-system
 spec:
-  interval: 10m0s
+  interval: 30m
   url: https://helm.traefik.io/traefik
