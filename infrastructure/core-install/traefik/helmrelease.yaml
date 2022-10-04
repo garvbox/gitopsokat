@@ -21,7 +21,7 @@ spec:
 
     image:
       name: traefik
-      tag: v2.8.8
+      tag: v2.9.1
       repository: traefik # Added repo for renovate to detect version
 
     # Disable silly traefik ingressroute
