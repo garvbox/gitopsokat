@@ -5,3 +5,4 @@ kind: Kustomization
 resources:
   - ../base/sources
   - ../base/whoami.yaml
+  - ../base/home-tautulli.yaml
