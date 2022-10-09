@@ -27,8 +27,7 @@ spec:
     substitute:
       metallb_ip_dns: 172.22.0.40
       metallb_ip_range: 172.22.0.50-172.22.0.60
-      metallb_ip_traefik: 172.22.0.52
-      metallb_ip_nginx: 172.22.0.54
+      metallb_ip_nginx: 172.22.0.52
       cluster_ext_domain: testsite.garvbox.net
       cluster_int_domain: testsite.glenside.lan
       default_provisioner_scname: local-path
