@@ -30,3 +30,5 @@ spec:
         default-ssl-certificate: kube-system/letsencrypt-cert-secret
       ingressClassResource:
         default: true
+      config:
+        force-ssl-redirect: "true"
