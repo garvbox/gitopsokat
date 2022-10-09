@@ -26,6 +26,6 @@ spec:
         loadBalancerIP: "${metallb_ip_nginx}"
         externalTrafficPolicy: Local
       extraArgs:
-        default-ssl-certificate: "kube-system/letsencrypt-cert"
+        default-ssl-certificate: kube-system/letsencrypt-cert-secret
       ingressClassResource:
         default: true
