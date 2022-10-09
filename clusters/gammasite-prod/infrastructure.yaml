@@ -28,7 +28,7 @@ spec:
       metallb_ip_dns: 192.168.0.45
       metallb_ip_range: 192.168.0.51-192.168.0.69
       metallb_ip_traefik: 192.168.0.60
-      metallb_ip_nginx: 192.168.0.62
+      metallb_ip_nginx: 192.168.0.59
       cluster_ext_domain: gammasite.garvbox.net
       cluster_int_domain: kube.gammasite.lan
       default_provisioner_scname: local-path
