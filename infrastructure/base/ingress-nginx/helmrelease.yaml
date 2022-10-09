@@ -23,8 +23,9 @@ spec:
       service:
         enabled: true
         type: LoadBalancer
-        loadBalancerIP: "${metallb_ip_nginx}"
         externalTrafficPolicy: Local
+        annotations:
+          metallb.universe.tf/loadBalancerIPs: ${metallb_ip_nginx}
       extraArgs:
         default-ssl-certificate: kube-system/letsencrypt-cert-secret
       ingressClassResource:
