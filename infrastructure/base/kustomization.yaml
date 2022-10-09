@@ -8,5 +8,4 @@ resources:
   - renovate-cronjob.yaml
   # - nfs-provisioner # Disabled - must be included explicitly
   - cert-manager
-  - traefik
   - ingress-nginx
