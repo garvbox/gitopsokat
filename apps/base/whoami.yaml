@@ -40,6 +40,8 @@ metadata:
   namespace: default
 spec:
   ingressClassName: nginx
+  annotations:
+    nginx.ingress.kubernetes.io/whitelist-source-range: 192.168.0.0/16,10.0.0.0/8
   rules:
     - host: whoami.${cluster_ext_domain}
       http:
