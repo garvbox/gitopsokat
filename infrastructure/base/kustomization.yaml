@@ -9,4 +9,4 @@ resources:
   # - nfs-provisioner # Disabled - must be included explicitly
   - cert-manager
   - traefik
-  - kubernetes-dashboard
+  - ingress-nginx
