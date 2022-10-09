@@ -10,4 +10,3 @@ resources:
   - cert-manager
   - traefik
   - ingress-nginx
-  - kubernetes-dashboard
