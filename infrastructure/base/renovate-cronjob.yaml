@@ -13,7 +13,7 @@ spec:
         spec:
           containers:
             - name: renovate
-              image: renovate/renovate:32.231.0
+              image: renovate/renovate:32.231.1
               args:
                 - garvbox-iac/gitopsokat
               env:
