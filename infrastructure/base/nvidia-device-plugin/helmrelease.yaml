@@ -14,8 +14,8 @@ spec:
         kind: HelmRepository
         name: nvdp-charts
         namespace: flux-system
-values:
-  image:
-    repository: nvcr.io/nvidia/k8s-device-plugin
-    tag: ""
-  runtimeClassName: nvidia-gpu
+  values:
+    image:
+      repository: nvcr.io/nvidia/k8s-device-plugin
+      tag: ""
+    runtimeClassName: nvidia-gpu
