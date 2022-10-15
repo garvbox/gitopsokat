@@ -8,7 +8,8 @@ metadata:
 spec:
   values:
     env:
-      ADVERTISE_IP: http://${metallb_ip_plex}:32400/
+      ADVERTISE_IP: https://plex.${cluster_ext_domain}/
+    runtimeClassName: nvidia-gpu
     persistence:
       videos:
         enabled: true
