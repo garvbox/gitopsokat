@@ -7,3 +7,4 @@ resources:
   - ./renovate-secret.yaml
   - ./videos-pvs.yaml
   - ../base
+  - ../base/nvidia-device-plugin
