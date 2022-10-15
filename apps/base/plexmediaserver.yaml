@@ -39,6 +39,15 @@ spec:
       runAsGroup: 6666
       fsGroup: 6666
       fsGroupChangePolicy: "OnRootMismatch"
+    ingress:
+      main:
+        enabled: true
+        ingressClassName: nginx
+        hosts:
+          - host: plex.${cluster_ext_domain}
+            paths:
+              - path: "/"
+                pathType: Prefix
     service:
       main:
         primary: true
