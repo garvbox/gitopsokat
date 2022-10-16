@@ -1,0 +1,93 @@
+---
+# Patches for apps only needing basic storage settings
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: radarr
+  namespace: default
+spec:
+  values:
+    persistence:
+      config:
+        enabled: true
+        type: pvc
+        existingClaim: datapool-shared-config
+        subPath: radarr-config
+      videos:
+        enabled: true
+        readOnly: false
+        existingClaim: videos-pvc
+      videos-archive:
+        enabled: true
+        readOnly: false
+        existingClaim: videos-archive-pvc
+      downloads:
+        enabled: true
+        readOnly: false
+        existingClaim: downloads-pvc
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: sonarr
+  namespace: default
+spec:
+  values:
+    persistence:
+      config:
+        enabled: true
+        type: pvc
+        existingClaim: datapool-shared-config
+        subPath: sonarr-config
+      videos:
+        enabled: true
+        readOnly: false
+        existingClaim: videos-pvc
+      videos-archive:
+        enabled: true
+        readOnly: false
+        existingClaim: videos-archive-pvc
+      downloads:
+        enabled: true
+        readOnly: false
+        existingClaim: downloads-pvc
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: home-assistant
+  namespace: default
+spec:
+  values:
+    persistence:
+      config:
+        enabled: true
+        type: pvc
+        existingClaim: datapool-shared-config
+        subPath: homeassistant-config
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: grafana
+  namespace: default
+spec:
+  values:
+    persistence:
+      enabled: true
+      type: pvc
+      existingClaim: datapool-shared-config
+      subPath: grafana-config
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: jackett
+  namespace: default
+spec:
+  values:
+    persistence:
+      enabled: true
+      type: pvc
+      existingClaim: datapool-shared-config
+      subPath: jackett-config
