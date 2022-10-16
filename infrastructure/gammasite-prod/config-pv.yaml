@@ -1,0 +1,41 @@
+---
+# Single PV for general-purpose configuration, database etc mounts
+# Backed by a zfs dataset `datapool/kube/gammasite`, all PVCs use this PV
+# with subPath mounts for ease of integration with standard app template
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: datapool-shared-config-pv
+  namespace: default
+spec:
+  storageClassName: local-datapool
+  capacity:
+    storage: 100Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  local:
+    path: "/datapool/kube/gammasite"
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - gammatron
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: datapool-shared-config-pvc
+  namespace: default
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: local-datapool
+  volumeName: local-shared-config-pv
+  resources:
+    requests:
+      storage: 100Gi

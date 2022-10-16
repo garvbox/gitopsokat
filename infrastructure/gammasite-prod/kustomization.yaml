@@ -6,5 +6,6 @@ resources:
   - ./cf-secret.yaml
   - ./renovate-secret.yaml
   - ./videos-pvs.yaml
+  - ./config-pv.yaml
   - ../base
   - ../base/nvidia-device-plugin
