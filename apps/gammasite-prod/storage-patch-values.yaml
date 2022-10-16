@@ -1,5 +1,19 @@
 ---
 # Patches for apps only needing basic storage settings
+# NOTE: Grafana is slightly different as its not using the k8s@home app template
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: grafana
+  namespace: default
+spec:
+  values:
+    persistence:
+      enabled: true
+      type: pvc
+      existingClaim: datapool-shared-config
+      subPath: grafana-config
+---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
@@ -69,28 +83,16 @@ spec:
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: grafana
-  namespace: default
-spec:
-  values:
-    persistence:
-      enabled: true
-      type: pvc
-      existingClaim: datapool-shared-config
-      subPath: grafana-config
----
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
-kind: HelmRelease
-metadata:
   name: jackett
   namespace: default
 spec:
   values:
     persistence:
-      enabled: true
-      type: pvc
-      existingClaim: datapool-shared-config
-      subPath: jackett-config
+      config:
+        enabled: true
+        type: pvc
+        existingClaim: datapool-shared-config
+        subPath: jackett-config
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
@@ -100,7 +102,8 @@ metadata:
 spec:
   values:
     persistence:
-      enabled: true
-      type: pvc
-      existingClaim: datapool-shared-config
-      subPath: tautulli-config
+      config:
+        enabled: true
+        type: pvc
+        existingClaim: datapool-shared-config
+        subPath: tautulli-config
