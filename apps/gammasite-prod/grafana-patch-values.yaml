@@ -1,6 +1,4 @@
-
 ---
-# HomeAssistant Prod NFS Patch for editable config
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
@@ -11,5 +9,5 @@ spec:
     persistence:
       enabled: true
       type: pvc
-      existingClaim: grafana-config-pvc
-      size: 5Gi
+      existingClaim: datapool-shared-config
+      subPath: grafana-config
