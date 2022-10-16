@@ -91,3 +91,16 @@ spec:
       type: pvc
       existingClaim: datapool-shared-config
       subPath: jackett-config
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: tautulli
+  namespace: default
+spec:
+  values:
+    persistence:
+      enabled: true
+      type: pvc
+      existingClaim: datapool-shared-config
+      subPath: tautulli-config
