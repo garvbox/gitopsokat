@@ -1,18 +1,5 @@
 # Prod Gammasite PVS
 ---
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: homeassistant-config-pvc
-  namespace: default
-spec:
-  storageClassName: local-path
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 2Gi
----
 # Plex Static Path on dedicated ZFS dataset due to size
 apiVersion: v1
 kind: PersistentVolume
