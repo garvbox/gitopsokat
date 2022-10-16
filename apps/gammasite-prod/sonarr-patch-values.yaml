@@ -8,6 +8,11 @@ metadata:
 spec:
   values:
     persistence:
+      config:
+        enabled: true
+        type: pvc
+        existingClaim: datapool-shared-config
+        subPath: sonarr-config
       videos:
         enabled: true
         readOnly: false
