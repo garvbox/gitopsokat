@@ -24,17 +24,3 @@ spec:
               operator: In
               values:
                 - gammatron
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: plex-config-pvc
-  namespace: default
-spec:
-  accessModes:
-    - ReadWriteOnce
-  storageClassName: local-datapool
-  volumeName: local-plex-config-pv
-  resources:
-    requests:
-      storage: 50Gi
