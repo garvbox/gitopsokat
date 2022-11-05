@@ -3,7 +3,6 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - ./pvc.yaml
   - ../base/sources
   - ../base/whoami.yaml
   - ../base/home-assistant.yaml
