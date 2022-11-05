@@ -21,7 +21,9 @@ spec:
         existingClaim: videos-archive-pvc
       config:
         enabled: true
-        existingClaim: plex-config-pvc
+        type: pvc
+        existingClaim: datapool-shared-config
+        subPath: plex-config
     service:
       main:
         type: LoadBalancer
