@@ -28,14 +28,6 @@ spec:
         ports:
           http:
             port: 8112
-      torrents:
-        enabled: true
-        ports:
-          torrent:
-            enabled: true
-            port: 55066
-            targetPort: 55066
-            protocol: TCP
     ingress:
       main:
         enabled: true

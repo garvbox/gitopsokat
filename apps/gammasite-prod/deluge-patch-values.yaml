@@ -24,14 +24,19 @@ spec:
         existingClaim: downloads-pvc
         mountPath: /datapool/downloads
     service:
-      torrents:
+      daemon:
         enabled: true
         type: LoadBalancer
         annotations:
           metallb.universe.tf/loadBalancerIPs: ${metallb_ip_deluge}
         ports:
-          torrent:
+          torrents:
             enabled: true
             port: 55066
             targetPort: 55066
+            protocol: TCP
+          admin:
+            enabled: true
+            port: 58846
+            targetPort: 58846
             protocol: TCP
