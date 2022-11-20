@@ -17,7 +17,7 @@ spec:
   values:
     image:
       repository: ghcr.io/onedr0p/jackett
-      tag: 0.20.2267
+      tag: 0.20.2269
     env:
       TZ: "Europe/Dublin"
     service:
