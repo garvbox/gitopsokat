@@ -37,22 +37,6 @@
       ]
     },
     {
-      "description": "Auto merge All Minor Releases for Renovate",
-      "matchDatasources": [
-        "docker"
-      ],
-      "automerge": true,
-      "automergeType": "branch",
-      "ignoreTests": true,
-      "matchUpdateTypes": [
-        "patch",
-        "minor"
-      ],
-      "matchPackageNames": [
-        "renovate/renovate"
-      ]
-    },
-    {
       "description": "Restrict Linuxserver Packages with known odd naming",
       "allowedVersions": "<=2",
       "matchPackageNames": [
@@ -69,6 +53,15 @@
         "ghcr.io/onedr0p/plex"
       ]
     },
+    {
+      "description": "Limit Jackett updates to once a Week",
+      "matchPackageNames": [
+        "ghcr.io/onedr0p/jackett",
+        "grafana/grafana"
+      ],
+      "schedule": [
+        "after 6pm on Monday"
+      ]
     {
       "matchDatasources": [
         "docker"
