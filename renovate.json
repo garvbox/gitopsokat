@@ -62,6 +62,7 @@
       "schedule": [
         "after 6pm on Monday"
       ]
+    },
     {
       "matchDatasources": [
         "docker"
