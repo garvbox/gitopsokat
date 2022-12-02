@@ -4,3 +4,5 @@ extends: default
 rules:
   comments: disable
   line-length: disable
+ignore: |
+  flux-system/gotk.*\.yaml
