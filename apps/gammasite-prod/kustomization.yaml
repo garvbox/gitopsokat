@@ -3,6 +3,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
+  - gh-garvbox-secrets.yaml
   - ../base/sources
   - ../base/whoami.yaml
   - ../base/home-assistant.yaml
@@ -13,6 +14,7 @@ resources:
   - ../base/sonarr.yaml
   - ../base/deluge.yaml
   - ../base/plexmediaserver.yaml
+  - ../base/autodl-scheduler.yaml
 patchesStrategicMerge:
   - storage-patch-values.yaml
   - deluge-patch-values.yaml

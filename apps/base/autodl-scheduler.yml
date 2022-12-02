@@ -1,0 +1,23 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: autodl-scheduler
+  namespace: default
+  labels:
+    app: autodl-scheduler
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: autodl-scheduler
+  template:
+    metadata:
+      labels:
+        app: autodl-scheduler
+    spec:
+      containers:
+        - name: autodl-scheduler
+          image: ghcr.io/garvbox/autodl:0.0.1
+          imagePullSecrets:
+            - name: github-garvbox-deploy
