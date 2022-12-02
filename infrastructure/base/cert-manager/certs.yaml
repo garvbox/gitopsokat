@@ -5,10 +5,10 @@ metadata:
   name: letsencrypt-cert
   namespace: kube-system
 spec:
-  secretName: letsencrypt-cert-secret
+  secretName: letsencrypt-cert-secret # pragma: allowlist secret
   issuerRef:
     name: letsencrypt-issuer
     kind: ClusterIssuer
   dnsNames:
-  - ${cluster_ext_domain}
-  - '*.${cluster_ext_domain}'
+    - ${cluster_ext_domain}
+    - "*.${cluster_ext_domain}"

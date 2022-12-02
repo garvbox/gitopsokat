@@ -11,11 +11,11 @@ spec:
     privateKeySecretRef:
       name: letsencrypt-issuer-secret
     solvers:
-    # An empty 'selector' means that this solver matches all domains
-    - selector: {}
-      dns01:
-        cloudflare:
-          email: ${admin_email}
-          apiTokenSecretRef:
-            name: cloudflare-api-token-secret
-            key: api-token
+      # An empty 'selector' means that this solver matches all domains
+      - selector: {}
+        dns01:
+          cloudflare:
+            email: ${admin_email}
+            apiTokenSecretRef:
+              name: cloudflare-api-token-secret
+              key: api-token
