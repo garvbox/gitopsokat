@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: autodl-scheduler
-          image: ghcr.io/garvbox/autodl:v0.0.1
+          image: ghcr.io/garvbox/autodl:v0.0.2
       imagePullSecrets:
         - name: github-garvbox-deploy
