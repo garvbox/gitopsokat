@@ -14,7 +14,7 @@ resources:
   - ../base/sonarr.yaml
   - ../base/deluge.yaml
   - ../base/plexmediaserver.yaml
-  - ../base/autodl-scheduler.yaml
+  # - ../base/autodl-scheduler.yaml
 patchesStrategicMerge:
   - storage-patch-values.yaml
   - deluge-patch-values.yaml
