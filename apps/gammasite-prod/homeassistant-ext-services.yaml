@@ -35,10 +35,11 @@ spec:
   rules:
     - host: homeassistant.${cluster_ext_domain}
       http:
-        - path: /
-          pathType: Prefix
-          backend:
-            service:
-              name: homeassistant-external
-              port:
-                number: 8123
+        paths:
+          - path: "/"
+            pathType: Prefix
+            backend:
+              service:
+                name: homeassistant-external
+                port:
+                  number: 8123
