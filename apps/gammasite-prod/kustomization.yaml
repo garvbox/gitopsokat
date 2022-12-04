@@ -4,6 +4,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - gh-garvbox-secrets.yaml
+  - homeassistant-ext-services.yaml
   - ../base/sources
   - ../base/grafana.yaml
   - ../base/tautulli.yaml
