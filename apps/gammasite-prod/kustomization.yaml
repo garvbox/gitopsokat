@@ -5,7 +5,6 @@ kind: Kustomization
 resources:
   - gh-garvbox-secrets.yaml
   - ../base/sources
-  - ../base/home-assistant.yaml
   - ../base/grafana.yaml
   - ../base/tautulli.yaml
   - ../base/jackett.yaml
