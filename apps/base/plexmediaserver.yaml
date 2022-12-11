@@ -16,24 +16,18 @@ spec:
         namespace: flux-system
   values:
     image:
-      repository: ghcr.io/onedr0p/plex
+      repository: ghcr.io/onedr0p/plex-beta
       tag: 1.29.2.6364-6d72b0cf6
     probes:
       liveness:
         enabled: false
     env:
       TZ: "Europe/Dublin"
-      # ALLOWED_NETWORKS:
-      # ADVERTISE_IP:
+      ADVERTISE_IP: "https://plex.${cluster_ext_domain}/"
       # PLEX_CLAIM:
-      # PLEX_PREFERENCE_1: "FriendlyName=plex-kubernetes"
-      # PLEX_PREFERENCE_2: "EnableIPv6=0"
-      # PLEX_PREFERENCE_3: "logDebug=0"
-      # PLEX_PREFERENCE_4: "DisableTLSv1_0=1"
-      # PLEX_PREFERENCE_5: "LanNetworksBandwidth=xxx.xxx.xxx.0/18\,xxx.xxx.xxx.0/24\,xxx.xxx.xxx.0/24"
-      # PLEX_PREFERENCE_6: "TranscoderQuality=2"
-      # PLEX_PREFERENCE_7: "TreatWanIpAsLocal=0"
-      # PLEX_PREFERENCE_8: "TranscoderH264BackgroundPreset=fast"
+      PLEX_PREFERENCE_1: "LanNetworksBandwidth=192.168.0.0/16,10.0.0.0/16,172.16.0.0/12"
+      PLEX_PREFERENCE_2: "TranscoderQuality=0"
+      PLEX_PREFERENCE_3: "TranscoderH264BackgroundPreset=fast"
     podSecurityContext:
       runAsUser: 6666
       runAsGroup: 6666
