@@ -58,7 +58,8 @@
       ],
       "versioning": "loose",
       "matchPackageNames": [
-        "ghcr.io/onedr0p/plex"
+        "ghcr.io/onedr0p/plex",
+        "ghcr.io/onedr0p/plex-beta"
       ]
     },
     {
