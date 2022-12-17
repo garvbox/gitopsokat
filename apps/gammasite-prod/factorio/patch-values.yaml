@@ -17,7 +17,9 @@ spec:
         enabled: true
         name: factorio-server-config
         type: secret
-        mountPath: /factorio/config
+        subPath:
+          - path: server-settings.json
+            mountPath: /factorio/config/server-settings.json
     service:
       main:
         enabled: true
