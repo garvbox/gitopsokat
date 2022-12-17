@@ -16,7 +16,7 @@ spec:
       factorio-server-config:
         enabled: true
         name: factorio-server-config
-        type: configMap
+        type: secret
         mountPath: /factorio/config
     service:
       main:

@@ -5,7 +5,7 @@ kind: Kustomization
 resources:
   - gh-garvbox-secrets.yaml
   - homeassistant-ext-services.yaml
-  - ./factorio/config.yaml
+  - ./factorio/server-config-secret.yaml
   - ../base/sources
   - ../base/grafana.yaml
   - ../base/tautulli.yaml
