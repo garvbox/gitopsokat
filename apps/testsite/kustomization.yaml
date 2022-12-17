@@ -5,4 +5,4 @@ kind: Kustomization
 resources:
   - ../base/sources
   - ../base/whoami.yaml
-  - ../base/tautulli.yaml
+  - ../base/factorio.yaml
