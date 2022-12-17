@@ -1,0 +1,26 @@
+---
+# Factorio Production Patch
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: factorio-server
+  namespace: default
+spec:
+  values:
+    persistence:
+      factorio:
+        enabled: true
+        type: pvc
+        existingClaim: datapool-shared-config
+        subPath: factorio-config
+      factorio-server-config:
+        enabled: true
+        name: factorio-server-config
+        type: secret
+        mountPath: /factorio/config
+    service:
+      main:
+        enabled: true
+        type: LoadBalancer
+        annotations:
+          metallb.universe.tf/loadBalancerIPs: ${metallb_ip_factorio}
