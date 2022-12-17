@@ -20,6 +20,9 @@ spec:
       tag: 1.1.73
     env:
       TZ: "Europe/Dublin"
+      GENERATE_NEW_SAVE: true
+      LOAD_LATEST_SAVE: true
+      UPDATE_MODS_ON_START: true
     service:
       main:
         enabled: true
