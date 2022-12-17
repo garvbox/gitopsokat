@@ -38,9 +38,9 @@ spec:
             port: 27015
             protocol: TCP
     podSecurityContext:
-      runAsUser: 6666
-      runAsGroup: 6666
-      fsGroup: 6666
+      runAsUser: 845
+      runAsGroup: 845
+      fsGroup: 845
       fsGroupChangePolicy: "OnRootMismatch"
     persistence:
       factorio:
