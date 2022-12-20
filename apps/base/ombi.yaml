@@ -32,7 +32,7 @@ spec:
       main:
         ports:
           http:
-            port: 3579
+            port: 5000
     ingress:
       main:
         enabled: true
