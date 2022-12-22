@@ -31,3 +31,4 @@ spec:
       metallb_ip_deluge: 192.168.0.61
       metallb_ip_plex: 192.168.0.62
       metallb_ip_factorio: 192.168.0.63
+      metallb_ip_syncthing: 192.168.0.64
