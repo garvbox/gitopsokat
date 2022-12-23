@@ -8,12 +8,6 @@ metadata:
 spec:
   values:
     persistence:
-      config:
-        enabled: true
-        type: pvc
-        existingClaim: datapool-shared-config
-        subPath: syncthing-config
-        mountPath: /var/syncthing
       videos:
         enabled: true
         readOnly: false
