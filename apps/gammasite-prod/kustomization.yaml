@@ -5,6 +5,7 @@ kind: Kustomization
 resources:
   - gh-garvbox-secrets.yaml
   - homeassistant-ext-services.yaml
+  - ./unpackerr/config-secret.yaml
   # - ./factorio/server-config-secret.yaml
   - ../base/sources
   - ../base/grafana.yaml
@@ -12,6 +13,7 @@ resources:
   - ../base/jackett.yaml
   - ../base/radarr.yaml
   - ../base/sonarr.yaml
+  - ../base/unpackerr.yaml
   - ../base/ombi.yaml
   - ../base/deluge.yaml
   - ../base/plexmediaserver.yaml
@@ -23,4 +25,5 @@ patchesStrategicMerge:
   - deluge-patch-values.yaml
   - plexmediaserver-patch-values.yaml
   - syncthing-patch-values.yaml
+  - ./unpackerr/patch-values.yaml
   # - ./factorio/patch-values.yaml
