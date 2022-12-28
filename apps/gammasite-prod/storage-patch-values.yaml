@@ -22,11 +22,6 @@ metadata:
 spec:
   values:
     persistence:
-      config:
-        enabled: true
-        type: pvc
-        existingClaim: datapool-shared-config
-        subPath: radarr-config
       videos:
         enabled: true
         readOnly: false
@@ -48,11 +43,6 @@ metadata:
 spec:
   values:
     persistence:
-      config:
-        enabled: true
-        type: pvc
-        existingClaim: datapool-shared-config
-        subPath: sonarr-config
       videos:
         enabled: true
         readOnly: false
@@ -65,45 +55,3 @@ spec:
         enabled: true
         readOnly: false
         existingClaim: downloads-pvc
----
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
-kind: HelmRelease
-metadata:
-  name: jackett
-  namespace: default
-spec:
-  values:
-    persistence:
-      config:
-        enabled: true
-        type: pvc
-        existingClaim: datapool-shared-config
-        subPath: jackett-config
----
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
-kind: HelmRelease
-metadata:
-  name: tautulli
-  namespace: default
-spec:
-  values:
-    persistence:
-      config:
-        enabled: true
-        type: pvc
-        existingClaim: datapool-shared-config
-        subPath: tautulli-config
----
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
-kind: HelmRelease
-metadata:
-  name: ombi
-  namespace: default
-spec:
-  values:
-    persistence:
-      config:
-        enabled: true
-        type: pvc
-        existingClaim: datapool-shared-config
-        subPath: ombi-config
