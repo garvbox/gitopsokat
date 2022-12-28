@@ -20,15 +20,21 @@ spec:
       tag: 0.10.0
     env:
       TZ: "Europe/Dublin"
+    service:
+      main:
+        enabled: false
+    ingress:
+      main:
+        enabled: false
+    probes:
+      liveness:
+        enabled: false
+      readiness:
+        enabled: false
+      startup:
+        enabled: false
     podSecurityContext:
       runAsUser: 6666
       runAsGroup: 6666
       fsGroup: 6666
       fsGroupChangePolicy: "OnRootMismatch"
-    persistence:
-      config:
-        enabled: true
-        type: pvc
-        storageClass: "${default_provisioner_scname}"
-        accessMode: ReadWriteOnce
-        size: 10Gi

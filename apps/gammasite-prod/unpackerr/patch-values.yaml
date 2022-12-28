@@ -8,11 +8,6 @@ metadata:
 spec:
   values:
     persistence:
-      config:
-        enabled: true
-        type: pvc
-        existingClaim: datapool-shared-config
-        subPath: unpackerr-config
       downloads:
         enabled: true
         readOnly: false
