@@ -1,0 +1,26 @@
+---
+# Unpackerr Production Secret Patch
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: unpackerr
+  namespace: default
+spec:
+  values:
+    persistence:
+      config:
+        enabled: true
+        type: pvc
+        existingClaim: datapool-shared-config
+        subPath: unpackerr-config
+      downloads:
+        enabled: true
+        readOnly: false
+        existingClaim: downloads-pvc
+      unpackerr-config:
+        enabled: true
+        name: unpackerr-config
+        type: secret
+        subPath:
+          - path: unpackerr.conf
+            mountPath: /config/unpackerr.conf
