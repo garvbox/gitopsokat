@@ -8,16 +8,6 @@ metadata:
 spec:
   values:
     persistence:
-      config:
-        enabled: true
-        type: pvc
-        existingClaim: datapool-shared-config
-        subPath: deluge-config
-      videos:
-        enabled: true
-        readOnly: false
-        existingClaim: videos-pvc
-        mountPath: /datapool/videos
       downloads:
         enabled: true
         readOnly: false
