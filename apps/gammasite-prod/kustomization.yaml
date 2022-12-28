@@ -12,6 +12,7 @@ resources:
   - ../base/jackett.yaml
   - ../base/radarr.yaml
   - ../base/sonarr.yaml
+  - ../base/unpackerr.yaml
   - ../base/ombi.yaml
   - ../base/deluge.yaml
   - ../base/plexmediaserver.yaml
