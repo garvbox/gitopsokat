@@ -1,0 +1,127 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: radarr
+  namespace: default
+spec:
+  values:
+    persistence:
+      videos:
+        enabled: true
+        readOnly: false
+        existingClaim: videos-pvc
+      videos-archive:
+        enabled: true
+        readOnly: false
+        existingClaim: videos-archive-pvc
+      downloads:
+        enabled: true
+        readOnly: false
+        existingClaim: downloads-pvc
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: sonarr
+  namespace: default
+spec:
+  values:
+    persistence:
+      videos:
+        enabled: true
+        readOnly: false
+        existingClaim: videos-pvc
+      videos-archive:
+        enabled: true
+        readOnly: false
+        existingClaim: videos-archive-pvc
+      downloads:
+        enabled: true
+        readOnly: false
+        existingClaim: downloads-pvc
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: plexmediaserver
+  namespace: default
+spec:
+  values:
+    env:
+      ADVERTISE_IP: https://plex.${cluster_ext_domain}/
+    runtimeClassName: nvidia-gpu
+    persistence:
+      videos:
+        enabled: true
+        readOnly: true
+        existingClaim: videos-pvc
+      videos-archive:
+        enabled: true
+        readOnly: true
+        existingClaim: videos-archive-pvc
+    service:
+      main:
+        type: LoadBalancer
+        externalTrafficPolicy: Local
+        annotations:
+          metallb.universe.tf/loadBalancerIPs: ${metallb_ip_plex}
+    resources:
+      limits:
+        # NOTE: This request only works with a single node cluster
+        #   would need node affinity and feature detection to work
+        #   and schedule the pods correctly if we had a mixed cluster
+        nvidia.com/gpu: 1
+        memory: 6000Mi
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: deluge
+  namespace: default
+spec:
+  values:
+    persistence:
+      downloads:
+        enabled: true
+        readOnly: false
+        existingClaim: downloads-pvc
+        mountPath: /datapool/downloads
+    service:
+      daemon:
+        enabled: true
+        type: LoadBalancer
+        annotations:
+          metallb.universe.tf/loadBalancerIPs: ${metallb_ip_deluge}
+        ports:
+          torrents:
+            enabled: true
+            port: 55066
+            targetPort: 55066
+            protocol: TCP
+          admin:
+            enabled: true
+            port: 58846
+            targetPort: 58846
+            protocol: TCP
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: syncthing
+  namespace: default
+spec:
+  values:
+    persistence:
+      videos:
+        enabled: true
+        readOnly: false
+        existingClaim: videos-pvc
+      videos-archive:
+        enabled: true
+        readOnly: false
+        existingClaim: videos-archive-pvc
+    service:
+      syncthing:
+        annotations:
+          metallb.universe.tf/loadBalancerIPs: ${metallb_ip_syncthing}

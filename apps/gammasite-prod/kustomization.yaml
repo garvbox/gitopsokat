@@ -21,9 +21,6 @@ resources:
   - ../base/autodl-scheduler.yaml
   # - ../base/factorio.yaml
 patchesStrategicMerge:
-  - storage-patch-values.yaml
-  - deluge-patch-values.yaml
-  - plexmediaserver-patch-values.yaml
-  - syncthing-patch-values.yaml
+  - media-patch-values.yaml
   - ./unpackerr/patch-values.yaml
   # - ./factorio/patch-values.yaml
