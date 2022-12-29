@@ -18,7 +18,7 @@ resources:
   - ../base/deluge.yaml
   - ../base/plexmediaserver.yaml
   - ../base/syncthing.yaml
-  - ../base/autodl-scheduler.yaml
+  # - ../base/autodl-scheduler.yaml
   # - ../base/factorio.yaml
 patchesStrategicMerge:
   - media-patch-values.yaml
