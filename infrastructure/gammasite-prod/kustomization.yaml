@@ -8,4 +8,3 @@ resources:
   - ./videos-pvs.yaml
   - ./config-pv.yaml
   - ../base
-  - ../base/nvidia-device-plugin
