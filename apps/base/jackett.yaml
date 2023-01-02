@@ -32,4 +32,3 @@ spec:
         storageClass: "${default_provisioner_scname}"
         accessMode: ReadWriteOnce
         size: 1Gi
-        persistentVolumeReclaimPolicy: Retain
