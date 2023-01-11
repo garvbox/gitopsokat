@@ -17,7 +17,7 @@ spec:
   values:
     image:
       repository: factoriotools/factorio
-      tag: 1.1.74
+      tag: 1.1.75
     env:
       TZ: "Europe/Dublin"
       LOAD_LATEST_SAVE: true
