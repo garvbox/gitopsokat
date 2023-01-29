@@ -8,4 +8,4 @@ resources:
   - ./videos-pvs.yaml
   - ./config-pv.yaml
   - ../base
-  - ../base/intel-device-plugin
+  # - ../base/intel-device-plugin
