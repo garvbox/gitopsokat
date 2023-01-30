@@ -53,6 +53,8 @@ spec:
         gpu.intel.com/i915: 1
       limits:
         gpu.intel.com/i915: 1
+    nodeSelector:
+      intel.feature.node.kubernetes.io/gpu: "true"
     env:
       ADVERTISE_IP: https://plex.${cluster_ext_domain}/
     persistence:
