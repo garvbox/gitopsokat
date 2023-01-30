@@ -55,6 +55,8 @@ spec:
         gpu.intel.com/i915: 1
     nodeSelector:
       intel.feature.node.kubernetes.io/gpu: "true"
+    podSecurityContext:
+      supplementalGroups: [44, 109] # Extra groups for access to hardware encode/decode
     env:
       ADVERTISE_IP: https://plex.${cluster_ext_domain}/
     persistence:
