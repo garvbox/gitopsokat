@@ -48,6 +48,11 @@ metadata:
   namespace: default
 spec:
   values:
+    resources:
+      requests:
+        gpu.intel.com/i915: 1
+      limits:
+        gpu.intel.com/i915: 1
     env:
       ADVERTISE_IP: https://plex.${cluster_ext_domain}/
     persistence:
