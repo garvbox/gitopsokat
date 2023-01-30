@@ -26,4 +26,4 @@ spec:
     keepHistory: false
   values:
     name: intel-gpu-plugin
-    nodeFeatureRule: false
+    nodeFeatureRule: true

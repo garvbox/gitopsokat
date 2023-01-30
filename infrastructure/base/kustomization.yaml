@@ -8,3 +8,4 @@ resources:
   - discord-notifications.yaml
   - cert-manager
   - ingress-nginx
+  - node-feature-discovery
