@@ -22,6 +22,9 @@ spec:
       TZ: "Europe/Dublin"
       MEM_LIMIT: 1024
       MEM_STARTUP: 512
+    probes:
+      liveness:
+        enabled: false
     service:
       main:
         ports:
