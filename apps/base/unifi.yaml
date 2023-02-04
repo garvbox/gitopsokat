@@ -41,7 +41,7 @@ spec:
         ports:
           http:
             port: 8443
-            protocol: HTTPS
+            protocol: TCP
           stun:
             enabled: true
             port: 3478
@@ -60,6 +60,7 @@ spec:
         ingressClassName: nginx
         annotations:
           nginx.ingress.kubernetes.io/whitelist-source-range: ${wl_source_range}
+          nginx.ingress.kubernetes.io/backend-protocol: HTTPS
         hosts:
           - host: unifi.${cluster_ext_domain}
             paths:
