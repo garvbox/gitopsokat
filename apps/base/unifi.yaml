@@ -27,12 +27,12 @@ spec:
         enabled: false
     service:
       main:
+        primary: true
         ports:
-          main:
-            enabled: true
+          http:
             port: 8443
             protocol: TCP
-          ap-comms:
+          inform:
             enabled: true
             port: 8080
             protocol: TCP
@@ -43,7 +43,6 @@ spec:
     ingress:
       main:
         enabled: true
-        primary: true
         ingressClassName: nginx
         annotations:
           nginx.ingress.kubernetes.io/whitelist-source-range: ${wl_source_range}
