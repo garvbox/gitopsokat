@@ -39,7 +39,7 @@ metadata:
   name: whoami
   namespace: default
   annotations:
-    nginx.ingress.kubernetes.io/whitelist-source-range: 192.168.0.0/16,10.0.0.0/8
+    nginx.ingress.kubernetes.io/whitelist-source-range: ${wl_source_range}
 spec:
   ingressClassName: nginx
   rules:
