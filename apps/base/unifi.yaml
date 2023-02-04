@@ -45,7 +45,7 @@ spec:
           stun:
             enabled: true
             port: 3478
-            protocol: TCP
+            protocol: UDP
           ap-disco:
             enabled: true
             port: 10001
