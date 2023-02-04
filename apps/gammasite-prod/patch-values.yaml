@@ -124,6 +124,14 @@ spec:
         existingClaim: videos-archive-pvc
     service:
       syncthing:
+        enabled: true
+        type: LoadBalancer
+        externalTrafficPolicy: Local
+        ports:
+          sync:
+            enabled: true
+            port: 22000
+            protocol: TCP
         annotations:
           metallb.universe.tf/loadBalancerIPs: ${metallb_ip_syncthing}
 ---

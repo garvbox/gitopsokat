@@ -33,15 +33,6 @@ spec:
         ports:
           http:
             port: 8384
-      syncthing:
-        enabled: true
-        type: LoadBalancer
-        externalTrafficPolicy: Local
-        ports:
-          sync:
-            enabled: true
-            port: 22000
-            protocol: TCP
     ingress:
       main:
         enabled: true
