@@ -34,14 +34,23 @@ spec:
       MEM_STARTUP: 512
     service:
       main:
+        enabled: false
+      unifi-tcp:
         type: LoadBalancer
         externalTrafficPolicy: Local
-        annotations:
-          metallb.universe.tf/loadBalancerIPs: ${metallb_ip_unifi}
         ports:
-          http:
+          ui:
+            enabled: true
             port: 8443
             protocol: TCP
+          ap-comms:
+            enabled: true
+            port: 8080
+            protocol: TCP
+      unifi-udp:
+        type: LoadBalancer
+        externalTrafficPolicy: Local
+        ports:
           stun:
             enabled: true
             port: 3478
@@ -50,13 +59,10 @@ spec:
             enabled: true
             port: 10001
             protocol: UDP
-          ap-comms:
-            enabled: true
-            port: 8080
-            protocol: TCP
     ingress:
-      main:
+      unifi-tcp:
         enabled: true
+        primary: true
         ingressClassName: nginx
         annotations:
           nginx.ingress.kubernetes.io/whitelist-source-range: ${wl_source_range}

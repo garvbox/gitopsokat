@@ -126,3 +126,20 @@ spec:
       syncthing:
         annotations:
           metallb.universe.tf/loadBalancerIPs: ${metallb_ip_syncthing}
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: unifi-controller
+  namespace: default
+spec:
+  values:
+    service:
+      unifi-tcp:
+        annotations:
+          metallb.universe.tf/loadBalancerIPs: ${metallb_ip_unifi}
+          metallb.universe.tf/allow-shared-ip: "380970f7-d64f-4ae8-9c64-ff839a6b1b0e"
+      unifi-udp:
+        annotations:
+          metallb.universe.tf/loadBalancerIPs: ${metallb_ip_unifi}
+          metallb.universe.tf/allow-shared-ip: "380970f7-d64f-4ae8-9c64-ff839a6b1b0e"

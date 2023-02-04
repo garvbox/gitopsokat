@@ -22,6 +22,6 @@ resources:
   # - ../base/autodl-scheduler.yaml
   # - ../base/factorio.yaml
 patchesStrategicMerge:
-  - media-patch-values.yaml
+  - patch-values.yaml
   - ./unpackerr/patch-values.yaml
   # - ./factorio/patch-values.yaml
