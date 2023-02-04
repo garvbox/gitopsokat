@@ -42,15 +42,15 @@ spec:
           http:
             port: 8443
             protocol: TCP
-          unifi-stun:
+          stun:
             enabled: true
             port: 3478
             protocol: TCP
-          unifi-ap-discovery:
+          ap-disco:
             enabled: true
             port: 10001
             protocol: UDP
-          unifi-ap-comms:
+          ap-comms:
             enabled: true
             port: 8080
             protocol: TCP
