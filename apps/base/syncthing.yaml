@@ -38,18 +38,10 @@ spec:
         type: LoadBalancer
         externalTrafficPolicy: Local
         ports:
-          listen-tcp:
+          sync:
             enabled: true
             port: 22000
             protocol: TCP
-          listen-udp:
-            enabled: true
-            port: 22000
-            protocol: UDP
-          discovery:
-            enabled: true
-            port: 21027
-            protocol: UDP
     ingress:
       main:
         enabled: true
