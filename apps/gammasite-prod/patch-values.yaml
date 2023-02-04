@@ -123,17 +123,17 @@ spec:
         readOnly: false
         existingClaim: videos-archive-pvc
     service:
-      syncthing:
+      main:
+        annotations:
+          metallb.universe.tf/loadBalancerIPs: ${metallb_ip_syncthing}
         enabled: true
-        type: LoadBalancer
         externalTrafficPolicy: Local
+        type: LoadBalancer
         ports:
           sync:
             enabled: true
             port: 22000
             protocol: TCP
-        annotations:
-          metallb.universe.tf/loadBalancerIPs: ${metallb_ip_syncthing}
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
