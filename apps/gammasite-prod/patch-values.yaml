@@ -143,11 +143,8 @@ metadata:
 spec:
   values:
     service:
-      unifi-tcp:
+      main:
+        type: LoadBalancer
+        externalTrafficPolicy: Local
         annotations:
           metallb.universe.tf/loadBalancerIPs: ${metallb_ip_unifi}
-          metallb.universe.tf/allow-shared-ip: "380970f7-d64f-4ae8-9c64-ff839a6b1b0e"
-      unifi-udp:
-        annotations:
-          metallb.universe.tf/loadBalancerIPs: ${metallb_ip_unifi}
-          metallb.universe.tf/allow-shared-ip: "380970f7-d64f-4ae8-9c64-ff839a6b1b0e"

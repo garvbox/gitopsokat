@@ -34,12 +34,8 @@ spec:
       MEM_STARTUP: 512
     service:
       main:
-        enabled: false
-      unifi-tcp:
-        type: LoadBalancer
-        externalTrafficPolicy: Local
         ports:
-          ui:
+          main:
             enabled: true
             port: 8443
             protocol: TCP
@@ -47,20 +43,12 @@ spec:
             enabled: true
             port: 8080
             protocol: TCP
-      unifi-udp:
-        type: LoadBalancer
-        externalTrafficPolicy: Local
-        ports:
-          stun:
-            enabled: true
-            port: 3478
-            protocol: UDP
           ap-disco:
             enabled: true
             port: 10001
             protocol: UDP
     ingress:
-      unifi-tcp:
+      main:
         enabled: true
         primary: true
         ingressClassName: nginx
