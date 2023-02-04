@@ -41,7 +41,7 @@ spec:
         ports:
           http:
             port: 8443
-            protocol: TCP
+            protocol: HTTPS
           stun:
             enabled: true
             port: 3478
