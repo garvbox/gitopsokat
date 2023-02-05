@@ -4,7 +4,6 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - gh-garvbox-secrets.yaml
-  - homeassistant-ext-services.yaml
   - ./unpackerr/config-secret.yaml
   - ../sources
   - ../base/grafana.yaml
@@ -18,6 +17,7 @@ resources:
   - ../base/plexmediaserver.yaml
   - ../base/syncthing.yaml
   - ../base/unifi.yaml
+  - ../base/homeassistant.yaml
 patchesStrategicMerge:
   - patch-values.yaml
   - ./unpackerr/patch-values.yaml
