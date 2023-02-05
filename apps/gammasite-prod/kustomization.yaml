@@ -18,6 +18,7 @@ resources:
   - ../base/syncthing.yaml
   - ../base/unifi.yaml
   - ../base/homeassistant.yaml
+  - ../base/mosquitto.yaml
 patchesStrategicMerge:
   - patch-values.yaml
   - ./unpackerr/patch-values.yaml
