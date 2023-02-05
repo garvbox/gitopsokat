@@ -29,9 +29,6 @@ spec:
     image:
       repository: ghcr.io/onedr0p/plex-beta
       tag: 1.31.0.6654-02189b09f
-    probes:
-      liveness:
-        enabled: false
     env:
       TZ: "Europe/Dublin"
       ADVERTISE_IP: "https://plex.${cluster_ext_domain}/"

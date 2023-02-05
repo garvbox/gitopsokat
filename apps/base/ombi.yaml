@@ -29,9 +29,6 @@ spec:
     image:
       repository: ghcr.io/onedr0p/ombi
       tag: 4.22.5
-    probes:
-      liveness:
-        enabled: false
     env:
       TZ: "Europe/Dublin"
     podSecurityContext:

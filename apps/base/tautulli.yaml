@@ -31,9 +31,6 @@ spec:
       tag: 2.11.1
     env:
       TZ: "Europe/Dublin"
-    probes:
-      liveness:
-        enabled: false
     service:
       main:
         ports:

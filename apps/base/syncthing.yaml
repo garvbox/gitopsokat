@@ -29,9 +29,6 @@ spec:
     image:
       repository: syncthing/syncthing
       tag: 1.23.0
-    probes:
-      liveness:
-        enabled: false
     env:
       TZ: "Europe/Dublin"
     podSecurityContext:

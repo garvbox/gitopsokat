@@ -29,9 +29,6 @@ spec:
     image:
       repository: ghcr.io/onedr0p/radarr
       tag: 4.3.2.6857
-    probes:
-      liveness:
-        enabled: false
     env:
       TZ: "Europe/Dublin"
     podSecurityContext:
