@@ -17,6 +17,7 @@ spec:
   maxHistory: 3
   install:
     crds: CreateReplace
+    createNamespace: true
     remediation:
       retries: 3
   upgrade:

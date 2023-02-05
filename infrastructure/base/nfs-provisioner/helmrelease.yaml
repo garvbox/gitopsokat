@@ -14,6 +14,17 @@ spec:
         kind: HelmRepository
         name: nfs-provisioner-charts
         namespace: flux-system
+  maxHistory: 3
+  install:
+    createNamespace: true
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      retries: 3
+  uninstall:
+    keepHistory: false
   values:
     storageClass:
       name: ${default_provisioner_scname}

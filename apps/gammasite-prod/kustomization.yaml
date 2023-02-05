@@ -6,8 +6,7 @@ resources:
   - gh-garvbox-secrets.yaml
   - homeassistant-ext-services.yaml
   - ./unpackerr/config-secret.yaml
-  # - ./factorio/server-config-secret.yaml
-  - ../base/sources
+  - ../sources
   - ../base/grafana.yaml
   - ../base/tautulli.yaml
   - ../base/jackett.yaml
@@ -19,9 +18,6 @@ resources:
   - ../base/plexmediaserver.yaml
   - ../base/syncthing.yaml
   - ../base/unifi.yaml
-  # - ../base/autodl-scheduler.yaml
-  # - ../base/factorio.yaml
 patchesStrategicMerge:
   - patch-values.yaml
   - ./unpackerr/patch-values.yaml
-  # - ./factorio/patch-values.yaml
