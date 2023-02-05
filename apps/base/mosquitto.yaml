@@ -29,7 +29,10 @@ spec:
     image:
       repository: eclipse-mosquitto
       tag: 2.0.14
-    command: mosquitto -c /mosquitto-no-auth.conf
+    command:
+      - mosquitto
+      - -c
+      - /mosquitto-no-auth.conf
     env:
       TZ: "Europe/Dublin"
     service:
