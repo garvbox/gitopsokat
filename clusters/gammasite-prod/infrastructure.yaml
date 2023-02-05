@@ -35,6 +35,7 @@ spec:
       metallb_ip_factorio: 192.168.0.63
       metallb_ip_syncthing: 192.168.0.64
       metallb_ip_unifi: 192.168.0.65
+      metallb_ip_mqtt: 192.168.0.66
       wl_source_range: 192.168.0.0/16,10.0.0.0/8
       cluster_ext_domain: gammasite.garvbox.net
       cluster_int_domain: kube.gammasite.lan

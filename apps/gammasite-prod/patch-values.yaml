@@ -148,3 +148,17 @@ spec:
         externalTrafficPolicy: Local
         annotations:
           metallb.universe.tf/loadBalancerIPs: ${metallb_ip_unifi}
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: mosquitto
+  namespace: default
+spec:
+  values:
+    service:
+      main:
+        type: LoadBalancer
+        externalTrafficPolicy: Local
+        annotations:
+          metallb.universe.tf/loadBalancerIPs: ${metallb_ip_mqtt}
