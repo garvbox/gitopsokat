@@ -45,3 +45,9 @@ spec:
             primary: true
             port: 1883
             protocol: TCP
+    # Disable connections spamming mqtt logs
+    probes:
+      liveness:
+        enabled: false
+      readiness:
+        enabled: false
