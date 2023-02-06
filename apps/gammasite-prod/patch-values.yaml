@@ -19,27 +19,6 @@ spec:
         enabled: true
         readOnly: false
         existingClaim: downloads-pvc
-      backups:
-        enabled: true
-        type: custom
-        volumeSpec:
-          storageClassName: local-datapool
-          capacity:
-            storage: 1Mi
-          accessModes:
-            - ReadWriteOnce
-          volumeMode: Filesystem
-          persistentVolumeReclaimPolicy: Retain
-          local:
-            path: "/datapool/backups"
-          nodeAffinity:
-            required:
-              nodeSelectorTerms:
-                - matchExpressions:
-                    - key: kubernetes.io/hostname
-                      operator: In
-                      values:
-                        - gammatron
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
