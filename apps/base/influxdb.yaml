@@ -28,7 +28,7 @@ spec:
   values:
     image:
       repository: influxdb
-      tag: 1.8.9
+      tag: 2.6.1
     env:
       TZ: "Europe/Dublin"
     service:
