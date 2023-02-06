@@ -27,8 +27,8 @@ spec:
     keepHistory: false
   values:
     image:
-      repository: ghcr.io/onedr0p/radarr
-      tag: 4.3.2.6857
+      repository: ghcr.io/onedr0p/radarr-develop
+      tag: 4.4.0.6882
     env:
       TZ: "Europe/Dublin"
     podSecurityContext:

@@ -27,10 +27,15 @@ spec:
     keepHistory: false
   values:
     image:
-      repository: ghcr.io/onedr0p/sonarr
-      tag: 3.0.9.1549
+      repository: ghcr.io/onedr0p/sonarr-develop
+      tag: 4.0.0.366
     env:
       TZ: "Europe/Dublin"
+    service:
+      main:
+        ports:
+          http:
+            port: &port 8989
     probes:
       liveness: &probes
         enabled: true
@@ -38,7 +43,7 @@ spec:
         spec:
           httpGet:
             path: /ping
-            port: 8989
+            port: *port
           initialDelaySeconds: 0
           periodSeconds: 10
           timeoutSeconds: 1
@@ -51,11 +56,6 @@ spec:
       runAsGroup: 6666
       fsGroup: 6666
       fsGroupChangePolicy: "OnRootMismatch"
-    service:
-      main:
-        ports:
-          http:
-            port: 8989
     ingress:
       main:
         enabled: true
