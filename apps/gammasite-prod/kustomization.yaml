@@ -19,6 +19,7 @@ resources:
   - ../base/unifi.yaml
   - ../base/homeassistant.yaml
   - ../base/mosquitto.yaml
+  - ../base/influxdb.yaml
 patchesStrategicMerge:
   - patch-values.yaml
   - ./unpackerr/patch-values.yaml
