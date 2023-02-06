@@ -6,6 +6,5 @@ resources:
   - ./discord-secrets.yaml
   - ./cf-secret.yaml
   - ./videos-pvs.yaml
-  - ./config-pv.yaml
   - ../base
   - ../base/intel-device-plugin
