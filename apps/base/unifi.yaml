@@ -28,7 +28,7 @@ spec:
   values:
     image:
       repository: lscr.io/linuxserver/unifi-controller
-      tag: 7.3.76
+      tag: 7.3.83
     env:
       TZ: "Europe/Dublin"
       MEM_LIMIT: 1024
