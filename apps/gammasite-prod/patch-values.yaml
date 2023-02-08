@@ -22,9 +22,7 @@ spec:
         readOnly: false
         existingClaim: downloads-pvc
       config:
-        type: hostPath
-        hostPath: ${host_path_base}/radarr-config
-        hostPathType: DirectoryOrCreate
+        existingClaim: radarr-config
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
