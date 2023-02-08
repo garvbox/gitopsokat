@@ -40,6 +40,20 @@ spec:
         enabled: true
         readOnly: false
         existingClaim: downloads-pvc
+      test:
+        type: custom
+        enabled: true
+        volumeSpec:
+          local:
+            path: /rocketpool/kube/pvs/test
+          nodeAffinity:
+            required:
+              nodeSelectorTerms:
+                - matchExpressions:
+                    - key: kubernetes.io/hostname
+                      operator: In
+                      values:
+                        - gammatron
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
