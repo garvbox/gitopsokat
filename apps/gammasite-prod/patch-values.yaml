@@ -244,3 +244,17 @@ spec:
     persistence:
       config:
         existingClaim: ombi-config
+
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: tautulli
+  namespace: default
+spec:
+  values:
+    nodeSelector:
+      kubernetes.io/hostname: gammatron
+    persistence:
+      config:
+        existingClaim: tautulli-config
