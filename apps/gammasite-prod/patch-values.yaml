@@ -148,6 +148,8 @@ spec:
         externalTrafficPolicy: Local
         annotations:
           metallb.universe.tf/loadBalancerIPs: ${metallb_ip_unifi}
+    nodeSelector:
+      kubernetes.io/hostname: gammatron
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
