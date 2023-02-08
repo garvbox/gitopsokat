@@ -72,17 +72,3 @@ spec:
         storageClass: "${default_provisioner_scname}"
         accessMode: ReadWriteOnce
         size: 10Gi
-      test:
-        type: custom
-        enabled: true
-        volumeSpec:
-          local:
-            path: /rocketpool/kube/pvs/test
-          nodeAffinity:
-            required:
-              nodeSelectorTerms:
-                - matchExpressions:
-                    - key: kubernetes.io/hostname
-                      operator: In
-                      values:
-                        - gammatron
