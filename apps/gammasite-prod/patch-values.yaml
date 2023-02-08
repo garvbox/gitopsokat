@@ -41,11 +41,10 @@ spec:
         readOnly: false
         existingClaim: downloads-pvc
       test:
-        type: custom
         enabled: true
-        volumeSpec:
-          local:
-            path: /rocketpool/kube/pvs/test
+        type: hostPath
+        hostPath: /rocketpool/kube/pvs/test
+        hostPathType: DirectoryOrCreate
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
