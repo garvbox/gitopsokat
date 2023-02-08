@@ -6,6 +6,8 @@ metadata:
   namespace: default
 spec:
   values:
+    nodeSelector:
+      kubernetes.io/hostname: gammatron
     persistence:
       videos:
         enabled: true
@@ -19,6 +21,10 @@ spec:
         enabled: true
         readOnly: false
         existingClaim: downloads-pvc
+      config:
+        type: hostPath
+        hostPath: ${host_path_base}/radarr-config
+        hostPathType: DirectoryOrCreate
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
@@ -27,6 +33,8 @@ metadata:
   namespace: default
 spec:
   values:
+    nodeSelector:
+      kubernetes.io/hostname: gammatron
     persistence:
       videos:
         enabled: true
@@ -40,6 +48,10 @@ spec:
         enabled: true
         readOnly: false
         existingClaim: downloads-pvc
+      config:
+        type: hostPath
+        hostPath: ${host_path_base}/sonarr-config
+        hostPathType: DirectoryOrCreate
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
@@ -55,6 +67,7 @@ spec:
         gpu.intel.com/i915: 1
     nodeSelector:
       intel.feature.node.kubernetes.io/gpu: "true"
+      kubernetes.io/hostname: gammatron
     podSecurityContext:
       supplementalGroups: [44, 109] # Extra groups for access to hardware encode/decode
     env:
@@ -68,6 +81,10 @@ spec:
         enabled: true
         readOnly: true
         existingClaim: videos-archive-pvc
+      config:
+        type: hostPath
+        hostPath: ${host_path_base}/plexmediaserver-config
+        hostPathType: DirectoryOrCreate
     service:
       main:
         type: LoadBalancer
@@ -82,12 +99,18 @@ metadata:
   namespace: default
 spec:
   values:
+    nodeSelector:
+      kubernetes.io/hostname: gammatron
     persistence:
       downloads:
         enabled: true
         readOnly: false
         existingClaim: downloads-pvc
         mountPath: /datapool/downloads
+      config:
+        type: hostPath
+        hostPath: ${host_path_base}/deluge-config
+        hostPathType: DirectoryOrCreate
     service:
       daemon:
         enabled: true
@@ -113,6 +136,8 @@ metadata:
   namespace: default
 spec:
   values:
+    nodeSelector:
+      kubernetes.io/hostname: gammatron
     persistence:
       videos:
         enabled: true
@@ -122,6 +147,10 @@ spec:
         enabled: true
         readOnly: false
         existingClaim: videos-archive-pvc
+      config:
+        type: hostPath
+        hostPath: ${host_path_base}/syncthing-config
+        hostPathType: DirectoryOrCreate
     service:
       main:
         annotations:
@@ -148,6 +177,11 @@ spec:
         externalTrafficPolicy: Local
         annotations:
           metallb.universe.tf/loadBalancerIPs: ${metallb_ip_unifi}
+    persistence:
+      config:
+        type: hostPath
+        hostPath: ${host_path_base}/unifi-controller-config
+        hostPathType: DirectoryOrCreate
     nodeSelector:
       kubernetes.io/hostname: gammatron
 ---
@@ -172,9 +206,61 @@ metadata:
   namespace: default
 spec:
   values:
+    nodeSelector:
+      kubernetes.io/hostname: gammatron
     service:
       main:
         type: LoadBalancer
         externalTrafficPolicy: Local
         annotations:
           metallb.universe.tf/loadBalancerIPs: ${metallb_ip_influx}
+    persistence:
+      influxdata:
+        type: hostPath
+        hostPath: ${host_path_base}/influxdb-influxdata
+        hostPathType: DirectoryOrCreate
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: homeassistant
+  namespace: default
+spec:
+  values:
+    nodeSelector:
+      kubernetes.io/hostname: gammatron
+    persistence:
+      config:
+        type: hostPath
+        hostPath: ${host_path_base}/homeassistant-config
+        hostPathType: DirectoryOrCreate
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: jackett
+  namespace: default
+spec:
+  values:
+    nodeSelector:
+      kubernetes.io/hostname: gammatron
+    persistence:
+      config:
+        type: hostPath
+        hostPath: ${host_path_base}/jackett-config
+        hostPathType: DirectoryOrCreate
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: ombi
+  namespace: default
+spec:
+  values:
+    nodeSelector:
+      kubernetes.io/hostname: gammatron
+    persistence:
+      config:
+        type: hostPath
+        hostPath: ${host_path_base}/ombi-config
+        hostPathType: DirectoryOrCreate

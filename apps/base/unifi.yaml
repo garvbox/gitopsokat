@@ -67,6 +67,5 @@ spec:
       config:
         enabled: true
         type: pvc
-        storageClass: "${default_provisioner_scname}"
         accessMode: ReadWriteOnce
         size: 10Gi

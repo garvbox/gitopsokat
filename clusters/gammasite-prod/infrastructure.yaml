@@ -41,6 +41,7 @@ spec:
       cluster_ext_domain: gammasite.garvbox.net
       cluster_int_domain: kube.gammasite.lan
       default_provisioner_scname: local-path
+      host_path_base: /rocketpool/kube/pvs
       admin_email: gonarvib@protonmail.com
       le_url: https://acme-v02.api.letsencrypt.org/directory
 ---

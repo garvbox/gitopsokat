@@ -41,6 +41,5 @@ spec:
         enabled: true
         type: pvc
         mountPath: /var/lib/influxdb
-        storageClass: "${default_provisioner_scname}"
         accessMode: ReadWriteOnce
         size: 25G
