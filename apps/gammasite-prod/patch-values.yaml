@@ -47,9 +47,7 @@ spec:
         readOnly: false
         existingClaim: downloads-pvc
       config:
-        type: hostPath
-        hostPath: ${host_path_base}/sonarr-config
-        hostPathType: DirectoryOrCreate
+        existingClaim: sonarr-config
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
@@ -80,9 +78,7 @@ spec:
         readOnly: true
         existingClaim: videos-archive-pvc
       config:
-        type: hostPath
-        hostPath: ${host_path_base}/plexmediaserver-config
-        hostPathType: DirectoryOrCreate
+        existingClaim: plexmediaserver-config
     service:
       main:
         type: LoadBalancer
@@ -106,9 +102,7 @@ spec:
         existingClaim: downloads-pvc
         mountPath: /datapool/downloads
       config:
-        type: hostPath
-        hostPath: ${host_path_base}/deluge-config
-        hostPathType: DirectoryOrCreate
+        existingClaim: deluge-config
     service:
       daemon:
         enabled: true
@@ -146,9 +140,7 @@ spec:
         readOnly: false
         existingClaim: videos-archive-pvc
       config:
-        type: hostPath
-        hostPath: ${host_path_base}/syncthing-config
-        hostPathType: DirectoryOrCreate
+        existingClaim: syncthing-config
     service:
       main:
         annotations:
@@ -177,9 +169,7 @@ spec:
           metallb.universe.tf/loadBalancerIPs: ${metallb_ip_unifi}
     persistence:
       config:
-        type: hostPath
-        hostPath: ${host_path_base}/unifi-controller-config
-        hostPathType: DirectoryOrCreate
+        existingClaim: unifi-controller-config
     nodeSelector:
       kubernetes.io/hostname: gammatron
 ---
@@ -214,9 +204,7 @@ spec:
           metallb.universe.tf/loadBalancerIPs: ${metallb_ip_influx}
     persistence:
       influxdata:
-        type: hostPath
-        hostPath: ${host_path_base}/influxdb-influxdata
-        hostPathType: DirectoryOrCreate
+        existingClaim: influxdb-influxdata
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
@@ -229,9 +217,7 @@ spec:
       kubernetes.io/hostname: gammatron
     persistence:
       config:
-        type: hostPath
-        hostPath: ${host_path_base}/homeassistant-config
-        hostPathType: DirectoryOrCreate
+        existingClaim: homeassistant-config
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
@@ -244,9 +230,7 @@ spec:
       kubernetes.io/hostname: gammatron
     persistence:
       config:
-        type: hostPath
-        hostPath: ${host_path_base}/jackett-config
-        hostPathType: DirectoryOrCreate
+        existingClaim: jackett-config
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
@@ -259,6 +243,4 @@ spec:
       kubernetes.io/hostname: gammatron
     persistence:
       config:
-        type: hostPath
-        hostPath: ${host_path_base}/ombi-config
-        hostPathType: DirectoryOrCreate
+        existingClaim: ombi-config
