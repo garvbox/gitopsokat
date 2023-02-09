@@ -41,7 +41,3 @@ spec:
       pathType: Prefix
     persistence:
       enabled: true
-      storageClass: "${default_provisioner_scname}"
-      nextcloudData:
-        enabled: true
-        storageClass: "${default_provisioner_scname}"

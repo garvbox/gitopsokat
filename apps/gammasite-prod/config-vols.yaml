@@ -153,7 +153,6 @@ spec:
   resources:
     requests:
       storage: 1Mi
-
 ---
 apiVersion: v1
 kind: PersistentVolume
@@ -231,7 +230,6 @@ spec:
   resources:
     requests:
       storage: 1Mi
-
 ---
 apiVersion: v1
 kind: PersistentVolume
@@ -270,7 +268,6 @@ spec:
   resources:
     requests:
       storage: 1Mi
-
 ---
 apiVersion: v1
 kind: PersistentVolume
@@ -309,7 +306,6 @@ spec:
   resources:
     requests:
       storage: 1Mi
-
 ---
 apiVersion: v1
 kind: PersistentVolume
@@ -348,7 +344,6 @@ spec:
   resources:
     requests:
       storage: 1Mi
-
 ---
 apiVersion: v1
 kind: PersistentVolume
@@ -387,7 +382,6 @@ spec:
   resources:
     requests:
       storage: 1Mi
-
 ---
 apiVersion: v1
 kind: PersistentVolume
@@ -423,6 +417,82 @@ spec:
     - ReadWriteOnce
   storageClassName: local-rocketpool
   volumeName: tautulli-config-pv
+  resources:
+    requests:
+      storage: 1Mi
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nextcloud-config-pv
+  namespace: default
+spec:
+  storageClassName: local-rocketpool
+  capacity:
+    storage: 1Mi
+  accessModes:
+    - ReadWriteOnce
+  volumeMode: Filesystem
+  persistentVolumeReclaimPolicy: Retain
+  local:
+    path: ${host_path_base}/nextcloud-config
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - gammatron
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: nextcloud-config
+  namespace: default
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: local-rocketpool
+  volumeName: nextcloud-config-pv
+  resources:
+    requests:
+      storage: 1Mi
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nextcloud-data-pv
+  namespace: default
+spec:
+  storageClassName: local-rocketpool
+  capacity:
+    storage: 1Mi
+  accessModes:
+    - ReadWriteOnce
+  volumeMode: Filesystem
+  persistentVolumeReclaimPolicy: Retain
+  local:
+    path: ${host_path_base}/nextcloud-data
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - gammatron
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: nextcloud-data
+  namespace: default
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: local-rocketpool
+  volumeName: nextcloud-data-pv
   resources:
     requests:
       storage: 1Mi
