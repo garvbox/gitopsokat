@@ -473,7 +473,7 @@ spec:
   volumeMode: Filesystem
   persistentVolumeReclaimPolicy: Retain
   local:
-    path: ${host_path_base}/nextcloud-data
+    path: /datapool/nextcloud
   nodeAffinity:
     required:
       nodeSelectorTerms:
