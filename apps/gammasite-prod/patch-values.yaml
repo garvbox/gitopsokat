@@ -271,3 +271,13 @@ spec:
       nextcloudData:
         enabled: true
         existingClaim: nextcloud-data
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: grafana
+  namespace: default
+spec:
+  values:
+    persistence:
+      existingClaim: grafana-config

@@ -32,7 +32,6 @@ spec:
     persistence:
       enabled: true
       type: pvc
-      storageClass: "${default_provisioner_scname}"
       size: 5Gi
     ingress:
       enabled: true
