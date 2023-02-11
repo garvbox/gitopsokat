@@ -45,6 +45,9 @@ spec:
       main:
         enabled: true
         ingressClassName: nginx
+        annotations:
+          hajimari.io/icon: |
+            https://raw.githubusercontent.com/Ombi-app/Ombi/gh-pages/img/android-chrome-512x512.png
         hosts:
           - host: ombi.${cluster_ext_domain}
             paths:

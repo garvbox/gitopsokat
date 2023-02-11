@@ -29,7 +29,6 @@ spec:
     env:
       TZ: Europe/Dublin
     hajimari:
-      title: Apps
       darkTheme: tron
       lightTheme: cloud
       alwaysTargetBlank: true

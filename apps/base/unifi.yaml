@@ -58,6 +58,7 @@ spec:
         annotations:
           nginx.ingress.kubernetes.io/whitelist-source-range: ${wl_source_range}
           nginx.ingress.kubernetes.io/backend-protocol: HTTPS
+          hajimari.io/icon: arcticons:unifi-network
         hosts:
           - host: unifi.${cluster_ext_domain}
             paths:

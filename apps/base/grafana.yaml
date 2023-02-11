@@ -40,3 +40,5 @@ spec:
         - grafana.${cluster_ext_domain}
       path: "/"
       pathType: Prefix
+      annotations:
+        hajimari.io/icon: simple-icons:grafana
