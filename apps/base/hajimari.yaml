@@ -32,6 +32,7 @@ spec:
       darkTheme: tron
       lightTheme: cloud
       alwaysTargetBlank: true
+      showGreeting: false
       showBookmarkGroups: false
       showGlobalBookmarks: false
       showAppUrls: false
