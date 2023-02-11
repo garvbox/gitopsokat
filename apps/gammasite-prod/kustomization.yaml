@@ -22,6 +22,7 @@ resources:
   - ../base/mosquitto.yaml
   - ../base/influxdb.yaml
   - ../base/nextcloud.yaml
+  - ../base/hajimari.yaml
 patchesStrategicMerge:
   - patch-values.yaml
   - ./unpackerr/patch-values.yaml
