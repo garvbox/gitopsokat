@@ -33,6 +33,7 @@ spec:
       lightTheme: cloud
       alwaysTargetBlank: true
       showGreeting: false
+      showBookmarks: false
       showBookmarkGroups: false
       showGlobalBookmarks: false
       showAppUrls: false
