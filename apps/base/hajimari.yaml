@@ -30,15 +30,14 @@ spec:
       TZ: Europe/Dublin
     hajimari:
       title: Apps
-      darkTheme: espresso
+      darkTheme: tron
+      lightTheme: cloud
       alwaysTargetBlank: true
-      showGreeting: false
-      showAppGroups: false
-      showAppStatus: false
       showBookmarkGroups: false
       showGlobalBookmarks: false
       showAppUrls: false
       defaultEnable: true
+      defaultSearchProvider: DuckDuckGo
       namespaceSelector:
         matchNames:
           - default
