@@ -27,8 +27,8 @@ spec:
     keepHistory: false
   values:
     image:
-      repository: ghcr.io/onedr0p/ombi
-      tag: 4.22.5
+      repository: lscr.io/linuxserver/ombi
+      tag: 4.35.10
     env:
       TZ: "Europe/Dublin"
     podSecurityContext:
