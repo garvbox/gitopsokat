@@ -31,11 +31,6 @@ spec:
       tag: 4.35.10
     env:
       TZ: "Europe/Dublin"
-    podSecurityContext:
-      runAsUser: 6666
-      runAsGroup: 6666
-      fsGroup: 6666
-      fsGroupChangePolicy: "OnRootMismatch"
     service:
       main:
         ports:
