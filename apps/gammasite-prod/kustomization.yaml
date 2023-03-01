@@ -10,6 +10,7 @@ resources:
   - ../base/grafana.yaml
   - ../base/tautulli.yaml
   - ../base/jackett.yaml
+  - ../base/prowlarr.yaml
   - ../base/radarr.yaml
   - ../base/sonarr.yaml
   - ../base/unpackerr.yaml
