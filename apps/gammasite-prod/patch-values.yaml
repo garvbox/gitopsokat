@@ -221,19 +221,6 @@ spec:
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: jackett
-  namespace: default
-spec:
-  values:
-    nodeSelector:
-      kubernetes.io/hostname: gammatron
-    persistence:
-      config:
-        existingClaim: jackett-config
----
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
-kind: HelmRelease
-metadata:
   name: prowlarr
   namespace: default
 spec:
