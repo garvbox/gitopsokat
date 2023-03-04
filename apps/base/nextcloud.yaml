@@ -29,13 +29,12 @@ spec:
     nextcloud:
       host: nextcloud.${cluster_ext_domain}
       configs:
-        configs:
-          file-size.config.php: |-
-            <?php
-            $CONFIG = array (
-              'upload_max_filesize' => '10G',
-              'post_max_size' => '10G',
-            );
+        filesize.config.php: |-
+          <?php
+          $CONFIG = array (
+            'upload_max_filesize' => '10G',
+            'post_max_size' => '10G',
+          );
     phpClientHttpsFix:
       enabled: true
       protocol: https
