@@ -33,7 +33,7 @@ spec:
           <?php
           $CONFIG = array (
             'upload_max_filesize' => '10G',
-            'post_max_size' => '10G',
+            'post_max_size' => '10G'
           );
     phpClientHttpsFix:
       enabled: true
