@@ -9,4 +9,3 @@ resources:
   - cert-manager
   - ingress-nginx
   - node-feature-discovery
-  - weave-gitops
