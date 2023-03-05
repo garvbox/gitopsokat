@@ -28,9 +28,10 @@ spec:
   values:
     nextcloud:
       host: nextcloud.${cluster_ext_domain}
-    extraEnv:
-      - name: PHP_UPLOAD_LIMIT
-        value: 10G
+      phpConfigs:
+        override_max_file_size.ini: |-
+          upload_max_filesize=10G
+          post_max_size=10G
     phpClientHttpsFix:
       enabled: true
       protocol: https
