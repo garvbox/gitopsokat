@@ -9,3 +9,4 @@ resources:
   - cert-manager
   - ingress-nginx
   - node-feature-discovery
+  - cloudnative-pg
