@@ -39,7 +39,7 @@ spec:
       hosts:
         - host: gitops.${cluster_ext_domain}
           paths:
-            - path: /
+            - path: "/"
               pathType: Prefix
     networkPolicy:
       create: false
