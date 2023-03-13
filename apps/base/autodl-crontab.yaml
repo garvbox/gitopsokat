@@ -12,8 +12,7 @@ spec:
       template:
         spec:
           containers:
-            - name: autodl-cleanup
-              image: ghcr.io/garvbox/autodl:v0.1.0
+            - image: ghcr.io/garvbox/autodl:v0.1.0
               env:
                 - name: DELUGE_CLIENT_USERNAME
                   valueFrom:
@@ -26,7 +25,7 @@ spec:
                       name: deluge-client-secret
                       key: deluge-password
                 - name: DELUGE_CLIENT_HOST
-                  value: deluge-daemon.default.{cluster_int_domain}
+                  value: deluge-daemon.default.${cluster_int_domain}
                 - name: DELUGE_CLIENT_PORT
                   value: "58846"
           imagePullSecrets:
