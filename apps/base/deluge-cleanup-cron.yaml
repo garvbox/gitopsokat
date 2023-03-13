@@ -2,7 +2,7 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: autodl-cleanup
+  name: deluge-cleanup
   namespace: default
 spec:
   schedule: "@daily"
@@ -11,8 +11,10 @@ spec:
     spec:
       template:
         spec:
+          restartPolicy: OnFailure
           containers:
-            - image: ghcr.io/garvbox/autodl:v0.1.0
+            - name: deluge-cleanup
+              image: ghcr.io/garvbox/autodl:v0.1.0
               env:
                 - name: DELUGE_CLIENT_USERNAME
                   valueFrom:

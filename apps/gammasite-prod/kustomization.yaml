@@ -24,7 +24,7 @@ resources:
   - ../base/influxdb.yaml
   - ../base/nextcloud.yaml
   - ../base/hajimari.yaml
-  - ../base/autodl-crontab.yaml
+  - ../base/deluge-cleanup-cron.yaml
 patchesStrategicMerge:
   - patch-values.yaml
   - ./unpackerr/patch-values.yaml
