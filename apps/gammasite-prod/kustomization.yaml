@@ -4,6 +4,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - gh-garvbox-secrets.yaml
+  - deluge-client-secret.yaml
   - ./config-vols.yaml
   - ./unpackerr/config-secret.yaml
   - ../sources
@@ -23,6 +24,7 @@ resources:
   - ../base/influxdb.yaml
   - ../base/nextcloud.yaml
   - ../base/hajimari.yaml
+  - ../base/autodl-crontab.yaml
 patchesStrategicMerge:
   - patch-values.yaml
   - ./unpackerr/patch-values.yaml
