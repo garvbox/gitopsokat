@@ -6,9 +6,9 @@ metadata:
   namespace: default
 spec:
   schedule: "@daily"
+  concurrencyPolicy: Forbid
   jobTemplate:
     spec:
-      concurrencyPolicy: Forbid
       template:
         spec:
           containers:
