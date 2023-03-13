@@ -1,0 +1,32 @@
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: autodl-cleanup
+spec:
+  schedule: "@daily"
+  jobTemplate:
+    spec:
+      concurrencyPolicy: Forbid
+      template:
+        spec:
+          containers:
+            - name: autodl-scheduler
+              image: ghcr.io/garvbox/autodl:v0.1.0
+          imagePullSecrets:
+            - name: github-garvbox-deploy
+          env:
+            - name: DELUGE_CLIENT_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: deluge-client-secret
+                  key: deluge-username
+            - name: DELUGE_CLIENT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: deluge-client-secret
+                  key: deluge-password
+            - name: DELUGE_CLIENT_HOST
+              value: deluge-daemon.default.{cluster_int_domain}
+            - name: DELUGE_CLIENT_PORT
+              value: 58846
