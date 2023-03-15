@@ -28,7 +28,7 @@ spec:
   values:
     image:
       repository: ghcr.io/onedr0p/plex-beta
-      tag: 1.31.2.6810-a607d384f
+      tag: 1.31.3.6819-2ef591a4c
     env:
       TZ: "Europe/Dublin"
       ADVERTISE_IP: "https://plex.${cluster_ext_domain}/"
