@@ -6,3 +6,5 @@ resources:
   - ./discord-secrets.yaml
   - ./cf-secret.yaml
   - ../base
+patchesStrategicMerge:
+  - ./postgres-patch-values.yaml
