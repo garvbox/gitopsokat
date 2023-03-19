@@ -33,7 +33,7 @@ spec:
       TZ: "Europe/Dublin"
       ADVERTISE_IP: "https://plex.${cluster_ext_domain}/"
       # PLEX_CLAIM:
-      PLEX_PREFERENCE_1: "LanNetworksBandwidth=192.168.0.0/16,10.0.0.0/16,172.16.0.0/12"
+      PLEX_PREFERENCE_1: "LanNetworksBandwidth=192.168.0.0/16,10.0.0.0/8,172.16.0.0/12"
       PLEX_PREFERENCE_2: "TranscoderQuality=0"
       PLEX_PREFERENCE_3: "TranscoderH264BackgroundPreset=fast"
     podSecurityContext:
