@@ -14,7 +14,7 @@ spec:
           restartPolicy: OnFailure
           containers:
             - name: deluge-cleanup
-              image: ghcr.io/garvbox/autodl:v0.2.1
+              image: ghcr.io/garvbox/autodl:v0.2.2
               env:
                 - name: DELUGE_CLIENT_USERNAME
                   valueFrom:
