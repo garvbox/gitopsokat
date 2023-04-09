@@ -23,25 +23,28 @@
   ],
   "packageRules": [
     {
-      "description": "Auto merge All image patches",
+      "description": "Auto apply All image patches",
       "matchDatasources": [
         "docker",
         "github-releases"
       ],
       "automerge": true,
+      "automergeType": "branch",
+      "ignoreTests": true,
       "matchUpdateTypes": [
         "patch"
       ]
     },
     {
-      "description": "Auto merge All Helm Patches and Minor Releases",
+      "description": "Auto apply All Helm Patches",
       "matchDatasources": [
         "helm"
       ],
       "automerge": true,
+      "automergeType": "branch",
+      "ignoreTests": true,
       "matchUpdateTypes": [
-        "patch",
-        "minor"
+        "patch"
       ]
     },
     {
@@ -52,6 +55,7 @@
       ]
     },
     {
+      "description": "Allow Plex loose package versions",
       "datasources": [
         "docker",
         "github-releases"
@@ -60,16 +64,6 @@
       "matchPackageNames": [
         "ghcr.io/onedr0p/plex",
         "ghcr.io/onedr0p/plex-beta"
-      ]
-    },
-    {
-      "description": "Limit Jackett updates to once a Week",
-      "matchPackageNames": [
-        "ghcr.io/onedr0p/jackett",
-        "grafana/grafana"
-      ],
-      "schedule": [
-        "after 6pm on Monday"
       ]
     },
     {
