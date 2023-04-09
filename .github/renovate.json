@@ -23,28 +23,36 @@
   ],
   "packageRules": [
     {
-      "description": "Auto apply All image patches",
+      "description": "Minor Patch Monday",
       "matchDatasources": [
         "docker",
-        "github-releases"
+        "github-releases",
+        "helm"
       ],
+      "groupName": "All Non-Major Deps",
+      "groupSlug": "all-minor-patch",
       "automerge": true,
-      "automergeType": "branch",
-      "ignoreTests": true,
       "matchUpdateTypes": [
-        "patch"
+        "patch",
+        "minor"
+      ],
+      "schedule": [
+        "after 6pm on Monday"
       ]
     },
     {
-      "description": "Auto apply All Helm Patches",
+      "description": "Major Update Tuesday",
       "matchDatasources": [
+        "docker",
+        "github-releases",
         "helm"
       ],
       "automerge": true,
-      "automergeType": "branch",
-      "ignoreTests": true,
       "matchUpdateTypes": [
-        "patch"
+        "major"
+      ],
+      "schedule": [
+        "after 6pm on Tuesday"
       ]
     },
     {
