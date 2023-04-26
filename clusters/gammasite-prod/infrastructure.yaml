@@ -32,7 +32,7 @@ spec:
       # These are only used in the apps kustomization but listed here to avoid duplication
       metallb_ip_deluge: 192.168.0.61
       metallb_ip_plex: 192.168.0.62
-      metallb_ip_hue: 192.168.0.63
+      metallb_ip_factorio: 192.168.0.63
       metallb_ip_syncthing: 192.168.0.64
       metallb_ip_unifi: 192.168.0.65
       metallb_ip_mqtt: 192.168.0.66
