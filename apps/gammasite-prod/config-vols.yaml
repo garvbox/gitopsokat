@@ -310,6 +310,44 @@ spec:
 apiVersion: v1
 kind: PersistentVolume
 metadata:
+  name: esphome-config-pv
+  namespace: default
+spec:
+  storageClassName: local-rocketpool
+  capacity:
+    storage: 1Mi
+  accessModes:
+    - ReadWriteOnce
+  volumeMode: Filesystem
+  persistentVolumeReclaimPolicy: Retain
+  local:
+    path: ${host_path_base}/esphome-config
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - gammatron
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: esphome-config
+  namespace: default
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: local-rocketpool
+  volumeName: esphome-config-pv
+  resources:
+    requests:
+      storage: 1Mi
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
   name: prowlarr-config-pv
   namespace: default
 spec:
