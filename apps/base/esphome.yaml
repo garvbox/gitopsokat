@@ -38,6 +38,7 @@ spec:
         enabled: false
     env:
       TZ: "Europe/Dublin"
+      ESPHOME_DASHBOARD_USE_PING: true
     service:
       main:
         ports:
