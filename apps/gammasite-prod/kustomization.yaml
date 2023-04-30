@@ -20,7 +20,6 @@ resources:
   - ../base/syncthing.yaml
   - ../base/unifi.yaml
   - ../base/homeassistant.yaml
-  - ../base/esphome.yaml
   - ../base/mosquitto.yaml
   - ../base/influxdb.yaml
   - ../base/nextcloud.yaml
