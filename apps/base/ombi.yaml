@@ -28,7 +28,7 @@ spec:
   values:
     image:
       repository: lscr.io/linuxserver/ombi
-      tag: 4.35.11
+      tag: 4.39.1
     env:
       TZ: "Europe/Dublin"
     service:
