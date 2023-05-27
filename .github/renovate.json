@@ -31,7 +31,7 @@
       ],
       "groupName": "All Non-Major Deps",
       "groupSlug": "all-minor-patch",
-      "automerge": true,
+      "automerge": false,
       "matchUpdateTypes": [
         "patch",
         "minor"
@@ -50,7 +50,7 @@
         "github-releases",
         "helm"
       ],
-      "automerge": true,
+      "automerge": false,
       "matchUpdateTypes": [
         "major"
       ],
