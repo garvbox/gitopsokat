@@ -37,7 +37,7 @@
         "minor"
       ],
       "schedule": [
-        "after 6pm every weekday"
+        "after 6pm on Monday, before 9pm on Money"
       ]
     },
     {
@@ -52,7 +52,7 @@
         "major"
       ],
       "schedule": [
-        "after 6pm on Tuesday"
+        "after 6pm on Tuesday, before 9pm on Tuesday"
       ]
     },
     {
