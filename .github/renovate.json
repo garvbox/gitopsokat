@@ -23,7 +23,7 @@
   ],
   "packageRules": [
     {
-      "description": "Minor Patch Monday",
+      "description": "Minor Patch Monday and Weekends",
       "matchDatasources": [
         "docker",
         "github-releases",
@@ -38,7 +38,9 @@
       ],
       "schedule": [
         "after 6pm on Monday",
-        "before 9pm on Money"
+        "before 9pm on Monday",
+        "after 9am every weekend",
+        "before 9pm every weekend"
       ]
     },
     {
