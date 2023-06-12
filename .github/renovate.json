@@ -23,24 +23,20 @@
   ],
   "packageRules": [
     {
-      "description": "Minor Patch Monday and Weekends",
+      "description": "Minor Patch Monday",
       "matchDatasources": [
         "docker",
         "github-releases",
         "helm"
       ],
-      "groupName": "All Non-Major Deps",
-      "groupSlug": "all-minor-patch",
-      "automerge": false,
+      "automerge": true,
       "matchUpdateTypes": [
         "patch",
         "minor"
       ],
       "schedule": [
         "after 6pm on Monday",
-        "before 9pm on Monday",
-        "after 9am every weekend",
-        "before 9pm every weekend"
+        "before 9pm on Monday"
       ]
     },
     {
