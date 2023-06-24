@@ -35,8 +35,7 @@
         "minor"
       ],
       "schedule": [
-        "after 6pm on Monday",
-        "before 9pm on Monday"
+        "after 6pm and before 9pm on Monday"
       ]
     },
     {
@@ -51,8 +50,7 @@
         "major"
       ],
       "schedule": [
-        "after 6pm on Tuesday",
-        "before 9pm on Tuesday"
+        "after 6pm and before 9pm on Tuesday"
       ]
     },
     {
