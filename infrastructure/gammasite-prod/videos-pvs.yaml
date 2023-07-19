@@ -39,46 +39,6 @@ spec:
     requests:
       storage: 1Mi
 ---
-# Datapool Videos Archive
-apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: local-videos-archive-pv
-  namespace: default
-spec:
-  storageClassName: local-datapool
-  capacity:
-    storage: 1Mi
-  accessModes:
-    - ReadWriteMany
-  volumeMode: Filesystem
-  persistentVolumeReclaimPolicy: Retain
-  local:
-    path: "/datapool/videos_archive"
-  nodeAffinity:
-    required:
-      nodeSelectorTerms:
-        - matchExpressions:
-            - key: kubernetes.io/hostname
-              operator: In
-              values:
-                - gammatron
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: videos-archive-pvc
-  namespace: default
-spec:
-  accessModes:
-    - ReadWriteMany
-  storageClassName: local-datapool
-  volumeName: local-videos-archive-pv
-  resources:
-    requests:
-      storage: 1Mi
-
----
 # Datapool Downloads
 apiVersion: v1
 kind: PersistentVolume

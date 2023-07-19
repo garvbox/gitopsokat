@@ -13,10 +13,6 @@ spec:
         enabled: true
         readOnly: false
         existingClaim: videos-pvc
-      videos-archive:
-        enabled: true
-        readOnly: false
-        existingClaim: videos-archive-pvc
       downloads:
         enabled: true
         readOnly: false
@@ -38,10 +34,6 @@ spec:
         enabled: true
         readOnly: false
         existingClaim: videos-pvc
-      videos-archive:
-        enabled: true
-        readOnly: false
-        existingClaim: videos-archive-pvc
       downloads:
         enabled: true
         readOnly: false
@@ -71,10 +63,6 @@ spec:
         enabled: true
         readOnly: true
         existingClaim: videos-pvc
-      videos-archive:
-        enabled: true
-        readOnly: true
-        existingClaim: videos-archive-pvc
       config:
         existingClaim: plexmediaserver-config
     service:
@@ -134,10 +122,6 @@ spec:
         enabled: true
         readOnly: false
         existingClaim: videos-pvc
-      videos-archive:
-        enabled: true
-        readOnly: false
-        existingClaim: videos-archive-pvc
       config:
         existingClaim: syncthing-config
     service:
