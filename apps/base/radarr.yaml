@@ -28,7 +28,7 @@ spec:
   values:
     image:
       repository: ghcr.io/onedr0p/radarr-develop
-      tag: 4.7.1.7640
+      tag: 4.7.3.7731
     env:
       TZ: "Europe/Dublin"
     podSecurityContext:
