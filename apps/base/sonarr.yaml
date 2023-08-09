@@ -28,7 +28,7 @@ spec:
   values:
     image:
       repository: ghcr.io/onedr0p/sonarr-develop
-      tag: 4.0.0.604
+      tag: 4.0.0.605
     env:
       TZ: "Europe/Dublin"
     service:
