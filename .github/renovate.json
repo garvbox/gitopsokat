@@ -55,8 +55,8 @@
         "patch"
       ],
       "schedule": [
-        "after 4pm every Monday",
-        "before 11pm every Monday"
+        "after 4pm on Monday",
+        "before 11pm on Monday"
       ]
     },
     {
