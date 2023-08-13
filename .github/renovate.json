@@ -36,9 +36,27 @@
         "minor"
       ],
       "schedule": [
-        "after 5pm every weekday",
-        "before 10pm every weekday",
+        "after 4pm every weekday",
+        "before 11pm every weekday",
         "every weekend"
+      ]
+    },
+    {
+      "description": "Restrict Sonarr Patches",
+      "matchPackageNames": [
+        "ghcr.io/onedr0p/sonarr-develop",
+        "ghcr.io/onedr0p/radarr-develop"
+      ],
+      "matchDatasources": [
+        "docker",
+        "github-releases"
+      ],
+      "matchUpdateTypes": [
+        "patch"
+      ],
+      "schedule": [
+        "after 4pm every Monday",
+        "before 11pm every Monday"
       ]
     },
     {
