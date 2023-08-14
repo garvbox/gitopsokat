@@ -36,8 +36,7 @@
         "minor"
       ],
       "schedule": [
-        "after 4pm every weekday",
-        "before 11pm every weekday",
+        "after 4pm and before 11pm every weekday",
         "every weekend"
       ]
     },
@@ -55,8 +54,7 @@
         "patch"
       ],
       "schedule": [
-        "after 4pm on Monday",
-        "before 11pm on Monday"
+        "after 4pm and before 11pm on Monday"
       ]
     },
     {
