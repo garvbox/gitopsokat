@@ -9,7 +9,7 @@ repos:
       - id: end-of-file-fixer
         exclude: .asc$|.json$
   - repo: https://github.com/bridgecrewio/checkov.git
-    rev: 2.3.310
+    rev: 2.3.362
     hooks:
       - id: checkov
   - repo: https://github.com/Yelp/detect-secrets
