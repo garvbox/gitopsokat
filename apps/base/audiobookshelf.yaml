@@ -58,7 +58,7 @@ spec:
         type: pvc
         accessMode: ReadWriteOnce
         size: 10Gi
-      podcasts:
+      media:
         enabled: true
         type: pvc
         accessMode: ReadWriteOnce

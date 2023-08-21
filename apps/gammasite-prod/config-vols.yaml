@@ -614,10 +614,10 @@ spec:
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: audiobookshelf-podcasts-pv
+  name: audiobookshelf-media-pv
   namespace: default
 spec:
-  storageClassName: local-rocketpool
+  storageClassName: local-datapool
   capacity:
     storage: 5Gi
   accessModes:
@@ -625,7 +625,7 @@ spec:
   volumeMode: Filesystem
   persistentVolumeReclaimPolicy: Retain
   local:
-    path: /${host_path_base}/audiobookshelf-podcasts
+    path: /datapool/audio
   nodeAffinity:
     required:
       nodeSelectorTerms:
@@ -638,13 +638,13 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: audiobookshelf-podcasts
+  name: audiobookshelf-media
   namespace: default
 spec:
   accessModes:
     - ReadWriteOnce
-  storageClassName: local-rocketpool
-  volumeName: audiobookshelf-podcasts-pv
+  storageClassName: local-datapool
+  volumeName: audiobookshelf-media-pv
   resources:
     requests:
       storage: 5Gi

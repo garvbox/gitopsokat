@@ -280,4 +280,4 @@ spec:
       metadata:
         existingClaim: audiobookshelf-metadata
       podcasts:
-        existingClaim: audiobookshelf-podcasts
+        existingClaim: audiobookshelf-media
