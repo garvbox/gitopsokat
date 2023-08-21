@@ -279,5 +279,5 @@ spec:
         existingClaim: audiobookshelf-config
       metadata:
         existingClaim: audiobookshelf-metadata
-      podcasts:
+      media:
         existingClaim: audiobookshelf-media
