@@ -20,7 +20,7 @@ spec:
   timeout: 3m0s
   retryInterval: 2m0s
   wait: true
-  prune: false
+  prune: true
   force: true
   # Site-specific variables
   postBuild:
