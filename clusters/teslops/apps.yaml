@@ -1,0 +1,35 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: apps
+  namespace: flux-system
+spec:
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  path: ./apps/teslops
+  dependsOn:
+    - name: infrastructure
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-gpg
+  # Flux Sync Settings
+  interval: 60m0s
+  timeout: 3m0s
+  retryInterval: 2m0s
+  wait: true
+  prune: true
+  force: true
+  # Site-specific variables
+  postBuild:
+    substitute:
+      nfs_server: ark.glenside.lan
+      metallb_ip_plex: 10.0.40.26
+      metallb_ip_syncthing: 10.0.40.27
+      wl_source_range: 192.168.0.0/16,10.0.0.0/8
+      cluster_ext_domain: alphasite-teslops.garvbox.net
+      cluster_int_domain: teslops.glenside.lan
+      default_provisioner_scname: local-path
+      host_path_base: /ultrapool/kube/pvs

@@ -1,0 +1,93 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: plexmediaserver
+  namespace: default
+spec:
+  values:
+    resources:
+      requests:
+        nvidia.com/gpu: 1
+      limits:
+        nvidia.com/gpu: 1
+    runtimeClassName: nvidia-gpu
+    tolerations:
+      - key: nvidia.com/gpu
+        operator: Exists
+        effect: NoSchedule
+    podSecurityContext:
+      # Extra groups for access to hardware encode/decode
+      supplementalGroups: [44, 109]
+    persistence:
+      config:
+        existingClaim: plexmediaserver-config
+      transcode:
+        enabled: true
+        type: pvc
+        existingClaim: plexmediaserver-transcode
+      videos:
+        enabled: true
+        readOnly: true
+        type: pvc
+        existingClaim: videos-pvc
+      archivetvshows:
+        enabled: true
+        readOnly: true
+        type: pvc
+        existingClaim: archivetvshows-pvc
+      archivemovies:
+        enabled: true
+        readOnly: true
+        type: pvc
+        existingClaim: archivemovies-pvc
+      archivesports:
+        enabled: true
+        readOnly: true
+        type: pvc
+        existingClaim: archivesports-pvc
+    service:
+      main:
+        type: LoadBalancer
+        externalTrafficPolicy: Local
+        annotations:
+          metallb.universe.tf/loadBalancerIPs: ${metallb_ip_plex}
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: syncthing
+  namespace: default
+spec:
+  values:
+    persistence:
+      config:
+        existingClaim: syncthing-config
+      videos:
+        enabled: true
+        readOnly: false
+        type: pvc
+        existingClaim: videos-pvc
+    service:
+      main:
+        annotations:
+          metallb.universe.tf/loadBalancerIPs: ${metallb_ip_syncthing}
+        enabled: true
+        externalTrafficPolicy: Local
+        type: LoadBalancer
+        ports:
+          sync:
+            enabled: true
+            port: 22000
+            protocol: TCP
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: tautulli
+  namespace: default
+spec:
+  values:
+    persistence:
+      config:
+        existingClaim: tautulli-config

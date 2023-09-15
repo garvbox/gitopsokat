@@ -1,0 +1,126 @@
+# Static Video PVCs using NFS mounts
+# Added as PVCs for ease of sharing
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-videos-pv
+  namespace: default
+spec:
+  storageClassName: nfs-ark
+  capacity:
+    storage: 1Mi
+  accessModes:
+    - ReadWriteMany
+  volumeMode: Filesystem
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    server: ${nfs_server}
+    path: "/mnt/atlantic/videos"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: videos-pvc
+  namespace: default
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: nfs-ark
+  volumeName: nfs-videos-pv
+  resources:
+    requests:
+      storage: 1Mi
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-archivemovies-pv
+  namespace: default
+spec:
+  storageClassName: nfs-ark
+  capacity:
+    storage: 1Mi
+  accessModes:
+    - ReadWriteMany
+  volumeMode: Filesystem
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    server: ${nfs_server}
+    path: "/mnt/pacific/archivemovies"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: archivemovies-pvc
+  namespace: default
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: nfs-ark
+  volumeName: nfs-archivemovies-pv
+  resources:
+    requests:
+      storage: 1Mi
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-archivetvshows-pv
+  namespace: default
+spec:
+  storageClassName: nfs-ark
+  capacity:
+    storage: 1Mi
+  accessModes:
+    - ReadWriteMany
+  volumeMode: Filesystem
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    server: ${nfs_server}
+    path: "/mnt/arctic/archivetvshows"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: archivetvshows-pvc
+  namespace: default
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: nfs-ark
+  volumeName: nfs-archivetvshows-pv
+  resources:
+    requests:
+      storage: 1Mi
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-archivesports-pv
+  namespace: default
+spec:
+  storageClassName: nfs-ark
+  capacity:
+    storage: 1Mi
+  accessModes:
+    - ReadWriteMany
+  volumeMode: Filesystem
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    server: ${nfs_server}
+    path: "/mnt/arctic/archivesports"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: archivesports-pvc
+  namespace: default
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: nfs-ark
+  volumeName: nfs-archivesports-pv
+  resources:
+    requests:
+      storage: 1Mi

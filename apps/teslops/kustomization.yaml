@@ -1,0 +1,16 @@
+---
+# Gammasite Production Apps
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ./config-vols.yaml
+  - ./nfs-vols.yaml
+  - ../sources
+  - ../base/whoami.yaml
+  - ../base/hajimari.yaml
+  - ../base/plexmediaserver.yaml
+  - ../base/syncthing.yaml
+  - ../base/tautulli.yaml
+# TODO: Reinstate patches for storage and GPU config
+patchesStrategicMerge:
+  - patch-values.yaml
