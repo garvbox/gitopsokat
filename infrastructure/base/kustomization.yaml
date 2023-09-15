@@ -5,7 +5,6 @@ resources:
   - metallb
   - coredns
   - ext-dns
-  - cert-manager
   - ingress-nginx
   - node-feature-discovery
   - discord-notifications
