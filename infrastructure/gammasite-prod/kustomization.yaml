@@ -7,4 +7,5 @@ resources:
   - ./cf-secret.yaml
   - ./videos-pvs.yaml
   - ../base
+  - ../base/cert-manager
   - ../base/intel-device-plugin
