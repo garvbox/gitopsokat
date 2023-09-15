@@ -1,16 +1,5 @@
 ---
 apiVersion: notification.toolkit.fluxcd.io/v1beta1
-kind: Provider
-metadata:
-  name: discord
-  namespace: flux-system
-spec:
-  type: discord
-  secretRef:
-    name: discord-url
-
----
-apiVersion: notification.toolkit.fluxcd.io/v1beta1
 kind: Alert
 metadata:
   name: discord-alerts
@@ -23,12 +12,12 @@ spec:
     # - kind: GitRepository
     #   name: '*'
     - kind: Kustomization
-      name: '*'
+      name: "*"
     # - kind: HelmRepository
     #   name: '*'
     # - kind: HelmChart
     #   name: '*'
     - kind: HelmRelease
-      name: '*'
+      name: "*"
   exclusionList:
     - "Dependencies do not meet ready condition"

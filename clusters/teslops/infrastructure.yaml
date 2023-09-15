@@ -1,0 +1,60 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: infra-core-install
+  namespace: flux-system
+spec:
+  path: ./infrastructure/teslops/infra-core-install
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  # Flux Sync Settings
+  interval: 60m0s
+  timeout: 3m0s
+  retryInterval: 2m0s
+  wait: true
+  prune: false
+  force: true
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: infrastructure
+  namespace: flux-system
+spec:
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  path: ./infrastructure/teslops/infra-base
+  dependsOn:
+    - name: infra-core-install
+  # Enable Encryption using sops-gpg secret pre-loaded with ansible
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-gpg
+  # Flux Sync Settings
+  interval: 60m0s
+  timeout: 3m0s
+  retryInterval: 2m0s
+  wait: true
+  prune: false
+  force: true
+  # Site-specific variables
+  postBuild:
+    substitute:
+      # DNS is outside the main range as it is allocated earlier to coredns
+      metallb_ip_dns: 10.0.40.10
+      metallb_ip_range: 10.0.40.20-10.0.40.50
+      metallb_ip_nginx: 10.0.40.25
+      # These are only used in the apps kustomization but listed for clarity
+      metallb_ip_plex: 10.0.40.26
+      metallb_ip_syncthing: 10.0.40.27
+      wl_source_range: 192.168.0.0/16,10.0.0.0/8
+      cluster_ext_domain: alphasite-teslops.garvbox.net
+      cluster_int_domain: teslops.glenside.lan
+      default_provisioner_scname: local-path
+      host_path_base: /ultrapool/kube/pvs
+      admin_email: gonarvib@protonmail.com
+      le_url: https://acme-v02.api.letsencrypt.org/directory
