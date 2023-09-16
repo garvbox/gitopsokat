@@ -281,16 +281,3 @@ spec:
         existingClaim: audiobookshelf-metadata
       media:
         existingClaim: audiobookshelf-media
----
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
-kind: HelmRelease
-metadata:
-  name: zigbee2mqtt
-  namespace: default
-spec:
-  values:
-    nodeSelector:
-      kubernetes.io/hostname: gammatron
-    persistence:
-      config:
-        existingClaim: z2m-config
