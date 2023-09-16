@@ -25,6 +25,7 @@ resources:
   - ../base/nextcloud.yaml
   - ../base/hajimari.yaml
   - ../base/audiobookshelf.yaml
+  - ../base/zigbee2mqtt.yaml
   - ../base/deluge-cleanup-cron.yaml
 patchesStrategicMerge:
   - patch-values.yaml
