@@ -4,4 +4,4 @@ kind: Kustomization
 resources:
   - ./discord-secrets.yaml
   - ../../base
-  - ../../base/nvidia-device-plugin
+  - ../../extras/nvidia-device-plugin

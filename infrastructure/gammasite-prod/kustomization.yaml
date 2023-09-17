@@ -6,5 +6,5 @@ resources:
   - ./discord-secrets.yaml
   - ./cf-secret.yaml
   - ../base
-  - ../base/cert-manager
-  - ../base/intel-device-plugin
+  - ../extras/cert-manager
+  - ../extras/intel-device-plugin
