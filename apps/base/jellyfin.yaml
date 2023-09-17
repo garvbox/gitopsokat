@@ -1,0 +1,74 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: jellyfin
+  namespace: default
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: app-template
+      version: 1.5.1
+      sourceRef:
+        kind: HelmRepository
+        name: bjw-s
+        namespace: flux-system
+  maxHistory: 3
+  install:
+    createNamespace: true
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      retries: 3
+  uninstall:
+    keepHistory: false
+  values:
+    image:
+      repository: ghcr.io/onedr0p/jellyfin
+      tag: 10.8.10
+    env:
+      TZ: "Europe/Dublin"
+      JELLYFIN_PublishedServerUrl: https://jellyfin.${cluster_ext_domain}
+    podSecurityContext:
+      runAsUser: 6666
+      runAsGroup: 6666
+      fsGroup: 6666
+      fsGroupChangePolicy: "OnRootMismatch"
+    service:
+      main:
+        ports:
+          http:
+            port: 8096
+          discovery-udp-1900:
+            port: 1900
+            protocol: UDP
+            enabled: true
+          discovery-udp-7539:
+            port: 7539
+            protocol: UDP
+            enabled: true
+    ingress:
+      main:
+        enabled: true
+        ingressClassName: nginx
+        annotations:
+          hajimari.io/icon: simple-icons:jellyfin
+        hosts:
+          - host: jellyfin.${cluster_ext_domain}
+            paths:
+              - path: "/"
+                pathType: Prefix
+    persistence:
+      config:
+        enabled: true
+        type: pvc
+        accessMode: ReadWriteOnce
+        size: 10Gi
+      cache:
+        enabled: true
+        type: pvc
+        accessMode: ReadWriteOnce
+        size: 10Gi

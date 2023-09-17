@@ -26,6 +26,7 @@ resources:
   - ../base/hajimari.yaml
   - ../base/audiobookshelf.yaml
   - ../base/deluge-cleanup-cron.yaml
+  - ./jellyfin
 patchesStrategicMerge:
   - patch-values.yaml
   - ./unpackerr/patch-values.yaml

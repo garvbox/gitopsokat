@@ -1,0 +1,25 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: jellyfin
+  namespace: default
+spec:
+  values:
+    nodeSelector:
+      kubernetes.io/hostname: gammatron
+    persistence:
+      videos:
+        enabled: true
+        readOnly: true
+        existingClaim: videos-pvc
+      config:
+        existingClaim: jellyfin-config
+      cache:
+        existingClaim: jellyfin-cache
+    service:
+      main:
+        type: LoadBalancer
+        externalTrafficPolicy: Local
+        annotations:
+          metallb.universe.tf/loadBalancerIPs: ${metallb_ip_jellyfin}
