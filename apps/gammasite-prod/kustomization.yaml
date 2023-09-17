@@ -5,6 +5,7 @@ kind: Kustomization
 resources:
   - gh-garvbox-secrets.yaml
   - deluge-client-secret.yaml
+  - ./videos-vols.yaml
   - ./config-vols.yaml
   - ./unpackerr/config-secret.yaml
   - ../sources
