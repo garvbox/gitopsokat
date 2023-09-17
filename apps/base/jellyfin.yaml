@@ -41,7 +41,7 @@ spec:
       main:
         ports:
           http:
-            port: 8096
+            port: &port 8096
           discovery-1900:
             port: 1900
             protocol: UDP
@@ -61,14 +61,27 @@ spec:
             paths:
               - path: "/"
                 pathType: Prefix
+    probes:
+      liveness: &probes
+        enabled: true
+        custom: true
+        spec:
+          httpGet:
+            path: /health
+            port: *port
+          initialDelaySeconds: 0
+          periodSeconds: 10
+          timeoutSeconds: 1
+          failureThreshold: 3
+      readiness: *probes
+      startup:
+        enabled: false
     persistence:
       config:
         enabled: true
         type: pvc
         accessMode: ReadWriteOnce
         size: 10Gi
-      cache:
+      transcode:
         enabled: true
-        type: pvc
-        accessMode: ReadWriteOnce
-        size: 10Gi
+        type: emptyDir

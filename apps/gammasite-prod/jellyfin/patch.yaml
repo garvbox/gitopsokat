@@ -15,8 +15,6 @@ spec:
         existingClaim: videos-pvc
       config:
         existingClaim: jellyfin-config
-      cache:
-        existingClaim: jellyfin-cache
     service:
       main:
         type: LoadBalancer
