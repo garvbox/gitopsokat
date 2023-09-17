@@ -6,16 +6,16 @@ metadata:
   namespace: default
 spec:
   values:
-    resources:
-      requests:
-        gpu.intel.com/i915: 1
-      limits:
-        gpu.intel.com/i915: 1
+    # resources:
+    #   requests:
+    #     gpu.intel.com/i915: 1
+    #   limits:
+    #     gpu.intel.com/i915: 1
     nodeSelector:
-      intel.feature.node.kubernetes.io/gpu: "true"
+      # intel.feature.node.kubernetes.io/gpu: "true"
       kubernetes.io/hostname: gammatron
-    podSecurityContext:
-      supplementalGroups: [44, 109] # Extra groups for access to hardware encode/decode
+    # podSecurityContext:
+    #   supplementalGroups: [44, 109] # Extra groups for access to hardware encode/decode
     persistence:
       videos:
         enabled: true
