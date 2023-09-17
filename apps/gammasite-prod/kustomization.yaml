@@ -22,7 +22,6 @@ resources:
   - ../base/homeassistant.yaml
   - ../base/mosquitto.yaml
   - ../base/influxdb.yaml
-  - ../base/nextcloud.yaml
   - ../base/hajimari.yaml
   - ../base/audiobookshelf.yaml
   - ../base/deluge-cleanup-cron.yaml
