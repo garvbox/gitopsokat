@@ -24,9 +24,9 @@ resources:
   - ../base/mosquitto.yaml
   - ../base/influxdb.yaml
   - ../base/hajimari.yaml
-  - ../base/audiobookshelf.yaml
   - ../base/deluge-cleanup-cron.yaml
   - ./jellyfin
+  - ./audiobookshelf
 patchesStrategicMerge:
   - patch-values.yaml
   - ./unpackerr/patch-values.yaml
