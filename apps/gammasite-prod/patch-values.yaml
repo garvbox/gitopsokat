@@ -250,20 +250,3 @@ spec:
   values:
     persistence:
       existingClaim: grafana-config
----
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
-kind: HelmRelease
-metadata:
-  name: audiobookshelf
-  namespace: default
-spec:
-  values:
-    nodeSelector:
-      kubernetes.io/hostname: gammatron
-    persistence:
-      config:
-        existingClaim: audiobookshelf-config
-      metadata:
-        existingClaim: audiobookshelf-metadata
-      media:
-        existingClaim: audiobookshelf-media
