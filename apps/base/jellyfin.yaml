@@ -42,11 +42,11 @@ spec:
         ports:
           http:
             port: 8096
-          discovery-udp-1900:
+          discovery-1900:
             port: 1900
             protocol: UDP
             enabled: true
-          discovery-udp-7539:
+          discovery-7539:
             port: 7539
             protocol: UDP
             enabled: true
