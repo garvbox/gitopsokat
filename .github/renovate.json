@@ -41,10 +41,11 @@
       ]
     },
     {
-      "description": "Restrict Sonarr Patches",
+      "description": "Restrict Arr Patches",
       "matchPackageNames": [
         "ghcr.io/onedr0p/sonarr-develop",
-        "ghcr.io/onedr0p/radarr-develop"
+        "ghcr.io/onedr0p/radarr-develop", 
+        "ghcr.io/onedr0p/prowlarr-develop"
       ],
       "matchDatasources": [
         "docker",
