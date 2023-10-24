@@ -23,6 +23,10 @@ spec:
         existingClaim: videos-pvc
       config:
         existingClaim: jellyfin-config
+      audiobooks:
+        enabled: true
+        readOnly: true
+        existingClaim: audiobookshelf-media
     service:
       main:
         type: LoadBalancer
