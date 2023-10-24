@@ -11,6 +11,6 @@ resources:
   - ../base/plexmediaserver.yaml
   - ../base/syncthing.yaml
   - ../base/tautulli.yaml
-# TODO: Reinstate patches for storage and GPU config
+  - ./jellyfin
 patchesStrategicMerge:
   - patch-values.yaml
