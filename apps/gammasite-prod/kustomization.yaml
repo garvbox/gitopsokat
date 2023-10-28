@@ -25,6 +25,7 @@ resources:
   - ../base/deluge-cleanup-cron.yaml
   - ./jellyfin
   - ./audiobookshelf
+  - ./homeassistant
 patchesStrategicMerge:
   - patch-values.yaml
   - ./unpackerr/patch-values.yaml
