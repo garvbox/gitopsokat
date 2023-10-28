@@ -159,20 +159,6 @@ spec:
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: mosquitto
-  namespace: default
-spec:
-  values:
-    service:
-      main:
-        type: LoadBalancer
-        externalTrafficPolicy: Local
-        annotations:
-          metallb.universe.tf/loadBalancerIPs: ${metallb_ip_mqtt}
----
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
-kind: HelmRelease
-metadata:
   name: influxdb
   namespace: default
 spec:
@@ -188,19 +174,6 @@ spec:
     persistence:
       influxdata:
         existingClaim: influxdb-influxdata
----
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
-kind: HelmRelease
-metadata:
-  name: homeassistant
-  namespace: default
-spec:
-  values:
-    nodeSelector:
-      kubernetes.io/hostname: gammatron
-    persistence:
-      config:
-        existingClaim: homeassistant-config
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease

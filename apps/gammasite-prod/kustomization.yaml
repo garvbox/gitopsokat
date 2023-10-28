@@ -20,8 +20,6 @@ resources:
   - ../base/plexmediaserver.yaml
   - ../base/syncthing.yaml
   - ../base/unifi.yaml
-  - ../base/homeassistant.yaml
-  - ../base/mosquitto.yaml
   - ../base/influxdb.yaml
   - ../base/hajimari.yaml
   - ../base/deluge-cleanup-cron.yaml
