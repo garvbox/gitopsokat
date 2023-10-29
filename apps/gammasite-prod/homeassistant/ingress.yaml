@@ -2,7 +2,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: homeassistant-ext
+  name: homeassistant
   namespace: default
   annotations:
     hajimari.io/icon: mdi:home-assistant
