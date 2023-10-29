@@ -4,7 +4,10 @@ kind: Ingress
 metadata:
   name: homeassistant-ext
   namespace: default
+  annotations:
+    hajimari.io/icon: mdi:home-assistant
 spec:
+  ingressClassName: nginx
   rules:
     - host: homeassistant.${cluster_ext_domain}
       http:
