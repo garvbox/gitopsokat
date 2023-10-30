@@ -12,7 +12,6 @@ resources:
   - ../base/grafana.yaml
   - ../base/tautulli.yaml
   - ../base/prowlarr.yaml
-  - ../base/radarr.yaml
   - ../base/sonarr.yaml
   - ../base/unpackerr.yaml
   - ../base/ombi.yaml
