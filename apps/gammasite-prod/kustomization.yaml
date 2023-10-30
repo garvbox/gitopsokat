@@ -7,6 +7,7 @@ resources:
   - ../sources
   - ../base/hajimari.yaml
   - ./deluge
+  - ./unpackerr
   - ./influxdb
   - ./tautulli
   - ./jellyfin
