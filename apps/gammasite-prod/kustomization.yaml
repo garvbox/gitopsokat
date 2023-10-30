@@ -4,16 +4,15 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - ./videos-vols.yaml
-  - ./config-vols.yaml
   - ./unpackerr/config-secret.yaml
   - ../sources
   - ../base/unpackerr.yaml
-  - ../base/plexmediaserver.yaml
   - ../base/hajimari.yaml
   - ./deluge
   - ./influxdb
   - ./tautulli
   - ./jellyfin
+  - ./plexmediaserver
   - ./radarr
   - ./sonarr
   - ./prowlarr
@@ -23,5 +22,4 @@ resources:
   - ./grafana
   - ./homeassistant # HA External Proxy
 patchesStrategicMerge:
-  - patch-values.yaml
   - ./unpackerr/patch-values.yaml

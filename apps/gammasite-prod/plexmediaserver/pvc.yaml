@@ -1,4 +1,3 @@
-# Per-App Static PVs
 ---
 apiVersion: v1
 kind: PersistentVolume
