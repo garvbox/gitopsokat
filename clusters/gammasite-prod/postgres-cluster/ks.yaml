@@ -5,7 +5,7 @@ metadata:
   name: postgres-cluster
   namespace: flux-system
 spec:
-  path: ./app
+  path: ./clusters/gammasite-prod/postgres-cluster
   sourceRef:
     kind: GitRepository
     name: flux-system
