@@ -1,0 +1,36 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: deluge
+  namespace: default
+spec:
+  values:
+    nodeSelector:
+      kubernetes.io/hostname: gammatron
+    persistence:
+      downloads:
+        enabled: true
+        readOnly: false
+        existingClaim: downloads-pvc
+        mountPath: /datapool/downloads
+      config:
+        existingClaim: deluge-config
+    service:
+      daemon:
+        enabled: true
+        type: LoadBalancer
+        externalTrafficPolicy: Local
+        annotations:
+          metallb.universe.tf/loadBalancerIPs: ${metallb_ip_deluge}
+        ports:
+          torrents:
+            enabled: true
+            port: 55066
+            targetPort: 55066
+            protocol: TCP
+          admin:
+            enabled: true
+            port: 58846
+            targetPort: 58846
+            protocol: TCP

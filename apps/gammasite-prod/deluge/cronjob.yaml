@@ -30,5 +30,3 @@ spec:
                   value: deluge-daemon.default.${cluster_int_domain}
                 - name: DELUGE_CLIENT_PORT
                   value: "58846"
-          imagePullSecrets:
-            - name: github-garvbox-deploy
