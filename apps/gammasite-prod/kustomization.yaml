@@ -24,6 +24,7 @@ resources:
   - ../base/hajimari.yaml
   - ../base/deluge-cleanup-cron.yaml
   - ./jellyfin
+  - ./radarr
   - ./audiobookshelf
   - ./homeassistant
 patchesStrategicMerge:
