@@ -1,0 +1,26 @@
+apiVersion: "acid.zalan.do/v1"
+kind: postgresql
+metadata:
+  name: postgres-mediadb
+  namespace: default
+spec:
+  teamId: default
+  volume:
+    size: 10Gi
+  numberOfInstances: 1
+  postgresql:
+    version: "15"
+  users:
+    admin: # database owner
+      - superuser
+      - createdb
+    radarr: []
+    sonarr: []
+    prowlarr: []
+  databases:
+    radarr_main: radarr
+    radarr_logs: radarr
+    sonarr_main: sonarr
+    sonarr_logs: sonarr
+    prowlarr_main: sonarr
+    prowlarr_logs: sonarr
