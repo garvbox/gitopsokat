@@ -26,7 +26,6 @@ resources:
   - ./jellyfin
   - ./audiobookshelf
   - ./homeassistant
-  - ./pgadmin
 patchesStrategicMerge:
   - patch-values.yaml
   - ./unpackerr/patch-values.yaml
