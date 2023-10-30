@@ -15,6 +15,7 @@ resources:
   - ../base/syncthing.yaml
   - ../base/hajimari.yaml
   - ../base/deluge-cleanup-cron.yaml
+  - ./influxdb
   - ./tautulli
   - ./jellyfin
   - ./radarr
