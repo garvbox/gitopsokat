@@ -72,6 +72,7 @@ spec:
             enabled: true
     ingress:
       main:
+        enabled: true
         className: nginx
         annotations:
           hajimari.io/icon: simple-icons:jellyfin
@@ -84,8 +85,10 @@ spec:
                   port: http
     persistence:
       config:
+        enabled: true
         type: pvc
         accessMode: ReadWriteOnce
         size: 10Gi
       transcode:
+        enabled: true
         type: emptyDir
