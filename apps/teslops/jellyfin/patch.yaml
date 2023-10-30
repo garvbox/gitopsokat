@@ -12,7 +12,7 @@ spec:
       videos:
         enabled: true
         readOnly: true
-        type: persistentVolumeClaimv
+        type: persistentVolumeClaim
         existingClaim: videos-pvc
       archivetvshows:
         enabled: true
