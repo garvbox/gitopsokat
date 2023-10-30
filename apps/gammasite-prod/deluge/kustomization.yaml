@@ -4,6 +4,7 @@ kind: Kustomization
 resources:
   - ../../base/deluge.yaml
   - pvc.yaml
+  - client-secret.yaml
   - cronjob.yaml
 patchesStrategicMerge:
   - patch.yaml
