@@ -98,25 +98,6 @@ spec:
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: unifi-controller
-  namespace: default
-spec:
-  values:
-    service:
-      main:
-        type: LoadBalancer
-        externalTrafficPolicy: Local
-        annotations:
-          metallb.universe.tf/loadBalancerIPs: ${metallb_ip_unifi}
-    persistence:
-      config:
-        existingClaim: unifi-controller-config
-    nodeSelector:
-      kubernetes.io/hostname: gammatron
----
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
-kind: HelmRelease
-metadata:
   name: influxdb
   namespace: default
 spec:
