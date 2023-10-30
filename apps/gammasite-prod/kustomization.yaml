@@ -6,6 +6,7 @@ resources:
   - ./videos-vols.yaml
   - ../sources
   - ../base/hajimari.yaml
+  - ../base/whoami.yaml
   - ./deluge
   - ./unpackerr
   - ./influxdb

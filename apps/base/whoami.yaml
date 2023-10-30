@@ -1,55 +1,53 @@
 ---
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
 metadata:
   name: whoami
   namespace: default
 spec:
-  replicas: 2
-  selector:
-    matchLabels:
-      app: whoami
-  template:
-    metadata:
-      labels:
-        app: whoami
+  interval: 15m
+  chart:
     spec:
-      containers:
-        - name: whoami
-          image: traefik/whoami
-
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: whoami
-  namespace: default
-  labels:
-    app: whoami
-spec:
-  ports:
-    - port: 80
-  selector:
-    app: whoami
-
----
-kind: Ingress
-apiVersion: networking.k8s.io/v1
-metadata:
-  name: whoami
-  namespace: default
-  annotations:
-    nginx.ingress.kubernetes.io/whitelist-source-range: ${wl_source_range}
-spec:
-  ingressClassName: nginx
-  rules:
-    - host: whoami.${cluster_ext_domain}
-      http:
-        paths:
-          - path: "/"
-            pathType: Prefix
-            backend:
-              service:
-                name: whoami
-                port:
-                  number: 80
+      chart: app-template
+      version: 2.0.3
+      sourceRef:
+        kind: HelmRepository
+        name: bjw-s
+        namespace: flux-system
+  maxHistory: 3
+  install:
+    createNamespace: true
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      retries: 3
+  uninstall:
+    keepHistory: false
+  values:
+    controllers:
+      main:
+        containers:
+          main:
+            image:
+              repository: traefik/whoami
+              tag: latest
+    service:
+      main:
+        ports:
+          http:
+            port: 80
+    ingress:
+      main:
+        className: nginx
+        annotations:
+          hajimari.io/icon: simple-icons:traefikproxy
+          nginx.ingress.kubernetes.io/whitelist-source-range: ${wl_source_range}
+        hosts:
+          - host: whoami.${cluster_ext_domain}
+            paths:
+              - path: /
+                service:
+                  name: main
+                  port: http
