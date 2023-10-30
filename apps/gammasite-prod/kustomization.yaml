@@ -13,7 +13,6 @@ resources:
   - ../base/deluge.yaml
   - ../base/plexmediaserver.yaml
   - ../base/syncthing.yaml
-  - ../base/influxdb.yaml
   - ../base/hajimari.yaml
   - ../base/deluge-cleanup-cron.yaml
   - ./tautulli

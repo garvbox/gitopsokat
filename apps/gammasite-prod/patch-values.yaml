@@ -94,22 +94,3 @@ spec:
             enabled: true
             port: 22000
             protocol: TCP
----
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
-kind: HelmRelease
-metadata:
-  name: influxdb
-  namespace: default
-spec:
-  values:
-    nodeSelector:
-      kubernetes.io/hostname: gammatron
-    service:
-      main:
-        type: LoadBalancer
-        externalTrafficPolicy: Local
-        annotations:
-          metallb.universe.tf/loadBalancerIPs: ${metallb_ip_influx}
-    persistence:
-      influxdata:
-        existingClaim: influxdb-influxdata
