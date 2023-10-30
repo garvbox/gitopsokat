@@ -22,5 +22,5 @@ spec:
     radarr_logs: radarr
     sonarr_main: sonarr
     sonarr_logs: sonarr
-    prowlarr_main: sonarr
-    prowlarr_logs: sonarr
+    prowlarr_main: prowlarr
+    prowlarr_logs: prowlarr
