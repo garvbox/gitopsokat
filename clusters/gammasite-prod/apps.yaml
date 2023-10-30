@@ -11,6 +11,7 @@ spec:
   path: ./apps/gammasite-prod
   dependsOn:
     - name: infrastructure
+    - name: postgres-cluster
   decryption:
     provider: sops
     secretRef:
