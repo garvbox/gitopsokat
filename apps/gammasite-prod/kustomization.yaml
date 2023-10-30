@@ -11,6 +11,7 @@ resources:
   - ./unpackerr
   - ./influxdb
   - ./tautulli
+  - ./jellyfin
   - ./plexmediaserver
   - ./radarr
   - ./sonarr
