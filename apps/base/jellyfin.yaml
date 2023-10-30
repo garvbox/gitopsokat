@@ -78,8 +78,7 @@ spec:
         hosts:
           - host: jellyfin.${cluster_ext_domain}
             paths:
-              - path: "/"
-                pathType: Prefix
+              - path: /
                 service:
                   name: main
                   port: http
