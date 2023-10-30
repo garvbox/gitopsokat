@@ -12,22 +12,22 @@ spec:
       videos:
         enabled: true
         readOnly: true
-        type: pvc
+        type: persistentVolumeClaimv
         existingClaim: videos-pvc
       archivetvshows:
         enabled: true
         readOnly: true
-        type: pvc
+        type: persistentVolumeClaim
         existingClaim: archivetvshows-pvc
       archivemovies:
         enabled: true
         readOnly: true
-        type: pvc
+        type: persistentVolumeClaim
         existingClaim: archivemovies-pvc
       archivesports:
         enabled: true
         readOnly: true
-        type: pvc
+        type: persistentVolumeClaim
         existingClaim: archivesports-pvc
     service:
       main:
