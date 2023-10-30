@@ -9,7 +9,6 @@ resources:
   - ./config-vols.yaml
   - ./unpackerr/config-secret.yaml
   - ../sources
-  - ../base/grafana.yaml
   - ../base/unpackerr.yaml
   - ../base/deluge.yaml
   - ../base/plexmediaserver.yaml
@@ -24,7 +23,8 @@ resources:
   - ./prowlarr
   - ./ombi
   - ./audiobookshelf
-  - ./homeassistant
+  - ./grafana
+  - ./homeassistant # HA External Proxy
 patchesStrategicMerge:
   - patch-values.yaml
   - ./unpackerr/patch-values.yaml
