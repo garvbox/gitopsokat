@@ -12,7 +12,6 @@ resources:
   - ../base/grafana.yaml
   - ../base/tautulli.yaml
   - ../base/prowlarr.yaml
-  - ../base/sonarr.yaml
   - ../base/unpackerr.yaml
   - ../base/ombi.yaml
   - ../base/deluge.yaml
@@ -24,6 +23,7 @@ resources:
   - ../base/deluge-cleanup-cron.yaml
   - ./jellyfin
   - ./radarr
+  - ./sonarr
   - ./audiobookshelf
   - ./homeassistant
 patchesStrategicMerge:

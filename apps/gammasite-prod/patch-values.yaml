@@ -2,27 +2,6 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: sonarr
-  namespace: default
-spec:
-  values:
-    nodeSelector:
-      kubernetes.io/hostname: gammatron
-    persistence:
-      videos:
-        enabled: true
-        readOnly: false
-        existingClaim: videos-pvc
-      downloads:
-        enabled: true
-        readOnly: false
-        existingClaim: downloads-pvc
-      config:
-        existingClaim: sonarr-config
----
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
-kind: HelmRelease
-metadata:
   name: plexmediaserver
   namespace: default
 spec:
