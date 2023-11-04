@@ -6,47 +6,46 @@ metadata:
   namespace: default
 spec:
   values:
-    resources:
-      requests:
-        nvidia.com/gpu: 1
-      limits:
-        nvidia.com/gpu: 1
+    controllers:
+      main:
+        containers:
+          main:
+            resources:
+              requests:
+                nvidia.com/gpu: 1
+              limits:
+                nvidia.com/gpu: 1
+            env:
+              ADVERTISE_IP: "https://${metallb_ip_plex}:32400/"
     runtimeClassName: nvidia-gpu
     tolerations:
       - key: nvidia.com/gpu
         operator: Exists
         effect: NoSchedule
-    podSecurityContext:
-      # Extra groups for access to hardware encode/decode
-      supplementalGroups: [44, 109]
-    env:
-      ADVERTISE_IP: "https://${metallb_ip_plex}:32400/"
+    defaultPodOptions:
+      securityContext:
+        supplementalGroups: [44, 109] # Extra groups for access to hardware encode/decode
     persistence:
       config:
         existingClaim: plexmediaserver-config
       transcode:
         enabled: true
-        type: pvc
         existingClaim: plexmediaserver-transcode
       videos:
         enabled: true
         readOnly: true
-        type: pvc
         existingClaim: videos-pvc
       archivetvshows:
         enabled: true
         readOnly: true
-        type: pvc
         existingClaim: archivetvshows-pvc
       archivemovies:
         enabled: true
         readOnly: true
-        type: pvc
         existingClaim: archivemovies-pvc
       archivesports:
         enabled: true
         readOnly: true
-        type: pvc
         existingClaim: archivesports-pvc
     service:
       main:
