@@ -6,11 +6,15 @@ metadata:
   namespace: default
 spec:
   values:
-    resources:
-      requests:
-        gpu.intel.com/i915: 1
-      limits:
-        gpu.intel.com/i915: 1
+    controllers:
+      main:
+        containers:
+          main:
+            resources:
+              requests:
+                gpu.intel.com/i915: 1
+              limits:
+                gpu.intel.com/i915: 1
     nodeSelector:
       intel.feature.node.kubernetes.io/gpu: "true"
       kubernetes.io/hostname: gammatron
