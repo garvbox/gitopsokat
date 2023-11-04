@@ -16,6 +16,6 @@ spec:
         enabled: true
         name: unpackerr-config
         type: secret
-        subPath:
+        globalMounts:
           - path: unpackerr.conf
-            mountPath: /config/unpackerr.conf
+            subPath: /config/unpackerr.conf
