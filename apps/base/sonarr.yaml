@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: app-template
-      version: 1.5.1
+      version: 2.0.3
       sourceRef:
         kind: HelmRepository
         name: bjw-s
@@ -26,36 +26,41 @@ spec:
   uninstall:
     keepHistory: false
   values:
-    image:
-      repository: ghcr.io/onedr0p/sonarr-develop
-      tag: 4.0.0.710
-    env:
-      TZ: "Europe/Dublin"
+    controllers:
+      main:
+        containers:
+          main:
+            image:
+              repository: ghcr.io/onedr0p/sonarr-develop
+              tag: 4.0.0.710
+            env:
+              TZ: "Europe/Dublin"
+            probes:
+              liveness: &probe
+                enabled: true
+                custom: true
+                spec:
+                  httpGet:
+                    path: /ping
+                    port: &port 8989
+                  initialDelaySeconds: 0
+                  periodSeconds: 10
+                  timeoutSeconds: 1
+                  failureThreshold: 3
+              readiness: *probe
+              startup:
+                enabled: false
+    defaultPodOptions:
+      securityContext:
+        runAsUser: 6666
+        runAsGroup: 6666
+        fsGroup: 6666
+        fsGroupChangePolicy: "OnRootMismatch"
     service:
       main:
         ports:
           http:
-            port: &port 8989
-    probes:
-      liveness: &probes
-        enabled: true
-        custom: true
-        spec:
-          httpGet:
-            path: /ping
             port: *port
-          initialDelaySeconds: 0
-          periodSeconds: 10
-          timeoutSeconds: 1
-          failureThreshold: 3
-      readiness: *probes
-      startup:
-        enabled: false
-    podSecurityContext:
-      runAsUser: 6666
-      runAsGroup: 6666
-      fsGroup: 6666
-      fsGroupChangePolicy: "OnRootMismatch"
     ingress:
       main:
         enabled: true
@@ -65,11 +70,13 @@ spec:
         hosts:
           - host: sonarr.${cluster_ext_domain}
             paths:
-              - path: "/"
-                pathType: Prefix
+              - path: /
+                service:
+                  name: main
+                  port: http
     persistence:
       config:
         enabled: true
-        type: pvc
+        type: persistentVolumeClaim
         accessMode: ReadWriteOnce
         size: 10Gi
