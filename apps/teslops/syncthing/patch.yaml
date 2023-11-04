@@ -12,7 +12,6 @@ spec:
       videos:
         enabled: true
         readOnly: false
-        type: pvc
         existingClaim: videos-pvc
     service:
       main:
