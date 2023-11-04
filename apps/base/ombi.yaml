@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: app-template
-      version: 1.5.1
+      version: 2.0.3
       sourceRef:
         kind: HelmRepository
         name: bjw-s
@@ -26,11 +26,15 @@ spec:
   uninstall:
     keepHistory: false
   values:
-    image:
-      repository: lscr.io/linuxserver/ombi
-      tag: 4.43.5
-    env:
-      TZ: "Europe/Dublin"
+    controllers:
+      main:
+        containers:
+          main:
+            image:
+              repository: lscr.io/linuxserver/ombi
+              tag: 4.43.5
+            env:
+              TZ: "Europe/Dublin"
     service:
       main:
         ports:
@@ -39,17 +43,19 @@ spec:
     ingress:
       main:
         enabled: true
-        ingressClassName: nginx
+        className: nginx
         annotations:
           hajimari.io/icon: mdi:ticket-account
         hosts:
           - host: ombi.${cluster_ext_domain}
             paths:
-              - path: "/"
-                pathType: Prefix
+              - path: /
+                service:
+                  name: main
+                  port: http
     persistence:
       config:
         enabled: true
-        type: pvc
+        type: persistentVolumeClaim
         accessMode: ReadWriteOnce
         size: 10Gi
