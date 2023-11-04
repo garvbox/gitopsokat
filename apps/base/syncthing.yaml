@@ -49,7 +49,7 @@ spec:
     ingress:
       main:
         enabled: true
-        ingressClassName: nginx
+        className: nginx
         annotations:
           hajimari.io/icon: arcticons:syncthing
           nginx.ingress.kubernetes.io/whitelist-source-range: ${wl_source_range}
