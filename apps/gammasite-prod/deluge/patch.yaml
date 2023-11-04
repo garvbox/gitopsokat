@@ -24,6 +24,7 @@ spec:
         externalTrafficPolicy: Local
         annotations:
           metallb.universe.tf/loadBalancerIPs: ${metallb_ip_deluge}
+        controller: main
         ports:
           torrents:
             enabled: true
