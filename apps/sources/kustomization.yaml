@@ -4,5 +4,4 @@ kind: Kustomization
 resources:
   - bjw-s-charts.yaml
   - grafana-charts.yaml
-  - nextcloud-charts.yaml
   - hajimari.yaml
