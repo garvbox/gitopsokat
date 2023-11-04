@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: app-template
-      version: 1.5.1
+      version: 2.0.3
       sourceRef:
         kind: HelmRepository
         name: bjw-s
@@ -26,26 +26,31 @@ spec:
   uninstall:
     keepHistory: false
   values:
-    image:
-      repository: ghcr.io/onedr0p/unpackerr
-      tag: 0.12.0
-    env:
-      TZ: "Europe/Dublin"
+    controllers:
+      main:
+        containers:
+          main:
+            image:
+              repository: ghcr.io/onedr0p/unpackerr
+              tag: 0.12.0
+            env:
+              TZ: "Europe/Dublin"
+            probes:
+              liveness:
+                enabled: false
+              readiness:
+                enabled: false
+              startup:
+                enabled: false
+    defaultPodOptions:
+      securityContext:
+        runAsUser: 6666
+        runAsGroup: 6666
+        fsGroup: 6666
+        fsGroupChangePolicy: "OnRootMismatch"
     service:
       main:
         enabled: false
     ingress:
       main:
         enabled: false
-    probes:
-      liveness:
-        enabled: false
-      readiness:
-        enabled: false
-      startup:
-        enabled: false
-    podSecurityContext:
-      runAsUser: 6666
-      runAsGroup: 6666
-      fsGroup: 6666
-      fsGroupChangePolicy: "OnRootMismatch"
