@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: app-template
-      version: 1.5.1
+      version: 2.0.3
       sourceRef:
         kind: HelmRepository
         name: bjw-s
@@ -26,18 +26,22 @@ spec:
   uninstall:
     keepHistory: false
   values:
-    image:
-      repository: ghcr.io/home-assistant/home-assistant
-      tag: 2023.11.0
-    probes:
-      liveness:
-        enabled: false
-      readiness:
-        enabled: false
-      startup:
-        enabled: false
-    env:
-      TZ: "Europe/Dublin"
+    controllers:
+      main:
+        containers:
+          main:
+            image:
+              repository: ghcr.io/home-assistant/home-assistant
+              tag: 2023.11.0
+            env:
+              TZ: "Europe/Dublin"
+            probes:
+              liveness:
+                enabled: false
+              readiness:
+                enabled: false
+              startup:
+                enabled: false
     service:
       main:
         ports:
@@ -46,48 +50,19 @@ spec:
     ingress:
       main:
         enabled: true
-        ingressClassName: nginx
+        className: nginx
         annotations:
           hajimari.io/icon: mdi:home-assistant
         hosts:
           - host: homeassistant.${cluster_ext_domain}
             paths:
-              - path: "/"
-                pathType: Prefix
+              - path: /
+                service:
+                  name: main
+                  port: http
     persistence:
       config:
         enabled: true
-        type: pvc
+        type: persistentVolumeClaim
         accessMode: ReadWriteOnce
         size: 10Gi
-    addons:
-      codeserver:
-        enabled: true
-        image:
-          repository: ghcr.io/coder/code-server
-          tag: 4.18.0
-        env:
-          TZ: "Europe/Dublin"
-        workingDir: /config
-        args:
-          - --auth
-          - "none"
-          - --user-data-dir
-          - "/config/.vscode"
-          - --extensions-dir
-          - "/config/.vscode"
-        ingress:
-          enabled: true
-          ingressClassName: nginx
-          annotations:
-            nginx.ingress.kubernetes.io/whitelist-source-range: ${wl_source_range}
-            hajimari.io/appName: "Hass Config"
-            hajimari.io/icon: cib:visual-studio-code
-          hosts:
-            - host: hass-code.${cluster_ext_domain}
-              paths:
-                - path: /
-                  pathType: Prefix
-        volumeMounts:
-          - name: config
-            mountPath: /config
