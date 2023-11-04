@@ -13,7 +13,8 @@ spec:
         enabled: true
         readOnly: false
         existingClaim: downloads-pvc
-        mountPath: /datapool/downloads
+        globalMounts:
+          - path: /datapool/downloads
       config:
         existingClaim: deluge-config
     service:
