@@ -42,6 +42,7 @@ spec:
             port: 9696
     ingress:
       main:
+        enabled: true
         className: nginx
         annotations:
           hajimari.io/icon: mdi:cloud-search-outline
