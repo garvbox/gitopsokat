@@ -6,8 +6,9 @@ metadata:
   namespace: default
 spec:
   values:
-    nodeSelector:
-      kubernetes.io/hostname: gammatron
+    defaultPodOptions:
+      nodeSelector:
+        kubernetes.io/hostname: gammatron
     service:
       main:
         type: LoadBalancer
