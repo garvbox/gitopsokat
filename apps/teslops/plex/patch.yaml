@@ -17,14 +17,15 @@ spec:
                 nvidia.com/gpu: 1
             env:
               ADVERTISE_IP: "https://${metallb_ip_plex}:32400/"
-    runtimeClassName: nvidia-gpu
-    tolerations:
-      - key: nvidia.com/gpu
-        operator: Exists
-        effect: NoSchedule
+
     defaultPodOptions:
       securityContext:
         supplementalGroups: [44, 109] # Extra groups for access to hardware encode/decode
+      runtimeClassName: nvidia-gpu
+      tolerations:
+        - key: nvidia.com/gpu
+          operator: Exists
+          effect: NoSchedule
     persistence:
       config:
         existingClaim: plexmediaserver-config
