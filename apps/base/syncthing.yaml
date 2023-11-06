@@ -32,7 +32,7 @@ spec:
           main:
             image:
               repository: syncthing/syncthing
-              tag: 1.25.0
+              tag: 1.26.0
             env:
               TZ: "Europe/Dublin"
     defaultPodOptions:
