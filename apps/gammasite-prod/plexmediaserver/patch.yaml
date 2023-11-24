@@ -29,6 +29,7 @@ spec:
       config:
         existingClaim: plexmediaserver-config
       transcode:
+        type: persistentVolumeClaim
         existingClaim: plexmediaserver-transcode-pvc
     service:
       main:
