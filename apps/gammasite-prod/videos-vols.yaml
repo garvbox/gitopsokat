@@ -77,3 +77,41 @@ spec:
   resources:
     requests:
       storage: 1Mi
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: plexmediaserver-transcode-pv
+  namespace: default
+spec:
+  storageClassName: local-datapool
+  capacity:
+    storage: 1Mi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  local:
+    path: "/datapool/videos/transcode"
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - gammatron
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: plexmediaserver-transcode-pvc
+  namespace: default
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: local-datapool
+  volumeName: plexmediaserver-transcode-pv
+  resources:
+    requests:
+      storage: 1Mi

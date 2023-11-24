@@ -28,6 +28,8 @@ spec:
         existingClaim: videos-pvc
       config:
         existingClaim: plexmediaserver-config
+      transcode:
+        existingClaim: plexmediaserver-transcode-pvc
     service:
       main:
         type: LoadBalancer
