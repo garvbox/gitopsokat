@@ -32,7 +32,7 @@ spec:
           main:
             image:
               repository: ghcr.io/onedr0p/tautulli
-              tag: 2.13.2
+              tag: 2.13.3
             env:
               TZ: "Europe/Dublin"
             probes:
