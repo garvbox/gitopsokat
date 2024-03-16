@@ -51,7 +51,6 @@ spec:
             port: 80
     ingress:
       main:
-        enabled: true
         className: nginx
         annotations:
           hajimari.io/icon: simple-icons:traefikproxy
@@ -61,5 +60,5 @@ spec:
             paths:
               - path: /
                 service:
-                  name: main
+                  identifier: main
                   port: http
