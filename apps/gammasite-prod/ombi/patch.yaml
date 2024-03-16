@@ -12,3 +12,5 @@ spec:
     persistence:
       config:
         existingClaim: ombi-config
+        accessMode: null
+        size: null
