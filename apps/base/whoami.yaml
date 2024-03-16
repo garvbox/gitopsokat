@@ -45,6 +45,7 @@ spec:
                   periodSeconds: 5
     service:
       main:
+        controller: main
         ports:
           http:
             port: 80
