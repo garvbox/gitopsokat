@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: app-template
-      version: 2.6.0
+      version: 3.0.4
       sourceRef:
         kind: HelmRepository
         name: bjw-s
@@ -40,6 +40,16 @@ spec:
               PLEX_PREFERENCE_1: "LanNetworksBandwidth=192.168.0.0/16,10.0.0.0/8,172.16.0.0/12"
               PLEX_PREFERENCE_2: "TranscoderQuality=0"
               PLEX_PREFERENCE_3: "TranscoderH264BackgroundPreset=fast"
+            probes:
+              liveness:
+                enabled: true
+              readiness:
+                enabled: true
+              startup:
+                enabled: true
+                spec:
+                  failureThreshold: 30
+                  periodSeconds: 5
     defaultPodOptions:
       securityContext:
         runAsUser: 6666
@@ -48,7 +58,6 @@ spec:
         fsGroupChangePolicy: "OnRootMismatch"
     ingress:
       main:
-        enabled: true
         className: nginx
         annotations:
           hajimari.io/icon: mdi:plex
@@ -57,11 +66,11 @@ spec:
             paths:
               - path: /
                 service:
-                  name: main
+                  identifier: main
                   port: http
     service:
       main:
-        primary: true
+        controller: main
         ports:
           http:
             port: 32400
@@ -69,45 +78,34 @@ spec:
           dlna-tcp:
             port: 32469
             protocol: TCP
-            enabled: true
           dlna-udp:
             port: 1900
             protocol: UDP
-            enabled: true
           plex-companion:
             port: 3005
             protocol: TCP
-            enabled: true
           discovery-udp:
             port: 5353
             protocol: UDP
-            enabled: true
           plex-roku:
             port: 8324
             protocol: TCP
-            enabled: true
           gdm-32410:
             port: 32410
             protocol: UDP
-            enabled: true
           gdm-32412:
             port: 32412
             protocol: UDP
-            enabled: true
           gdm-32413:
             port: 32413
             protocol: UDP
-            enabled: true
           gdm-32414:
             port: 32414
             protocol: UDP
-            enabled: true
     persistence:
       config:
-        enabled: true
         type: persistentVolumeClaim
         accessMode: ReadWriteOnce
         size: 10Gi
       transcode:
-        enabled: true
         type: emptyDir

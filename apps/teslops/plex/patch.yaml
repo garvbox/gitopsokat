@@ -17,7 +17,6 @@ spec:
                 nvidia.com/gpu: 1
             env:
               ADVERTISE_IP: "https://${metallb_ip_plex}:32400/"
-
     defaultPodOptions:
       securityContext:
         supplementalGroups: [44, 109] # Extra groups for access to hardware encode/decode
@@ -29,24 +28,19 @@ spec:
     persistence:
       config:
         existingClaim: plexmediaserver-config
+        type: null
+        accessMode: null
+        size: null
       transcode:
-        enabled: true
+        type: persistentVolumeClaim
         existingClaim: plexmediaserver-transcode
       videos:
-        enabled: true
-        readOnly: true
         existingClaim: videos-pvc
       archivetvshows:
-        enabled: true
-        readOnly: true
         existingClaim: archivetvshows-pvc
       archivemovies:
-        enabled: true
-        readOnly: true
         existingClaim: archivemovies-pvc
       archivesports:
-        enabled: true
-        readOnly: true
         existingClaim: archivesports-pvc
     service:
       main:
