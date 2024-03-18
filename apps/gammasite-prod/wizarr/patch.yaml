@@ -10,7 +10,7 @@ spec:
       nodeSelector:
         kubernetes.io/hostname: gammatron
     persistence:
-      config:
+      data:
         existingClaim: wizarr-config
         type: null
         accessMode: null

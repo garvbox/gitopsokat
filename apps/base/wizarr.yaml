@@ -40,13 +40,13 @@ spec:
         controller: main
         ports:
           http:
-            port: 5960
+            port: 5690
     ingress:
       main:
         enabled: true
         className: nginx
         annotations:
-          hajimari.io/icon: mdi:cloud-search-outline
+          hajimari.io/icon: mdi:wizard-hat
           nginx.ingress.kubernetes.io/whitelist-source-range: ${wl_source_range}
         hosts:
           - host: wizarr.${cluster_ext_domain}
@@ -56,7 +56,7 @@ spec:
                   identifier: main
                   port: http
     persistence:
-      config:
+      data:
         type: persistentVolumeClaim
         accessMode: ReadWriteOnce
         size: 1Gi
