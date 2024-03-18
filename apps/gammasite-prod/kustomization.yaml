@@ -16,6 +16,7 @@ resources:
   - ./radarr
   - ./sonarr
   - ./prowlarr
+  - ./wizarr
   - ./ombi
   - ./audiobookshelf
   - ./syncthing
