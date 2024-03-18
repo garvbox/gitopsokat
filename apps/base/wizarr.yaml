@@ -35,17 +35,22 @@ spec:
               tag: 3.5.1
             env:
               TZ: "Europe/Dublin"
+            probes:
+              liveness:
+                enabled: true
+              readiness:
+                enabled: true
+              startup:
+                enabled: true
+                spec:
+                  failureThreshold: 30
+                  periodSeconds: 5
     service:
       main:
         controller: main
         ports:
           http:
             port: 5690
-      backend:
-        controller: main
-        ports:
-          http-api:
-            port: 5000
     ingress:
       main:
         enabled: true
@@ -60,10 +65,6 @@ spec:
                 service:
                   identifier: main
                   port: http
-              - path: /api
-                service:
-                  identifier: backend
-                  port: http-api
     persistence:
       data:
         type: persistentVolumeClaim
