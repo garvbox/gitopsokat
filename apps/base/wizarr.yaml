@@ -41,6 +41,11 @@ spec:
         ports:
           http:
             port: 5690
+      backend:
+        controller: main
+        ports:
+          http-api:
+            port: 5000
     ingress:
       main:
         enabled: true
@@ -55,6 +60,10 @@ spec:
                 service:
                   identifier: main
                   port: http
+              - path: /api
+                service:
+                  identifier: backend
+                  port: http-api
     persistence:
       data:
         type: persistentVolumeClaim
