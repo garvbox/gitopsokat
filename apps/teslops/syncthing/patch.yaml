@@ -9,19 +9,18 @@ spec:
     persistence:
       config:
         existingClaim: syncthing-config
+        type: null
+        accessMode: null
+        size: null
       videos:
-        enabled: true
-        readOnly: false
         existingClaim: videos-pvc
     service:
       main:
         annotations:
           metallb.universe.tf/loadBalancerIPs: ${metallb_ip_syncthing}
-        enabled: true
         externalTrafficPolicy: Local
         type: LoadBalancer
         ports:
           sync:
-            enabled: true
             port: 22000
             protocol: TCP

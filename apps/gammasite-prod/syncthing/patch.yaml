@@ -10,21 +10,20 @@ spec:
       nodeSelector:
         kubernetes.io/hostname: gammatron
     persistence:
-      videos:
-        enabled: true
-        readOnly: false
-        existingClaim: videos-pvc
       config:
         existingClaim: syncthing-config
+        type: null
+        accessMode: null
+        size: null
+      videos:
+        existingClaim: videos-pvc
     service:
       main:
         annotations:
           metallb.universe.tf/loadBalancerIPs: ${metallb_ip_syncthing}
-        enabled: true
         externalTrafficPolicy: Local
         type: LoadBalancer
         ports:
           sync:
-            enabled: true
             port: 22000
             protocol: TCP
