@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: app-template
-      version: 2.6.0
+      version: 3.0.4
       sourceRef:
         kind: HelmRepository
         name: bjw-s
@@ -37,6 +37,7 @@ spec:
               TZ: "Europe/Dublin"
     service:
       main:
+        controller: main
         ports:
           http:
             port: 9696
@@ -52,11 +53,10 @@ spec:
             paths:
               - path: /
                 service:
-                  name: main
+                  identifier: main
                   port: http
     persistence:
       config:
-        enabled: true
         type: persistentVolumeClaim
         accessMode: ReadWriteOnce
         size: 1Gi
