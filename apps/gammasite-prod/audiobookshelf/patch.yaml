@@ -12,7 +12,16 @@ spec:
     persistence:
       config:
         existingClaim: audiobookshelf-config
+        type: null
+        accessMode: null
+        size: null
       metadata:
         existingClaim: audiobookshelf-metadata
+        type: null
+        accessMode: null
+        size: null
       media:
         existingClaim: audiobookshelf-media
+        type: null
+        accessMode: null
+        size: null
