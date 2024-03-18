@@ -22,13 +22,13 @@ spec:
       securityContext:
         supplementalGroups: [44, 109] # Extra groups for access to hardware encode/decode
     persistence:
-      videos:
-        existingClaim: videos-pvc
+      config:
+        existingClaim: plexmediaserver-config
         type: null
         accessMode: null
         size: null
-      config:
-        existingClaim: plexmediaserver-config
+      videos:
+        existingClaim: videos-pvc
       transcode:
         type: persistentVolumeClaim
         existingClaim: plexmediaserver-transcode-pvc
