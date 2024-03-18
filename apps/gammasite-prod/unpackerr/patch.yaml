@@ -9,11 +9,8 @@ spec:
   values:
     persistence:
       downloads:
-        enabled: true
-        readOnly: false
         existingClaim: downloads-pvc
       unpackerr-config:
-        enabled: true
         name: unpackerr-config
         type: secret
         globalMounts:
