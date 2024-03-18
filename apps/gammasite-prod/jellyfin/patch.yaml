@@ -18,13 +18,13 @@ spec:
       # podSecurityContext:
       #   supplementalGroups: [44, 109] # Extra groups for access to hardware encode/decode
     persistence:
-      videos:
-        enabled: true
-        readOnly: true
-        type: persistentVolumeClaim
-        existingClaim: videos-pvc
       config:
         existingClaim: jellyfin-config
+        type: null
+        accessMode: null
+        size: null
+      videos:
+        existingClaim: videos-pvc
     service:
       main:
         type: LoadBalancer

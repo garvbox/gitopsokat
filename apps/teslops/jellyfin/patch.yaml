@@ -14,24 +14,12 @@ spec:
         size: null
       videos:
         existingClaim: videos-pvc
-        type: null
-        accessMode: null
-        size: null
       archivetvshows:
         existingClaim: archivetvshows-pvc
-        type: null
-        accessMode: null
-        size: null
       archivemovies:
         existingClaim: archivemovies-pvc
-        type: null
-        accessMode: null
-        size: null
       archivesports:
         existingClaim: archivesports-pvc
-        type: null
-        accessMode: null
-        size: null
     service:
       main:
         type: LoadBalancer
