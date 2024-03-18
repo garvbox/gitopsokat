@@ -9,6 +9,9 @@ spec:
     persistence:
       config:
         existingClaim: jellyfin-config
+        type: null
+        accessMode: null
+        size: null
       videos:
         existingClaim: videos-pvc
         type: null
