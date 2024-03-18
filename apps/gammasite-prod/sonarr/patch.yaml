@@ -11,12 +11,11 @@ spec:
         kubernetes.io/hostname: gammatron
     persistence:
       videos:
-        enabled: true
-        readOnly: false
         existingClaim: videos-pvc
       downloads:
-        enabled: true
-        readOnly: false
         existingClaim: downloads-pvc
       config:
         existingClaim: sonarr-config
+        type: null
+        accessMode: null
+        size: null
