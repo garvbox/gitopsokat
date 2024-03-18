@@ -41,15 +41,17 @@ spec:
               PLEX_PREFERENCE_2: "TranscoderQuality=0"
               PLEX_PREFERENCE_3: "TranscoderH264BackgroundPreset=fast"
             probes:
-              liveness:
-                enabled: true
-              readiness:
-                enabled: true
-              startup:
+              startup: &probes
                 enabled: true
                 spec:
+                  httpGet:
+                    path: /status
+                    port: &port 32400
+                  periodSeconds: 10
+                  timeoutSeconds: 1
                   failureThreshold: 30
-                  periodSeconds: 5
+              liveness: *probes
+              readiness: *probes
     defaultPodOptions:
       securityContext:
         runAsUser: 6666
@@ -73,7 +75,7 @@ spec:
         controller: main
         ports:
           http:
-            port: 32400
+            port: *port
             protocol: TCP
           dlna-tcp:
             port: 32469
