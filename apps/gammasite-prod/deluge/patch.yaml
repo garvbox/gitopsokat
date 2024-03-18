@@ -11,16 +11,16 @@ spec:
         kubernetes.io/hostname: gammatron
     persistence:
       downloads:
-        enabled: true
-        readOnly: false
         existingClaim: downloads-pvc
         globalMounts:
           - path: /datapool/downloads
       config:
         existingClaim: deluge-config
+        type: null
+        accessMode: null
+        size: null
     service:
       daemon:
-        enabled: true
         type: LoadBalancer
         externalTrafficPolicy: Local
         annotations:
@@ -28,12 +28,10 @@ spec:
         controller: main
         ports:
           torrents:
-            enabled: true
             port: 55066
             targetPort: 55066
             protocol: TCP
           admin:
-            enabled: true
             port: 58846
             targetPort: 58846
             protocol: TCP
