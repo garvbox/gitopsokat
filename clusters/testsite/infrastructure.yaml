@@ -8,7 +8,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./infrastructure/testsite
+  path: ./infrastructure/testsite/infra-base
   dependsOn:
     - name: infra-core-install
   # Enable Encryption using sops-gpg secret pre-loaded with ansible
