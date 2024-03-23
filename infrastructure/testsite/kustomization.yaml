@@ -6,3 +6,4 @@ resources:
   - ./discord-secrets.yaml
   - ./cf-secret.yaml
   - ../base
+  - ../extras/cert-manager

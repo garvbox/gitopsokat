@@ -30,24 +30,6 @@ spec:
       metallb_ip_range: 172.22.0.50-172.22.0.60
       metallb_ip_nginx: 172.22.0.52
       cluster_ext_domain: testsite.garvbox.net
-      cluster_int_domain: testsite.glenside.lan
+      cluster_int_domain: ktest.gammasite.lan
       default_provisioner_scname: local-path
-      admin_email: gonarvib@protonmail.com
----
-apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
-kind: Kustomization
-metadata:
-  name: infra-core-install
-  namespace: flux-system
-spec:
-  path: ./infrastructure/core-install
-  sourceRef:
-    kind: GitRepository
-    name: flux-system
-  # Flux Sync Settings
-  interval: 60m0s
-  timeout: 3m0s
-  retryInterval: 2m0s
-  wait: true
-  prune: true
-  force: true
+      admin_email: support@garvbox.net
