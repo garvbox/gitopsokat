@@ -26,9 +26,9 @@ spec:
   # Site-specific variables
   postBuild:
     substitute:
-      metallb_ip_dns: 172.22.0.40
-      metallb_ip_range: 172.22.0.50-172.22.0.60
-      metallb_ip_nginx: 172.22.0.52
+      metallb_ip_dns: 192.168.0.46
+      metallb_ip_range: 192.168.0.70-192.168.0.80
+      metallb_ip_nginx: 192.168.0.70
       cluster_ext_domain: testsite.garvbox.net
       cluster_int_domain: ktest.gammasite.lan
       default_provisioner_scname: local-path
