@@ -37,28 +37,22 @@ spec:
               TZ: "Europe/Dublin"
             probes:
               liveness:
-                enabled: true
+                enabled: false
               readiness:
-                enabled: true
+                enabled: false
               startup:
-                enabled: true
-                spec:
-                  failureThreshold: 30
-                  periodSeconds: 5
+                enabled: false
           db:
             image:
               repository: mariadb
               tag: 10.11.7
             probes:
               liveness:
-                enabled: true
+                enabled: false
               readiness:
-                enabled: true
+                enabled: false
               startup:
-                enabled: true
-                spec:
-                  failureThreshold: 30
-                  periodSeconds: 5
+                enabled: false
     service:
       main:
         controller: main
