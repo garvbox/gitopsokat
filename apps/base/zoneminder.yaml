@@ -1,0 +1,107 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: zoneminder
+  namespace: default
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: app-template
+      version: 3.0.4
+      sourceRef:
+        kind: HelmRepository
+        name: bjw-s
+        namespace: flux-system
+  maxHistory: 3
+  install:
+    createNamespace: true
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      retries: 3
+  uninstall:
+    keepHistory: false
+  values:
+    controllers:
+      main:
+        containers:
+          main:
+            image:
+              repository: ghcr.io/zoneminder-containers/zoneminder-base
+              tag: 1.36.33
+            env:
+              TZ: "Europe/Dublin"
+            probes:
+              liveness:
+                enabled: true
+              readiness:
+                enabled: true
+              startup:
+                enabled: true
+                spec:
+                  failureThreshold: 30
+                  periodSeconds: 5
+          db:
+            image:
+              repository: mariadb
+              tag: 10.11.7
+            probes:
+              liveness:
+                enabled: true
+              readiness:
+                enabled: true
+              startup:
+                enabled: true
+                spec:
+                  failureThreshold: 30
+                  periodSeconds: 5
+    service:
+      main:
+        controller: main
+        ports:
+          http:
+            port: 80
+      db:
+        controller: db
+        ports:
+          mysql:
+            port: 3306
+    ingress:
+      main:
+        enabled: true
+        className: nginx
+        annotations:
+          hajimari.io/icon: mdi:wizard-hat
+          nginx.ingress.kubernetes.io/whitelist-source-range: ${wl_source_range}
+        hosts:
+          - host: zoneminder.${cluster_ext_domain}
+            paths:
+              - path: /
+                service:
+                  identifier: main
+                  port: http
+    persistence:
+      config:
+        type: persistentVolumeClaim
+        accessMode: ReadWriteOnce
+        size: 1Gi
+      data:
+        type: persistentVolumeClaim
+        accessMode: ReadWriteOnce
+        size: 10Gi
+      log:
+        type: persistentVolumeClaim
+        accessMode: ReadWriteOnce
+        size: 1Gi
+      mysql:
+        type: persistentVolumeClaim
+        accessMode: ReadWriteOnce
+        size: 10Gi
+        advancedMounts:
+          main:
+            mysql:
+              - path: /var/lib/mysql
