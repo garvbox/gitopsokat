@@ -35,6 +35,7 @@ spec:
               tag: 1.36.33
             env:
               TZ: "Europe/Dublin"
+              MYSQL_USER: zoneminder
             probes:
               liveness:
                 enabled: false
@@ -43,6 +44,9 @@ spec:
               startup:
                 enabled: false
           db:
+            env:
+              MYSQL_USER: zoneminder
+              MYSQL_DATABASE: zm
             image:
               repository: mariadb
               tag: 10.11.7

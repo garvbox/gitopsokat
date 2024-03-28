@@ -11,25 +11,19 @@ spec:
         containers:
           main:
             env:
-              - name: MYSQL_USER
-                value: zoneminder
-              - name: MYSQL_PASSWORD
+              MYSQL_PASSWORD:
                 valueFrom:
                   secretKeyRef:
                     name: zoneminder-db-secret
                     key: app-password
           db:
             env:
-              - name: MYSQL_ROOT_PASSWORD
+              MYSQL_ROOT_PASSWORD:
                 valueFrom:
                   secretKeyRef:
                     name: zoneminder-db-secret
                     key: root-password
-              - name: MYSQL_DATABASE
-                value: zm
-              - name: MYSQL_USER
-                value: zoneminder
-              - name: MYSQL_PASSWORD
+              MYSQL_PASSWORD:
                 valueFrom:
                   secretKeyRef:
                     name: zoneminder-db-secret
