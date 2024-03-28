@@ -70,7 +70,7 @@ spec:
         enabled: true
         className: nginx
         annotations:
-          hajimari.io/icon: mdi:wizard-hat
+          hajimari.io/icon: mdi:cctv
           nginx.ingress.kubernetes.io/whitelist-source-range: ${wl_source_range}
         hosts:
           - host: zoneminder.${cluster_ext_domain}

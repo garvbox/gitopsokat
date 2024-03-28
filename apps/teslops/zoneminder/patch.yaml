@@ -1,0 +1,20 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: zoneminder
+  namespace: default
+spec:
+  values:
+    controllers:
+      main:
+        containers:
+          main:
+            env:
+              MYSQL_USER: zoneminder
+              MYSQL_PASSWORD: zoneminder
+          db:
+            env:
+              MYSQL_ROOT_PASSWORD: supersecretrootpassword
+              MYSQL_DATABASE: zm
+
