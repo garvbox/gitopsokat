@@ -9,4 +9,4 @@ resources:
   - ./jellyfin
   - ./syncthing
   - ./tautulli
-  - ./jellyfin
+  - ./zoneminder
