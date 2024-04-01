@@ -67,8 +67,9 @@ spec:
       db:
         controller: main
         ports:
-          http:
+          mysql:
             port: 3306
+            protocol: TCP
     ingress:
       main:
         enabled: true
