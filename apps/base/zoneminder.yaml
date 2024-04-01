@@ -64,6 +64,11 @@ spec:
         ports:
           http:
             port: 80
+      db:
+        controller: db
+        ports:
+          http:
+            port: 3306
     ingress:
       main:
         enabled: true
