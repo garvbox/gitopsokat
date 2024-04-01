@@ -65,7 +65,7 @@ spec:
           http:
             port: 80
       db:
-        controller: db
+        controller: main
         ports:
           http:
             port: 3306
