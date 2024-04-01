@@ -36,6 +36,7 @@ spec:
             env:
               TZ: "Europe/Dublin"
               MYSQL_USER: zoneminder
+              MYSQL_HOST: zoneminder
             probes:
               liveness:
                 enabled: false
