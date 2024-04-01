@@ -5,3 +5,4 @@ resources:
   - ./discord-secrets.yaml
   - ../../base
   - ../../extras/nvidia-device-plugin
+  - ../../extras/cert-manager
