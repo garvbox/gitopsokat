@@ -34,3 +34,9 @@ spec:
         externalTrafficPolicy: Local
         annotations:
           metallb.universe.tf/loadBalancerIPs: ${metallb_ip_zm}
+    persistence:
+      data:
+        type: null
+        accessMode: null
+        size: null
+        existingClaim: zoneminder-data-pvc
