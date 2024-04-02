@@ -50,7 +50,7 @@ spec:
               MYSQL_DATABASE: zm
             image:
               repository: mariadb
-              tag: 10.11.7
+              tag: 11.3.2
             probes:
               liveness:
                 enabled: false
