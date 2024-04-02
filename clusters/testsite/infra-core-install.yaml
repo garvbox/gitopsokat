@@ -5,7 +5,7 @@ metadata:
   name: infra-core-install
   namespace: flux-system
 spec:
-  path: ./infrastructure/core-install
+  path: ./infrastructure/testsite/infra-core-install
   sourceRef:
     kind: GitRepository
     name: flux-system
