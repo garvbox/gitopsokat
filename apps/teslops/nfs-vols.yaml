@@ -124,3 +124,34 @@ spec:
   resources:
     requests:
       storage: 1Mi
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-zoneminder-data-pv
+  namespace: default
+spec:
+  storageClassName: nfs-ark
+  capacity:
+    storage: 1Mi
+  accessModes:
+    - ReadWriteMany
+  volumeMode: Filesystem
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    server: ${nfs_server}
+    path: "/mnt/pacific/zoneminder"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: zoneminder-data-pvc
+  namespace: default
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: nfs-ark
+  volumeName: nfs-zoneminder-data-pv
+  resources:
+    requests:
+      storage: 1Mi
