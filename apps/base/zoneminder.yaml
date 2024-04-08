@@ -46,6 +46,7 @@ spec:
                 enabled: false
           db:
             env:
+              TZ: "Europe/Dublin"
               MYSQL_USER: zoneminder
               MYSQL_DATABASE: zm
             image:
