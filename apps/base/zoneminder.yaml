@@ -100,5 +100,6 @@ spec:
         size: 10Gi
         advancedMounts:
           main:
-            mysql:
+            db:
               - path: /var/lib/mysql
+                readOnly: false
