@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: frigate
-      version: 0.13.1
+      version: 0.12.0
       sourceRef:
         kind: HelmRepository
         name: blakeblackshear
@@ -28,7 +28,7 @@ spec:
   values:
     image:
       repository: ghcr.io/blakeblackshear/frigate
-      tag: 0.13.1
+      tag: 0.12.0
     ingress:
       enabled: true
       ingressClassName: nginx
