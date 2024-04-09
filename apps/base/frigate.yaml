@@ -38,7 +38,7 @@ spec:
       hosts:
         - host: frigate.${cluster_ext_domain}
           paths:
-            - path: '/'
+            - '/'
     persistence:
       config:
         enabled: true
