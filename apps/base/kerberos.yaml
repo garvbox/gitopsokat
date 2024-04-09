@@ -44,11 +44,9 @@ spec:
                 enabled: false
         initContainers:
           download-config:
-            image: kerberos/agent:latest
-            volumeMounts:
-              - name: kerberos-data
-                path: /home/agent/data/config
-                subPath: config
+            image:
+              repository: kerberos/agent
+              tag: b67a72b
             command:
               [
                 "cp",
@@ -94,4 +92,8 @@ spec:
                 readOnly: false
               - path: /home/agent/data/cloud
                 subPath: cloud
+                readOnly: false
+            download-config:
+              - path: /home/agent/data/config
+                subPath: config
                 readOnly: false
