@@ -5,3 +5,4 @@ resources:
   - bjw-s-charts.yaml
   - grafana-charts.yaml
   - hajimari.yaml
+  - blakeblackshear.yaml
