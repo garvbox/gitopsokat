@@ -43,7 +43,7 @@ spec:
               startup:
                 enabled: false
         initContainers:
-          - name: download-config
+          download-config:
             image: kerberos/agent:latest
             volumeMounts:
               - name: kerberos-data
