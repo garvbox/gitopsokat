@@ -1,3 +1,4 @@
+
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
@@ -29,6 +30,17 @@ spec:
     image:
       repository: ghcr.io/blakeblackshear/frigate
       tag: 0.13.2
+    config: |
+      mqtt:
+        enabled: False
+      cameras:
+        dummy_camera: # <--- this will be changed to your actual camera later
+          enabled: False
+          ffmpeg:
+            inputs:
+              - path: rtsp://127.0.0.1:554/rtsp
+                roles:
+                  - detect
     ingress:
       enabled: true
       ingressClassName: nginx
