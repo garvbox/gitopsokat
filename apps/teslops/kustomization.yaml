@@ -9,4 +9,3 @@ resources:
   - ./jellyfin
   - ./syncthing
   - ./tautulli
-  - ./kerberos
