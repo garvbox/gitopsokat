@@ -11,9 +11,10 @@ spec:
         enabled: False
       record:
         enabled: True
-          retain:
-            days: 30
-            mode: all
+        sync_recordings: True
+        retain:
+          days: 30
+          mode: all
       cameras:
         carpark:
           detect:
