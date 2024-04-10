@@ -9,6 +9,8 @@ spec:
     config: |
       mqtt:
         enabled: False
+      detect:
+        enabled: False
       cameras:
         carpark:
           ffmpeg:
