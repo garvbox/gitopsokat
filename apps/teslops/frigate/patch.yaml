@@ -16,6 +16,6 @@ spec:
               - path: rtsp://admin:adminadmin@10.0.128.54:554//h265Preview_01_main
                 roles:
                   - record
-    # persistence:
-    #   media:
-    #     existingClaim: frigate-data-pvc
+    persistence:
+      media:
+        existingClaim: frigate-data-pvc
