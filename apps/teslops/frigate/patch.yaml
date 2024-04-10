@@ -18,6 +18,30 @@ spec:
               - path: rtsp://admin:adminadmin@10.0.128.54:554//h265Preview_01_main
                 roles:
                   - record
+        backyard:
+          detect:
+            enabled: False
+          ffmpeg:
+            inputs:
+              - path: rtsp://10.0.128.53:554/user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream
+                roles:
+                  - record
+        sidepath:
+          detect:
+            enabled: False
+          ffmpeg:
+            inputs:
+              - path: rtsp://10.0.128.56:554/user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream
+                roles:
+                  - record
+        driveway:
+          detect:
+            enabled: False
+          ffmpeg:
+            inputs:
+              - path: rtsp://10.0.128.57:554/user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream
+                roles:
+                  - record
     persistence:
       media:
         existingClaim: frigate-data-pvc
