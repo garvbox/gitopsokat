@@ -9,6 +9,11 @@ spec:
     config: |
       mqtt:
         enabled: False
+      record:
+        enabled: True
+          retain:
+            days: 30
+            mode: all
       cameras:
         carpark:
           detect:
