@@ -9,10 +9,10 @@ spec:
     config: |
       mqtt:
         enabled: False
-      detect:
-        enabled: False
       cameras:
         carpark:
+          detect:
+            enabled: False
           ffmpeg:
             inputs:
               - path: rtsp://admin:adminadmin@10.0.128.54:554//h265Preview_01_main
