@@ -1,0 +1,25 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: frigate
+  namespace: default
+spec:
+  values:
+    config: |
+      mqtt:
+        enabled: False
+      cameras:
+        carpark:
+          ffmpeg:
+            inputs:
+              - path: rtsp://admin:adminadmin@10.0.128.54:554//h264Preview_01_sub
+                roles:
+                  - rtmp
+                  - detect
+              - path: rtsp://admin:adminadmin@10.0.128.54:554//h265Preview_01_main
+                roles:
+                  - record
+    persistence:
+      media:
+        existingClaim: frigate-data-pvc

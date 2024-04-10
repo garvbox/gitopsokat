@@ -1,0 +1,31 @@
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-frigate-data-pv
+  namespace: default
+spec:
+  storageClassName: nfs-ark
+  capacity:
+    storage: 1Mi
+  accessModes:
+    - ReadWriteMany
+  volumeMode: Filesystem
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    server: ${nfs_server}
+    path: "/mnt/pacific/frigate"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: frigate-data-pvc
+  namespace: default
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: nfs-ark
+  volumeName: nfs-frigate-data-pv
+  resources:
+    requests:
+      storage: 1Mi
