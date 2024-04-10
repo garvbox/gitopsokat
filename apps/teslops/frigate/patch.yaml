@@ -9,7 +9,7 @@ spec:
     config: |
       mqtt:
         enabled: True
-        host: mqttbroker01.glenside.lan
+        host: homeassistant01.glenside.lan
       record:
         enabled: True
         sync_recordings: True
