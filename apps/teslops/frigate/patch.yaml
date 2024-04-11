@@ -8,7 +8,8 @@ spec:
   values:
     config: |
       mqtt:
-        enabled: False
+        enabled: True
+        host: homeassistant01.glenside.lan
       record:
         enabled: True
         sync_recordings: True
