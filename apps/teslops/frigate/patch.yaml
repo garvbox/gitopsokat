@@ -22,7 +22,7 @@ spec:
             enabled: False
           ffmpeg:
             inputs:
-              - path: rtsp://admin:adminadmin@10.0.128.54:554//h265Preview_01_main
+              - path: rtsp://admin:adminadmin@cam01:554//h265Preview_01_main
                 roles:
                   - record
         backyard:
@@ -30,7 +30,7 @@ spec:
             enabled: False
           ffmpeg:
             inputs:
-              - path: rtsp://10.0.128.53:554/user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream
+              - path: rtsp://cam03:554/user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream
                 roles:
                   - record
         sidepath:
@@ -38,7 +38,7 @@ spec:
             enabled: False
           ffmpeg:
             inputs:
-              - path: rtsp://10.0.128.56:554/user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream
+              - path: rtsp://cam02:554/user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream
                 roles:
                   - record
         driveway:
@@ -46,7 +46,7 @@ spec:
             enabled: False
           ffmpeg:
             inputs:
-              - path: rtsp://10.0.128.57:554/user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream
+              - path: rtsp://cam04:554/user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream
                 roles:
                   - record
     persistence:
