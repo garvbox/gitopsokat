@@ -24,7 +24,7 @@
   ],
   "packageRules": [
     {
-      "description": "Minor Patches",
+      "description": "Patches",
       "matchDatasources": [
         "docker",
         "github-releases",
@@ -32,8 +32,7 @@
       ],
       "automerge": true,
       "matchUpdateTypes": [
-        "patch",
-        "minor"
+        "patch"
       ],
       "schedule": [
         "after 4pm and before 11pm every weekday",
@@ -44,7 +43,7 @@
       "description": "Restrict Arr Patches",
       "matchPackageNames": [
         "ghcr.io/onedr0p/sonarr-develop",
-        "ghcr.io/onedr0p/radarr-develop", 
+        "ghcr.io/onedr0p/radarr-develop",
         "ghcr.io/onedr0p/prowlarr-develop"
       ],
       "matchDatasources": [
@@ -59,7 +58,7 @@
       ]
     },
     {
-      "description": "Major Update Tuesday",
+      "description": "Update Tuesday",
       "matchDatasources": [
         "docker",
         "github-releases",
@@ -67,6 +66,7 @@
       ],
       "automerge": false,
       "matchUpdateTypes": [
+        "minor",
         "major"
       ],
       "schedule": [
