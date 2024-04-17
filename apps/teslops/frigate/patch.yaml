@@ -6,6 +6,8 @@ metadata:
   namespace: default
 spec:
   values:
+    coral:
+      enabled: true
     config: |
       mqtt:
         enabled: True
@@ -16,6 +18,10 @@ spec:
         retain:
           days: 30
           mode: all
+      detectors:
+        coral:
+          type: edgetpu
+          device: usb
       cameras:
         carpark:
           detect:
