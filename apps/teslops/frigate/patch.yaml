@@ -32,7 +32,7 @@ spec:
       cameras:
         carpark:
           detect:
-            enabled: False
+            enabled: True
           ffmpeg:
             inputs:
               - path: rtsp://admin:adminadmin@cam01:554//h265Preview_01_main
@@ -43,7 +43,7 @@ spec:
                   - detect
         backyard:
           detect:
-            enabled: False
+            enabled: True
           ffmpeg:
             inputs:
               - path: rtsp://cam03:554/user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream
@@ -52,7 +52,7 @@ spec:
                   - detect
         sidepath:
           detect:
-            enabled: False
+            enabled: True
           ffmpeg:
             inputs:
               - path: rtsp://cam02:554/user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream
@@ -61,7 +61,7 @@ spec:
                   - detect
         driveway:
           detect:
-            enabled: False
+            enabled: True
           ffmpeg:
             inputs:
               - path: rtsp://cam04:554/user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream
