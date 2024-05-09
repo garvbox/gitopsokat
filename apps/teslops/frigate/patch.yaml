@@ -29,6 +29,9 @@ spec:
           - bird
           - dog
           - elephant
+      birdseye:
+        enabled: True
+        mode: continuous
       cameras:
         carpark:
           detect:
