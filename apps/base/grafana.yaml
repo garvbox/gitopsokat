@@ -28,7 +28,7 @@ spec:
   values:
     image:
       repository: grafana/grafana
-      tag: 10.4.2
+      tag: 11.0.0
     persistence:
       enabled: true
       type: pvc
