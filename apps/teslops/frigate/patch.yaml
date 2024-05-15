@@ -41,6 +41,7 @@ spec:
               - path: rtsp://admin:adminadmin@cam01:554//h265Preview_01_main
                 roles:
                   - record
+                  - audio
               - path: rtsp://admin:adminadmin@cam01:554//h264Preview_01_sub
                 roles:
                   - detect
