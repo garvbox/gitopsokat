@@ -31,8 +31,8 @@ spec:
         containers:
           main:
             image:
-              repository: ghcr.io/onedr0p/jellyfin
-              tag: 10.8.11
+              repository: jellyfin/jellyfin
+              tag: 10.9.3
             env:
               TZ: "Europe/Dublin"
               JELLYFIN_PublishedServerUrl: https://jellyfin.${cluster_ext_domain}
