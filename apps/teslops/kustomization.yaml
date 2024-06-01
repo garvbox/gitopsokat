@@ -6,7 +6,6 @@ resources:
   - ../sources
   - ../base/hajimari.yaml
   - ./plex
-  - ./jellyfin
   - ./syncthing
   - ./tautulli
   - ./frigate
