@@ -72,6 +72,24 @@ spec:
                 roles:
                   - record
                   - detect
+        frontdoor:
+          detect:
+            enabled: True
+          ffmpeg:
+            inputs:
+              - path: rtsp://cam05:554/user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream
+                roles:
+                  - record
+                  - detect
+        shedwall:
+          detect:
+            enabled: True
+          ffmpeg:
+            inputs:
+              - path: rtsp://cam06:554/user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream
+                roles:
+                  - record
+                  - detect
     persistence:
       media:
         existingClaim: frigate-data-pvc
