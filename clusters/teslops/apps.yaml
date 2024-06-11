@@ -31,6 +31,7 @@ spec:
       metallb_ip_jellyfin: 10.0.40.28
       metallb_ip_zm: 10.0.40.29
       wl_source_range: 192.168.0.0/16,10.0.0.0/8
+      cluster_name: teslops
       cluster_ext_domain: alphasite-teslops.garvbox.net
       cluster_int_domain: teslops.glenside.lan
       default_provisioner_scname: local-path

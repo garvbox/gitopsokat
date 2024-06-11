@@ -25,6 +25,7 @@ spec:
   # Site-specific variables
   postBuild:
     substitute:
+      cluster_name: gammasite
       cluster_int_domain: kube.gammasite.lan
       cluster_ext_domain: gammasite.garvbox.net
       default_provisioner_scname: local-path
