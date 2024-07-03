@@ -31,7 +31,7 @@ spec:
         containers:
           main:
             image:
-              repository: ghcr.io/onedr0p/radarr-develop
+              repository: ghcr.io/onedr0p/radarr
               tag: 5.7.0.8882
             env:
               TZ: "Europe/Dublin"
