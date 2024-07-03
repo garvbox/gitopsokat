@@ -31,7 +31,7 @@ spec:
         containers:
           main:
             image:
-              repository: ghcr.io/onedr0p/prowlarr-develop
+              repository: ghcr.io/onedr0p/prowlarr
               tag: 1.19.0.4568
             env:
               TZ: "Europe/Dublin"
