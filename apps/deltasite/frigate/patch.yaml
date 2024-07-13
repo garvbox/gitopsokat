@@ -1,0 +1,45 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: frigate
+  namespace: default
+spec:
+  values:
+    coral:
+      enabled: true
+    config: |
+      mqtt:
+        enabled: False
+      record:
+        enabled: False
+        sync_recordings: True
+        retain:
+          days: 30
+          mode: all
+      detectors:
+        coral:
+          type: edgetpu
+          device: usb
+      objects:
+        track:
+          - person
+          - cat
+          - bird
+          - dog
+          - elephant
+      cameras:
+        cam1:
+          detect:
+            enabled: True
+          ffmpeg:
+            inputs:
+              - path: rtsp://cam1:554/user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream
+                roles:
+                  - record
+                  - detect
+    persistence:
+      media:
+        existingClaim: frigate-data-pvc
+    nodeSelector:
+      kubernetes.io/hostname: turingcm2
