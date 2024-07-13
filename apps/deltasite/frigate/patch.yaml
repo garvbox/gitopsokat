@@ -19,6 +19,10 @@ spec:
           mode: all
       detect:
         enabled: False
+      detectors:
+        cpu1:
+          type: cpu
+          num_threads: 1
       objects:
         track:
           - person
