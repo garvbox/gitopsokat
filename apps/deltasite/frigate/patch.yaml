@@ -32,6 +32,7 @@ spec:
           - elephant
       cameras:
         cam1:
+          enabled: False
           detect:
             enabled: False
           ffmpeg:
