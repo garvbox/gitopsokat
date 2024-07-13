@@ -30,3 +30,4 @@ spec:
       cluster_ext_domain: deltasite.garvbox.net
       default_provisioner_scname: local-path
       wl_source_range: 192.168.0.0/16,10.0.0.0/8
+      nfs_server: turingcm3
