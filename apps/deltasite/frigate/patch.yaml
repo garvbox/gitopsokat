@@ -33,13 +33,10 @@ spec:
       cameras:
         cam1:
           detect:
-            enabled: True
+            enabled: False
           ffmpeg:
             inputs:
               - path: rtsp://cam1:554/user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream
-                roles:
-                  - record
-                  - detect
     persistence:
       media:
         existingClaim: frigate-data-pvc
