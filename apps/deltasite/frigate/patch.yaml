@@ -17,10 +17,8 @@ spec:
         retain:
           days: 30
           mode: all
-      detectors:
-        coral:
-          type: edgetpu
-          device: usb
+      detect:
+        enabled: False
       objects:
         track:
           - person
