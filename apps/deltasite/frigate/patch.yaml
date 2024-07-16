@@ -20,9 +20,9 @@ spec:
       detect:
         enabled: False
       detectors:
-        cpu1:
-          type: cpu
-          num_threads: 1
+        coral:
+          type: edgetpu
+          device: usb
       objects:
         track:
           - person
