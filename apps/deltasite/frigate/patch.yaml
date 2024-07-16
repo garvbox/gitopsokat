@@ -44,7 +44,12 @@ spec:
             enabled: False
           ffmpeg:
             inputs:
-              - path: rtsp://192.168.3.21:554/user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream
+              - path: rtsp://admin:adminadmin@192.168.3.21:554//h265Preview_01_main
+                roles:
+                  - record
+              - path: rtsp://admin:adminadmin@192.168.3.21:554//h264Preview_01_sub
+                roles:
+                  - detect
         cam3:
           enabled: True
           detect:
