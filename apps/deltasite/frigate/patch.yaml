@@ -32,12 +32,12 @@ spec:
           - elephant
       cameras:
         cam1:
-          enabled: False
+          enabled: True
           detect:
             enabled: False
           ffmpeg:
             inputs:
-              - path: rtsp://cam1:554/user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream
+              - path: rtsp://192.168.3.20:554/user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream
     persistence:
       media:
         existingClaim: frigate-data-pvc
