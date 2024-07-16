@@ -12,13 +12,11 @@ spec:
       mqtt:
         enabled: False
       record:
-        enabled: False
+        enabled: True
         sync_recordings: True
         retain:
           days: 30
           mode: all
-      detect:
-        enabled: False
       detectors:
         coral:
           type: edgetpu
@@ -38,10 +36,13 @@ spec:
           ffmpeg:
             inputs:
               - path: rtsp://192.168.3.20:554/user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream
+                roles:
+                  - detect
+                  - record
         cam2:
           enabled: True
           detect:
-            enabled: False
+            enabled: True
           ffmpeg:
             inputs:
               - path: rtsp://admin:adminadmin@192.168.3.21:554//h265Preview_01_main
@@ -57,6 +58,9 @@ spec:
           ffmpeg:
             inputs:
               - path: rtsp://192.168.3.22:554/user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream
+                roles:
+                  - detect
+                  - record
         cam4:
           enabled: True
           detect:
@@ -64,6 +68,9 @@ spec:
           ffmpeg:
             inputs:
               - path: rtsp://192.168.3.23:554/user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream
+                roles:
+                  - detect
+                  - record
         cam5:
           enabled: True
           detect:
@@ -71,6 +78,9 @@ spec:
           ffmpeg:
             inputs:
               - path: rtsp://192.168.3.24:554/user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream
+                roles:
+                  - detect
+                  - record
     persistence:
       media:
         existingClaim: frigate-data-pvc
