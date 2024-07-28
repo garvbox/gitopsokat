@@ -33,8 +33,6 @@ spec:
       cameras:
         cam1:
           enabled: True
-          detect:
-            enabled: False
           ffmpeg:
             inputs:
               - path: rtsp://192.168.3.20:554/user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream
@@ -43,8 +41,6 @@ spec:
                   - record
         cam2:
           enabled: True
-          detect:
-            enabled: True
           ffmpeg:
             inputs:
               - path: rtsp://admin:adminadmin@192.168.3.21:554//h265Preview_01_main
@@ -55,8 +51,6 @@ spec:
                   - detect
         cam3:
           enabled: True
-          detect:
-            enabled: False
           ffmpeg:
             inputs:
               - path: rtsp://192.168.3.22:554/user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream
@@ -65,8 +59,6 @@ spec:
                   - record
         cam4:
           enabled: True
-          detect:
-            enabled: False
           ffmpeg:
             inputs:
               - path: rtsp://192.168.3.23:554/user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream
@@ -75,8 +67,6 @@ spec:
                   - record
         cam5:
           enabled: True
-          detect:
-            enabled: False
           ffmpeg:
             inputs:
               - path: rtsp://192.168.3.24:554/user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream
