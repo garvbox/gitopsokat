@@ -70,6 +70,9 @@ spec:
                   - record
         Back-Door:
           enabled: True
+          motion:
+            mask:
+              - 1280,0,1280,483,444,0
           ffmpeg:
             inputs:
               - path: rtsp://192.168.3.23:554/user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream
