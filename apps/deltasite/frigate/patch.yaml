@@ -15,8 +15,12 @@ spec:
         enabled: True
         sync_recordings: True
         retain:
-          days: 30
+          days: 2
           mode: all
+        events:
+          retain:
+            default: 90
+            mode: active_objects
       detectors:
         coral:
           type: edgetpu
