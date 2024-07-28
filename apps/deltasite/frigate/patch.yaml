@@ -52,7 +52,7 @@ spec:
           enabled: True
           motion:
             mask:
-              - 422,25,210,25,210,0,420,0
+              - 420,50,0,70,0,0,380,0,420,0
           ffmpeg:
             inputs:
               - path: rtsp://admin:adminadmin@192.168.3.21:554//h265Preview_01_main
