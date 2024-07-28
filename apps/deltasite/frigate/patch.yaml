@@ -42,6 +42,8 @@ spec:
       cameras:
         Shed-Door:
           enabled: True
+          detect:
+            enabled: False
           ffmpeg:
             inputs:
               - path: rtsp://192.168.3.20:554/user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream
@@ -63,11 +65,14 @@ spec:
                   - detect
         Back-Corner:
           enabled: True
+          detect:
+            enabled: False
           ffmpeg:
             inputs:
               - path: rtsp://192.168.3.22:554/user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream
                 roles:
                   - record
+                  - detect
         Back-Door:
           enabled: True
           motion:
@@ -81,11 +86,14 @@ spec:
                   - record
         Lower-Yard:
           enabled: True
+          detect:
+            enabled: False
           ffmpeg:
             inputs:
               - path: rtsp://192.168.3.24:554/user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream
                 roles:
                   - record
+                  - detect
         Van-Watch:
           motion:
             mask:
