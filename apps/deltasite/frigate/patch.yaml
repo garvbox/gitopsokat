@@ -67,7 +67,6 @@ spec:
             inputs:
               - path: rtsp://192.168.3.22:554/user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream
                 roles:
-                  - detect
                   - record
         Back-Door:
           enabled: True
@@ -83,7 +82,6 @@ spec:
             inputs:
               - path: rtsp://192.168.3.24:554/user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream
                 roles:
-                  - detect
                   - record
         Van-Watch:
           motion:
