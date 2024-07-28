@@ -33,7 +33,12 @@ spec:
           - cat
           - bird
           - dog
-          - elephant
+          - horse
+          - sheep
+          - cow
+          - car
+          - bicycle
+          - motorcycle
       cameras:
         Shed-Door:
           enabled: True
