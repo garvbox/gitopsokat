@@ -81,6 +81,9 @@ spec:
                   - detect
                   - record
         Van-Watch:
+          motion:
+            mask:
+              - 640,0,640,90,0,90,0,0
           ffmpeg:
             inputs:
               - path: rtsp://camera:eZW2tHGfVf_zLjxTgsBm@192.168.3.66/stream1
@@ -89,10 +92,10 @@ spec:
               - path: rtsp://camera:eZW2tHGfVf_zLjxTgsBm@192.168.3.66/stream2
                 roles:
                   - detect
-            motion:
-                mask:
-                  - 640,0,640,90,0,90,0,0
         Chicken-Watch:
+          motion:
+            mask:
+              - 0,0,0,360,300,360,300,0
           ffmpeg:
             inputs:
               - path: rtsp://camera:eZW2tHGfVf_zLjxTgsBm@192.168.3.187/stream1
@@ -101,9 +104,6 @@ spec:
               - path: rtsp://camera:eZW2tHGfVf_zLjxTgsBm@192.168.3.187/stream2
                 roles:
                   - detect
-            motion:
-                mask:
-                  - 0,0,0,360,300,360,300,0
     persistence:
       media:
         existingClaim: frigate-data-pvc
