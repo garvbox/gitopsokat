@@ -31,13 +31,9 @@ spec:
         track:
           - person
           - cat
-          - bird
           - dog
-          - horse
-          - sheep
           - cow
           - car
-          - bicycle
           - motorcycle
       cameras:
         Shed-Door:
