@@ -31,12 +31,16 @@ spec:
         containers:
           main:
             image:
-              repository: lscr.io/linuxserver/unifi-controller
-              tag: 8.0.24
+              repository: jacobalberty/unifi
+              tag: 8.3.32
             env:
               TZ: "Europe/Dublin"
-              MEM_LIMIT: 2096
-              MEM_STARTUP: 1024
+              RUNAS_UID0: "false"
+              UNIFI_UID: "911"
+              UNIFI_GID: "911"
+              UNIFI_STDOUT: "true"
+              JVM_INIT_HEAP_SIZE: 1024M
+              JVM_MAX_HEAP_SIZE: 2048M
             probes:
               liveness:
                 enabled: false
@@ -95,3 +99,6 @@ spec:
         type: persistentVolumeClaim
         accessMode: ReadWriteOnce
         size: 1Gi
+        globalMounts:
+          - path: /unifi
+            readOnly: false
