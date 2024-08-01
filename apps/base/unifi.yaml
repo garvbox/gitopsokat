@@ -1,0 +1,96 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: unifi-controller
+  namespace: default
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: app-template
+      version: 3.3.1
+      sourceRef:
+        kind: HelmRepository
+        name: bjw-s
+        namespace: flux-system
+  maxHistory: 3
+  install:
+    createNamespace: true
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      retries: 3
+  uninstall:
+    keepHistory: false
+  values:
+    controllers:
+      main:
+        containers:
+          main:
+            image:
+              repository: lscr.io/linuxserver/unifi-controller
+              tag: 8.0.24
+            env:
+              TZ: "Europe/Dublin"
+              MEM_LIMIT: 2096
+              MEM_STARTUP: 1024
+            probes:
+              liveness:
+                enabled: false
+              readiness:
+                enabled: false
+              startup:
+                enabled: false
+    service:
+      main:
+        controller: main
+        ports:
+          http:
+            protocol: HTTPS
+            port: 8443
+          unifi-stun:
+            port: 3478
+            protocol: UDP
+          unifi-discovery:
+            port: 10001
+            protocol: UDP
+          unifi-device-discovery:
+            port: 1900
+            protocol: UDP
+          unifi-device-comms:
+            port: 8080
+            protocol: TCP
+          unifi-guest-portal:
+            port: 8880
+            protocol: TCP
+          unifi-guest-portal-https:
+            port: 8843
+            protocol: TCP
+          unifi-mobile-throughput:
+            port: 6789
+            protocol: TCP
+          unifi-syslog:
+            port: 5514
+            protocol: UDP
+    ingress:
+      main:
+        enabled: true
+        className: nginx
+        annotations:
+          hajimari.io/icon: mdi:wifi-cog
+          nginx.ingress.kubernetes.io/whitelist-source-range: ${wl_source_range}
+        hosts:
+          - host: unifi-controller.${cluster_ext_domain}
+            paths:
+              - path: /
+                service:
+                  identifier: main
+                  port: http
+    persistence:
+      config:
+        type: persistentVolumeClaim
+        accessMode: ReadWriteOnce
+        size: 1Gi
