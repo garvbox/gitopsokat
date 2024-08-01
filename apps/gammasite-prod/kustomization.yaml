@@ -21,4 +21,5 @@ resources:
   - ./audiobookshelf
   - ./syncthing
   - ./grafana
+  - ./unifi
   - ./homeassistant # HA External Proxy
