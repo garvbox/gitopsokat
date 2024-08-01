@@ -80,8 +80,9 @@ spec:
         enabled: true
         className: nginx
         annotations:
-          hajimari.io/icon: mdi:wifi-cog
+          hajimari.io/icon: arcticons:unifi-network
           nginx.ingress.kubernetes.io/whitelist-source-range: ${wl_source_range}
+          nginx.ingress.kubernetes.io/backend-protocol: HTTPS
         hosts:
           - host: unifi-controller.${cluster_ext_domain}
             paths:
