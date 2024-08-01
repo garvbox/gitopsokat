@@ -15,3 +15,9 @@ spec:
         externalTrafficPolicy: Local
         annotations:
           metallb.universe.tf/loadBalancerIPs: ${metallb_ip_unifi}
+    persistence:
+      config:
+        existingClaim: unifi-controller-config
+        type: null
+        accessMode: null
+        size: null
