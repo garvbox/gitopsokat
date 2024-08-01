@@ -79,6 +79,9 @@ spec:
               car:
                 mask:
                   - 621,720,1280,720,985,370,440,355
+              person:
+                mask:
+                  - 200,300,300,300,300,500,200,500
           ffmpeg:
             inputs:
               - path: rtsp://192.168.3.23:554/user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream
