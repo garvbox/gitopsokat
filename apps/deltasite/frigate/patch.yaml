@@ -98,7 +98,7 @@ spec:
                 roles:
                   - record
                   - detect
-        Van-Watch:
+        Oak_Lodge_Driveway:
           motion:
             mask:
               - 0,0,0,360,300,360,300,0
