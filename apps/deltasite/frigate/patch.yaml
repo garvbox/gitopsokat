@@ -36,7 +36,7 @@ spec:
           - car
           - motorcycle
       cameras:
-        Shed-Door:
+        Shed_Door:
           enabled: True
           detect:
             enabled: False
@@ -46,7 +46,7 @@ spec:
                 roles:
                   - detect
                   - record
-        Front-Gate:
+        Front_Gate:
           enabled: True
           motion:
             mask:
@@ -59,7 +59,7 @@ spec:
               - path: rtsp://admin:adminadmin@192.168.3.21:554//h264Preview_01_sub
                 roles:
                   - detect
-        Back-Corner:
+        Back_Corner:
           enabled: True
           detect:
             enabled: False
@@ -69,7 +69,7 @@ spec:
                 roles:
                   - record
                   - detect
-        Back-Door:
+        Back_Door:
           enabled: True
           motion:
             mask:
@@ -88,7 +88,7 @@ spec:
                 roles:
                   - detect
                   - record
-        Lower-Yard:
+        Lower_Yard:
           enabled: True
           detect:
             enabled: False
@@ -108,7 +108,7 @@ spec:
                 roles:
                   - detect
                   - record
-        Chicken-Watch:
+        Chicken_Watch:
           motion:
             mask:
               - 640,0,640,90,0,90,0,0
