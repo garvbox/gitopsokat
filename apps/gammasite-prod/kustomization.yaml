@@ -18,7 +18,6 @@ resources:
   - ./sonarr
   - ./prowlarr
   - ./wizarr
-  - ./ombi
   - ./audiobookshelf
   - ./syncthing
   - ./grafana
