@@ -57,7 +57,6 @@ spec:
         className: nginx
         annotations:
           hajimari.io/icon: mdi:wizard-hat
-          nginx.ingress.kubernetes.io/whitelist-source-range: ${wl_source_range}
         hosts:
           - host: wizarr.${cluster_ext_domain}
             paths:
