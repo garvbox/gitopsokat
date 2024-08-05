@@ -2,7 +2,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: jellyseer
+  name: jellyseerr
   namespace: default
 spec:
   values:
@@ -11,6 +11,6 @@ spec:
         kubernetes.io/hostname: gammatron
     persistence:
       config:
-        existingClaim: jellyseer-config
+        existingClaim: jellyseerr-config
         accessMode: null
         size: null

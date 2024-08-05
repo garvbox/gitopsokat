@@ -2,7 +2,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: jellyseer
+  name: jellyseerr
   namespace: default
 spec:
   interval: 15m
@@ -31,7 +31,7 @@ spec:
         containers:
           main:
             image:
-              repository: fallenbagel/jellyseer
+              repository: fallenbagel/jellyseerr
               tag: 1.9.2
             env:
               TZ: "Europe/Dublin"
@@ -57,7 +57,7 @@ spec:
         annotations:
           hajimari.io/icon: mdi:jellyfish-outline
         hosts:
-          - host: jellyseer.${cluster_ext_domain}
+          - host: jellyseerr.${cluster_ext_domain}
             paths:
               - path: /
                 service:

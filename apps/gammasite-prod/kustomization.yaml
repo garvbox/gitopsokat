@@ -12,7 +12,7 @@ resources:
   - ./influxdb
   - ./tautulli
   - ./jellyfin
-  - ./jellyseer
+  - ./jellyseerr
   - ./plexmediaserver
   - ./radarr
   - ./sonarr
