@@ -31,10 +31,16 @@ spec:
         containers:
           main:
             image:
-              repository: ghcr.io/onedr0p/tautulli
-              tag: 2.13.4
+              repository: ghcr.io/tautulli/tautulli
+              tag: 2.14.3
             env:
               TZ: "Europe/Dublin"
+            command: ["python", "Tautulli.py"]
+            args: [
+              "--config", "/config/config.ini",
+              "--datadir", "/config",
+              "--port", "8181"
+            ]
             probes:
               liveness: &probes
                 enabled: true
