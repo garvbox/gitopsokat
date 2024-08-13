@@ -6,6 +6,9 @@ metadata:
   namespace: default
 spec:
   values:
+    image:
+      repository: ghcr.io/blakeblackshear/frigate
+      tag: 0.14.0
     coral:
       enabled: true
     config: |
