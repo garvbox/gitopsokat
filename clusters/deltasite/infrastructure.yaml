@@ -37,3 +37,4 @@ spec:
       default_provisioner_scname: local-path
       admin_email: gonarvib@protonmail.com
       le_url: https://acme-v02.api.letsencrypt.org/directory
+      host_path_base: /data/kube/pvs

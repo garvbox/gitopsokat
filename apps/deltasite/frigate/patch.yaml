@@ -129,5 +129,3 @@ spec:
     persistence:
       media:
         existingClaim: frigate-data-pvc
-    nodeSelector:
-      kubernetes.io/hostname: turingcm2
