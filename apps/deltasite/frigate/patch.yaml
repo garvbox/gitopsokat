@@ -109,6 +109,8 @@ spec:
               - path: rtsp://camera:eZW2tHGfVf_zLjxTgsBm@192.168.3.66/stream2
                 roles:
                   - detect
+              - path: rtsp://camera:eZW2tHGfVf_zLjxTgsBm@192.168.3.66/stream1
+                roles:
                   - record
         Chicken_Watch:
           motion:
