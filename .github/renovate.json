@@ -93,6 +93,16 @@
       ]
     },
     {
+      "description": "Blacklist Nvidia Container updates",
+      "matchPackageNames": [
+        "nvidia-device-plugin"
+      ],
+      "matchDatasources": [
+        "helm"
+      ],
+      "enabled": false
+    },
+    {
       "matchDatasources": [
         "docker"
       ],
