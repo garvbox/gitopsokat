@@ -103,7 +103,12 @@ spec:
         Oak_Lodge_Driveway:
           motion:
             mask:
-              - 0,0,0,360,187,360,105,105,640,130,640,0
+              - 0,0,0,1,0.292,1,0.164,0.292,1,0.509,1,0
+          objects:
+            filters:
+              cow:
+                mask:
+                  - 0.317,0.362,1,0.692,1,0,0.317,0
           ffmpeg:
             inputs:
               - path: rtsp://camera:eZW2tHGfVf_zLjxTgsBm@192.168.3.66/stream2
