@@ -28,7 +28,7 @@ spec:
   values:
     image:
       repository: ghcr.io/blakeblackshear/frigate
-      tag: 0.14.0
+      tag: 0.14.1
     config: |
       mqtt:
         enabled: False
