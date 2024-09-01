@@ -59,15 +59,18 @@ spec:
           http:
             port: *port
     ingress:
-      enabled: true
-      ingressClassName: nginx
-      annotations:
-        hajimari.io/icon: mdi:cctv
-        nginx.ingress.kubernetes.io/whitelist-source-range: ${wl_source_range}
-      hosts:
-        - host: frigate.${cluster_ext_domain}
-          paths:
-            - '/'
+      main:
+        className: nginx
+        annotations:
+          hajimari.io/icon: mdi:cctv
+          nginx.ingress.kubernetes.io/whitelist-source-range: ${wl_source_range}
+        hosts:
+          - host: frigate.${cluster_ext_domain}
+            paths:
+              - path: /
+                service:
+                  identifier: main
+                  port: http
     persistence:
       config:
         type: persistentVolumeClaim
