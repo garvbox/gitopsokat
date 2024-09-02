@@ -39,7 +39,7 @@ data:
           enabled: False
         ffmpeg:
           inputs:
-            - path: rtsp://192.168.3.20:554/user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream
+            - path: rtsp://192.168.3.20:554/user=admin_password='{LEGACY_CAM_PASS}'_channel=1_stream=0.sdp?real_stream
               roles:
                 - detect
                 - record
@@ -62,7 +62,7 @@ data:
           enabled: False
         ffmpeg:
           inputs:
-            - path: rtsp://192.168.3.22:554/user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream
+            - path: rtsp://192.168.3.22:554/user=admin_password='{LEGACY_CAM_PASS}'_channel=1_stream=0.sdp?real_stream
               roles:
                 - record
                 - detect
@@ -82,7 +82,7 @@ data:
                 - 200,300,300,300,300,500,200,500
         ffmpeg:
           inputs:
-            - path: rtsp://192.168.3.23:554/user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream
+            - path: rtsp://192.168.3.23:554/user=admin_password='{LEGACY_CAM_PASS}'_channel=1_stream=0.sdp?real_stream
               roles:
                 - detect
                 - record
@@ -92,7 +92,7 @@ data:
           enabled: False
         ffmpeg:
           inputs:
-            - path: rtsp://192.168.3.24:554/user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream
+            - path: rtsp://192.168.3.24:554/user=admin_password='{LEGACY_CAM_PASS}'_channel=1_stream=0.sdp?real_stream
               roles:
                 - record
                 - detect
@@ -107,10 +107,10 @@ data:
                 - 0.317,0.362,1,0.692,1,0,0.317,0
         ffmpeg:
           inputs:
-            - path: rtsp://camera:eZW2tHGfVf_zLjxTgsBm@192.168.3.66/stream2
+            - path: rtsp://'{TAPO_CAM_USER}':'{TAPO_CAM_PASS}'@192.168.3.66/stream2
               roles:
                 - detect
-            - path: rtsp://camera:eZW2tHGfVf_zLjxTgsBm@192.168.3.66/stream1
+            - path: rtsp://'{TAPO_CAM_USER}':'{TAPO_CAM_PASS}'@192.168.3.66/stream1
               roles:
                 - record
       Chicken_Watch:
@@ -125,7 +125,7 @@ data:
             - cow
         ffmpeg:
           inputs:
-            - path: rtsp://camera:eZW2tHGfVf_zLjxTgsBm@192.168.3.187/stream2
+            - path: rtsp://'{TAPO_CAM_USER}':'{TAPO_CAM_PASS}'@192.168.3.187/stream2
               roles:
                 - detect
                 - record
