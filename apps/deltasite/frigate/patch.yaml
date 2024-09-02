@@ -6,6 +6,13 @@ metadata:
   namespace: default
 spec:
   values:
+    controllers:
+      main:
+        containers:
+          main:
+            envFrom:
+              - secretRef:
+                  name: frigate-secret
     persistence:
       config:
         existingClaim: frigate-config
