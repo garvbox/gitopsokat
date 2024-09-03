@@ -19,13 +19,6 @@ spec:
         type: null
         accessMode: null
         size: null
-      config-file:
-        type: configMap
-        name: frigate-configmap
-        globalMounts:
-          - path: /config/config.yml
-            subPath: config.yml
-            readOnly: true
       media:
         existingClaim: frigate-media-pvc
         type: null
