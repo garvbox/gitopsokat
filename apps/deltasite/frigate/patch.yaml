@@ -12,7 +12,7 @@ spec:
           main:
             envFrom:
               - secretRef:
-                  name: frigate-secret
+                  name: frigate-env-secret
     persistence:
       config:
         existingClaim: frigate-config
