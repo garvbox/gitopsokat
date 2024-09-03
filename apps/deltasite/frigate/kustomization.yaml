@@ -4,6 +4,7 @@ kind: Kustomization
 resources:
   - pvc.yaml
   - configmap.yaml
+  - secret.yaml
   - ../../base/frigate.yaml
 patchesStrategicMerge:
   - patch.yaml
