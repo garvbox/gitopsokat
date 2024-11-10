@@ -69,7 +69,7 @@ metadata:
 spec:
   accessModes:
     - ReadWriteOnce
-  storageClassName: local-rocketpool
+  storageClassName: local-datapool
   volumeName: nextcloud-data-pv
   resources:
     requests:
