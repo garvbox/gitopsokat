@@ -7,19 +7,20 @@ resources:
   - ../sources
   - ../base/hajimari.yaml
   - ../base/whoami.yaml
+  - ./audiobookshelf
   - ./deluge
-  - ./unpackerr
+  - ./grafana
+  - ./homeassistant # HA External Proxy
   - ./influxdb
-  - ./tautulli
   - ./jellyfin
   - ./jellyseerr
+  - ./nextcloud
   - ./plexmediaserver
+  - ./prowlarr
   - ./radarr
   - ./sonarr
-  - ./prowlarr
-  - ./wizarr
-  - ./audiobookshelf
   - ./syncthing
-  - ./grafana
+  - ./tautulli
   - ./unifi
-  - ./homeassistant # HA External Proxy
+  - ./unpackerr
+  - ./wizarr
