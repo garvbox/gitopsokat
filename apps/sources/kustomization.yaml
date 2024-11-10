@@ -6,3 +6,4 @@ resources:
   - grafana-charts.yaml
   - hajimari.yaml
   - blakeblackshear.yaml
+  - nextcloud-charts.yaml
