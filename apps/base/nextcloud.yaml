@@ -1,0 +1,57 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: nextcloud
+  namespace: default
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: nextcloud
+      version: 6.2.2
+      sourceRef:
+        kind: HelmRepository
+        name: nextcloud-charts
+        namespace: flux-system
+  maxHistory: 3
+  install:
+    createNamespace: true
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      retries: 3
+  uninstall:
+    keepHistory: false
+  values:
+    nextcloud:
+      host: nextcloud.${cluster_ext_domain}
+      phpConfigs:
+        override_max_file_size.ini: |-
+          upload_max_filesize=16G
+          post_max_size=16G
+    phpClientHttpsFix:
+      enabled: true
+      protocol: https
+    internalDatabase:
+      enabled: true
+    ingress:
+      enabled: true
+      className: "nginx"
+      annotations:
+        nginx.ingress.kubernetes.io/proxy-body-size: "10G"
+        nginx.ingress.kubernetes.io/proxy-buffering: "off"
+        nginx.ingress.kubernetes.io/proxy-request-buffering: "off"
+        hajimari.io/icon: simple-icons:nextcloud
+      path: /
+      pathType: Prefix
+    persistence:
+      enabled: true
+    service:
+      main:
+        controller: main
+        ports:
+          http:
+            port: 8112
