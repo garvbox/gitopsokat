@@ -12,3 +12,5 @@ spec:
       nextcloudData:
         enabled: true
         existingClaim: nextcloud-data
+    cronjob:
+      enabled: true
