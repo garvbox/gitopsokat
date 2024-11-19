@@ -42,7 +42,7 @@ spec:
                 spec:
                   httpGet:
                     path: /api/version
-                    port: &port 5000
+                    port: 5000
                   initialDelaySeconds: 10
                   periodSeconds: 10
                   timeoutSeconds: 1
@@ -58,10 +58,6 @@ spec:
         ports:
           http:
             port: 8971
-            protocol: TCP
-          internal:
-            port: *port
-            protocol: TCP
     ingress:
       main:
         className: nginx
@@ -74,18 +70,6 @@ spec:
                 service:
                   identifier: main
                   port: http
-      internal:
-        className: nginx
-        annotations:
-          hajimari.io/icon: mdi:cctv
-          nginx.ingress.kubernetes.io/whitelist-source-range: ${wl_source_range}
-        hosts:
-          - host: frigate-internal.${cluster_ext_domain}
-            paths:
-              - path: /
-                service:
-                  identifier: main
-                  port: internal
     persistence:
       config:
         type: persistentVolumeClaim
