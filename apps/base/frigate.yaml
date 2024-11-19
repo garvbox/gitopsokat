@@ -58,12 +58,12 @@ spec:
         ports:
           http:
             port: 8971
-            appProtocol: https
     ingress:
       main:
         className: nginx
         annotations:
           hajimari.io/icon: mdi:cctv
+          nginx.ingress.kubernetes.io/backend-protocol: HTTPS
         hosts:
           - host: frigate.${cluster_ext_domain}
             paths:
