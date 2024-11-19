@@ -6,23 +6,6 @@ metadata:
   namespace: default
 spec:
   values:
-    controllers:
-      main:
-        containers:
-          main:
-            probes:
-              liveness: &probes
-                enabled: true
-                custom: true
-                spec:
-                  httpGet:
-                    path: /api/version
-                    port: 5000
-                  initialDelaySeconds: 0
-                  periodSeconds: 10
-                  timeoutSeconds: 1
-                  failureThreshold: 30
-              readiness: *probes
     persistence:
       config:
         existingClaim: frigate-config
