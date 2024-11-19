@@ -42,7 +42,7 @@ spec:
                 spec:
                   httpGet:
                     path: /api/version
-                    port: 5000
+                    port: &port 5000
                   initialDelaySeconds: 10
                   periodSeconds: 10
                   timeoutSeconds: 1
@@ -58,6 +58,8 @@ spec:
         ports:
           http:
             port: 8971
+          noauth:
+            port: *port
     ingress:
       main:
         className: nginx
