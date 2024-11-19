@@ -58,8 +58,10 @@ spec:
         ports:
           http:
             port: 8971
+            protocol: TCP
           internal:
             port: *port
+            protocol: TCP
     ingress:
       main:
         className: nginx
