@@ -58,6 +58,7 @@ spec:
         ports:
           http:
             port: 8971
+            appProtocol: https
     ingress:
       main:
         className: nginx
