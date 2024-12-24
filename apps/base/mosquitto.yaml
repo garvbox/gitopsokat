@@ -58,19 +58,6 @@ spec:
             primary: true
             protocol: TCP
             port: 1883
-    ingress:
-      main:
-        enabled: true
-        className: nginx
-        annotations:
-          hajimari.io/icon: mdi:wizard-hat
-        hosts:
-          - host: wizarr.${cluster_ext_domain}
-            paths:
-              - path: /
-                service:
-                  identifier: main
-                  port: http
     persistence:
       data:
         type: persistentVolumeClaim
