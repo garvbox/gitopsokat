@@ -53,6 +53,7 @@ spec:
         ports:
           http:
             enabled: false
+            port: 8080
           mqtt:
             enabled: true
             primary: true
