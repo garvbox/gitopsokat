@@ -33,3 +33,4 @@ spec:
       host_path_base: /data/kube/pvs
       metallb_ip_nginx: 192.168.3.215
       metallb_ip_frigate: 192.168.3.216
+      metallb_ip_homeassistant: 192.168.3.217
