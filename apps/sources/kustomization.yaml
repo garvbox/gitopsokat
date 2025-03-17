@@ -7,3 +7,4 @@ resources:
   - hajimari.yaml
   - blakeblackshear.yaml
   - nextcloud-charts.yaml
+  - cnpg-charts.yaml
