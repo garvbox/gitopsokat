@@ -25,3 +25,5 @@ spec:
         type: null
         accessMode: null
         size: null
+      audiobooks:
+        existingClaim: audiobookshelf-audiobooks
