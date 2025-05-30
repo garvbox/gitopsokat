@@ -42,9 +42,9 @@
     {
       "description": "Restrict Arr Patches",
       "matchPackageNames": [
-        "ghcr.io/onedr0p/sonarr-develop",
-        "ghcr.io/onedr0p/radarr-develop",
-        "ghcr.io/onedr0p/prowlarr-develop"
+        "ghcr.io/home-operations/sonarr-develop",
+        "ghcr.io/home-operations/radarr-develop",
+        "ghcr.io/home-operations/prowlarr-develop"
       ],
       "matchDatasources": [
         "docker",
@@ -88,8 +88,8 @@
       ],
       "versioning": "loose",
       "matchPackageNames": [
-        "ghcr.io/onedr0p/plex",
-        "ghcr.io/onedr0p/plex-beta"
+        "ghcr.io/home-operations/plex",
+        "ghcr.io/home-operations/plex-beta"
       ]
     },
     {

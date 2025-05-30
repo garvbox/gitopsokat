@@ -31,8 +31,8 @@ spec:
         containers:
           main:
             image:
-              repository: ghcr.io/onedr0p/unpackerr
-              tag: 0.12.0
+              repository: ghcr.io/unpackerr/unpackerr
+              tag: 0.14.5
             env:
               TZ: "Europe/Dublin"
     defaultPodOptions:
