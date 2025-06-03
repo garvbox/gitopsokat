@@ -32,7 +32,7 @@ spec:
           main:
             image:
               repository: ghcr.io/home-operations/radarr
-              tag: 5.20.1.9773
+              tag: 5.26.0.10051
             env:
               TZ: "Europe/Dublin"
             probes:
