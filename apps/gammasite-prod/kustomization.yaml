@@ -21,7 +21,6 @@ resources:
   - ./sonarr
   - ./syncthing
   - ./tautulli
-  - ./unifi
   - ./unpackerr
   - ./wizarr
   - ./pg-cluster
