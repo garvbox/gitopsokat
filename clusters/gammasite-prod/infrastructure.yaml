@@ -26,18 +26,9 @@ spec:
   # Site-specific variables
   postBuild:
     substitute:
-      metallb_ip_dns: 192.168.0.45
-      metallb_ip_range: 192.168.0.51-192.168.0.69
-      metallb_ip_nginx: 192.168.0.60
-      # These are only used in the apps kustomization but listed here to avoid duplication
-      metallb_ip_deluge: 192.168.0.61
-      metallb_ip_plex: 192.168.0.62
-      metallb_ip_factorio: 192.168.0.63
-      metallb_ip_syncthing: 192.168.0.64
-      metallb_ip_mqtt: 192.168.0.66
-      metallb_ip_influx: 192.168.0.67
-      metallb_ip_jellyfin: 192.168.0.68
-      metallb_ip_unifi: 192.168.0.69
+      metallb_ip_dns: 192.168.20.19
+      metallb_ip_range: 192.168.20.21-192.168.0.49
+      metallb_ip_nginx: 192.168.20.20
       wl_source_range: 192.168.0.0/16,10.0.0.0/8
       cluster_name: oaklodge
       cluster_ext_domain: oaklodge.dev
