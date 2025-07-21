@@ -25,9 +25,9 @@ spec:
   # Site-specific variables
   postBuild:
     substitute:
-      cluster_name: gammasite
-      cluster_int_domain: kube.gammasite.lan
-      cluster_ext_domain: gammasite.garvbox.net
+      cluster_name: oaklodge
+      cluster_int_domain: kube.oaklodge.lan
+      cluster_ext_domain: oaklodge.dev
       default_provisioner_scname: local-path
       host_path_base: /rocketpool/kube/pvs
       metallb_ip_deluge: 192.168.0.61
