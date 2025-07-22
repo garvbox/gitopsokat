@@ -26,6 +26,7 @@ spec:
   uninstall:
     keepHistory: false
   values:
+    replicaCount: 0
     nextcloud:
       host: nextcloud.${cluster_ext_domain}
       phpConfigs:
