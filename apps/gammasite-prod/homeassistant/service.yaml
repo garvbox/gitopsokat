@@ -6,7 +6,7 @@ metadata:
   namespace: default
 spec:
   type: ExternalName
-  externalName: homeassistant.gammasite.lan
+  externalName: homeassistant.oaklodge.lan
   ports:
     - name: homeassistant
       port: 8123
