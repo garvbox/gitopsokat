@@ -6,9 +6,6 @@ metadata:
   namespace: default
 spec:
   values:
-    controllers:
-      main:
-        replicas: 0
     defaultPodOptions:
       nodeSelector:
         kubernetes.io/hostname: gammatron
