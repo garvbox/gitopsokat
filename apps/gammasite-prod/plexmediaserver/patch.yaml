@@ -12,9 +12,6 @@ spec:
         kubernetes.io/hostname: gammatron
       securityContext:
         supplementalGroups: [44, 109] # Extra groups for access to hardware encode/decode
-    controllers:
-      main:
-        replicas: 0
     persistence:
       config:
         existingClaim: plexmediaserver-config
