@@ -19,7 +19,7 @@ spec:
         accessMode: null
         size: null
       media:
-        existingClaim: frigate-data-pvc
+        existingClaim: frigate-media-pvc
         type: null
         accessMode: null
         size: null
