@@ -5,7 +5,7 @@ metadata:
   name: frigate-config-pv
   namespace: default
 spec:
-  storageClassName: local-data
+  storageClassName: local-rocketpool
   capacity:
     storage: 1Mi
   accessModes:
@@ -31,7 +31,7 @@ metadata:
 spec:
   accessModes:
     - ReadWriteOnce
-  storageClassName: local-data
+  storageClassName: local-rocketpool
   volumeName: frigate-config-pv
   resources:
     requests:
@@ -43,7 +43,7 @@ metadata:
   name: frigate-media-pv
   namespace: default
 spec:
-  storageClassName: local-data
+  storageClassName: local-datapool
   capacity:
     storage: 1Mi
   accessModes:
@@ -69,7 +69,7 @@ metadata:
 spec:
   accessModes:
     - ReadWriteMany
-  storageClassName: local-data
+  storageClassName: local-datapool
   volumeName: frigate-media-pv
   resources:
     requests:
