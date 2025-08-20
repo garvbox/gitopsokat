@@ -6,6 +6,22 @@ metadata:
   namespace: default
 spec:
   values:
+    controllers:
+      main:
+        containers:
+          main:
+            resources:
+              requests:
+                gpu.intel.com/i915: 1
+              limits:
+                gpu.intel.com/i915: 1
+            securityContext:
+              privileged: true
+              supplementalGroups: [44, 109] # Extra groups for access to hardware encode/decode
+    defaultPodOptions:
+      nodeSelector:
+        intel.feature.node.kubernetes.io/gpu: "true"
+        kubernetes.io/hostname: gammatron
     service:
       main:
         type: LoadBalancer
