@@ -8,3 +8,4 @@ resources:
   - ../base
   - ../extras/cert-manager
   - ../extras/intel-device-plugin
+  - ../extras/cloudnative-pg-operator
