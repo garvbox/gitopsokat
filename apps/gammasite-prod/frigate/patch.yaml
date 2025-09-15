@@ -18,6 +18,12 @@ spec:
             securityContext:
               privileged: true
               supplementalGroups: [44, 109] # Extra groups for access to hardware encode/decode
+            env:
+              PLUS_API_KEY:
+                valueFrom:
+                  secretKeyRef:
+                    name: frigate-plus-api-key
+                    key: api-key
     defaultPodOptions:
       nodeSelector:
         intel.feature.node.kubernetes.io/gpu: "true"
