@@ -15,7 +15,6 @@ resources:
   - ./jellyfin
   - ./jellyseerr
   - ./nextcloud
-  - ./plexmediaserver
   - ./prowlarr
   - ./radarr
   - ./sonarr
