@@ -19,7 +19,6 @@ resources:
   - ./radarr
   - ./sonarr
   - ./syncthing
-  - ./tautulli
   - ./unpackerr
   - ./wizarr
   - ./pg-cluster
