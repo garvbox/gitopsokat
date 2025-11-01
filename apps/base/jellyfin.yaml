@@ -36,20 +36,19 @@ spec:
             env:
               TZ: "Europe/Dublin"
               JELLYFIN_PublishedServerUrl: https://jellyfin.${cluster_ext_domain}
-            # NOTE: Probes disabled for jellyfin upgrade migration
-            # probes:
-            #   liveness: &probe
-            #     enabled: true
-            #     custom: true
-            #     spec:
-            #       httpGet:
-            #         path: /health
-            #         port: 8096
-            #       initialDelaySeconds: 0
-            #       periodSeconds: 10
-            #       timeoutSeconds: 1
-            #       failureThreshold: 3
-            #   readiness: *probe
+            probes:
+              liveness: &probe
+                enabled: true
+                custom: true
+                spec:
+                  httpGet:
+                    path: /health
+                    port: 8096
+                  initialDelaySeconds: 0
+                  periodSeconds: 10
+                  timeoutSeconds: 1
+                  failureThreshold: 3
+              readiness: *probe
     defaultPodOptions:
       securityContext:
         runAsUser: 6666
