@@ -10,7 +10,7 @@ resources:
   - ./audiobookshelf
   - ./deluge
   - ./grafana
-  - ./homeassistant # HA External Proxy
+  - ./homeassistant
   - ./influxdb
   - ./jellyfin
   - ./jellyseerr
@@ -21,5 +21,6 @@ resources:
   - ./syncthing
   - ./unpackerr
   - ./wizarr
+  - ./mosquitto
   - ./pg-cluster
   - ./frigate
