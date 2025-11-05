@@ -8,6 +8,9 @@ spec:
   values:
     ingress:
       main:
+        className: nginx
+        annotations:
+          hajimari.io/icon: mdi:home-assistant
         hosts:
           - host: homeassistant-new.${cluster_ext_domain}
             paths:
