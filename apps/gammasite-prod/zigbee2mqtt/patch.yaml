@@ -1,0 +1,17 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: zigbee2mqtt
+  namespace: default
+spec:
+  values:
+    defaultPodOptions:
+      nodeSelector:
+        kubernetes.io/hostname: gammatron
+    persistence:
+      data:
+        existingClaim: z2m-config
+        type: null
+        accessMode: null
+        size: null
