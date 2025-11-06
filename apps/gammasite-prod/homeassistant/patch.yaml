@@ -6,6 +6,9 @@ metadata:
   namespace: default
 spec:
   values:
+    controllers:
+      main:
+        replicas: 0
     ingress:
       main:
         className: nginx
