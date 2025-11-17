@@ -1,0 +1,16 @@
+clusterName: tiny-kube
+talosVersion: v1.11.5
+endpoint: https://tiny-kube.oaklodge.lan:6443
+nodes:
+  - hostname: tiny-cl-01
+    ipAddress: 192.168.20.31
+    installDisk: /dev/nvme0n1
+    controlPlane: true
+  - hostname: tiny-cl-02
+    ipAddress: 192.168.20.32
+    installDisk: /dev/nvme0n1
+    controlPlane: true
+  - hostname: tiny-cl-03
+    ipAddress: 192.168.20.33
+    installDisk: /dev/nvme0n1
+    controlPlane: true
