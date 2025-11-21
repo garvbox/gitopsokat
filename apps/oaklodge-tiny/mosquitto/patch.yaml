@@ -15,3 +15,5 @@ spec:
     persistence:
       data:
         type: emptyDir
+        accessMode: null
+        size: null
