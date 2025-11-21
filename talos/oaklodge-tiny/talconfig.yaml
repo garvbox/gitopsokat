@@ -60,3 +60,10 @@ controlPlane:
     - "@./ephemeral-storage-vol.patch.yaml"
     - "@./local-storage-vol.patch.yaml"
     - "@./longhorn-storage-vol.patch.yaml"
+    - |-
+      cluster:
+        allowSchedulingOnControlPlanes: true
+    - |-
+      machine:
+        nodeLabels:
+          node.kubernetes.io/exclude-from-external-load-balancers: null
