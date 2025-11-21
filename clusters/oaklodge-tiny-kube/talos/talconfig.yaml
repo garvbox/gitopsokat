@@ -57,3 +57,6 @@ controlPlane:
           modules:
             - name: nvme_tcp
             - name: vfio_pci
+    - "@./ephemeral-storage-vol.patch.yaml"
+    - "@./local-storage-vol.patch.yaml"
+    - "@./longhorn-storage-vol.patch.yaml"
