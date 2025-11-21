@@ -14,7 +14,7 @@ spec:
   decryption:
     provider: sops
     secretRef:
-      name: sops-gpg
+      name: sops-age
   # Flux Sync Settings
   interval: 60m0s
   timeout: 3m0s
