@@ -38,3 +38,22 @@ controlPlane:
         - mitigations=off
         - security=none
         - talos.auditd.disabled=1
+  patches:
+    # Longhorn bind mount to kubelet for disk info and kernel modules
+    - |-
+      machine:
+        kubelet:
+          extraMounts:
+            - destination: /var/lib/longhorn
+              type: bind
+              source: /var/lib/longhorn
+              options:
+                - bind
+                - rshared
+                - rw
+        sysctls:
+          vm.nr_hugepages: "1024"
+        kernel:
+          modules:
+            - name: nvme_tcp
+            - name: vfio_pci
