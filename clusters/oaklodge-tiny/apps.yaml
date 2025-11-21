@@ -1,0 +1,38 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: apps
+  namespace: flux-system
+spec:
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  path: ./apps/oaklodge-tiny
+  dependsOn:
+    - name: infrastructure
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-gpg
+  # Flux Sync Settings
+  interval: 60m0s
+  timeout: 3m0s
+  retryInterval: 2m0s
+  wait: true
+  prune: true
+  force: true
+  # Site-specific variables
+  postBuild:
+    substitute:
+      cluster_name: oaklodge
+      cluster_int_domain: tiny-kube.oaklodge.lan
+      cluster_ext_domain: tiny-kube.oaklodge.dev
+      default_provisioner_scname: local-path
+      # metallb_ip_deluge: 192.168.20.21
+      # metallb_ip_jellyfin: 192.168.20.22
+      # metallb_ip_syncthing: 192.168.20.24
+      # metallb_ip_influx: 192.168.20.25
+      # metallb_ip_frigate: 192.168.20.26
+      # metallb_ip_mqtt: 192.168.20.27
+      wl_source_range: 192.168.0.0/16,10.0.0.0/8
