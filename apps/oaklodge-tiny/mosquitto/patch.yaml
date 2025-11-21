@@ -15,5 +15,3 @@ spec:
     persistence:
       data:
         type: emptyDir
-        accessMode: ReadWriteOnce
-        size: 1Gi
