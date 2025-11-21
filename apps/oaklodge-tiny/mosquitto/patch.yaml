@@ -1,0 +1,19 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: mosquitto
+  namespace: default
+spec:
+  values:
+    service:
+      main:
+        type: LoadBalancer
+        externalTrafficPolicy: Local
+        annotations:
+          metallb.universe.tf/loadBalancerIPs: ${metallb_ip_mqtt}
+    persistence:
+      data:
+        type: emptyDir
+        accessMode: ReadWriteOnce
+        size: 1Gi
