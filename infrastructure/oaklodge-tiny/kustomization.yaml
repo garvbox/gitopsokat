@@ -6,6 +6,7 @@ resources:
   - ./discord-secret.yaml
   - ./cf-secret.yaml
   - ../base
+  - ./longhorn
   - ../extras/cert-manager
   - ../extras/intel-device-plugin
   - ../extras/cloudnative-pg-operator
