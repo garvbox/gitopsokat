@@ -4,5 +4,6 @@ extends: default
 rules:
   comments: disable
   line-length: disable
-ignore: |
-  gotk*.yaml
+ignore:
+  - "gotk*.yaml"
+  - "*flux-system*"
