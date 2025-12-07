@@ -10,7 +10,6 @@ resources:
   - ./audiobookshelf
   - ./deluge
   - ./grafana
-  - ./homeassistant
   - ./influxdb
   - ./jellyfin
   - ./jellyseerr
@@ -24,4 +23,3 @@ resources:
   - ./mosquitto
   - ./pg-cluster
   - ./frigate
-  - ./zigbee2mqtt

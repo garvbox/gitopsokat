@@ -27,12 +27,12 @@ spec:
   postBuild:
     substitute:
       metallb_ip_dns: 192.168.20.19
-      metallb_ip_range: 192.168.20.20-192.168.20.49
+      metallb_ip_range: 192.168.20.20-192.168.20.29
       metallb_ip_nginx: 192.168.20.20
       wl_source_range: 192.168.0.0/16,10.0.0.0/8
       cluster_name: oaklodge
-      cluster_ext_domain: oaklodge.dev
-      cluster_int_domain: kube.oaklodge.lan
+      cluster_ext_domain: gammatron-kube.oaklodge.dev
+      cluster_int_domain: gammatron-kube.oaklodge.lan
       default_provisioner_scname: local-path
       host_path_base: /rocketpool/kube/pvs
       admin_email: gonarvib@protonmail.com

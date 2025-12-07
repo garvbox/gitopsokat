@@ -26,8 +26,8 @@ spec:
   postBuild:
     substitute:
       cluster_name: oaklodge
-      cluster_int_domain: kube.oaklodge.lan
-      cluster_ext_domain: oaklodge.dev
+      cluster_int_domain: gammatron-kube.oaklodge.lan
+      cluster_ext_domain: gammatron-kube.oaklodge.dev
       default_provisioner_scname: local-path
       host_path_base: /rocketpool/kube/pvs
       metallb_ip_deluge: 192.168.20.21
