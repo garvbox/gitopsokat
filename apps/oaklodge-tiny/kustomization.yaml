@@ -6,4 +6,5 @@ resources:
   - ./mosquitto
   - ./unpackerr
   - ./homeassistant
+  - ./zigbee2mqtt
   - ../base/whoami.yaml
