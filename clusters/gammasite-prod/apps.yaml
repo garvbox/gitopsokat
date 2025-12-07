@@ -32,7 +32,6 @@ spec:
       host_path_base: /rocketpool/kube/pvs
       metallb_ip_deluge: 192.168.20.21
       metallb_ip_jellyfin: 192.168.20.22
-      metallb_ip_syncthing: 192.168.20.24
       metallb_ip_influx: 192.168.20.25
       metallb_ip_frigate: 192.168.20.26
       wl_source_range: 192.168.0.0/16,10.0.0.0/8
