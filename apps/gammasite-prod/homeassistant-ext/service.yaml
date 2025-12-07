@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: homeassistant-ext
+  namespace: default
+spec:
+  type: ExternalName
+  externalName: homeassistant.tiny-kube.oaklodge.dev
+  ports:
+    - name: homeassistant
+      port: 443
+      protocol: TCP
+      targetPort: 443
