@@ -24,4 +24,3 @@ resources:
   - ./mosquitto
   - ./pg-cluster
   - ./frigate
-  - ./zigbee2mqtt
