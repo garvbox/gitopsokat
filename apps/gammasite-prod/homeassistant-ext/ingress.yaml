@@ -16,6 +16,6 @@ spec:
               service:
                 name: homeassistant-ext
                 port:
-                  number: 8123
+                  number: 443
             path: /
             pathType: Prefix
