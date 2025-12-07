@@ -11,3 +11,5 @@ spec:
       - name: local-volume
         hostPath:
           path: /var/mnt/local-volume
+    defaultBackupStore:
+      backupTarget: nfs://gammatron.oaklodge.lan:/datapool/longhorn-backups
