@@ -15,3 +15,4 @@ spec:
     persistence:
       config:
         size: 25Gi
+        retain: true
