@@ -1,0 +1,69 @@
+clusterName: tiny-kube
+talosVersion: v1.11.5
+endpoint: https://tiny-kube.oaklodge.lan:6443
+nodes:
+  - hostname: tiny-cl-01
+    ipAddress: 192.168.20.31
+    installDisk: /dev/nvme0n1
+    controlPlane: true
+  - hostname: tiny-cl-02
+    ipAddress: 192.168.20.32
+    installDisk: /dev/nvme0n1
+    controlPlane: true
+  - hostname: tiny-cl-03
+    ipAddress: 192.168.20.33
+    installDisk: /dev/nvme0n1
+    controlPlane: true
+
+controlPlane:
+  schematic:
+    customization:
+      systemExtensions:
+        officialExtensions:
+          # Intel GPU
+          - siderolabs/i915
+          - siderolabs/intel-ucode
+          - siderolabs/mei
+          # Longhorn Extras
+          - siderolabs/iscsi-tools
+          - siderolabs/util-linux-tools
+      extraKernelArgs:
+        # Less security, faster puter
+        - -init_on_alloc
+        - -init_on_free
+        - -selinux
+        - apparmor=0
+        - init_on_alloc=0
+        - init_on_free=0
+        - mitigations=off
+        - security=none
+        - talos.auditd.disabled=1
+  patches:
+    # Longhorn bind mount to kubelet for disk info and kernel modules
+    - |-
+      machine:
+        kubelet:
+          extraMounts:
+            - destination: /var/lib/longhorn
+              type: bind
+              source: /var/lib/longhorn
+              options:
+                - bind
+                - rshared
+                - rw
+        sysctls:
+          vm.nr_hugepages: "1024"
+        kernel:
+          modules:
+            - name: nvme_tcp
+            - name: vfio_pci
+    - "@./ephemeral-storage-vol.patch.yaml"
+    - "@./local-storage-vol.patch.yaml"
+    - "@./longhorn-storage-vol.patch.yaml"
+    - |-
+      cluster:
+        allowSchedulingOnControlPlanes: true
+    - |-
+      machine:
+        nodeLabels:
+          node.kubernetes.io/exclude-from-external-load-balancers: null

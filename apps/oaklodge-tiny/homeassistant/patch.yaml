@@ -1,0 +1,18 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: homeassistant
+  namespace: default
+spec:
+  values:
+    # service:
+    #   main:
+    #     type: LoadBalancer
+    #     externalTrafficPolicy: Local
+    #     annotations:
+    #       metallb.universe.tf/loadBalancerIPs: ${metallb_ip_homeassistant}
+    persistence:
+      config:
+        size: 25Gi
+        retain: true
