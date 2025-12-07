@@ -10,6 +10,5 @@ spec:
     name: letsencrypt-issuer
     kind: ClusterIssuer
   dnsNames:
-    - ${cluster_ext_domain}
-    - "*.${cluster_ext_domain}"
+    - "oaklodge.dev"
     - "*.oaklodge.dev"
