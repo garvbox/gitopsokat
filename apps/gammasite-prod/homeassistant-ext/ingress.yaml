@@ -6,6 +6,7 @@ metadata:
   namespace: default
   annotations:
     hajimari.io/icon: mdi:home-assistant
+    nginx.ingress.kubernetes.io/backend-protocol: HTTPS
 spec:
   ingressClassName: nginx
   rules:
