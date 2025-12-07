@@ -20,6 +20,5 @@ resources:
   - ./syncthing
   - ./unpackerr
   - ./wizarr
-  - ./mosquitto
   - ./pg-cluster
   - ./frigate
