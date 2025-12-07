@@ -53,6 +53,7 @@ spec:
         className: nginx
         annotations:
           hajimari.io/icon: mdi:home-assistant
+          nginx.ingress.kubernetes.io/proxy-body-size: 500m # large body size for backup restore
         hosts:
           - host: homeassistant.${cluster_ext_domain}
             paths:
