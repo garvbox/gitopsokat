@@ -12,14 +12,12 @@ spec:
       metadata:
         size: 10Gi
       media:
-        type: nfs
-        server: gammatron
-        path: /datapool/share/audio
+        existingClaim: audiobookshelf-media-pvc
+        type: null
         accessMode: null
         size: null
       audiobooks:
-        type: nfs
-        server: gammatron
-        path: /datapool/share/Audiobooks
+        existingClaim: audiobookshelf-audiobooks-pvc
+        type: null
         accessMode: null
         size: null

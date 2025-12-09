@@ -1,0 +1,62 @@
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-audiobookshelf-media-pv
+  namespace: default
+spec:
+  storageClassName: nfs-gammatron
+  capacity:
+    storage: 1Mi
+  accessModes:
+    - ReadWriteMany
+  volumeMode: Filesystem
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    server: ${nfs_server}
+    path: "/datapool/share/audio"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: audiobookshelf-media-pvc
+  namespace: default
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: nfs-gammatron
+  volumeName: nfs-audiobookshelf-media-pv
+  resources:
+    requests:
+      storage: 1Mi
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-audiobookshelf-audiobooks-pv
+  namespace: default
+spec:
+  storageClassName: nfs-gammatron
+  capacity:
+    storage: 1Mi
+  accessModes:
+    - ReadWriteMany
+  volumeMode: Filesystem
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    server: ${nfs_server}
+    path: "/datapool/share/Audiobooks"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: audiobookshelf-audiobooks-pvc
+  namespace: default
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: nfs-gammatron
+  volumeName: nfs-audiobookshelf-audiobooks-pv
+  resources:
+    requests:
+      storage: 1Mi
