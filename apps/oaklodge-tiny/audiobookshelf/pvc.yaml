@@ -14,7 +14,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   nfs:
     server: ${nfs_server}
-    path: "/datapool/share/audio"
+    path: "/datapool/audio"
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
