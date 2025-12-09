@@ -7,7 +7,6 @@ resources:
   - ../sources
   - ../base/hajimari.yaml
   - ../base/whoami.yaml
-  - ./audiobookshelf
   - ./deluge
   - ./grafana
   - ./homeassistant-ext
