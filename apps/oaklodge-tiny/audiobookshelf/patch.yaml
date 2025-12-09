@@ -15,7 +15,11 @@ spec:
         type: nfs
         server: gammatron
         path: /datapool/share/audio
+        accessMode: null
+        size: null
       audiobooks:
         type: nfs
         server: gammatron
         path: /datapool/share/Audiobooks
+        accessMode: null
+        size: null
