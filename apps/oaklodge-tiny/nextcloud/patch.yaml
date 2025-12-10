@@ -24,6 +24,7 @@ spec:
       enabled: false
     externalDatabase:
       enabled: true
+      type: postgresql
       host: pg-cluster-rw.default.svc.cluster.local
       existingSecret:
         enabled: true
