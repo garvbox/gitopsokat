@@ -6,6 +6,7 @@ metadata:
   namespace: default
 spec:
   values:
+    replicaCount: 0
     persistence:
       enabled: true
       existingClaim: nextcloud-config

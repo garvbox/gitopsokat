@@ -12,7 +12,7 @@ spec:
         enabled: true
         secretName: nextcloud-config-secret # pragma: allowlist secret
         smtpUsernameKey: smtpUserName
-        smtpPasswordKey: smtpPassword # pragma:allowlist secret
+        smtpPasswordKey: smtpPassword # pragma: allowlist secret
       mail:
         smtp:
           host: smtp.protonmail.ch
