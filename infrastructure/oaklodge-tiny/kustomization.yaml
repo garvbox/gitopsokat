@@ -7,5 +7,6 @@ resources:
   - ../base
   - ./longhorn
   - ./cert-manager
+  - ./local-path-provisioner
   - ../extras/intel-device-plugin
   - ../extras/cloudnative-pg-operator
