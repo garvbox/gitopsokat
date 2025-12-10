@@ -33,4 +33,4 @@ spec:
       existingSecret:
         enabled: true
         secretName: nextcloud-config-secret # pragma: allowlist secret
-        usernameKey: pgUsername
+        passwordKey: pgPassword # pragma: allowlist secret
