@@ -8,11 +8,6 @@ spec:
   values:
     nextcloud:
       host: nextcloud.oaklodge.dev
-      existingSecret:
-        enabled: true
-        secretName: nextcloud-config-secret # pragma: allowlist secret
-        smtpUsernameKey: smtpUserName
-        smtpPasswordKey: smtpPassword # pragma: allowlist secret
       mail:
         smtp:
           host: smtp.protonmail.ch
@@ -33,4 +28,7 @@ spec:
       existingSecret:
         enabled: true
         secretName: nextcloud-config-secret # pragma: allowlist secret
+        usernameKey: pgUsername
         passwordKey: pgPassword # pragma: allowlist secret
+        hostKey: pgHost
+        databaseKey: pgDatabase # pragma: allowlist secret
