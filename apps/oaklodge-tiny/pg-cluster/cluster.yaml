@@ -7,6 +7,6 @@ metadata:
 spec:
   instances: 3
   storage:
-    storageClass: local-storage
+    storageClass: local-path
     size: 10Gi
   imageName: ghcr.io/cloudnative-pg/postgresql:17.4
