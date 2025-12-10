@@ -9,3 +9,4 @@ resources:
   - ./mosquitto
   - ./unpackerr
   - ./zigbee2mqtt
+  - ./pg-cluster
