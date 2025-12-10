@@ -1,0 +1,31 @@
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-nextcloud-data-pv
+  namespace: default
+spec:
+  storageClassName: nfs-gammatron
+  capacity:
+    storage: 1Mi
+  accessModes:
+    - ReadWriteMany
+  volumeMode: Filesystem
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    server: ${nfs_server}
+    path: "/datapool/nextcloud"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: nextcloud-data
+  namespace: default
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: nfs-gammatron
+  volumeName: nfs-nextcloud-data-pv
+  resources:
+    requests:
+      storage: 1Mi

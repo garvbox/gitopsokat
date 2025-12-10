@@ -7,6 +7,7 @@ resources:
   - ./audiobookshelf
   - ./homeassistant
   - ./mosquitto
+  - ./nextcloud
   - ./unpackerr
   - ./zigbee2mqtt
   - ./pg-cluster
