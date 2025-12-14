@@ -6,7 +6,6 @@ metadata:
   namespace: default
 spec:
   values:
-    replicas: 0
     persistence:
       enabled: true
       type: pvc
