@@ -6,6 +6,7 @@ resources:
   - ../base/whoami.yaml
   - ./nfs-videos-vols.yaml
   - ./audiobookshelf
+  - ./deluge
   - ./homeassistant
   - ./jellyseerr
   - ./mosquitto

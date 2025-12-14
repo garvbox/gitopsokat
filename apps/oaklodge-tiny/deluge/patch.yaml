@@ -6,19 +6,16 @@ metadata:
   namespace: default
 spec:
   values:
-    defaultPodOptions:
-      nodeSelector:
-        kubernetes.io/hostname: gammatron
+    controllers:
+      main:
+        replicas: 0
     persistence:
       downloads:
-        existingClaim: downloads-pvc
+        existingClaim: nfs-downloads-pvc
         globalMounts:
           - path: /datapool/downloads
       config:
-        existingClaim: deluge-config
-        type: null
-        accessMode: null
-        size: null
+        retain: true
     service:
       daemon:
         type: LoadBalancer
