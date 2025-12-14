@@ -28,6 +28,9 @@ spec:
       nodeSelector:
         intel.feature.node.kubernetes.io/gpu: "true"
         kubernetes.io/hostname: tiny-cl-03
+      securityContext:
+        fsGroup: 6666
+        fsGroupChangePolicy: "OnRootMismatch"
     service:
       main:
         type: LoadBalancer
