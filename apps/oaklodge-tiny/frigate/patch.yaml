@@ -8,9 +8,9 @@ spec:
   values:
     controllers:
       main:
+        replicas: 0
         containers:
           main:
-            replicas: 0
             resources:
               requests:
                 gpu.intel.com/i915: 1
