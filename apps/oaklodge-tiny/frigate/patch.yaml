@@ -29,6 +29,8 @@ spec:
         intel.feature.node.kubernetes.io/gpu: "true"
         kubernetes.io/hostname: tiny-cl-03
       securityContext:
+        runAsUser: 6666
+        runAsGroup: 6666
         fsGroup: 6666
         fsGroupChangePolicy: "OnRootMismatch"
     service:
