@@ -9,8 +9,10 @@ spec:
     persistence:
       config:
         size: 2Gi
+        retain: true
       metadata:
         size: 10Gi
+        retain: true
       media:
         existingClaim: audiobookshelf-media-pvc
         type: null
