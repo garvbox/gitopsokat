@@ -7,6 +7,7 @@ resources:
   - ./nfs-videos-vols.yaml
   - ./audiobookshelf
   - ./deluge
+  - ./frigate
   - ./grafana
   - ./homeassistant
   - ./jellyfin
@@ -15,8 +16,8 @@ resources:
   - ./nextcloud
   - ./pg-cluster
   - ./prowlarr
-  - ./sonarr
   - ./radarr
+  - ./sonarr
   - ./unpackerr
   - ./wizarr
   - ./zigbee2mqtt
