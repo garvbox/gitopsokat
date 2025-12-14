@@ -12,6 +12,8 @@ resources:
   - ./nextcloud
   - ./pg-cluster
   - ./prowlarr
+  - ./sonarr
+  - ./radarr
   - ./unpackerr
   - ./wizarr
   - ./zigbee2mqtt

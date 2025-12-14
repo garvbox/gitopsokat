@@ -1,0 +1,15 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: sonarr
+  namespace: default
+spec:
+  values:
+    persistence:
+      videos:
+        existingClaim: nfs-videos-pvc
+      downloads:
+        existingClaim: nfs-downloads-pvc
+      config:
+        retain: true

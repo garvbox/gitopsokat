@@ -12,8 +12,6 @@ resources:
   - ./homeassistant-ext
   - ./influxdb
   - ./jellyfin
-  - ./radarr
-  - ./sonarr
   - ./unpackerr
   - ./pg-cluster
   - ./frigate
