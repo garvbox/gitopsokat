@@ -12,4 +12,5 @@ resources:
   - ./pg-cluster
   - ./prowlarr
   - ./unpackerr
+  - ./wizarr
   - ./zigbee2mqtt

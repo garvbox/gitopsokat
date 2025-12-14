@@ -1,0 +1,11 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: wizarr
+  namespace: default
+spec:
+  values:
+    persistence:
+      data:
+        retain: true

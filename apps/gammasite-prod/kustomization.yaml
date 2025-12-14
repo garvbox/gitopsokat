@@ -15,6 +15,5 @@ resources:
   - ./radarr
   - ./sonarr
   - ./unpackerr
-  - ./wizarr
   - ./pg-cluster
   - ./frigate
