@@ -8,8 +8,8 @@ metadata:
 spec:
   values:
     persistence:
-      # downloads:
-      #   existingClaim: downloads-pvc
+      downloads:
+        existingClaim: nfs-downloads-pvc
       unpackerr-config:
         name: unpackerr-config
         type: secret
