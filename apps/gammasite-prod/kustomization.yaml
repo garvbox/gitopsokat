@@ -12,7 +12,6 @@ resources:
   - ./homeassistant-ext
   - ./influxdb
   - ./jellyfin
-  - ./jellyseerr
   - ./nextcloud
   - ./prowlarr
   - ./radarr
