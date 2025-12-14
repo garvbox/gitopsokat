@@ -6,6 +6,7 @@ resources:
   - ../base/whoami.yaml
   - ./audiobookshelf
   - ./homeassistant
+  - ./jellyseerr
   - ./mosquitto
   - ./nextcloud
   - ./unpackerr
