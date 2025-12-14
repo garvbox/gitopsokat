@@ -8,7 +8,6 @@ spec:
   values:
     controllers:
       main:
-        replicas: 0
         containers:
           main:
             resources:
@@ -40,7 +39,7 @@ spec:
         size: 1Gi
         retain: true
       media:
-        existingClaim: frigate-media-pvc
+        existingClaim: nfs-frigate-media-pvc
         type: null
         accessMode: null
         size: null
