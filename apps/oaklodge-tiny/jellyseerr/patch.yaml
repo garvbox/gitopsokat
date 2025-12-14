@@ -9,15 +9,3 @@ spec:
     persistence:
       config:
         retain: true
-    ingress:
-      main:
-        className: nginx
-        annotations:
-          hajimari.io/icon: mdi:jellyfish-outline
-        hosts:
-          - host: jellyseerr.oaklodge.dev
-            paths:
-              - path: /
-                service:
-                  identifier: main
-                  port: http
