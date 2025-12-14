@@ -6,9 +6,6 @@ metadata:
   namespace: default
 spec:
   values:
-    controllers:
-      main:
-        replicas: 0
     persistence:
       downloads:
         existingClaim: nfs-downloads-pvc
