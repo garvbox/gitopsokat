@@ -6,12 +6,49 @@ metadata:
   namespace: default
 spec:
   values:
+    controllers:
+      main:
+        containers:
+          code:
+            dependsOn: main
+            image:
+              repository: ghcr.io/coder/code-server
+              tag: 4.106.3
+            args:
+              - --auth
+              - "none"
+              - --user-data-dir
+              - "/config/.vscode"
+              - --extensions-dir
+              - "/config/.vscode"
+              - --port
+              - "8081"
+              - "/config"
     service:
       main:
         type: LoadBalancer
         externalTrafficPolicy: Local
         annotations:
           metallb.universe.tf/loadBalancerIPs: ${metallb_ip_homeassistant}
+      code:
+        controller: main
+        ports:
+          http:
+            port: 8081
+    ingress:
+      code:
+        className: nginx
+        annotations:
+          hajimari.io/icon: mdi:microsoft-visual-studio-code
+          nginx.ingress.kubernetes.io/whitelist-source-range: ${wl_source_range}
+        hosts:
+          - host: "hass-code.${cluster_ext_domain}"
+            paths:
+              - path: /
+                pathType: Prefix
+                service:
+                  identifier: code
+                  port: http
     persistence:
       config:
         size: 25Gi
