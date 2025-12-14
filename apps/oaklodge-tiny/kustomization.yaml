@@ -8,6 +8,7 @@ resources:
   - ./audiobookshelf
   - ./deluge
   - ./homeassistant
+  - ./jellyfin
   - ./jellyseerr
   - ./mosquitto
   - ./nextcloud

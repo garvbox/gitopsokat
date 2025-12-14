@@ -1,0 +1,36 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: jellyfin
+  namespace: default
+spec:
+  values:
+    controllers:
+      main:
+        replicas: 0
+    #     containers:
+    #       main:
+    #         resources:
+    #           requests:
+    #             gpu.intel.com/i915: 1
+    #           limits:
+    #             gpu.intel.com/i915: 1
+    # defaultPodOptions:
+    #   nodeSelector:
+    #     intel.feature.node.kubernetes.io/gpu: "true"
+    #     kubernetes.io/hostname: gammatron
+    #   securityContext:
+    #     supplementalGroups: [44, 109] # Extra groups for access to hardware encode/decode
+    persistence:
+      config:
+        retain: true
+        size: 25Gi
+      videos:
+        existingClaim: nfs-videos-pvc
+    service:
+      main:
+        type: LoadBalancer
+        externalTrafficPolicy: Local
+        annotations:
+          metallb.universe.tf/loadBalancerIPs: ${metallb_ip_jellyfin}
