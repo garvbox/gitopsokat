@@ -6,5 +6,8 @@ metadata:
   namespace: default
 spec:
   values:
+    replicas: 0
     persistence:
-      existingClaim: grafana-config
+      enabled: true
+      type: pvc
+      size: 2Gi
