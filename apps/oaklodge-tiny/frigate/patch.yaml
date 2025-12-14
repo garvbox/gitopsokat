@@ -10,6 +10,7 @@ spec:
       main:
         containers:
           main:
+            replicas: 0
             resources:
               requests:
                 gpu.intel.com/i915: 1
@@ -27,7 +28,7 @@ spec:
     defaultPodOptions:
       nodeSelector:
         intel.feature.node.kubernetes.io/gpu: "true"
-        kubernetes.io/hostname: gammatron
+        kubernetes.io/hostname: tiny-cl-03
     service:
       main:
         type: LoadBalancer
@@ -36,10 +37,8 @@ spec:
           metallb.universe.tf/loadBalancerIPs: ${metallb_ip_frigate}
     persistence:
       config:
-        existingClaim: frigate-config
-        type: null
-        accessMode: null
-        size: null
+        size: 1Gi
+        retain: true
       media:
         existingClaim: frigate-media-pvc
         type: null

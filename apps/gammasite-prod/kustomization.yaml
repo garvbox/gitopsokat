@@ -8,4 +8,3 @@ resources:
   - ../base/hajimari.yaml
   - ../base/whoami.yaml
   - ./influxdb
-  - ./frigate
