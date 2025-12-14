@@ -13,7 +13,6 @@ resources:
   - ./influxdb
   - ./jellyfin
   - ./nextcloud
-  - ./prowlarr
   - ./radarr
   - ./sonarr
   - ./unpackerr

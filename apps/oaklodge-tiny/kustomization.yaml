@@ -9,6 +9,7 @@ resources:
   - ./jellyseerr
   - ./mosquitto
   - ./nextcloud
+  - ./pg-cluster
+  - ./prowlarr
   - ./unpackerr
   - ./zigbee2mqtt
-  - ./pg-cluster
