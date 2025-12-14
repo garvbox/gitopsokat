@@ -8,7 +8,6 @@ resources:
   - ../base/hajimari.yaml
   - ../base/whoami.yaml
   - ./grafana
-  - ./homeassistant-ext
   - ./influxdb
   - ./pg-cluster
   - ./frigate
