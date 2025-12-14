@@ -7,4 +7,3 @@ resources:
   - ../sources
   - ../base/hajimari.yaml
   - ../base/whoami.yaml
-  - ./influxdb
