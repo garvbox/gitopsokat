@@ -4,6 +4,7 @@ kind: Kustomization
 resources:
   - ../sources
   - ../base/whoami.yaml
+  - ./nfs-videos-vols.yaml
   - ./audiobookshelf
   - ./homeassistant
   - ./jellyseerr

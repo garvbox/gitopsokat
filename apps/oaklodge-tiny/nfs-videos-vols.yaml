@@ -1,0 +1,63 @@
+# Static Video PVCs using NFS mounts - Added as PVCs for ease of sharing
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-videos-pv
+  namespace: default
+spec:
+  storageClassName: nfs-gammatron
+  capacity:
+    storage: 1Mi
+  accessModes:
+    - ReadWriteMany
+  volumeMode: Filesystem
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    server: ${nfs_server}
+    path: "/datapool/videos"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: nfs-videos-pvc
+  namespace: default
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: nfs-gammatron
+  volumeName: nfs-videos-pv
+  resources:
+    requests:
+      storage: 1Mi
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-downloads-pv
+  namespace: default
+spec:
+  storageClassName: nfs-gammatron
+  capacity:
+    storage: 1Mi
+  accessModes:
+    - ReadWriteMany
+  volumeMode: Filesystem
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    server: ${nfs_server}
+    path: "/datapool/downloads"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: nfs-downloads-pvc
+  namespace: default
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: nfs-gammatron
+  volumeName: nfs-downloads-pv
+  resources:
+    requests:
+      storage: 1Mi
