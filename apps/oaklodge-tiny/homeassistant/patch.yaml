@@ -16,15 +16,3 @@ spec:
       config:
         size: 25Gi
         retain: true
-    ingress:
-      main:
-        className: nginx
-        annotations:
-          hajimari.io/icon: mdi:home-assistant
-        hosts:
-          - host: homeassistant.oaklodge.dev
-            paths:
-              - path: /
-                service:
-                  identifier: main
-                  port: http

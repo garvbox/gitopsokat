@@ -7,7 +7,6 @@ metadata:
 spec:
   values:
     nextcloud:
-      host: nextcloud.oaklodge.dev
       mail:
         smtp:
           host: smtp.protonmail.ch

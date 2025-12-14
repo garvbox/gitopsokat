@@ -21,15 +21,3 @@ spec:
         type: null
         accessMode: null
         size: null
-    ingress:
-      main:
-        className: nginx
-        annotations:
-          hajimari.io/icon: mdi:bookshelf
-        hosts:
-          - host: audiobookshelf.oaklodge.dev
-            paths:
-              - path: /
-                service:
-                  identifier: main
-                  port: http
