@@ -16,9 +16,3 @@ spec:
       config:
         size: 25Gi
         retain: true
-      backup:
-        type: nfs
-        server: ${nfs_server}
-        path: /datapool/share/backups/homeassistant
-        globalMounts:
-          - path: /config/backups
