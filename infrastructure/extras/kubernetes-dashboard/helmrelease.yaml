@@ -29,7 +29,8 @@ spec:
     ingress:
       enabled: true
       ingressClassName: nginx
-      host: kube-dashboard.${cluster_ext_domain}
+      hosts:
+        - kube-dashboard.${cluster_ext_domain}
       annotations:
         hajimari.io/icon: mdi:cow
         nginx.ingress.kubernetes.io/whitelist-source-range: ${wl_source_range}
