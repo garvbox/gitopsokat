@@ -26,11 +26,12 @@ spec:
   uninstall:
     keepHistory: false
   values:
-    ingress:
-      enabled: true
-      ingressClassName: nginx
-      hosts:
-        - kube-dashboard.${cluster_ext_domain}
-      annotations:
-        hajimari.io/icon: mdi:cow
-        nginx.ingress.kubernetes.io/whitelist-source-range: ${wl_source_range}
+    app:
+      ingress:
+        enabled: true
+        ingressClassName: nginx
+        hosts:
+          - kube-dashboard.${cluster_ext_domain}
+        annotations:
+          hajimari.io/icon: mdi:cow
+          nginx.ingress.kubernetes.io/whitelist-source-range: ${wl_source_range}
