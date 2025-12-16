@@ -16,6 +16,19 @@ spec:
     controllers:
       main:
         containers:
+          main:
+            image:
+              repository: ghcr.io/home-operations/home-assistant
+              tag: 2025.12.3
+            env:
+              TZ: "Europe/Dublin"
+            probes:
+              liveness:
+                enabled: false
+              readiness:
+                enabled: false
+              startup:
+                enabled: false
           code:
             dependsOn: main
             image:
@@ -43,6 +56,18 @@ spec:
           http:
             port: 8081
     ingress:
+      main:
+        className: nginx
+        annotations:
+          hajimari.io/icon: mdi:home-assistant
+          nginx.ingress.kubernetes.io/proxy-body-size: 500m # large body size for backup restore
+        hosts:
+          - host: homeassistant.${cluster_ext_domain}
+            paths:
+              - path: /
+                service:
+                  identifier: main
+                  port: http
       code:
         className: nginx
         annotations:
