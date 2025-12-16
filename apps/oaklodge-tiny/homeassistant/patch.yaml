@@ -6,13 +6,63 @@ metadata:
   namespace: default
 spec:
   values:
+    controllers:
+      main:
+        containers:
+          code:
+            dependsOn: main
+            image:
+              repository: ghcr.io/coder/code-server
+              tag: 4.106.3
+            args:
+              - --auth
+              - "none"
+              - --user-data-dir
+              - "/config/.vscode"
+              - --extensions-dir
+              - "/config/.vscode"
+              - --port
+              - "8081"
+              - "/config"
     service:
       main:
         type: LoadBalancer
         externalTrafficPolicy: Local
         annotations:
           metallb.universe.tf/loadBalancerIPs: ${metallb_ip_homeassistant}
+      code:
+        controller: main
+        ports:
+          http:
+            port: 8081
+    ingress:
+      code:
+        className: nginx
+        annotations:
+          hajimari.io/icon: mdi:microsoft-visual-studio-code
+          nginx.ingress.kubernetes.io/whitelist-source-range: ${wl_source_range}
+        hosts:
+          - host: "hass-code.${cluster_ext_domain}"
+            paths:
+              - path: /
+                pathType: Prefix
+                service:
+                  identifier: code
+                  port: http
+    defaultPodOptions:
+      automountServiceAccountToken: false
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 1000
+        fsGroup: 1000
+        fsGroupChangePolicy: "OnRootMismatch"
     persistence:
       config:
         size: 25Gi
         retain: true
+      backup:
+        type: nfs
+        server: ${nfs_server}
+        path: /datapool/share/backups/homeassistant
+        globalMounts:
+          - path: /config/backups
