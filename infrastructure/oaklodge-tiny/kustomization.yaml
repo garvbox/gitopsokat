@@ -10,3 +10,4 @@ resources:
   - ./local-path-provisioner
   - ../extras/intel-device-plugin
   - ../extras/cloudnative-pg-operator
+  - ../extras/kubernetes-dashboard
