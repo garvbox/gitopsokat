@@ -9,9 +9,9 @@ spec:
     defaultPodOptions:
       automountServiceAccountToken: false
       securityContext:
-        runAsUser: 1000
-        runAsGroup: 1000
-        fsGroup: 1000
+        runAsUser: 6666
+        runAsGroup: 6666
+        fsGroup: 6666
         fsGroupChangePolicy: "OnRootMismatch"
     controllers:
       main:
@@ -60,3 +60,9 @@ spec:
       config:
         size: 25Gi
         retain: true
+      backup:
+        type: nfs
+        server: ${nfs_server}
+        path: /datapool/share/backups/homeassistant
+        globalMounts:
+          - path: /config/backups
