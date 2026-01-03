@@ -27,6 +27,6 @@ spec:
                       name: deluge-client-secret
                       key: deluge-password
                 - name: DELUGE_CLIENT_HOST
-                  value: deluge-daemon.default.${cluster_int_domain}
+                  value: deluge-daemon.default.svc.${cluster_int_domain}
                 - name: DELUGE_CLIENT_PORT
                   value: "58846"
