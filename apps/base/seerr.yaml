@@ -2,7 +2,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: jellyseerr
+  name: seerr
   namespace: default
 spec:
   interval: 15m
@@ -31,8 +31,8 @@ spec:
         containers:
           main:
             image:
-              repository: fallenbagel/jellyseerr
-              tag: 2.7.3
+              repository: seerr-team/seerr
+              tag: 3.0.1
             env:
               TZ: "Europe/Dublin"
             probes:
@@ -45,6 +45,12 @@ spec:
                 spec:
                   failureThreshold: 30
                   periodSeconds: 5
+    defaultPodOptions:
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 1000
+        fsGroup: 1000
+        fsGroupChangePolicy: "OnRootMismatch"
     service:
       main:
         controller: main
