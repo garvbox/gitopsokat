@@ -11,7 +11,7 @@ resources:
   - ./grafana
   - ./homeassistant
   - ./jellyfin
-  - ./jellyseerr
+  - ./seerr
   - ./mosquitto
   - ./nextcloud
   - ./pg-cluster
