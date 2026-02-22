@@ -5,6 +5,7 @@ resources:
   - ../sources
   - ../base/whoami.yaml
   - ./nfs-videos-vols.yaml
+  - ./deesl
   - ./audiobookshelf
   - ./deluge
   - ./frigate
