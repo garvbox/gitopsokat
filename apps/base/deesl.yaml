@@ -32,7 +32,7 @@ spec:
           main:
             image:
               repository: ghcr.io/garvbox/deesl
-              tag: v0.2.0
+              tag: 0.2.0
             env:
               TZ: "Europe/Dublin"
             probes:
