@@ -32,9 +32,10 @@ spec:
           main:
             image:
               repository: ghcr.io/garvbox/deesl
-              tag: 0.2.0
+              tag: 0.3.0
             env:
               TZ: "Europe/Dublin"
+              BASE_URL: https://deesl.${cluster_ext_domain}
             probes:
               liveness:
                 enabled: true
