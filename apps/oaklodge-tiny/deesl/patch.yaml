@@ -1,0 +1,28 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: deesl
+  namespace: default
+spec:
+  values:
+    controllers:
+      main:
+        containers:
+          main:
+            env:
+              DATABASE_URL:
+                valueFrom:
+                  secretKeyRef:
+                    name: deesl-secrets
+                    key: DATABASE_URL
+              GOOGLE_CLIENT_ID:
+                valueFrom:
+                  secretKeyRef:
+                    name: deesl-secrets
+                    key: GOOGLE_CLIENT_ID
+              GOOGLE_CLIENT_SECRET:
+                valueFrom:
+                  secretKeyRef:
+                    name: deesl-secrets
+                    key: GOOGLE_CLIENT_SECRET
