@@ -32,7 +32,7 @@ spec:
           main:
             image:
               repository: ghcr.io/garvbox/deesl
-              tag: 0.3.1
+              tag: latest
             env:
               TZ: "Europe/Dublin"
               BASE_URL: https://deesl.${cluster_ext_domain}
