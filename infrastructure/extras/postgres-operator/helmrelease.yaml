@@ -19,12 +19,6 @@ spec:
     createNamespace: true
     remediation:
       retries: 3
-  upgrade:
-    cleanupOnFail: true
-    remediation:
-      retries: 3
-  uninstall:
-    keepHistory: false
   values:
     # See Values in https://github.com/zalando/postgres-operator/blob/master/charts/postgres-operator/values.yaml
     image:
