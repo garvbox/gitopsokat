@@ -30,6 +30,7 @@ spec:
             env:
               TZ: "Europe/Dublin"
               BASE_URL: https://deesl.${cluster_ext_domain}
+              SERVER_HOST: 0.0.0.0
             probes:
               liveness: &probe
                 enabled: true
