@@ -26,26 +26,25 @@ spec:
           main:
             image:
               repository: ghcr.io/garvbox/deesl
-              tag: 0.8.5
+              tag: 0.8.6
             env:
               TZ: "Europe/Dublin"
               BASE_URL: https://deesl.${cluster_ext_domain}
             probes:
-              liveness:
-                enabled: true
-              readiness:
-                enabled: true
-              startup:
+              liveness: &probe
                 enabled: true
                 spec:
-                  failureThreshold: 30
-                  periodSeconds: 5
+                  httpGet:
+                    path: /health
+                    port: &port 8000
+              readiness: *probe
+              startup: *probe
     service:
       main:
         controller: main
         ports:
           http:
-            port: 8000
+            port: *port
     ingress:
       main:
         className: nginx
