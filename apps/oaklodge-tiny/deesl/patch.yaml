@@ -16,12 +16,12 @@ spec:
                   secretKeyRef:
                     name: deesl-secrets
                     key: DATABASE_URL
-              GOOGLE_CLIENT_ID:
+              OAUTH_GOOGLE_CLIENT_ID:
                 valueFrom:
                   secretKeyRef:
                     name: deesl-secrets
                     key: GOOGLE_CLIENT_ID
-              GOOGLE_CLIENT_SECRET:
+              OAUTH_GOOGLE_CLIENT_SECRET:
                 valueFrom:
                   secretKeyRef:
                     name: deesl-secrets
