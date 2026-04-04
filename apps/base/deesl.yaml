@@ -26,11 +26,11 @@ spec:
           main:
             image:
               repository: ghcr.io/garvbox/deesl
-              tag: 0.8.6
+              tag: 0.8.7
             env:
               TZ: "Europe/Dublin"
-              SERVER_BASE_URL: https://deesl.${cluster_ext_domain}
-              SERVER_HOST: 0.0.0.0
+              BASE_URL: https://deesl.${cluster_ext_domain}
+              HOST: 0.0.0.0
             probes:
               liveness: &probe
                 enabled: true
