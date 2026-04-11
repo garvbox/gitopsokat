@@ -19,7 +19,7 @@ spec:
               limits:
                 gpu.intel.com/i915: 1
             securityContext:
-              privileged: false
+              privileged: true
               supplementalGroups: [44, 109] # Extra groups for access to hardware encode/decode
             env:
               PLUS_API_KEY:
