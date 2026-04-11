@@ -16,7 +16,7 @@ spec:
               limits:
                 gpu.intel.com/i915: 1
             securityContext:
-              privileged: true
+              privileged: false
               supplementalGroups: [44, 109] # Extra groups for access to hardware encode/decode
             env:
               PLUS_API_KEY:
@@ -27,7 +27,6 @@ spec:
     defaultPodOptions:
       nodeSelector:
         intel.feature.node.kubernetes.io/gpu: "true"
-        kubernetes.io/hostname: tiny-cl-03
     service:
       main:
         type: LoadBalancer
