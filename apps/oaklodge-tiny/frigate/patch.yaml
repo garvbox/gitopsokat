@@ -10,6 +10,9 @@ spec:
       main:
         containers:
           main:
+            image:
+              repository: ghcr.io/blakeblackshear/frigate
+              tag: 0.17.1
             resources:
               requests:
                 gpu.intel.com/i915: 1
