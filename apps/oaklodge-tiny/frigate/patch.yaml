@@ -42,3 +42,5 @@ spec:
         type: null
         accessMode: null
         size: null
+      usb:
+        enabled: false
