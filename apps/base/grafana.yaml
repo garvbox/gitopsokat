@@ -22,7 +22,7 @@ spec:
   values:
     image:
       repository: grafana/grafana
-      tag: 12.4.2
+      tag: 13.0.0
     persistence:
       enabled: true
       type: pvc
