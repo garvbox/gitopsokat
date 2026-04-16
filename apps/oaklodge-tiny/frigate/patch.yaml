@@ -30,6 +30,7 @@ spec:
     defaultPodOptions:
       nodeSelector:
         intel.feature.node.kubernetes.io/gpu: "true"
+        kubernetes.io/hostname: tiny-cl-03
     service:
       main:
         type: LoadBalancer
