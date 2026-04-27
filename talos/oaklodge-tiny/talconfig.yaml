@@ -1,5 +1,5 @@
 clusterName: tiny-kube
-talosVersion: v1.11.5
+talosVersion: v1.12.7
 endpoint: https://tiny-kube.oaklodge.lan:6443
 nodes:
   - hostname: tiny-cl-01
@@ -37,6 +37,7 @@ controlPlane:
         - init_on_free=0
         - mitigations=off
         - security=none
+        - pcie_aspm=off
         - talos.auditd.disabled=1
   patches:
     # Longhorn bind mount to kubelet for disk info and kernel modules
