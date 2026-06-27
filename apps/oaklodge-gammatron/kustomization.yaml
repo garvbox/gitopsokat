@@ -11,3 +11,4 @@ resources:
   - ./homeassistant
   - ./zigbee2mqtt
   - ./deluge
+  - ./jellyfin
