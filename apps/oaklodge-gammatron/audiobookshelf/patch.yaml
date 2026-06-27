@@ -20,13 +20,11 @@ spec:
         type: null
         accessMode: null
         size: null
-        retain: true
       metadata:
         existingClaim: audiobookshelf-metadata
         type: null
         accessMode: null
         size: null
-        retain: true
       media:
         existingClaim: audiobookshelf-media
         type: null

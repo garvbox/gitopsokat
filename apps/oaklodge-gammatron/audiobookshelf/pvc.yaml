@@ -85,7 +85,7 @@ spec:
   capacity:
     storage: 1Mi
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   volumeMode: Filesystem
   persistentVolumeReclaimPolicy: Retain
   local:
@@ -106,7 +106,7 @@ metadata:
   namespace: default
 spec:
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   storageClassName: local-datapool
   volumeName: audiobookshelf-media-pv
   resources:
@@ -123,7 +123,7 @@ spec:
   capacity:
     storage: 1Mi
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   volumeMode: Filesystem
   persistentVolumeReclaimPolicy: Retain
   local:
@@ -144,7 +144,7 @@ metadata:
   namespace: default
 spec:
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   storageClassName: local-datapool
   volumeName: audiobookshelf-audiobooks-pv
   resources:
