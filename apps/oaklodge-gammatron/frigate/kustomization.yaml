@@ -5,5 +5,6 @@ resources:
   - ../../base/frigate.yaml
   - ./pvc.yaml
   - ./secret.yaml
+  - ./serverstransport.yaml
 patchesStrategicMerge:
   - patch.yaml
