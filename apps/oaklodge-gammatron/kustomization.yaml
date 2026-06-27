@@ -13,3 +13,4 @@ resources:
   - ./deluge
   - ./jellyfin
   - ./radarr
+  - ./sonarr
