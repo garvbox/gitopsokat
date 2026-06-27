@@ -7,3 +7,4 @@ resources:
   - ./audiobookshelf
   - ./videos-vols.yaml
   - ./frigate
+  - ./mosquitto
