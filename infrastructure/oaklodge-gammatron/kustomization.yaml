@@ -12,5 +12,6 @@ resources:
   - ./cf-secret.yaml
   # Certs disabled for now until cutover
   - ./cert-manager
+  - ./servers-transport.yaml
   - ../extras/intel-device-plugin
   - ../extras/cloudnative-pg-operator

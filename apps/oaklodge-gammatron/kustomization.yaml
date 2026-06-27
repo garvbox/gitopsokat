@@ -6,3 +6,4 @@ resources:
   - ./whoami
   - ./audiobookshelf
   - ./videos-vols.yaml
+  - ./frigate

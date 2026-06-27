@@ -1,0 +1,9 @@
+---
+apiVersion: traefik.io/v1alpha1
+kind: ServersTransport
+metadata:
+  name: backend-https
+  namespace: default
+spec:
+  serverName: ""
+  insecureSkipVerify: true

@@ -32,7 +32,7 @@ spec:
       # metallb_ip_homeassistant: 192.168.20.41
       # metallb_ip_deluge: 192.168.20.42
       # metallb_ip_jellyfin: 192.168.20.43
-      # metallb_ip_frigate: 192.168.20.44
+      metallb_ip_frigate: 192.168.20.44
       # metallb_ip_mqtt: 192.168.20.47
       wl_source_range: 192.168.0.0/16,10.0.0.0/8
       host_path_base: /rocketpool/kube/pvs

@@ -1,0 +1,57 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: frigate
+  namespace: default
+spec:
+  values:
+    controllers:
+      main:
+        replicas: 0
+        containers:
+          main:
+            image:
+              repository: ghcr.io/blakeblackshear/frigate
+              tag: 0.17.1
+            resources:
+              requests:
+                gpu.intel.com/i915: 1
+              limits:
+                gpu.intel.com/i915: 1
+            securityContext:
+              privileged: true
+              supplementalGroups: [44, 109]
+            env:
+              PLUS_API_KEY:
+                valueFrom:
+                  secretKeyRef:
+                    name: frigate-plus-api-key
+                    key: api-key
+    defaultPodOptions:
+      nodeSelector:
+        intel.feature.node.kubernetes.io/gpu: "true"
+        kubernetes.io/hostname: gammatron
+    ingress:
+      main:
+        className: traefik
+        annotations:
+          hajimari.io/icon: mdi:cctv
+          traefik.ingress.kubernetes.io/service.serverstransport: backend-https@kubernetescrd
+    service:
+      main:
+        type: LoadBalancer
+        externalTrafficPolicy: Local
+        annotations:
+          metallb.universe.tf/loadBalancerIPs: ${metallb_ip_frigate}
+    persistence:
+      config:
+        existingClaim: frigate-config
+        type: null
+        accessMode: null
+        size: null
+      media:
+        existingClaim: frigate-media
+        type: null
+        accessMode: null
+        size: null
