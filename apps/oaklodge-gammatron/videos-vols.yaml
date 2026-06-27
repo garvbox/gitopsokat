@@ -61,3 +61,17 @@ spec:
               operator: In
               values:
                 - gammatron
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: downloads-pvc
+  namespace: default
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: local-datapool
+  volumeName: local-downloads-pv
+  resources:
+    requests:
+      storage: 1Mi
