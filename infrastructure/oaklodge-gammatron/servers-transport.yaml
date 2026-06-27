@@ -5,5 +5,4 @@ metadata:
   name: backend-https
   namespace: default
 spec:
-  serverName: ""
   insecureSkipVerify: true

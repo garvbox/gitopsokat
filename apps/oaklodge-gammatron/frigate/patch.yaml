@@ -38,7 +38,7 @@ spec:
         className: traefik
         annotations:
           hajimari.io/icon: mdi:cctv
-          traefik.ingress.kubernetes.io/service.serverstransport: backend-https@kubernetescrd
+          traefik.ingress.kubernetes.io/service.serverstransport: backend-https
     service:
       main:
         type: LoadBalancer
