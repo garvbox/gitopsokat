@@ -38,6 +38,7 @@ spec:
         className: traefik
         annotations:
           hajimari.io/icon: mdi:cctv
+          nginx.ingress.kubernetes.io/backend-protocol: null
     service:
       main:
         type: LoadBalancer
