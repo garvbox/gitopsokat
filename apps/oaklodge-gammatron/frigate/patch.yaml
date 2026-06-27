@@ -39,7 +39,6 @@ spec:
         annotations:
           hajimari.io/icon: mdi:cctv
           nginx.ingress.kubernetes.io/backend-protocol: null
-          traefik.ingress.kubernetes.io/service.serverstransport: default-frigate-insecure@kubernetescrd
     service:
       main:
         type: LoadBalancer
@@ -47,6 +46,7 @@ spec:
         annotations:
           metallb.universe.tf/loadBalancerIPs: ${metallb_ip_frigate}
           traefik.ingress.kubernetes.io/service.serversscheme: https
+          traefik.ingress.kubernetes.io/service.serverstransport: default-frigate-insecure@kubernetescrd
     persistence:
       config:
         existingClaim: frigate-config
