@@ -19,3 +19,4 @@ resources:
   - ./unpackerr
   - ./wizarr
   - ./prowlarr
+  - ./pg-cluster
