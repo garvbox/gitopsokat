@@ -29,6 +29,11 @@ spec:
     ingressClass:
       enabled: true
       isDefaultClass: true
+    tls:
+      stores:
+        default:
+          defaultCertificate:
+            secretName: letsencrypt-cert-secret # pragma: allowlist secret
     providers:
       kubernetesIngress:
         enabled: true
