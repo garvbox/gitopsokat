@@ -39,7 +39,7 @@ spec:
         annotations:
           hajimari.io/icon: mdi:cctv
           nginx.ingress.kubernetes.io/backend-protocol: null
-          traefik.ingress.kubernetes.io/service.serverstransport: frigate-insecure@kubernetescrd
+          traefik.ingress.kubernetes.io/service.serverstransport: default-frigate-insecure@kubernetescrd
     service:
       main:
         type: LoadBalancer
