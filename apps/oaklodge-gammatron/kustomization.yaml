@@ -12,3 +12,4 @@ resources:
   - ./zigbee2mqtt
   - ./deluge
   - ./jellyfin
+  - ./radarr
