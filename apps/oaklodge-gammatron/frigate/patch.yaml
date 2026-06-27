@@ -38,13 +38,13 @@ spec:
         className: traefik
         annotations:
           hajimari.io/icon: mdi:cctv
-          traefik.ingress.kubernetes.io/service.serverstransport: backend-https
     service:
       main:
         type: LoadBalancer
         externalTrafficPolicy: Local
         annotations:
           metallb.universe.tf/loadBalancerIPs: ${metallb_ip_frigate}
+          traefik.ingress.kubernetes.io/service.serverstransport: backend-https
     persistence:
       config:
         existingClaim: frigate-config
