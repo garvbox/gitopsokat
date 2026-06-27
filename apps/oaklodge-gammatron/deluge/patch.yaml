@@ -14,6 +14,7 @@ spec:
         className: traefik
         annotations:
           hajimari.io/icon: arcticons:deluge
+          nginx.ingress.kubernetes.io/whitelist-source-range: null
           traefik.ingress.kubernetes.io/router.middlewares: default-deluge-whitelist@kubernetescrd
     persistence:
       config:
