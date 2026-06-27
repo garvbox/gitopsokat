@@ -6,6 +6,7 @@ resources:
   - ./whoami
   - ./audiobookshelf
   - ./videos-vols.yaml
+  - ./middleware.yaml
   - ./frigate
   - ./mosquitto
   - ./homeassistant
@@ -17,3 +18,4 @@ resources:
   - ./seerr
   - ./unpackerr
   - ./wizarr
+  - ./prowlarr

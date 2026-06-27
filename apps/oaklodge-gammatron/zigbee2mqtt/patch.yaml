@@ -14,8 +14,7 @@ spec:
         className: traefik
         annotations:
           hajimari.io/icon: mdi:broadcast
-          nginx.ingress.kubernetes.io/whitelist-source-range: null
-          traefik.ingress.kubernetes.io/router.middlewares: default-zigbee2mqtt-whitelist@kubernetescrd
+          traefik.ingress.kubernetes.io/router.middlewares: default-whitelist@kubernetescrd
     persistence:
       config:
         existingClaim: zigbee2mqtt-config

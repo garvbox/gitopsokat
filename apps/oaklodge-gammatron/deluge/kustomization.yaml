@@ -6,6 +6,5 @@ resources:
   - ./pvc.yaml
   - ./client-secret.yaml
   - ./cronjob.yaml
-  - ./middleware.yaml
 patchesStrategicMerge:
   - patch.yaml
