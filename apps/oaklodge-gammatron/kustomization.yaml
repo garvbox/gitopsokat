@@ -8,3 +8,4 @@ resources:
   - ./videos-vols.yaml
   - ./frigate
   - ./mosquitto
+  - ./homeassistant
