@@ -25,13 +25,9 @@ spec:
   # Site-specific variables
   postBuild:
     substitute:
-      # metallb_ip_dns: 192.168.20.39
-      # metallb_ip_range: 192.168.20.40-192.168.20.49
-      # metallb_ip_traefik: 192.168.20.40
-      # TEMP Migration IPs
-      metallb_ip_dns: 192.168.20.49
-      metallb_ip_range: 192.168.20.50-192.168.20.59
-      metallb_ip_traefik: 192.168.20.50
+      metallb_ip_dns: 192.168.20.39
+      metallb_ip_range: 192.168.20.40-192.168.20.48
+      metallb_ip_traefik: 192.168.20.40
       wl_source_range: 192.168.0.0/16,10.0.0.0/8
       host_path_base: /rocketpool/kube/pvs
       cluster_name: oaklodge-gammatron
