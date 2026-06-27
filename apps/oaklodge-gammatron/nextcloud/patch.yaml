@@ -13,7 +13,7 @@ spec:
           port: 587
     persistence:
       enabled: true
-      storageClass: local-datapool
+      existingClaim: nextcloud-config
       nextcloudData:
         enabled: true
         existingClaim: nextcloud-data
