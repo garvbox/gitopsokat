@@ -45,7 +45,7 @@ spec:
         externalTrafficPolicy: Local
         annotations:
           metallb.universe.tf/loadBalancerIPs: ${metallb_ip_frigate}
-          traefik.ingress.kubernetes.io/service.serverstransport: backend-https
+          traefik.ingress.kubernetes.io/service.serverstransport: backend-https@kubernetescrd
     persistence:
       config:
         existingClaim: frigate-config
