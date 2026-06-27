@@ -4,4 +4,5 @@ kind: Kustomization
 resources:
   - ../sources
   - ./whoami
+  - ./audiobookshelf
   - ./videos-vols.yaml
