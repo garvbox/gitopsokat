@@ -9,3 +9,4 @@ resources:
   - ./frigate
   - ./mosquitto
   - ./homeassistant
+  - ./zigbee2mqtt
