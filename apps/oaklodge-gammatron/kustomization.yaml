@@ -20,3 +20,4 @@ resources:
   - ./wizarr
   - ./prowlarr
   - ./pg-cluster
+  - ./nextcloud

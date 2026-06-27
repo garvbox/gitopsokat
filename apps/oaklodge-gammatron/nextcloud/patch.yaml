@@ -1,0 +1,38 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: nextcloud
+  namespace: default
+spec:
+  values:
+    nextcloud:
+      mail:
+        smtp:
+          host: smtp.protonmail.ch
+          port: 587
+    persistence:
+      enabled: true
+      storageClass: local-datapool
+      nextcloudData:
+        enabled: true
+        existingClaim: nextcloud-data
+    cronjob:
+      enabled: true
+    internalDatabase:
+      enabled: false
+    externalDatabase:
+      enabled: true
+      type: postgresql
+      host: pg-cluster-rw.default.svc.cluster.local
+      existingSecret:
+        enabled: true
+        secretName: nextcloud-config-secret # pragma: allowlist secret
+        usernameKey: pgUsername
+        passwordKey: pgPassword # pragma: allowlist secret
+        hostKey: pgHost
+        databaseKey: pgDatabase # pragma: allowlist secret
+    ingress:
+      className: traefik
+      annotations:
+        hajimari.io/icon: simple-icons:nextcloud
