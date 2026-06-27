@@ -23,7 +23,8 @@ spec:
     service:
       enabled: true
       type: LoadBalancer
-      externalTrafficPolicy: Local
+      spec:
+        externalTrafficPolicy: Local
       annotations:
         metallb.universe.tf/loadBalancerIPs: ${metallb_ip_traefik}
     ingressClass:
