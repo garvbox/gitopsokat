@@ -53,7 +53,7 @@ spec:
             port: 5055
     ingress:
       main:
-        className: nginx
+        className: traefik
         annotations:
           hajimari.io/icon: mdi:jellyfish-outline
         hosts:

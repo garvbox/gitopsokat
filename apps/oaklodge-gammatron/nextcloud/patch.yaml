@@ -33,6 +33,5 @@ spec:
         hostKey: pgHost
         databaseKey: pgDatabase # pragma: allowlist secret
     ingress:
-      className: traefik
       annotations:
         hajimari.io/icon: simple-icons:nextcloud

@@ -6,6 +6,7 @@ metadata:
   namespace: default
 spec:
   values:
-    controllers:
+    ingress:
       main:
-        replicas: 1
+        annotations:
+          traefik.ingress.kubernetes.io/router.middlewares: default-whitelist@kubernetescrd

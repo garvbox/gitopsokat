@@ -39,9 +39,8 @@ spec:
     ingress:
       main:
         enabled: true
-        ingressClassName: nginx
+        ingressClassName: traefik
         annotations:
-          nginx.ingress.kubernetes.io/whitelist-source-range: ${wl_source_range}
           hajimari.io/enable: "false"
         hosts:
           - host: apps.${cluster_ext_domain}

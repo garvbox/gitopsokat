@@ -31,8 +31,3 @@ spec:
                   secretKeyRef:
                     name: deesl-secrets
                     key: JWT_SECRET
-    ingress:
-      main:
-        className: traefik
-        annotations:
-          hajimari.io/icon: mdi:web

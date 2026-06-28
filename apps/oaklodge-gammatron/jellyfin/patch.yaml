@@ -20,11 +20,6 @@ spec:
         intel.feature.node.kubernetes.io/gpu: "true"
       securityContext:
         supplementalGroups: [44, 109]
-    ingress:
-      main:
-        className: traefik
-        annotations:
-          hajimari.io/icon: simple-icons:jellyfin
     persistence:
       config:
         existingClaim: jellyfin-config

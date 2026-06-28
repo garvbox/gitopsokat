@@ -38,10 +38,9 @@ spec:
     ingress:
       main:
         enabled: true
-        className: nginx
+        className: traefik
         annotations:
-          hajimari.io/icon: mdi:cloud-search-outline
-          nginx.ingress.kubernetes.io/whitelist-source-range: ${wl_source_range}
+          hajimari.io/icon: mdi:download
         hosts:
           - host: prowlarr.${cluster_ext_domain}
             paths:

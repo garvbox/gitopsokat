@@ -2,7 +2,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: prowlarr
+  name: hajimari
   namespace: default
 spec:
   values:
@@ -10,9 +10,3 @@ spec:
       main:
         annotations:
           traefik.ingress.kubernetes.io/router.middlewares: default-whitelist@kubernetescrd
-    persistence:
-      config:
-        existingClaim: prowlarr-config
-        type: null
-        accessMode: null
-        size: null

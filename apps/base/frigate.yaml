@@ -56,10 +56,9 @@ spec:
             port: *port
     ingress:
       main:
-        className: nginx
+        className: traefik
         annotations:
           hajimari.io/icon: mdi:cctv
-          nginx.ingress.kubernetes.io/backend-protocol: HTTPS
         hosts:
           - host: frigate.${cluster_ext_domain}
             paths:

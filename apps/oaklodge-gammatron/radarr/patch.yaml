@@ -6,11 +6,6 @@ metadata:
   namespace: default
 spec:
   values:
-    ingress:
-      main:
-        className: traefik
-        annotations:
-          hajimari.io/icon: mdi:filmstrip
     persistence:
       config:
         existingClaim: radarr-config

@@ -51,10 +51,9 @@ spec:
     ingress:
       main:
         enabled: true
-        className: nginx
+        className: traefik
         annotations:
-          hajimari.io/icon: arcticons:deluge
-          nginx.ingress.kubernetes.io/whitelist-source-range: ${wl_source_range}
+          hajimari.io/icon: mdi:download
         hosts:
           - host: deluge.${cluster_ext_domain}
             paths:

@@ -45,10 +45,9 @@ spec:
             port: 80
     ingress:
       main:
-        className: nginx
+        className: traefik
         annotations:
           hajimari.io/icon: simple-icons:traefikproxy
-          nginx.ingress.kubernetes.io/whitelist-source-range: ${wl_source_range}
         hosts:
           - host: whoami.${cluster_ext_domain}
             paths:

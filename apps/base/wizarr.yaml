@@ -48,7 +48,7 @@ spec:
     ingress:
       main:
         enabled: true
-        className: nginx
+        className: traefik
         annotations:
           hajimari.io/icon: mdi:wizard-hat
         hosts:

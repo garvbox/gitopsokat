@@ -53,10 +53,9 @@ spec:
             port: 8384
     ingress:
       main:
-        className: nginx
+        className: traefik
         annotations:
-          hajimari.io/icon: arcticons:syncthing
-          nginx.ingress.kubernetes.io/whitelist-source-range: ${wl_source_range}
+          hajimari.io/icon: mdi:sync
         hosts:
           - host: syncthing.${cluster_ext_domain}
             paths:

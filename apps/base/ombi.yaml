@@ -47,7 +47,7 @@ spec:
             port: 3579
     ingress:
       main:
-        className: nginx
+        className: traefik
         annotations:
           hajimari.io/icon: mdi:ticket-account
         hosts:

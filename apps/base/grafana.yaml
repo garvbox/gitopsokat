@@ -29,7 +29,7 @@ spec:
       size: 5Gi
     ingress:
       enabled: true
-      ingressClassName: nginx
+      ingressClassName: traefik
       hosts:
         - grafana.${cluster_ext_domain}
       path: "/"

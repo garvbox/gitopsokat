@@ -6,11 +6,6 @@ metadata:
   namespace: default
 spec:
   values:
-    ingress:
-      main:
-        className: traefik
-        annotations:
-          hajimari.io/icon: mdi:jellyfish-outline
     persistence:
       config:
         existingClaim: seerr-config

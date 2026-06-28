@@ -19,11 +19,6 @@ spec:
         externalTrafficPolicy: Local
         annotations:
           metallb.universe.tf/loadBalancerIPs: ${metallb_ip_homeassistant}
-    ingress:
-      main:
-        className: traefik
-        annotations:
-          hajimari.io/icon: mdi:home-assistant
     persistence:
       config:
         existingClaim: homeassistant-config

@@ -47,7 +47,7 @@ spec:
             port: 80
     ingress:
       main:
-        className: nginx
+        className: traefik
         annotations:
           hajimari.io/icon: mdi:bookshelf
         hosts:

@@ -63,7 +63,7 @@ spec:
             protocol: UDP
     ingress:
       main:
-        className: nginx
+        className: traefik
         annotations:
           hajimari.io/icon: simple-icons:jellyfin
         hosts:

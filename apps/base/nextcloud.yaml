@@ -33,11 +33,8 @@ spec:
       enabled: true
     ingress:
       enabled: true
-      className: "nginx"
+      className: "traefik"
       annotations:
-        nginx.ingress.kubernetes.io/proxy-body-size: "10G"
-        nginx.ingress.kubernetes.io/proxy-buffering: "off"
-        nginx.ingress.kubernetes.io/proxy-request-buffering: "off"
         hajimari.io/icon: simple-icons:nextcloud
       path: /
       pathType: Prefix

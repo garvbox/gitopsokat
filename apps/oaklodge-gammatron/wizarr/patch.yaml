@@ -6,11 +6,6 @@ metadata:
   namespace: default
 spec:
   values:
-    ingress:
-      main:
-        className: traefik
-        annotations:
-          hajimari.io/icon: mdi:wizard-hat
     persistence:
       data:
         existingClaim: wizarr-data

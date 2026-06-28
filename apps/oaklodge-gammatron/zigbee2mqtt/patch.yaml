@@ -11,9 +11,7 @@ spec:
         kubernetes.io/hostname: gammatron
     ingress:
       main:
-        className: traefik
         annotations:
-          hajimari.io/icon: mdi:broadcast
           traefik.ingress.kubernetes.io/router.middlewares: default-whitelist@kubernetescrd
     persistence:
       config:
