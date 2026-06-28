@@ -39,8 +39,6 @@ spec:
         externalTrafficPolicy: Local
         annotations:
           metallb.universe.tf/loadBalancerIPs: ${metallb_ip_frigate}
-          traefik.ingress.kubernetes.io/service.serversscheme: https
-          traefik.ingress.kubernetes.io/service.serverstransport: default-frigate-insecure@kubernetescrd
     persistence:
       config:
         existingClaim: frigate-config

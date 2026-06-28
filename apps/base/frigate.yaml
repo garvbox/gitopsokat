@@ -54,6 +54,9 @@ spec:
             port: 8971
           noauth:
             port: *port
+        annotations:
+          traefik.ingress.kubernetes.io/service.serversscheme: https
+          traefik.ingress.kubernetes.io/service.serverstransport: default-frigate-insecure@kubernetescrd
     ingress:
       main:
         className: traefik
@@ -87,3 +90,11 @@ spec:
         hostPathType: Directory
         globalMounts:
           - path: /dev/bus/usb
+---
+apiVersion: traefik.io/v1alpha1
+kind: ServersTransport
+metadata:
+  name: frigate-insecure
+  namespace: default
+spec:
+  insecureSkipVerify: true
