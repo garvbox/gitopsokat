@@ -6,6 +6,12 @@ metadata:
   namespace: default
 spec:
   values:
+    service:
+      main:
+        type: LoadBalancer
+        externalTrafficPolicy: Local
+        annotations:
+          metallb.universe.tf/loadBalancerIPs: ${metallb_ip_influxdb}
     persistence:
       influxdata:
         existingClaim: influxdb-data
