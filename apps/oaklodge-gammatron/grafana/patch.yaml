@@ -1,0 +1,12 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: grafana
+  namespace: default
+spec:
+  values:
+    persistence:
+      existingClaim: grafana-config
+      type: null
+      size: null
