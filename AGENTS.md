@@ -11,6 +11,11 @@
 - Commit messages should be imperative and short (e.g. "Update sonarr to 4.0.18", "Add cert-manager ClusterIssuer for deltasite")
 - Always ask before committing
 
+## Validation
+
+- After any manifest change, run `flux build kustomization` for each active cluster and layer (`infra-core-install`, `infrastructure`, `apps`) to confirm the kustomization still renders
+- `flux build kustomization` is read-only and local; it does not affect the cluster
+
 ## Project conventions
 
 ### App layout
