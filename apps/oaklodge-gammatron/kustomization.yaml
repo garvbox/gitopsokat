@@ -22,3 +22,5 @@ resources:
   - ./pg-cluster
   - ./nextcloud
   - ./deesl
+  - ./grafana
+  - ./influxdb
