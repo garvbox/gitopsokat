@@ -11,16 +11,11 @@ spec:
         replicas: 1
         containers:
           main:
-            image:
-              repository: ghcr.io/blakeblackshear/frigate
-              tag: 0.17.2
             resources:
               requests:
                 gpu.intel.com/i915: 1
               limits:
                 gpu.intel.com/i915: 1
-            securityContext:
-              privileged: true
             env:
               PLUS_API_KEY:
                 valueFrom:
