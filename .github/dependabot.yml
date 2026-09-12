@@ -5,3 +5,13 @@ updates:
     schedule:
       # Check for updates to GitHub Actions every weekday
       interval: "daily"
+  - package-ecosystem: "docker"
+    directory: "/"
+    open-pull-requests-limit: 4
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "helm"
+    directory: "/"
+    open-pull-requests-limit: 4
+    schedule:
+      interval: "daily"
