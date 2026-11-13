@@ -29,6 +29,30 @@ spec:
               tag: 3.0.1.5752
             env:
               TZ: "Europe/Dublin"
+            probes:
+              liveness: &probe
+                enabled: true
+                custom: true
+                spec:
+                  httpGet:
+                    path: /ping
+                    port: &port 9696
+                  initialDelaySeconds: 0
+                  periodSeconds: 10
+                  timeoutSeconds: 1
+                  failureThreshold: 3
+              readiness: *probe
+              startup:
+                enabled: true
+                custom: true
+                spec:
+                  httpGet:
+                    path: /ping
+                    port: *port
+                  periodSeconds: 5
+                  timeoutSeconds: 1
+                  # v3 migration of a copy of the deployed database completed in ~1s
+                  failureThreshold: 30
     service:
       main:
         controller: main
