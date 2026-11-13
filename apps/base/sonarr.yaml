@@ -43,7 +43,16 @@ spec:
                   failureThreshold: 3
               readiness: *probe
               startup:
-                enabled: false
+                enabled: true
+                custom: true
+                spec:
+                  httpGet:
+                    path: /ping
+                    port: *port
+                  periodSeconds: 5
+                  timeoutSeconds: 1
+                  # v5 migration of a copy of the deployed database completed in ~7s
+                  failureThreshold: 30
     defaultPodOptions:
       securityContext:
         runAsUser: 6666
