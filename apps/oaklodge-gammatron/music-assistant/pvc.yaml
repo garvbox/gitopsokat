@@ -1,0 +1,76 @@
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: music-assistant-data-pv
+  namespace: default
+spec:
+  storageClassName: local-rocketpool
+  capacity:
+    storage: 1Mi
+  accessModes:
+    - ReadWriteOnce
+  volumeMode: Filesystem
+  persistentVolumeReclaimPolicy: Retain
+  local:
+    path: ${host_path_base}/music-assistant/data
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - gammatron
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: music-assistant-data
+  namespace: default
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: local-rocketpool
+  volumeName: music-assistant-data-pv
+  resources:
+    requests:
+      storage: 1Mi
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: music-assistant-music-pv
+  namespace: default
+spec:
+  storageClassName: local-datapool
+  capacity:
+    storage: 1Mi
+  accessModes:
+    - ReadWriteMany
+  volumeMode: Filesystem
+  persistentVolumeReclaimPolicy: Retain
+  local:
+    path: /datapool/audio/music
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - gammatron
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: music-assistant-music
+  namespace: default
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: local-datapool
+  volumeName: music-assistant-music-pv
+  resources:
+    requests:
+      storage: 1Mi
