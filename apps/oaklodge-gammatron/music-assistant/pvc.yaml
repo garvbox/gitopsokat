@@ -40,7 +40,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: local-music-pv
+  name: music-assistant-music-pv
   namespace: default
 spec:
   storageClassName: local-datapool
@@ -64,13 +64,13 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: music-pvc
+  name: music-assistant-music
   namespace: default
 spec:
   accessModes:
     - ReadWriteMany
   storageClassName: local-datapool
-  volumeName: local-music-pv
+  volumeName: music-assistant-music-pv
   resources:
     requests:
       storage: 1Mi
