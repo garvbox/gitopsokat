@@ -24,3 +24,4 @@ resources:
   - ./deesl
   - ./grafana
   - ./influxdb
+  - ./music-assistant
