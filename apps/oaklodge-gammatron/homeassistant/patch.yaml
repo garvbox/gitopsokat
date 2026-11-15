@@ -19,6 +19,16 @@ spec:
         externalTrafficPolicy: Local
         annotations:
           metallb.universe.tf/loadBalancerIPs: ${metallb_ip_homeassistant}
+    ingress:
+      alias:
+        className: traefik
+        hosts:
+          - host: home-assistant.${cluster_ext_domain}
+            paths:
+              - path: /
+                service:
+                  identifier: main
+                  port: http
     persistence:
       config:
         existingClaim: homeassistant-config
